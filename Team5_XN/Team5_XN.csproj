@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1890525F-3F59-4F76-B5E3-2DAA75D8A277}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Team5_XN</RootNamespace>
+    <AssemblyName>Team5_XN</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\PlaceholderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PlaceholderTextBox.designer.cs">
+      <DependentUpon>PlaceholderTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucPaletteList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucPaletteList.Designer.cs">
+      <DependentUpon>ucPaletteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucWorkCenterList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucWorkCenterList.Designer.cs">
+      <DependentUpon>ucWorkCenterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucWorkOrderStatusList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucWorkOrderStatusList.Designer.cs">
+      <DependentUpon>ucWorkOrderStatusList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1-1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1-1.Designer.cs">
+      <DependentUpon>Form1-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2-1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2-1.Designer.cs">
+      <DependentUpon>Form2-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2-2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2-2.Designer.cs">
+      <DependentUpon>Form2-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3-1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3-1.Designer.cs">
+      <DependentUpon>Form3-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCost.Designer.cs">
+      <DependentUpon>frmCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCostBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCostBOM.Designer.cs">
+      <DependentUpon>frmCostBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDayProduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDayProduction.Designer.cs">
+      <DependentUpon>frmDayProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDownTimeCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDownTimeCode.designer.cs">
+      <DependentUpon>frmDownTimeCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGlazeBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGlazeBOM.Designer.cs">
+      <DependentUpon>frmGlazeBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGlazeBOM_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGlazeBOM_dialog.Designer.cs">
+      <DependentUpon>frmGlazeBOM_dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItem.Designer.cs">
+      <DependentUpon>frmItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNopHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNopHistory.Designer.cs">
+      <DependentUpon>frmNopHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcess.Designer.cs">
+      <DependentUpon>frmProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchPopup.Designer.cs">
+      <DependentUpon>frmSearchPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSystemCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSystemCode.designer.cs">
+      <DependentUpon>frmSystemCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTimeProduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimeProduction.Designer.cs">
+      <DependentUpon>frmTimeProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkOrder.Designer.cs">
+      <DependentUpon>frmWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkPlan.Designer.cs">
+      <DependentUpon>frmWorkPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkRequest.Designer.cs">
+      <DependentUpon>frmWorkRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPPalette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPPalette.Designer.cs">
+      <DependentUpon>POPPalette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPWorkCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPWorkCenter.designer.cs">
+      <DependentUpon>POPWorkCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPWorkOrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPWorkOrderStatus.Designer.cs">
+      <DependentUpon>POPWorkOrderStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utill\DataGridViewUtil.cs" />
+    <Compile Include="frmWorkCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkCenter.Designer.cs">
+      <DependentUpon>frmWorkCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkingPlaceInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkingPlaceInfo.designer.cs">
+      <DependentUpon>WorkingPlaceInfo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\ucPaletteList.resx">
+      <DependentUpon>ucPaletteList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucWorkCenterList.resx">
+      <DependentUpon>ucWorkCenterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucWorkOrderStatusList.resx">
+      <DependentUpon>ucWorkOrderStatusList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1-1.resx">
+      <DependentUpon>Form1-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2-1.resx">
+      <DependentUpon>Form2-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2-2.resx">
+      <DependentUpon>Form2-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3-1.resx">
+      <DependentUpon>Form3-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCost.resx">
+      <DependentUpon>frmCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCostBOM.resx">
+      <DependentUpon>frmCostBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDayProduction.resx">
+      <DependentUpon>frmDayProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownTimeCode.resx">
+      <DependentUpon>frmDownTimeCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlazeBOM.resx">
+      <DependentUpon>frmGlazeBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlazeBOM_dialog.resx">
+      <DependentUpon>frmGlazeBOM_dialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItem.resx">
+      <DependentUpon>frmItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNopHistory.resx">
+      <DependentUpon>frmNopHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcess.resx">
+      <DependentUpon>frmProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchPopup.resx">
+      <DependentUpon>frmSearchPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSystemCode.resx">
+      <DependentUpon>frmSystemCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimeProduction.resx">
+      <DependentUpon>frmTimeProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkOrder.resx">
+      <DependentUpon>frmWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkPlan.resx">
+      <DependentUpon>frmWorkPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkRequest.resx">
+      <DependentUpon>frmWorkRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPPalette.resx">
+      <DependentUpon>POPPalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPWorkCenter.resx">
+      <DependentUpon>POPWorkCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPWorkOrderStatus.resx">
+      <DependentUpon>POPWorkOrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="frmWorkCenter.resx">
+      <DependentUpon>frmWorkCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkingPlaceInfo.resx">
+      <DependentUpon>WorkingPlaceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\samhyun_icon.png" />
+    <None Include="image\icon_xn_cancle.png" />
+    <None Include="image\icon_xn_save.png" />
+    <None Include="image\icon_xn_delete.png" />
+    <None Include="image\icon_xn_update.png" />
+    <None Include="image\icon_xn_create.png" />
+    <None Include="image\icon_xn_select.png" />
+    <None Include="Resources\backColor.JPG" />
+    <None Include="Resources\backColor6.JPG" />
+    <None Include="Resources\buttonBackColor3.JPG" />
+    <None Include="Resources\backColor11.JPG" />
+    <None Include="Resources\backColor12.JPG" />
+    <Content Include="Resources\free-icon-add-file-12658752.png" />
+    <Content Include="Resources\free-icon-document-63012642.png" />
+    <None Include="Resources\keyboard.png" />
+    <Content Include="Resources\premium-icon-cancel-3815923.png" />
+    <Content Include="Resources\premium-icon-search-engine-32766562.png" />
+    <Content Include="Resources\previous1.png" />
+    <Content Include="Resources\samhyun_icon_3.png" />
+    <Content Include="Resources\xn_save_icon2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
