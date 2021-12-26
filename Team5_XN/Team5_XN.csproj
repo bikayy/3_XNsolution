@@ -113,6 +113,12 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBoxingGradeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBoxingGradeDetail.Designer.cs">
+      <DependentUpon>frmBoxingGradeDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCost.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,12 @@
     </Compile>
     <Compile Include="frmCostBOM.Designer.cs">
       <DependentUpon>frmCostBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashBoard.Designer.cs">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDayProduction.cs">
       <SubType>Form</SubType>
@@ -155,6 +167,12 @@
     <Compile Include="frmItem.Designer.cs">
       <DependentUpon>frmItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModule.Designer.cs">
+      <DependentUpon>frmModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNopHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +184,12 @@
     </Compile>
     <Compile Include="frmProcess.Designer.cs">
       <DependentUpon>frmProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScreenManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScreenManagement.Designer.cs">
+      <DependentUpon>frmScreenManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSearchPopup.cs">
       <SubType>Form</SubType>
@@ -184,6 +208,24 @@
     </Compile>
     <Compile Include="frmTimeProduction.Designer.cs">
       <DependentUpon>frmTimeProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserGroup.Designer.cs">
+      <DependentUpon>frmUserGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserGroupAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserGroupAuthority.Designer.cs">
+      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserInfo.Designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWorkOrder.cs">
       <SubType>Form</SubType>
@@ -278,11 +320,17 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBoxingGradeDetail.resx">
+      <DependentUpon>frmBoxingGradeDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCost.resx">
       <DependentUpon>frmCost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCostBOM.resx">
       <DependentUpon>frmCostBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashBoard.resx">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDayProduction.resx">
       <DependentUpon>frmDayProduction.cs</DependentUpon>
@@ -299,11 +347,17 @@
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmModule.resx">
+      <DependentUpon>frmModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNopHistory.resx">
       <DependentUpon>frmNopHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcess.resx">
       <DependentUpon>frmProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScreenManagement.resx">
+      <DependentUpon>frmScreenManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchPopup.resx">
       <DependentUpon>frmSearchPopup.cs</DependentUpon>
@@ -313,6 +367,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimeProduction.resx">
       <DependentUpon>frmTimeProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserGroup.resx">
+      <DependentUpon>frmUserGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserGroupAuthority.resx">
+      <DependentUpon>frmUserGroupAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrder.resx">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>

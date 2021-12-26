@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Team5_XN
 {
-    public partial class frmSystemCode : Form
+    public partial class frmModule : Form
     {
-        public frmSystemCode()
+        public frmModule()
         {
             InitializeComponent();
-        }
-
-        private void pnlSelect_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
