@@ -355,7 +355,7 @@ namespace Team5_XN
             this.placeholderTextBox10.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.placeholderTextBox10.Location = new System.Drawing.Point(815, 16);
             this.placeholderTextBox10.Name = "placeholderTextBox10";
-            this.placeholderTextBox10.PlaceholderText = "작업 코드";
+            this.placeholderTextBox10.PlaceholderText = "작업장 코드";
             this.placeholderTextBox10.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
             this.placeholderTextBox10.ReadOnly = true;
             this.placeholderTextBox10.Size = new System.Drawing.Size(138, 25);
