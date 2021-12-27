@@ -30,6 +30,7 @@ namespace Team5_XN
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ucWorkOrderStatusList1 = new Team5_XN.Controls.ucWorkOrderStatusList();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@ namespace Team5_XN
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -66,8 +68,6 @@ namespace Team5_XN
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.ucWorkOrderStatusList1 = new Team5_XN.Controls.ucWorkOrderStatusList();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -97,6 +97,15 @@ namespace Team5_XN
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1084, 537);
             this.panel4.TabIndex = 8;
+            // 
+            // ucWorkOrderStatusList1
+            // 
+            this.ucWorkOrderStatusList1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucWorkOrderStatusList1.Location = new System.Drawing.Point(1, 115);
+            this.ucWorkOrderStatusList1.Name = "ucWorkOrderStatusList1";
+            this.ucWorkOrderStatusList1.Size = new System.Drawing.Size(1081, 99);
+            this.ucWorkOrderStatusList1.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -436,6 +445,21 @@ namespace Team5_XN
             this.panel3.Size = new System.Drawing.Size(1084, 125);
             this.panel3.TabIndex = 7;
             // 
+            // button6
+            // 
+            this.button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(96)))), ((int)(((byte)(149)))));
+            this.button6.Location = new System.Drawing.Point(570, 11);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(123, 101);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "팔렛생성";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // button5
             // 
             this.button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -505,6 +529,7 @@ namespace Team5_XN
             this.button1.TabIndex = 0;
             this.button1.Text = "작업지시 생성";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -554,29 +579,6 @@ namespace Team5_XN
             this.label1.Size = new System.Drawing.Size(147, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "2021-12-22";
-            // 
-            // button6
-            // 
-            this.button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(96)))), ((int)(((byte)(149)))));
-            this.button6.Location = new System.Drawing.Point(570, 11);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(123, 101);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "팔렛생성";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // ucWorkOrderStatusList1
-            // 
-            this.ucWorkOrderStatusList1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucWorkOrderStatusList1.Location = new System.Drawing.Point(1, 115);
-            this.ucWorkOrderStatusList1.Name = "ucWorkOrderStatusList1";
-            this.ucWorkOrderStatusList1.Size = new System.Drawing.Size(1081, 99);
-            this.ucWorkOrderStatusList1.TabIndex = 1;
             // 
             // POPWorkOrderStatus
             // 
