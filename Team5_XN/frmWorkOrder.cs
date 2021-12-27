@@ -16,5 +16,11 @@ namespace Team5_XN
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PopupUpdatePalette frm = new PopupUpdatePalette();
+            frm.ShowDialog();
+        }
     }
 }

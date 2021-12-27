@@ -16,5 +16,17 @@ namespace Team5_XN
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            POPCreateWork pop = new POPCreateWork();
+            pop.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            POPPalette pop = new POPPalette();
+            pop.ShowDialog();
+        }
     }
 }

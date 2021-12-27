@@ -32,18 +32,16 @@ namespace Team5_XN
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POPCreateWork));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,36 +51,60 @@ namespace Team5_XN
             this.label12 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.ucCreateWorkList1 = new Team5_XN.Controls.ucCreateWorkList();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.tableLayoutPanel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(711, 111);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(373, 662);
             this.panel3.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageIndex = 0;
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(11, 374);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(355, 277);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "작업지시생성";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "buttonBackColor3.JPG");
             // 
             // tableLayoutPanel2
             // 
@@ -117,98 +139,6 @@ namespace Team5_XN
             this.panel17.Size = new System.Drawing.Size(207, 85);
             this.panel17.TabIndex = 27;
             // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.White;
-            this.panel16.Controls.Add(this.label6);
-            this.panel16.Controls.Add(this.button4);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(145, 183);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(207, 84);
-            this.panel16.TabIndex = 26;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.White;
-            this.panel15.Controls.Add(this.label4);
-            this.panel15.Controls.Add(this.button3);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(145, 93);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(207, 84);
-            this.panel15.TabIndex = 25;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Controls.Add(this.label5);
-            this.panel14.Controls.Add(this.button2);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(145, 3);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(207, 84);
-            this.panel14.TabIndex = 24;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "buttonBackColor3.JPG");
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(7, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 28);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "2SWD-베트로M";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(25, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 28);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "2022-01-01";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(18, 26);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 28);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "W1 PACKING";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageIndex = 0;
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(11, 374);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(355, 277);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "작업지시생성";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.LightGray;
@@ -223,6 +153,30 @@ namespace Team5_XN
             this.button5.TabIndex = 2;
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.White;
+            this.panel16.Controls.Add(this.label6);
+            this.panel16.Controls.Add(this.button4);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Location = new System.Drawing.Point(145, 183);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(207, 84);
+            this.panel16.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(18, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 28);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "W1 PACKING";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.LightGray;
@@ -236,6 +190,30 @@ namespace Team5_XN
             this.button4.Size = new System.Drawing.Size(33, 76);
             this.button4.TabIndex = 2;
             this.button4.UseVisualStyleBackColor = false;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.Controls.Add(this.label4);
+            this.panel15.Controls.Add(this.button3);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(145, 93);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(207, 84);
+            this.panel15.TabIndex = 25;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(7, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(157, 28);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "2SWD-베트로M";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button3
             // 
@@ -343,6 +321,30 @@ namespace Team5_XN
             this.label13.Text = "계획수량";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.White;
+            this.panel14.Controls.Add(this.label5);
+            this.panel14.Controls.Add(this.button2);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(145, 3);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(207, 84);
+            this.panel14.TabIndex = 24;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(25, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 28);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "2022-01-01";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightGray;
@@ -419,21 +421,32 @@ namespace Team5_XN
             this.label1.TabIndex = 0;
             this.label1.Text = "2021-12-22";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.panel2.Controls.Add(this.ucCreateWorkList1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 111);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(705, 662);
+            this.panel2.TabIndex = 12;
+            // 
             // ucCreateWorkList1
             // 
-            this.ucCreateWorkList1.Location = new System.Drawing.Point(3, 114);
+            this.ucCreateWorkList1.Location = new System.Drawing.Point(3, 6);
             this.ucCreateWorkList1.Name = "ucCreateWorkList1";
             this.ucCreateWorkList1.Size = new System.Drawing.Size(678, 78);
-            this.ucCreateWorkList1.TabIndex = 11;
+            this.ucCreateWorkList1.TabIndex = 0;
             // 
             // POPCreateWork
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1084, 773);
-            this.Controls.Add(this.ucCreateWorkList1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "POPCreateWork";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "POPCreateWork";
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -442,8 +455,6 @@ namespace Team5_XN
             this.panel16.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -452,8 +463,11 @@ namespace Team5_XN
             this.panel11.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -488,6 +502,7 @@ namespace Team5_XN
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel2;
         private Controls.ucCreateWorkList ucCreateWorkList1;
     }
 }

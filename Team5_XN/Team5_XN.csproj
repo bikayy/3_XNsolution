@@ -167,6 +167,12 @@
     <Compile Include="frmGlazeBOM_dialog.Designer.cs">
       <DependentUpon>frmGlazeBOM_dialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInputList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInputList.Designer.cs">
+      <DependentUpon>frmInputList.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,12 @@
     </Compile>
     <Compile Include="frmNopHistory.Designer.cs">
       <DependentUpon>frmNopHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPOPMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOPMain.Designer.cs">
+      <DependentUpon>frmPOPMain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProcess.cs">
       <SubType>Form</SubType>
@@ -281,6 +293,30 @@
     <Compile Include="POPPalette.Designer.cs">
       <DependentUpon>POPPalette.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupAddPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupAddPlan.Designer.cs">
+      <DependentUpon>PopupAddPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupCreatePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupCreatePlan.Designer.cs">
+      <DependentUpon>PopupCreatePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupCreateWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupCreateWork.Designer.cs">
+      <DependentUpon>PopupCreateWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupUpdatePalette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupUpdatePalette.Designer.cs">
+      <DependentUpon>PopupUpdatePalette.cs</DependentUpon>
+    </Compile>
     <Compile Include="POPWorkCenter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +401,9 @@
     <EmbeddedResource Include="frmGlazeBOM_dialog.resx">
       <DependentUpon>frmGlazeBOM_dialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInputList.resx">
+      <DependentUpon>frmInputList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNopHistory.resx">
       <DependentUpon>frmNopHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPOPMain.resx">
+      <DependentUpon>frmPOPMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcess.resx">
       <DependentUpon>frmProcess.cs</DependentUpon>
@@ -421,6 +463,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POPPalette.resx">
       <DependentUpon>POPPalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupAddPlan.resx">
+      <DependentUpon>PopupAddPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupCreatePlan.resx">
+      <DependentUpon>PopupCreatePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupCreateWork.resx">
+      <DependentUpon>PopupCreateWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupUpdatePalette.resx">
+      <DependentUpon>PopupUpdatePalette.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POPWorkCenter.resx">
       <DependentUpon>POPWorkCenter.cs</DependentUpon>

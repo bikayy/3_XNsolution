@@ -16,5 +16,11 @@ namespace Team5_XN
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PopupCreateWork frm = new PopupCreateWork();
+            frm.ShowDialog();
+        }
     }
 }

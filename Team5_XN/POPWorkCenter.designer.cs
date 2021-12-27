@@ -69,6 +69,7 @@ namespace Team5_XN
             this.button1.TabIndex = 2;
             this.button1.Text = "작업장이동";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -275,7 +276,7 @@ namespace Team5_XN
             this.Controls.Add(this.panel1);
             this.Name = "POPWorkCenter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "POPWorkCenter";
+            this.Text = "작업장 선택";
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

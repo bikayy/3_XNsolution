@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Team5_XN
 {
-    public partial class frmWorkRequest : Form
+    public partial class PopupCreateWork : Form
     {
-        public frmWorkRequest()
+        public PopupCreateWork()
         {
             InitializeComponent();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            frmSearchPopup frm = new frmSearchPopup();
-            frm.ShowDialog();
         }
     }
 }

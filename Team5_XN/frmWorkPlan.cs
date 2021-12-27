@@ -16,5 +16,23 @@ namespace Team5_XN
         {
             InitializeComponent();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            frmSearchPopup frm = new frmSearchPopup();
+            frm.ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            PopupCreatePlan frm = new PopupCreatePlan();
+            frm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PopupAddPlan frm = new PopupAddPlan();
+            frm.ShowDialog();
+        }
     }
 }

@@ -72,12 +72,12 @@ namespace Team5_XN
             this.label14 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.ucPaletteList1 = new Team5_XN.Controls.ucPaletteList();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ucPaletteList1 = new Team5_XN.Controls.ucPaletteList();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -611,14 +611,6 @@ namespace Team5_XN
             this.panel5.Size = new System.Drawing.Size(744, 541);
             this.panel5.TabIndex = 10;
             // 
-            // ucPaletteList1
-            // 
-            this.ucPaletteList1.BackColor = System.Drawing.Color.LightGray;
-            this.ucPaletteList1.Location = new System.Drawing.Point(4, 6);
-            this.ucPaletteList1.Name = "ucPaletteList1";
-            this.ucPaletteList1.Size = new System.Drawing.Size(713, 61);
-            this.ucPaletteList1.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -681,6 +673,14 @@ namespace Team5_XN
             this.label1.TabIndex = 0;
             this.label1.Text = "2021-12-22";
             // 
+            // ucPaletteList1
+            // 
+            this.ucPaletteList1.BackColor = System.Drawing.Color.LightGray;
+            this.ucPaletteList1.Location = new System.Drawing.Point(4, 6);
+            this.ucPaletteList1.Name = "ucPaletteList1";
+            this.ucPaletteList1.Size = new System.Drawing.Size(713, 61);
+            this.ucPaletteList1.TabIndex = 0;
+            // 
             // POPPalette
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -690,6 +690,7 @@ namespace Team5_XN
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "POPPalette";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "팔레트생성";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
