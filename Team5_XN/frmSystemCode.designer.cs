@@ -44,14 +44,11 @@ namespace Team5_XN
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,6 +69,9 @@ namespace Team5_XN
             this.label13 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.placeholderTextBox1 = new WinReflectionSettings.PlaceholderTextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pnlDgv2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -180,11 +180,12 @@ namespace Team5_XN
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.placeholderTextBox1);
+            this.panel4.Controls.Add(this.textBox4);
             this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.textBox5);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.textBox2);
@@ -192,7 +193,6 @@ namespace Team5_XN
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.textBox4);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -204,15 +204,17 @@ namespace Team5_XN
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(433, 102);
+            this.comboBox1.Location = new System.Drawing.Point(412, 102);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(101, 20);
             this.comboBox1.TabIndex = 25;
+            this.comboBox1.Text = "예";
             // 
             // label16
             // 
-            this.label16.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label16.ForeColor = System.Drawing.Color.Red;
             this.label16.Location = new System.Drawing.Point(330, 99);
             this.label16.Name = "label16";
@@ -223,7 +225,7 @@ namespace Team5_XN
             // 
             // label17
             // 
-            this.label17.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label17.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label17.Location = new System.Drawing.Point(347, 99);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(69, 23);
@@ -233,7 +235,7 @@ namespace Team5_XN
             // 
             // label10
             // 
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(333, 37);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
@@ -243,19 +245,9 @@ namespace Team5_XN
             this.label10.Text = "*";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.Location = new System.Drawing.Point(433, 35);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(231, 51);
-            this.textBox5.TabIndex = 21;
-            // 
             // label11
             // 
-            this.label11.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label11.Location = new System.Drawing.Point(347, 37);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 23);
@@ -265,7 +257,7 @@ namespace Team5_XN
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(7, 12);
             this.label6.Name = "label6";
@@ -274,17 +266,9 @@ namespace Team5_XN
             this.label6.Text = "*";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(191, 10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 23);
-            this.textBox2.TabIndex = 18;
-            // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label3.Location = new System.Drawing.Point(24, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 23);
@@ -294,7 +278,7 @@ namespace Team5_XN
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(333, 9);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
@@ -306,7 +290,7 @@ namespace Team5_XN
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(7, 41);
             this.label7.Name = "label7";
@@ -315,25 +299,17 @@ namespace Team5_XN
             this.label7.Text = "*";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(191, 39);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 23);
-            this.textBox3.TabIndex = 12;
-            // 
             // textBox4
             // 
-            this.textBox4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(433, 7);
+            this.textBox4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.textBox4.Location = new System.Drawing.Point(412, 7);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(101, 23);
+            this.textBox4.Size = new System.Drawing.Size(101, 21);
             this.textBox4.TabIndex = 14;
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label4.Location = new System.Drawing.Point(24, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 23);
@@ -343,7 +319,7 @@ namespace Team5_XN
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label5.Location = new System.Drawing.Point(347, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 23);
@@ -461,12 +437,13 @@ namespace Team5_XN
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1284, 54);
             this.pnlSelect.TabIndex = 18;
+            this.pnlSelect.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSelect_Paint);
             // 
             // label15
             // 
-            this.label15.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(492, 17);
+            this.label15.Location = new System.Drawing.Point(278, 16);
             this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(17, 23);
@@ -476,7 +453,7 @@ namespace Team5_XN
             // 
             // label14
             // 
-            this.label14.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(25, 17);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
@@ -488,7 +465,7 @@ namespace Team5_XN
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label1.Location = new System.Drawing.Point(35, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 23);
@@ -498,16 +475,16 @@ namespace Team5_XN
             // 
             // textBox6
             // 
-            this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.textBox6.Location = new System.Drawing.Point(354, 15);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(122, 23);
+            this.textBox6.Size = new System.Drawing.Size(122, 21);
             this.textBox6.TabIndex = 5;
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(503, 16);
+            this.label13.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label13.Location = new System.Drawing.Point(289, 15);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 23);
             this.label13.TabIndex = 4;
@@ -516,10 +493,10 @@ namespace Team5_XN
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.textBox1.Location = new System.Drawing.Point(121, 15);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 23);
+            this.textBox1.Size = new System.Drawing.Size(122, 21);
             this.textBox1.TabIndex = 3;
             // 
             // panel2
@@ -530,6 +507,32 @@ namespace Team5_XN
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(19, 52);
             this.panel2.TabIndex = 0;
+            // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.Location = new System.Drawing.Point(412, 34);
+            this.placeholderTextBox1.Multiline = true;
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.PlaceholderText = "비고";
+            this.placeholderTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.placeholderTextBox1.Size = new System.Drawing.Size(231, 52);
+            this.placeholderTextBox1.TabIndex = 8;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.textBox3.Location = new System.Drawing.Point(191, 39);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(122, 21);
+            this.textBox3.TabIndex = 12;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.textBox2.Location = new System.Drawing.Point(191, 10);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(122, 21);
+            this.textBox2.TabIndex = 18;
             // 
             // frmSystemCode
             // 
@@ -575,14 +578,11 @@ namespace Team5_XN
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -603,5 +603,8 @@ namespace Team5_XN
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel2;
+        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
