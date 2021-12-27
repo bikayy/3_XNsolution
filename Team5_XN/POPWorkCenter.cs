@@ -16,5 +16,12 @@ namespace Team5_XN
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            POPWorkOrderStatus pop = new POPWorkOrderStatus();
+            pop.ShowDialog();
+            this.Hide();
+        }
     }
 }

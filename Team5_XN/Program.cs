@@ -19,10 +19,12 @@ namespace Team5_XN
             //Application.Run(new Main());
             //Application.Run(new POPWorkCenter());
             //Application.Run(new frmWorkOrder());
+            //Application.Run(new frmWorkOrder2());
             //Application.Run(new frmWorkPlan());
             //Application.Run(new frmWorkRequest());
             //Application.Run(new POPWorkOrderStatus());
-            Application.Run(new POPPalette());
+            //Application.Run(new POPPalette());
+            Application.Run(new frmPOPMain());
         }
     }
 }

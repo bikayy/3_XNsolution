@@ -35,28 +35,10 @@ namespace Team5_XN
             this.pnlSubject1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
-            this.pnlSelect = new System.Windows.Forms.Panel();
-            this.placeholderTextBox4 = new WinReflectionSettings.PlaceholderTextBox();
-            this.placeholderTextBox3 = new WinReflectionSettings.PlaceholderTextBox();
-            this.placeholderTextBox2 = new WinReflectionSettings.PlaceholderTextBox();
-            this.placeholderTextBox1 = new WinReflectionSettings.PlaceholderTextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,18 +50,36 @@ namespace Team5_XN
             this.label6 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.pnlSelect = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.placeholderTextBox4 = new WinReflectionSettings.PlaceholderTextBox();
+            this.placeholderTextBox3 = new WinReflectionSettings.PlaceholderTextBox();
+            this.placeholderTextBox2 = new WinReflectionSettings.PlaceholderTextBox();
+            this.placeholderTextBox1 = new WinReflectionSettings.PlaceholderTextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlBorder.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSubject1.SuspendLayout();
             this.pnlDetail.SuspendLayout();
-            this.pnlSelect.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBorder
@@ -159,10 +159,178 @@ namespace Team5_XN
             this.pnlDetail.Size = new System.Drawing.Size(1455, 313);
             this.pnlDetail.TabIndex = 4;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 38);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(1455, 275);
+            this.dataGridView2.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.panel9);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.panel10);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.panel12);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1455, 38);
+            this.panel1.TabIndex = 8;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.Location = new System.Drawing.Point(1016, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(115, 30);
+            this.button7.TabIndex = 45;
+            this.button7.Text = "작업지시 삭제";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Location = new System.Drawing.Point(895, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(115, 30);
+            this.button6.TabIndex = 44;
+            this.button6.Text = "작업지시 수정";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(758, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 19);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "작업지시마감";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Blue;
+            this.panel8.Location = new System.Drawing.Point(711, 7);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(41, 24);
+            this.panel8.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(616, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 19);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "현장마감";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel9.Location = new System.Drawing.Point(569, 7);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(41, 24);
+            this.panel9.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(477, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 19);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "생산중지";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Gold;
+            this.panel10.Location = new System.Drawing.Point(430, 7);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(41, 24);
+            this.panel10.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(354, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 19);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "생산중";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Green;
+            this.panel11.Location = new System.Drawing.Point(307, 7);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(41, 24);
+            this.panel11.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(218, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 19);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "생산대기";
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Orange;
+            this.panel12.Location = new System.Drawing.Point(171, 7);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(41, 24);
+            this.panel12.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Gainsboro;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(152, 38);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "작업지시";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnlSelect
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSelect.Controls.Add(this.button5);
             this.pnlSelect.Controls.Add(this.placeholderTextBox4);
             this.pnlSelect.Controls.Add(this.placeholderTextBox3);
             this.pnlSelect.Controls.Add(this.placeholderTextBox2);
@@ -189,6 +357,21 @@ namespace Team5_XN
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1455, 129);
             this.pnlSelect.TabIndex = 1;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button5.Location = new System.Drawing.Point(922, 13);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(168, 59);
+            this.button5.TabIndex = 43;
+            this.button5.Text = "작업지시 생성";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // placeholderTextBox4
             // 
@@ -248,20 +431,10 @@ namespace Team5_XN
             // 
             this.comboBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(776, 31);
+            this.comboBox1.Location = new System.Drawing.Point(722, 14);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(139, 25);
             this.comboBox1.TabIndex = 38;
-            // 
-            // label19
-            // 
-            this.label19.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label19.Location = new System.Drawing.Point(661, 28);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(109, 29);
-            this.label19.TabIndex = 35;
-            this.label19.Text = "작업지시상태";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button4
             // 
@@ -285,6 +458,16 @@ namespace Team5_XN
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(139, 25);
             this.dateTimePicker2.TabIndex = 31;
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label19.Location = new System.Drawing.Point(607, 11);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(109, 29);
+            this.label19.TabIndex = 35;
+            this.label19.Text = "작업지시상태";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label17
             // 
@@ -406,205 +589,24 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(22, 127);
             this.panel2.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.panel12);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1455, 38);
-            this.panel1.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(758, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 19);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "작업지시마감";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Blue;
-            this.panel8.Location = new System.Drawing.Point(711, 7);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(41, 24);
-            this.panel8.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(616, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 19);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "현장마감";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel9.Location = new System.Drawing.Point(569, 7);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(41, 24);
-            this.panel9.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(477, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 19);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "생산중지";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Gold;
-            this.panel10.Location = new System.Drawing.Point(430, 7);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(41, 24);
-            this.panel10.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(354, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 19);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "생산중";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Green;
-            this.panel11.Location = new System.Drawing.Point(307, 7);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(41, 24);
-            this.panel11.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(218, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 19);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "생산대기";
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Orange;
-            this.panel12.Location = new System.Drawing.Point(171, 7);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(41, 24);
-            this.panel12.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Gainsboro;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(152, 38);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "작업지시";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(896, 4);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(115, 30);
-            this.button5.TabIndex = 43;
-            this.button5.Text = "작업지시 추가";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Location = new System.Drawing.Point(1017, 4);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(115, 30);
-            this.button6.TabIndex = 44;
-            this.button6.Text = "작업지시 수정";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Location = new System.Drawing.Point(1138, 4);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(115, 30);
-            this.button7.TabIndex = 45;
-            this.button7.Text = "작업지시 삭제";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 38);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1455, 275);
-            this.dataGridView2.TabIndex = 9;
-            // 
             // frmWorkOrder2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1467, 791);
             this.Controls.Add(this.pnlBorder);
             this.Name = "frmWorkOrder2";
-            this.Text = "시유 작업지시 생성";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "시유 작업지시 생성 및 마감";
             this.pnlBorder.ResumeLayout(false);
             this.pnlDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
-            this.pnlSelect.ResumeLayout(false);
-            this.pnlSelect.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.pnlSelect.ResumeLayout(false);
+            this.pnlSelect.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -652,7 +654,7 @@ namespace Team5_XN
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button5;
     }
 }
