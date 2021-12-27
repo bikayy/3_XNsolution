@@ -53,6 +53,12 @@
     <Compile Include="Controls\PlaceholderTextBox.designer.cs">
       <DependentUpon>PlaceholderTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucCreateWorkList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucCreateWorkList.Designer.cs">
+      <DependentUpon>ucCreateWorkList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucPaletteList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -191,6 +197,12 @@
     <Compile Include="frmWorkOrder.Designer.cs">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWorkOrder2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkOrder2.Designer.cs">
+      <DependentUpon>frmWorkOrder2.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWorkPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +220,12 @@
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPCreateWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPCreateWork.Designer.cs">
+      <DependentUpon>POPCreateWork.cs</DependentUpon>
     </Compile>
     <Compile Include="POPNopRegister.cs.cs">
       <SubType>Form</SubType>
@@ -248,6 +266,9 @@
     <Compile Include="WorkingPlaceInfo.designer.cs">
       <DependentUpon>WorkingPlaceInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\ucCreateWorkList.resx">
+      <DependentUpon>ucCreateWorkList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucPaletteList.resx">
       <DependentUpon>ucPaletteList.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +338,9 @@
     <EmbeddedResource Include="frmWorkOrder.resx">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkOrder2.resx">
+      <DependentUpon>frmWorkOrder2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmWorkPlan.resx">
       <DependentUpon>frmWorkPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPCreateWork.resx">
+      <DependentUpon>POPCreateWork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POPNopRegister.cs.resx">
       <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
