@@ -167,6 +167,12 @@
     <Compile Include="frmGlazeBOM_dialog.Designer.cs">
       <DependentUpon>frmGlazeBOM_dialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInputList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInputList.Designer.cs">
+      <DependentUpon>frmInputList.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,18 @@
     <Compile Include="POPPalette.Designer.cs">
       <DependentUpon>POPPalette.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupAddPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupAddPlan.Designer.cs">
+      <DependentUpon>PopupAddPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupCreatePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupCreatePlan.Designer.cs">
+      <DependentUpon>PopupCreatePlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopupCreateWork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,6 +401,9 @@
     <EmbeddedResource Include="frmGlazeBOM_dialog.resx">
       <DependentUpon>frmGlazeBOM_dialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInputList.resx">
+      <DependentUpon>frmInputList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -442,6 +463,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POPPalette.resx">
       <DependentUpon>POPPalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupAddPlan.resx">
+      <DependentUpon>PopupAddPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupCreatePlan.resx">
+      <DependentUpon>PopupCreatePlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupCreateWork.resx">
       <DependentUpon>PopupCreateWork.cs</DependentUpon>
