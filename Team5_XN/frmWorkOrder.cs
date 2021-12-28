@@ -22,5 +22,11 @@ namespace Team5_XN
             PopupUpdatePalette frm = new PopupUpdatePalette();
             frm.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PopupCreatePalette frm = new PopupCreatePalette();
+            frm.ShowDialog();
+        }
     }
 }

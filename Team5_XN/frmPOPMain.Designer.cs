@@ -33,6 +33,7 @@ namespace Team5_XN
             this.작업장선택ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.작업지시현황ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.비가동등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,8 @@ namespace Team5_XN
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.작업장선택ToolStripMenuItem,
             this.작업지시현황ToolStripMenuItem,
-            this.비가동등록ToolStripMenuItem});
+            this.비가동등록ToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
@@ -70,6 +72,12 @@ namespace Team5_XN
             this.비가동등록ToolStripMenuItem.Text = "비가동 등록";
             this.비가동등록ToolStripMenuItem.Click += new System.EventHandler(this.비가동등록ToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(30, 24);
+            this.toolStripMenuItem1.Text = "?";
+            // 
             // frmPOPMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -94,5 +102,6 @@ namespace Team5_XN
         private System.Windows.Forms.ToolStripMenuItem 작업장선택ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 작업지시현황ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 비가동등록ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
