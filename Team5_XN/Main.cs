@@ -16,6 +16,9 @@ namespace Team5_XN
         string userID;
         DataTable dtMenu;
         Button btnInit;
+        Panel panel1;
+        TreeView treeView1;
+
         public Main(string userID)
         {
             InitializeComponent();
@@ -33,7 +36,7 @@ namespace Team5_XN
             MenuDAC db = new MenuDAC();
             dtMenu = db.GetUserMenuList(this.userID);
 
-            DrawMenuStrip();
+            //DrawMenuStrip();
             DrawMenuPanel();
             btnInit.PerformClick();
         }
@@ -41,7 +44,7 @@ namespace Team5_XN
         private void DrawMenuPanel()
         {
             DataView dv1 = new DataView(dtMenu);
-            dv1.RowFilter = "isnull(Parent_Screen_Code,' ')= ' '";
+            dv1.RowFilter = "Parent_Screen_Code is null or Parent_Screen_Code = ''";
             dv1.Sort = "Sort_Index";
             for (int i = 0; i < dv1.Count; i++)
             {
@@ -121,6 +124,18 @@ namespace Team5_XN
             Button btn = (Button)sender;
             flowLayoutPanel1.Controls.SetChildIndex(panel1, Convert.ToInt32(btn.Tag) + 1);
             flowLayoutPanel1.Invalidate();
+
+            treeView1.Nodes.Clear();
+
+            DataView dv2 = new DataView(dtMenu);
+            dv2.RowFilter = "menu_level = 2 and pnt_menu_id = " + btn.Name.Replace("p_btn", "");
+            dv2.Sort = "Sort_Index";
+            for (int k = 0; k < dv2.Count; k++)
+            {
+                TreeNode c_node = new TreeNode(dv2[k]["WordKey"].ToString());
+                c_node.Tag = dv2[k]["Screen_Path"].ToString();
+                treeView1.Nodes.Add(c_node);
+            }
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
