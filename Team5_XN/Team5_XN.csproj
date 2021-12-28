@@ -556,5 +556,8 @@
     <Content Include="Resources\samhyun_icon_3.png" />
     <Content Include="Resources\xn_save_icon2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
