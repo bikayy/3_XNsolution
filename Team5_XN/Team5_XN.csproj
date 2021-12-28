@@ -144,6 +144,12 @@
     <Compile Include="frmDashBoard.Designer.cs">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDayDefect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDayDefect.Designer.cs">
+      <DependentUpon>frmDayDefect.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDayProduction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,12 @@
     </Compile>
     <Compile Include="frmNopHistory.Designer.cs">
       <DependentUpon>frmNopHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNopHistory2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNopHistory2.Designer.cs">
+      <DependentUpon>frmNopHistory2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPOPMain.cs">
       <SubType>Form</SubType>
@@ -403,6 +415,9 @@
     <EmbeddedResource Include="frmDashBoard.resx">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDayDefect.resx">
+      <DependentUpon>frmDayDefect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDayProduction.resx">
       <DependentUpon>frmDayProduction.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNopHistory.resx">
       <DependentUpon>frmNopHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNopHistory2.resx">
+      <DependentUpon>frmNopHistory2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPOPMain.resx">
       <DependentUpon>frmPOPMain.cs</DependentUpon>
