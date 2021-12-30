@@ -19,15 +19,17 @@ namespace Team5_XN
         Panel panel1;
         TreeView treeView1;
 
+        //클릭시 발생하는 이벤트
+        public event EventHandler Select; //조회버튼
+        public event EventHandler Create; //등록(생성)버튼
+        public event EventHandler Update; //수정버튼
+        public event EventHandler Save;   //저장버튼
+        public event EventHandler Delete; //삭제버튼
+
         public Main(string userID)
         {
             InitializeComponent();
             this.userID = userID;
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
 
@@ -128,7 +130,7 @@ namespace Team5_XN
             treeView1.Nodes.Clear();
 
             DataView dv2 = new DataView(dtMenu);
-            dv2.RowFilter = "menu_level = 2 and pnt_menu_id = " + btn.Name.Replace("p_btn", "");
+            //dv2.RowFilter = "menu_level = 2 and pnt_menu_id = " + btn.Name.Replace("p_btn", "");
             dv2.Sort = "Sort_Index";
             for (int k = 0; k < dv2.Count; k++)
             {
@@ -169,6 +171,57 @@ namespace Team5_XN
             {
                 MessageBox.Show("등록된 프로그램이 존재하지 않습니다.");
             }
+        }
+
+        //조회
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (Select != null)
+            {
+                Select(this, null);
+            }
+        }
+        //추가
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            if (Create != null)
+            {
+                Create(this, null);
+            }
+        }
+        //편집
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            if (Update != null)
+            {
+                Update(this, null);
+            }
+        }
+        //삭제
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (Delete != null)
+            {
+                Delete(this, null);
+            }
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+        //저장
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (Save != null)
+            {
+                Save(this, null);
+            }
+        }
+        //취소
+        private void toolSelect_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

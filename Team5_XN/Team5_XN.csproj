@@ -577,5 +577,15 @@
   <ItemGroup>
     <Folder Include="Service\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Team5_XN_DAC\Team5_XN_DAC.csproj">
+      <Project>{adfa7088-e2e5-4c5d-9325-47c5c64e0a42}</Project>
+      <Name>Team5_XN_DAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Team5_XN_VO\Team5_XN_VO.csproj">
+      <Project>{242fb483-6cca-475c-95dc-387108ce084b}</Project>
+      <Name>Team5_XN_VO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
