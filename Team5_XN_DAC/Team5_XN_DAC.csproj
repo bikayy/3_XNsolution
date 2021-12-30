@@ -42,9 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper.cs" />
     <Compile Include="ProcessDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestDAC\RequestDAC.cs" />
+    <Compile Include="SearchDAC\SearchDAC.cs" />
     <Compile Include="WorkCenterDAC.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Team5_XN_VO\Team5_XN_VO.csproj">
+      <Project>{242fb483-6cca-475c-95dc-387108ce084b}</Project>
+      <Name>Team5_XN_VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
