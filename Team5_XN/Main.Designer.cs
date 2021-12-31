@@ -89,7 +89,6 @@ namespace Team5_XN
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(230, 782);
             this.flowLayoutPanel1.TabIndex = 7;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // panel3
             // 
