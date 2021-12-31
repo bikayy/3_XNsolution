@@ -66,6 +66,7 @@ namespace Team5_XN
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -431,6 +432,7 @@ namespace Team5_XN
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
@@ -448,7 +450,7 @@ namespace Team5_XN
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(96)))), ((int)(((byte)(149)))));
-            this.button6.Location = new System.Drawing.Point(570, 11);
+            this.button6.Location = new System.Drawing.Point(478, 12);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(123, 101);
             this.button6.TabIndex = 5;
@@ -463,7 +465,7 @@ namespace Team5_XN
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(96)))), ((int)(((byte)(149)))));
-            this.button4.Location = new System.Drawing.Point(754, 11);
+            this.button4.Location = new System.Drawing.Point(672, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(123, 101);
             this.button4.TabIndex = 3;
@@ -477,7 +479,7 @@ namespace Team5_XN
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(96)))), ((int)(((byte)(149)))));
-            this.button3.Location = new System.Drawing.Point(386, 11);
+            this.button3.Location = new System.Drawing.Point(284, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(123, 101);
             this.button3.TabIndex = 2;
@@ -491,7 +493,7 @@ namespace Team5_XN
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(96)))), ((int)(((byte)(149)))));
-            this.button2.Location = new System.Drawing.Point(202, 11);
+            this.button2.Location = new System.Drawing.Point(90, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(123, 101);
             this.button2.TabIndex = 1;
@@ -546,6 +548,20 @@ namespace Team5_XN
             this.label1.Size = new System.Drawing.Size(147, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "2021-12-22";
+            // 
+            // button1
+            // 
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(96)))), ((int)(((byte)(149)))));
+            this.button1.Location = new System.Drawing.Point(866, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 101);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "실적등록";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // POPWorkOrderStatus
             // 
@@ -618,5 +634,6 @@ namespace Team5_XN
         private System.Windows.Forms.Button button2;
         private Controls.ucWorkOrderStatusList ucWorkOrderStatusList1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
     }
 }

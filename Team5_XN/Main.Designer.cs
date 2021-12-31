@@ -79,6 +79,7 @@ namespace Team5_XN
             this.toolStrip1.Size = new System.Drawing.Size(1056, 83);
             this.toolStrip1.TabIndex = 50;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // flowLayoutPanel1
             // 
@@ -114,6 +115,7 @@ namespace Team5_XN
             this.toolStripButton5.Size = new System.Drawing.Size(56, 68);
             this.toolStripButton5.Text = "조회";
             this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton4
             // 
@@ -127,6 +129,7 @@ namespace Team5_XN
             this.toolStripButton4.Size = new System.Drawing.Size(56, 68);
             this.toolStripButton4.Text = "추가";
             this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripButton3
             // 
@@ -140,6 +143,7 @@ namespace Team5_XN
             this.toolStripButton3.Size = new System.Drawing.Size(56, 68);
             this.toolStripButton3.Text = "편집";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton2
             // 
@@ -153,6 +157,7 @@ namespace Team5_XN
             this.toolStripButton2.Size = new System.Drawing.Size(56, 68);
             this.toolStripButton2.Text = "삭제";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton1
             // 
@@ -166,6 +171,7 @@ namespace Team5_XN
             this.toolStripButton1.Size = new System.Drawing.Size(56, 68);
             this.toolStripButton1.Text = "저장";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolSelect
             // 
@@ -179,6 +185,7 @@ namespace Team5_XN
             this.toolSelect.Size = new System.Drawing.Size(56, 68);
             this.toolSelect.Text = "취소";
             this.toolSelect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolSelect.Click += new System.EventHandler(this.toolSelect_Click);
             // 
             // tabControl1
             // 
@@ -191,6 +198,15 @@ namespace Team5_XN
             this.tabControl1.TabIndex = 14;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 80);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 5, 4);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(225, 782);
+            this.flowLayoutPanel1.TabIndex = 7;
             // 
             // imageList1
             // 

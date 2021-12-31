@@ -43,8 +43,11 @@
   <ItemGroup>
     <Compile Include="ProcessVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestVO\RequestVO.cs" />
+    <Compile Include="SearchVO\SearchVO.cs" />
     <Compile Include="UserVO.cs" />
     <Compile Include="WorkCenterVO.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
