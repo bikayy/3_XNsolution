@@ -66,6 +66,12 @@
     <Compile Include="Controls\ucPaletteList.Designer.cs">
       <DependentUpon>ucPaletteList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ucTabControl.Designer.cs">
+      <DependentUpon>ucTabControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucWorkCenterList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,6 +228,12 @@
     <Compile Include="frmProcess.Designer.cs">
       <DependentUpon>frmProcess.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegister.Designer.cs">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmScreenManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,7 +306,6 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuDAC.cs" />
     <Compile Include="POPCreateWork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +368,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\UserService.cs" />
     <Compile Include="Utill\DataGridViewUtil.cs" />
     <Compile Include="frmWorkCenter.cs">
       <SubType>Form</SubType>
@@ -375,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucPaletteList.resx">
       <DependentUpon>ucPaletteList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucTabControl.resx">
+      <DependentUpon>ucTabControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucWorkCenterList.resx">
       <DependentUpon>ucWorkCenterList.cs</DependentUpon>
@@ -453,6 +468,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcess.resx">
       <DependentUpon>frmProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmScreenManagement.resx">
       <DependentUpon>frmScreenManagement.cs</DependentUpon>
@@ -568,14 +586,24 @@
     <Content Include="Resources\free-icon-add-file-12658752.png" />
     <Content Include="Resources\free-icon-document-63012642.png" />
     <None Include="Resources\keyboard.png" />
+    <Content Include="Resources\icon_close_black.png" />
+    <Content Include="Resources\icon_close_red.png" />
     <Content Include="Resources\premium-icon-cancel-3815923.png" />
     <Content Include="Resources\premium-icon-search-engine-32766562.png" />
     <Content Include="Resources\previous1.png" />
     <Content Include="Resources\samhyun_icon_3.png" />
     <Content Include="Resources\xn_save_icon2.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Service\" />
+    <ProjectReference Include="..\Team5_XN_DAC\Team5_XN_DAC.csproj">
+      <Project>{adfa7088-e2e5-4c5d-9325-47c5c64e0a42}</Project>
+      <Name>Team5_XN_DAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Team5_XN_VO\Team5_XN_VO.csproj">
+      <Project>{242fb483-6cca-475c-95dc-387108ce084b}</Project>
+      <Name>Team5_XN_VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
