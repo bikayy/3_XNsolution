@@ -16,7 +16,7 @@ namespace Team5_XN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new Main("admin"));
             //Application.Run(new POPWorkCenter());
             //Application.Run(new frmWorkOrder());
             //Application.Run(new frmWorkOrder2());
