@@ -168,9 +168,9 @@ namespace Team5_XN
             try
             {
                 Form frm = (Form)Activator.CreateInstance(frmType);
-                frm.MdiParent = this;
-                frm.WindowState = FormWindowState.Maximized;
                 frm.Text = formText;
+                frm.MdiParent = this;
+                frm.WindowState = FormWindowState.Maximized;                
                 frm.Show();
             }
             catch
@@ -261,7 +261,7 @@ namespace Team5_XN
             }
             else
             {
-                this.ActiveMdiChild.StartPosition = FormStartPosition.Manual;
+                //this.ActiveMdiChild.StartPosition = FormStartPosition.Manual;
                 this.ActiveMdiChild.Location = new Point(0, 0);
                 this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
 
@@ -299,6 +299,12 @@ namespace Team5_XN
         {
             Form frm = (Form)sender;
             ((TabPage)frm.Tag).Dispose();
+        }
+
+        private void menuStrip1_ItemAdded(object sender, ToolStripItemEventArgs e)
+        {
+            if (e.Item.Text == "" || e.Item.Text == "최소화(&N)" || e.Item.Text == "이전 크기로(&R)" || e.Item.Text == "닫기(&C)") //최소화(&N) 이전 크기로(&R) 닫기(&C)
+                e.Item.Visible = false;
         }
     }
 }
