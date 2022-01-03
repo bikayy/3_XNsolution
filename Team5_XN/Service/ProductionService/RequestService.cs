@@ -27,5 +27,23 @@ namespace Team5_XN
 
             return result;
         }
+
+        public bool UpdateRequest(RequestVO ur)
+        {
+            RequestDAC db = new RequestDAC();
+            bool result = db.UpdateRequest(ur);
+            db.Dispose();
+
+            return result;
+        }
+
+        public bool DeleteRequest(string id)
+        {
+            RequestDAC db = new RequestDAC();
+            bool result = db.DeleteRequest(id);
+            db.Dispose();
+
+            return result;
+        }
     }
 }

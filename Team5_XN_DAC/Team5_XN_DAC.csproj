@@ -45,11 +45,12 @@
     <Compile Include="Helper.cs" />
     <Compile Include="MenuDAC.cs" />
     <Compile Include="ProcessDAC.cs" />
+    <Compile Include="ProductionDAC\PlanDAC.cs" />
+    <Compile Include="ProductionDAC\RequestDAC.cs" />
+    <Compile Include="SearchDAC\SearchDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDAC.cs" />
     <Compile Include="WorkCenterDAC.cs" />
-    <Compile Include="RequestDAC\RequestDAC.cs" />
-    <Compile Include="SearchDAC\SearchDAC.cs" />
     <Compile Include="WorkCenterDAC.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -44,5 +44,34 @@ namespace Team5_XN_DAC
                 return null;
             }
         }
+
+        public List<WCSearchVO> GetWCList()
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+            SqlCommand cmd = null;
+            try
+            {
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.Transaction = trans;
+
+                    cmd.CommandText = @"select Wc_Code, Wc_Name, Wc_Group, Process_Name 
+from WorkCenter_Master wc join Process_Master pm
+on wc.Process_Code = pm.Process_Code";
+                    cmd.ExecuteNonQuery();
+                }
+                trans.Commit();
+                return Helper.DataReaderMapToList<WCSearchVO>(cmd.ExecuteReader());
+            }
+            catch (Exception err)
+            {
+                trans.Rollback();
+                Debug.WriteLine(err.Message);
+                return null;
+            }
+        }
+
+
     }
 }

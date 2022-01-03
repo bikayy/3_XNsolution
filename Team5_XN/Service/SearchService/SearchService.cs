@@ -18,5 +18,15 @@ namespace Team5_XN
 
             return list;
         }
+
+        public List<WCSearchVO> GetWCList()
+        {
+            SearchDAC db = new SearchDAC();
+            List<WCSearchVO> list = db.GetWCList();
+            db.Dispose();
+
+            return list;
+        }
+
     }
 }

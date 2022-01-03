@@ -11,26 +11,23 @@ using Team5_XN_VO;
 
 namespace Team5_XN
 {
-    public partial class PopupCreatePlan : Form
+    public partial class PopupIndPlan : Form
     {
-        private RequestVO getInfo = new RequestVO();
-        public RequestVO Get { get { return getInfo; } set { getInfo = value; } }
-
-        public PopupCreatePlan()
+        public PopupIndPlan()
         {
             InitializeComponent();
         }
 
-        private void PopupCreatePlan_Load(object sender, EventArgs e)
+        private void btnItemSearch_Click(object sender, EventArgs e)
         {
-            txtReqNo.Text = getInfo.Prd_Req_No;
-            txtReqDate.Text = getInfo.Req_Date;
-            txtReqSeq.Text = getInfo.Req_Seq;
-            txtItemCode.Text = getInfo.Item_Code;
-            txtItemName.Text = getInfo.Item_Name;
-            txtReqQty.Text = getInfo.Req_Qty.ToString();
-            txtCustomerName.Text = getInfo.Customer_Name;
-            txtDeliDate.Text = getInfo.Delivery_Date;
+            PopupSearch frm = new PopupSearch();
+            frm.ShowDialog();
+
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                txtItemCode.Text = frm.Send.Item_Code;
+                txtItemName.Text = frm.Send.Item_Name;
+            }
         }
 
         private void btnWCSearch_Click(object sender, EventArgs e)
@@ -46,21 +43,19 @@ namespace Team5_XN
         }
 
         private void btnOK_Click(object sender, EventArgs e)
-        {  //Prd_Req_No, Plan_Month, Item_Code, Plan_Qty, Wc_Code, Remark, Ins_Emp
+        {  ////Plan_Month, Item_Code, Plan_Qty, Wc_Code, Remark, Ins_Emp
             PlanService planServ = new PlanService();
-            //MessageBox.Show(dtpPlanMonth.Value.ToString("yyyy-MM"));
-            PlanVO pr = new PlanVO()
+            PlanVO ap = new PlanVO()
             {
-                Prd_Req_No = txtReqNo.Text,
-                Plan_Month = dtpPlanMonth.Value.ToString(),
+                Plan_Month = dtpPlanMonth.Value.ToString("yyyy-MM"),
                 Item_Code = txtItemCode.Text,
                 Plan_Qty = Convert.ToInt32(txtPlanQty.Text),
                 Wc_Code = txtWCCode.Text,
                 Remark = txtRemark.Text,
-                Ins_Emp = "스벅"
+                Ins_Emp = "추가테"
             };
 
-            bool result = planServ.CreatePlan(pr);
+            bool result = planServ.AddPlan(ap);
             if (result) MessageBox.Show("성공");
             else MessageBox.Show("실패");
         }

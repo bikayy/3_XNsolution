@@ -82,24 +82,6 @@ namespace Team5_XN
                           select item).ToList();
 
             dgvList.DataSource = listFilter;
-
-            //if (! string.IsNullOrWhiteSpace(txtItemCode.Text))
-            //{
-            //    listFilter = (from item in list
-            //                  where item.Item_Code.Contains(code)
-            //                  && item.Item_Name.Contains(name)
-            //                  select item).ToList();
-
-            //    //listFilter = (from item in list
-            //    //              where item.Item_Name.Contains(name)
-            //    //              select item).ToList();
-            //}
-            //else
-            //{
-            //    listFilter = (from item in list
-            //                  where item.Item_Code.Contains(code)
-            //                  select item).ToList();
-            //}
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

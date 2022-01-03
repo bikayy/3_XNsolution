@@ -346,8 +346,14 @@
     <Compile Include="PopupCreateWork.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopupCreateWork.Designer.cs">
+    <Compile Include="PopupCreateWork.designer.cs">
       <DependentUpon>PopupCreateWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupIndPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupIndPlan.Designer.cs">
+      <DependentUpon>PopupIndPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="PopupRequest.cs">
       <SubType>Form</SubType>
@@ -367,6 +373,12 @@
     <Compile Include="PopupUpdatePalette.Designer.cs">
       <DependentUpon>PopupUpdatePalette.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupWCSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupWCSearch.designer.cs">
+      <DependentUpon>PopupWCSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="POPWorkCenter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,8 +393,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\RequestService.cs" />
-    <Compile Include="Service\SearchService.cs" />
+    <Compile Include="Service\ProductionService\PlanService.cs" />
+    <Compile Include="Service\ProductionService\RequestService.cs" />
+    <Compile Include="Service\SearchService\SearchService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Utill\DataGridViewUtil.cs" />
     <Compile Include="frmWorkCenter.cs">
@@ -544,6 +557,9 @@
     <EmbeddedResource Include="PopupCreateWork.resx">
       <DependentUpon>PopupCreateWork.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopupIndPlan.resx">
+      <DependentUpon>PopupIndPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopupRequest.resx">
       <DependentUpon>PopupRequest.cs</DependentUpon>
     </EmbeddedResource>
@@ -552,6 +568,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupUpdatePalette.resx">
       <DependentUpon>PopupUpdatePalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupWCSearch.resx">
+      <DependentUpon>PopupWCSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POPWorkCenter.resx">
       <DependentUpon>POPWorkCenter.cs</DependentUpon>

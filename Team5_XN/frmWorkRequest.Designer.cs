@@ -47,10 +47,11 @@ namespace Team5_XN
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.txtItemName = new WinReflectionSettings.PlaceholderTextBox();
             this.txtItemCode = new WinReflectionSettings.PlaceholderTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlBorder.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequest)).BeginInit();
@@ -97,6 +98,8 @@ namespace Team5_XN
             this.dgvRequest.Size = new System.Drawing.Size(1455, 574);
             this.dgvRequest.TabIndex = 1;
             this.dgvRequest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRequest_CellClick);
+            this.dgvRequest.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvRequest_CellValidating);
+            this.dgvRequest.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRequest_CellValueChanged);
             this.dgvRequest.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvRequest_DataError);
             // 
             // pnlSubject1
@@ -128,6 +131,7 @@ namespace Team5_XN
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSelect.Controls.Add(this.button1);
             this.pnlSelect.Controls.Add(this.groupBox1);
             this.pnlSelect.Controls.Add(this.btnSearch);
             this.pnlSelect.Controls.Add(this.btnCopy);
@@ -222,7 +226,7 @@ namespace Team5_XN
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearch.Location = new System.Drawing.Point(250, 102);
+            this.btnSearch.Location = new System.Drawing.Point(288, 103);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(25, 24);
@@ -243,6 +247,7 @@ namespace Team5_XN
             this.btnCopy.TabIndex = 57;
             this.btnCopy.Text = "복 사";
             this.btnCopy.UseVisualStyleBackColor = false;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // btnSave
             // 
@@ -257,6 +262,7 @@ namespace Team5_XN
             this.btnSave.TabIndex = 56;
             this.btnSave.Text = "저 장";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -271,6 +277,7 @@ namespace Team5_XN
             this.btnDelete.TabIndex = 55;
             this.btnDelete.Text = "삭 제";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -298,6 +305,26 @@ namespace Team5_XN
             this.label8.Text = "*";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // txtItemName
+            // 
+            this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemName.Location = new System.Drawing.Point(319, 102);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.PlaceholderText = "품목 명";
+            this.txtItemName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtItemName.Size = new System.Drawing.Size(226, 25);
+            this.txtItemName.TabIndex = 52;
+            // 
+            // txtItemCode
+            // 
+            this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemCode.Location = new System.Drawing.Point(121, 102);
+            this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.PlaceholderText = "품목 코드";
+            this.txtItemCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtItemCode.Size = new System.Drawing.Size(161, 25);
+            this.txtItemCode.TabIndex = 51;
+            // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -318,25 +345,19 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(22, 153);
             this.panel2.TabIndex = 0;
             // 
-            // txtItemName
+            // button1
             // 
-            this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtItemName.Location = new System.Drawing.Point(281, 102);
-            this.txtItemName.Name = "txtItemName";
-            this.txtItemName.PlaceholderText = "품목 명";
-            this.txtItemName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.txtItemName.Size = new System.Drawing.Size(202, 25);
-            this.txtItemName.TabIndex = 52;
-            // 
-            // txtItemCode
-            // 
-            this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtItemCode.Location = new System.Drawing.Point(105, 102);
-            this.txtItemCode.Name = "txtItemCode";
-            this.txtItemCode.PlaceholderText = "품목 코드";
-            this.txtItemCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.txtItemCode.Size = new System.Drawing.Size(139, 25);
-            this.txtItemCode.TabIndex = 51;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(621, 68);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 49);
+            this.button1.TabIndex = 62;
+            this.button1.Text = "조회";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmWorkRequest
             // 
@@ -383,5 +404,6 @@ namespace Team5_XN
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdoReqDate;
         private System.Windows.Forms.RadioButton rdoDeliDate;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -80,7 +80,7 @@ namespace Team5_XN
             this.groupBox2.Size = new System.Drawing.Size(517, 187);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "작업지시정보";
+            this.groupBox2.Text = "생산요청정보";
             // 
             // txtProjName
             // 

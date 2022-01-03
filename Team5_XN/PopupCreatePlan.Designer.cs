@@ -29,96 +29,97 @@ namespace Team5_XN
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnCancle = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.placeholderTextBox13 = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.txtPlanQty = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.placeholderTextBox10 = new WinReflectionSettings.PlaceholderTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPlanMonth = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.placeholderTextBox8 = new WinReflectionSettings.PlaceholderTextBox();
-            this.placeholderTextBox7 = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtWCCode = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtWCName = new WinReflectionSettings.PlaceholderTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.placeholderTextBox12 = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtReqQty = new WinReflectionSettings.PlaceholderTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.placeholderTextBox11 = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtReqSeq = new WinReflectionSettings.PlaceholderTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.placeholderTextBox6 = new WinReflectionSettings.PlaceholderTextBox();
-            this.placeholderTextBox3 = new WinReflectionSettings.PlaceholderTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtDeliDate = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtItemName = new WinReflectionSettings.PlaceholderTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.placeholderTextBox1 = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtItemCode = new WinReflectionSettings.PlaceholderTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.placeholderTextBox5 = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtCustomerName = new WinReflectionSettings.PlaceholderTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.placeholderTextBox4 = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtReqDate = new WinReflectionSettings.PlaceholderTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.placeholderTextBox2 = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtReqNo = new WinReflectionSettings.PlaceholderTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnWCSearch = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button3
+            // btnCancle
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(424, 510);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 41);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "Cancle";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCancle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancle.BackColor = System.Drawing.Color.White;
+            this.btnCancle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancle.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancle.Location = new System.Drawing.Point(424, 510);
+            this.btnCancle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Size = new System.Drawing.Size(105, 41);
+            this.btnCancle.TabIndex = 50;
+            this.btnCancle.Text = "Cancle";
+            this.btnCancle.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnOK
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Location = new System.Drawing.Point(313, 510);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(105, 41);
-            this.button6.TabIndex = 49;
-            this.button6.Text = "OK";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK.BackColor = System.Drawing.Color.White;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOK.Location = new System.Drawing.Point(313, 510);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(105, 41);
+            this.btnOK.TabIndex = 49;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.placeholderTextBox13);
+            this.groupBox2.Controls.Add(this.txtRemark);
+            this.groupBox2.Controls.Add(this.txtPlanQty);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.placeholderTextBox10);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtpPlanMonth);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.btnWCSearch);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.placeholderTextBox8);
-            this.groupBox2.Controls.Add(this.placeholderTextBox7);
+            this.groupBox2.Controls.Add(this.txtWCCode);
+            this.groupBox2.Controls.Add(this.txtWCName);
             this.groupBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox2.Location = new System.Drawing.Point(12, 282);
             this.groupBox2.Name = "groupBox2";
@@ -127,16 +128,20 @@ namespace Team5_XN
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "생산계획정보";
             // 
-            // placeholderTextBox13
+            // txtRemark
             // 
-            this.placeholderTextBox13.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox13.Location = new System.Drawing.Point(125, 125);
-            this.placeholderTextBox13.Multiline = true;
-            this.placeholderTextBox13.Name = "placeholderTextBox13";
-            this.placeholderTextBox13.PlaceholderText = "";
-            this.placeholderTextBox13.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox13.Size = new System.Drawing.Size(378, 85);
-            this.placeholderTextBox13.TabIndex = 63;
+            this.txtRemark.Location = new System.Drawing.Point(125, 127);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(378, 80);
+            this.txtRemark.TabIndex = 64;
+            // 
+            // txtPlanQty
+            // 
+            this.txtPlanQty.Location = new System.Drawing.Point(125, 59);
+            this.txtPlanQty.Name = "txtPlanQty";
+            this.txtPlanQty.Size = new System.Drawing.Size(378, 25);
+            this.txtPlanQty.TabIndex = 63;
             // 
             // label23
             // 
@@ -159,16 +164,6 @@ namespace Team5_XN
             this.label24.Text = "비고";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // placeholderTextBox10
-            // 
-            this.placeholderTextBox10.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox10.Location = new System.Drawing.Point(125, 62);
-            this.placeholderTextBox10.Name = "placeholderTextBox10";
-            this.placeholderTextBox10.PlaceholderText = "";
-            this.placeholderTextBox10.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox10.Size = new System.Drawing.Size(378, 25);
-            this.placeholderTextBox10.TabIndex = 60;
-            // 
             // label16
             // 
             this.label16.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -190,14 +185,14 @@ namespace Team5_XN
             this.label17.Text = "생산계획수량";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dateTimePicker1
+            // dtpPlanMonth
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(125, 28);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 25);
-            this.dateTimePicker1.TabIndex = 55;
+            this.dtpPlanMonth.CustomFormat = "yyyy-MM";
+            this.dtpPlanMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPlanMonth.Location = new System.Drawing.Point(125, 28);
+            this.dtpPlanMonth.Name = "dtpPlanMonth";
+            this.dtpPlanMonth.Size = new System.Drawing.Size(138, 25);
+            this.dtpPlanMonth.TabIndex = 55;
             // 
             // label10
             // 
@@ -208,20 +203,6 @@ namespace Team5_XN
             this.label10.TabIndex = 48;
             this.label10.Text = "작업장";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(269, 94);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(26, 26);
-            this.button2.TabIndex = 47;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
@@ -255,49 +236,51 @@ namespace Team5_XN
             this.label12.Text = "생산계획월";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // placeholderTextBox8
+            // txtWCCode
             // 
-            this.placeholderTextBox8.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox8.Location = new System.Drawing.Point(125, 94);
-            this.placeholderTextBox8.Name = "placeholderTextBox8";
-            this.placeholderTextBox8.PlaceholderText = "작업장 코드";
-            this.placeholderTextBox8.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox8.Size = new System.Drawing.Size(138, 25);
-            this.placeholderTextBox8.TabIndex = 50;
+            this.txtWCCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWCCode.Location = new System.Drawing.Point(125, 94);
+            this.txtWCCode.Name = "txtWCCode";
+            this.txtWCCode.PlaceholderText = "작업장 코드";
+            this.txtWCCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtWCCode.ReadOnly = true;
+            this.txtWCCode.Size = new System.Drawing.Size(138, 25);
+            this.txtWCCode.TabIndex = 50;
             // 
-            // placeholderTextBox7
+            // txtWCName
             // 
-            this.placeholderTextBox7.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox7.Location = new System.Drawing.Point(301, 94);
-            this.placeholderTextBox7.Name = "placeholderTextBox7";
-            this.placeholderTextBox7.PlaceholderText = "작업장 명";
-            this.placeholderTextBox7.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox7.Size = new System.Drawing.Size(202, 25);
-            this.placeholderTextBox7.TabIndex = 51;
+            this.txtWCName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWCName.Location = new System.Drawing.Point(301, 94);
+            this.txtWCName.Name = "txtWCName";
+            this.txtWCName.PlaceholderText = "작업장 명";
+            this.txtWCName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtWCName.ReadOnly = true;
+            this.txtWCName.Size = new System.Drawing.Size(202, 25);
+            this.txtWCName.TabIndex = 51;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.placeholderTextBox12);
+            this.groupBox1.Controls.Add(this.txtReqQty);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.placeholderTextBox11);
+            this.groupBox1.Controls.Add(this.txtReqSeq);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.placeholderTextBox6);
-            this.groupBox1.Controls.Add(this.placeholderTextBox3);
+            this.groupBox1.Controls.Add(this.txtDeliDate);
+            this.groupBox1.Controls.Add(this.txtItemName);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.placeholderTextBox1);
+            this.groupBox1.Controls.Add(this.txtItemCode);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.placeholderTextBox5);
+            this.groupBox1.Controls.Add(this.txtCustomerName);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.placeholderTextBox4);
+            this.groupBox1.Controls.Add(this.txtReqDate);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.placeholderTextBox2);
+            this.groupBox1.Controls.Add(this.txtReqNo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -308,16 +291,16 @@ namespace Team5_XN
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "생산요청정보";
             // 
-            // placeholderTextBox12
+            // txtReqQty
             // 
-            this.placeholderTextBox12.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox12.Location = new System.Drawing.Point(125, 152);
-            this.placeholderTextBox12.Name = "placeholderTextBox12";
-            this.placeholderTextBox12.PlaceholderText = "";
-            this.placeholderTextBox12.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox12.ReadOnly = true;
-            this.placeholderTextBox12.Size = new System.Drawing.Size(378, 25);
-            this.placeholderTextBox12.TabIndex = 65;
+            this.txtReqQty.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtReqQty.Location = new System.Drawing.Point(125, 152);
+            this.txtReqQty.Name = "txtReqQty";
+            this.txtReqQty.PlaceholderText = "";
+            this.txtReqQty.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtReqQty.ReadOnly = true;
+            this.txtReqQty.Size = new System.Drawing.Size(378, 25);
+            this.txtReqQty.TabIndex = 65;
             // 
             // label20
             // 
@@ -340,16 +323,16 @@ namespace Team5_XN
             this.label21.Text = "요청수량";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // placeholderTextBox11
+            // txtReqSeq
             // 
-            this.placeholderTextBox11.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox11.Location = new System.Drawing.Point(125, 88);
-            this.placeholderTextBox11.Name = "placeholderTextBox11";
-            this.placeholderTextBox11.PlaceholderText = "";
-            this.placeholderTextBox11.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox11.ReadOnly = true;
-            this.placeholderTextBox11.Size = new System.Drawing.Size(378, 25);
-            this.placeholderTextBox11.TabIndex = 62;
+            this.txtReqSeq.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtReqSeq.Location = new System.Drawing.Point(125, 88);
+            this.txtReqSeq.Name = "txtReqSeq";
+            this.txtReqSeq.PlaceholderText = "";
+            this.txtReqSeq.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtReqSeq.ReadOnly = true;
+            this.txtReqSeq.Size = new System.Drawing.Size(378, 25);
+            this.txtReqSeq.TabIndex = 62;
             // 
             // label18
             // 
@@ -382,41 +365,27 @@ namespace Team5_XN
             this.label14.Text = "품목";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // placeholderTextBox6
+            // txtDeliDate
             // 
-            this.placeholderTextBox6.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox6.Location = new System.Drawing.Point(125, 214);
-            this.placeholderTextBox6.Name = "placeholderTextBox6";
-            this.placeholderTextBox6.PlaceholderText = "";
-            this.placeholderTextBox6.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox6.ReadOnly = true;
-            this.placeholderTextBox6.Size = new System.Drawing.Size(378, 25);
-            this.placeholderTextBox6.TabIndex = 58;
+            this.txtDeliDate.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtDeliDate.Location = new System.Drawing.Point(125, 214);
+            this.txtDeliDate.Name = "txtDeliDate";
+            this.txtDeliDate.PlaceholderText = "";
+            this.txtDeliDate.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtDeliDate.ReadOnly = true;
+            this.txtDeliDate.Size = new System.Drawing.Size(378, 25);
+            this.txtDeliDate.TabIndex = 58;
             // 
-            // placeholderTextBox3
+            // txtItemName
             // 
-            this.placeholderTextBox3.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox3.Location = new System.Drawing.Point(301, 119);
-            this.placeholderTextBox3.Name = "placeholderTextBox3";
-            this.placeholderTextBox3.PlaceholderText = "";
-            this.placeholderTextBox3.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox3.ReadOnly = true;
-            this.placeholderTextBox3.Size = new System.Drawing.Size(202, 25);
-            this.placeholderTextBox3.TabIndex = 46;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(269, 119);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 26);
-            this.button1.TabIndex = 42;
-            this.button1.UseVisualStyleBackColor = false;
+            this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemName.Location = new System.Drawing.Point(301, 119);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.PlaceholderText = "";
+            this.txtItemName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtItemName.ReadOnly = true;
+            this.txtItemName.Size = new System.Drawing.Size(202, 25);
+            this.txtItemName.TabIndex = 46;
             // 
             // label7
             // 
@@ -429,16 +398,16 @@ namespace Team5_XN
             this.label7.Text = "*";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // placeholderTextBox1
+            // txtItemCode
             // 
-            this.placeholderTextBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox1.Location = new System.Drawing.Point(125, 119);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.PlaceholderText = "";
-            this.placeholderTextBox1.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox1.ReadOnly = true;
-            this.placeholderTextBox1.Size = new System.Drawing.Size(138, 25);
-            this.placeholderTextBox1.TabIndex = 45;
+            this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemCode.Location = new System.Drawing.Point(125, 119);
+            this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.PlaceholderText = "";
+            this.txtItemCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtItemCode.ReadOnly = true;
+            this.txtItemCode.Size = new System.Drawing.Size(138, 25);
+            this.txtItemCode.TabIndex = 45;
             // 
             // label8
             // 
@@ -461,16 +430,16 @@ namespace Team5_XN
             this.label13.Text = "*";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // placeholderTextBox5
+            // txtCustomerName
             // 
-            this.placeholderTextBox5.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox5.Location = new System.Drawing.Point(125, 183);
-            this.placeholderTextBox5.Name = "placeholderTextBox5";
-            this.placeholderTextBox5.PlaceholderText = "";
-            this.placeholderTextBox5.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox5.ReadOnly = true;
-            this.placeholderTextBox5.Size = new System.Drawing.Size(378, 25);
-            this.placeholderTextBox5.TabIndex = 55;
+            this.txtCustomerName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtCustomerName.Location = new System.Drawing.Point(125, 183);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.PlaceholderText = "";
+            this.txtCustomerName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtCustomerName.ReadOnly = true;
+            this.txtCustomerName.Size = new System.Drawing.Size(378, 25);
+            this.txtCustomerName.TabIndex = 55;
             // 
             // label5
             // 
@@ -493,16 +462,16 @@ namespace Team5_XN
             this.label6.Text = "거래처";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // placeholderTextBox4
+            // txtReqDate
             // 
-            this.placeholderTextBox4.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox4.Location = new System.Drawing.Point(125, 57);
-            this.placeholderTextBox4.Name = "placeholderTextBox4";
-            this.placeholderTextBox4.PlaceholderText = "";
-            this.placeholderTextBox4.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox4.ReadOnly = true;
-            this.placeholderTextBox4.Size = new System.Drawing.Size(378, 25);
-            this.placeholderTextBox4.TabIndex = 52;
+            this.txtReqDate.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtReqDate.Location = new System.Drawing.Point(125, 57);
+            this.txtReqDate.Name = "txtReqDate";
+            this.txtReqDate.PlaceholderText = "";
+            this.txtReqDate.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtReqDate.ReadOnly = true;
+            this.txtReqDate.Size = new System.Drawing.Size(378, 25);
+            this.txtReqDate.TabIndex = 52;
             // 
             // label3
             // 
@@ -525,16 +494,16 @@ namespace Team5_XN
             this.label4.Text = "요청일자";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // placeholderTextBox2
+            // txtReqNo
             // 
-            this.placeholderTextBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox2.Location = new System.Drawing.Point(125, 26);
-            this.placeholderTextBox2.Name = "placeholderTextBox2";
-            this.placeholderTextBox2.PlaceholderText = "";
-            this.placeholderTextBox2.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox2.ReadOnly = true;
-            this.placeholderTextBox2.Size = new System.Drawing.Size(378, 25);
-            this.placeholderTextBox2.TabIndex = 49;
+            this.txtReqNo.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtReqNo.Location = new System.Drawing.Point(125, 26);
+            this.txtReqNo.Name = "txtReqNo";
+            this.txtReqNo.PlaceholderText = "";
+            this.txtReqNo.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtReqNo.ReadOnly = true;
+            this.txtReqNo.Size = new System.Drawing.Size(378, 25);
+            this.txtReqNo.TabIndex = 49;
             // 
             // label1
             // 
@@ -557,12 +526,41 @@ namespace Team5_XN
             this.label2.Text = "생산요청번호";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnWCSearch
+            // 
+            this.btnWCSearch.BackColor = System.Drawing.Color.Black;
+            this.btnWCSearch.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnWCSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnWCSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWCSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnWCSearch.Location = new System.Drawing.Point(269, 94);
+            this.btnWCSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnWCSearch.Name = "btnWCSearch";
+            this.btnWCSearch.Size = new System.Drawing.Size(26, 26);
+            this.btnWCSearch.TabIndex = 47;
+            this.btnWCSearch.UseVisualStyleBackColor = false;
+            this.btnWCSearch.Click += new System.EventHandler(this.btnWCSearch_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gray;
+            this.button1.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(269, 119);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 26);
+            this.button1.TabIndex = 42;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // PopupCreatePlan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(540, 558);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnCancle);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -571,6 +569,7 @@ namespace Team5_XN
             this.Name = "PopupCreatePlan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "생산계획생성";
+            this.Load += new System.EventHandler(this.PopupCreatePlan_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -581,46 +580,46 @@ namespace Team5_XN
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnCancle;
+        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.GroupBox groupBox2;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpPlanMonth;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox7;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox8;
+        private WinReflectionSettings.PlaceholderTextBox txtWCName;
+        private WinReflectionSettings.PlaceholderTextBox txtWCCode;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnWCSearch;
         private System.Windows.Forms.GroupBox groupBox1;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox6;
+        private WinReflectionSettings.PlaceholderTextBox txtDeliDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox5;
+        private WinReflectionSettings.PlaceholderTextBox txtCustomerName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox4;
+        private WinReflectionSettings.PlaceholderTextBox txtReqDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox2;
+        private WinReflectionSettings.PlaceholderTextBox txtReqNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox3;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox1;
+        private WinReflectionSettings.PlaceholderTextBox txtItemName;
+        private WinReflectionSettings.PlaceholderTextBox txtItemCode;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button1;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox12;
+        private WinReflectionSettings.PlaceholderTextBox txtReqQty;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox11;
+        private WinReflectionSettings.PlaceholderTextBox txtReqSeq;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox13;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtRemark;
+        private System.Windows.Forms.TextBox txtPlanQty;
     }
 }

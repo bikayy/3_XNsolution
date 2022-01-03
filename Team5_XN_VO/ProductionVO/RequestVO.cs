@@ -13,6 +13,7 @@ namespace Team5_XN_VO
             요청일자 Req_Date
             요청순번 Req_Seq
             품목코드 Item_Code
+            품목명 Item_Name
             요청수량 Req_Qty
             거래처 Customer_Name
             프로젝트명 Project_Nm
@@ -26,6 +27,7 @@ namespace Team5_XN_VO
         public string Req_Date { get; set; }
         public string Req_Seq { get; set; }
         public string Item_Code { get; set; }
+        public string Item_Name { get; set; }
         public int Req_Qty { get; set; }
         public string Customer_Name { get; set; }
         public string Project_Nm { get; set; }

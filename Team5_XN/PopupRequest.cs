@@ -93,16 +93,13 @@ namespace Team5_XN
 
                 bool reqResult = reqServ.ProductionRequest(cr);
                 if (reqResult) MessageBox.Show("생산요청이 등록되었습니다.");
+                else MessageBox.Show("생산요청에 실패하였습니다.\n다시 확인하여주십시오.");
 
                 for (int i = 0; i < textboxes.Length; i++)
                 {
                     textboxes[i].Text = "";
                 }
                 dtpDeliDate.Value = DateTime.Now;
-            }
-            else
-            {
-                MessageBox.Show("취소");
             }
 
 
