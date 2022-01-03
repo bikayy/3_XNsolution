@@ -34,12 +34,12 @@ namespace Team5_XN
             this.pnlTop = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolSelect = new System.Windows.Forms.ToolStripButton();
+            this.toolCreate = new System.Windows.Forms.ToolStripButton();
+            this.toolUpdate = new System.Windows.Forms.ToolStripButton();
+            this.toolDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolSave = new System.Windows.Forms.ToolStripButton();
+            this.toolCancle = new System.Windows.Forms.ToolStripButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -80,12 +80,12 @@ namespace Team5_XN
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(42, 45);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton5,
-            this.toolStripButton4,
-            this.toolStripButton3,
-            this.toolStripButton2,
-            this.toolStripButton1,
-            this.toolSelect});
+            this.toolSelect,
+            this.toolCreate,
+            this.toolUpdate,
+            this.toolDelete,
+            this.toolSave,
+            this.toolCancle});
             this.toolStrip1.Location = new System.Drawing.Point(228, -1);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 2, 1, 0);
@@ -94,89 +94,89 @@ namespace Team5_XN
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.BackColor = System.Drawing.Color.DarkGray;
-            this.toolStripButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolStripButton5.Image = global::Team5_XN.Properties.Resources.icon_xn_select;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolStripButton5.Size = new System.Drawing.Size(56, 68);
-            this.toolStripButton5.Text = "조회";
-            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.BackColor = System.Drawing.Color.DarkGray;
-            this.toolStripButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolStripButton4.Image = global::Team5_XN.Properties.Resources.icon_xn_create;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolStripButton4.Size = new System.Drawing.Size(56, 68);
-            this.toolStripButton4.Text = "추가";
-            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.BackColor = System.Drawing.Color.DarkGray;
-            this.toolStripButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolStripButton3.Image = global::Team5_XN.Properties.Resources.icon_xn_update;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolStripButton3.Size = new System.Drawing.Size(56, 68);
-            this.toolStripButton3.Text = "편집";
-            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.BackColor = System.Drawing.Color.DarkGray;
-            this.toolStripButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolStripButton2.Image = global::Team5_XN.Properties.Resources.icon_xn_delete;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolStripButton2.Size = new System.Drawing.Size(56, 68);
-            this.toolStripButton2.Text = "삭제";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.BackColor = System.Drawing.Color.DarkGray;
-            this.toolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolStripButton1.Image = global::Team5_XN.Properties.Resources.icon_xn_save;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolStripButton1.Size = new System.Drawing.Size(56, 68);
-            this.toolStripButton1.Text = "저장";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // toolSelect
             // 
             this.toolSelect.BackColor = System.Drawing.Color.DarkGray;
             this.toolSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolSelect.Image = global::Team5_XN.Properties.Resources.icon_xn_cancle;
+            this.toolSelect.Image = global::Team5_XN.Properties.Resources.icon_xn_select;
             this.toolSelect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolSelect.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
             this.toolSelect.Name = "toolSelect";
             this.toolSelect.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.toolSelect.Size = new System.Drawing.Size(56, 68);
-            this.toolSelect.Text = "취소";
+            this.toolSelect.Text = "조회";
             this.toolSelect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolSelect.Click += new System.EventHandler(this.toolSelect_Click);
+            this.toolSelect.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolCreate
+            // 
+            this.toolCreate.BackColor = System.Drawing.Color.DarkGray;
+            this.toolCreate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolCreate.Image = global::Team5_XN.Properties.Resources.icon_xn_create;
+            this.toolCreate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolCreate.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
+            this.toolCreate.Name = "toolCreate";
+            this.toolCreate.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolCreate.Size = new System.Drawing.Size(56, 68);
+            this.toolCreate.Text = "추가";
+            this.toolCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolCreate.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolUpdate
+            // 
+            this.toolUpdate.BackColor = System.Drawing.Color.DarkGray;
+            this.toolUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolUpdate.Image = global::Team5_XN.Properties.Resources.icon_xn_update;
+            this.toolUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolUpdate.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
+            this.toolUpdate.Name = "toolUpdate";
+            this.toolUpdate.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolUpdate.Size = new System.Drawing.Size(56, 68);
+            this.toolUpdate.Text = "편집";
+            this.toolUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolUpdate.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolDelete
+            // 
+            this.toolDelete.BackColor = System.Drawing.Color.DarkGray;
+            this.toolDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolDelete.Image = global::Team5_XN.Properties.Resources.icon_xn_delete;
+            this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolDelete.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
+            this.toolDelete.Name = "toolDelete";
+            this.toolDelete.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolDelete.Size = new System.Drawing.Size(56, 68);
+            this.toolDelete.Text = "삭제";
+            this.toolDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolDelete.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolSave
+            // 
+            this.toolSave.BackColor = System.Drawing.Color.DarkGray;
+            this.toolSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolSave.Image = global::Team5_XN.Properties.Resources.icon_xn_save;
+            this.toolSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolSave.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
+            this.toolSave.Name = "toolSave";
+            this.toolSave.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolSave.Size = new System.Drawing.Size(56, 68);
+            this.toolSave.Text = "저장";
+            this.toolSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolSave.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolCancle
+            // 
+            this.toolCancle.BackColor = System.Drawing.Color.DarkGray;
+            this.toolCancle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolCancle.Image = global::Team5_XN.Properties.Resources.icon_xn_cancle;
+            this.toolCancle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolCancle.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
+            this.toolCancle.Name = "toolCancle";
+            this.toolCancle.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolCancle.Size = new System.Drawing.Size(56, 68);
+            this.toolCancle.Text = "취소";
+            this.toolCancle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolCancle.Click += new System.EventHandler(this.toolCancle_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -247,15 +247,15 @@ namespace Team5_XN
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolSelect;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
         private ucTabControl tabControl1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripButton toolCancle;
+        public System.Windows.Forms.ToolStripButton toolUpdate;
+        public System.Windows.Forms.ToolStripButton toolDelete;
+        public System.Windows.Forms.ToolStripButton toolSave;
+        public System.Windows.Forms.ToolStripButton toolSelect;
+        public System.Windows.Forms.ToolStripButton toolCreate;
     }
 }
 

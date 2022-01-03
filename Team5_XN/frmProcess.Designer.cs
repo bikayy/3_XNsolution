@@ -29,16 +29,16 @@ namespace Team5_XN
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboUse_YN = new System.Windows.Forms.ComboBox();
-            this.cboProcessGroup = new System.Windows.Forms.ComboBox();
             this.pnlDgv = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlSubject1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.pnlDetail2 = new System.Windows.Forms.Panel();
             this.pnlDetail = new System.Windows.Forms.Panel();
-            this.txtRemark = new System.Windows.Forms.Panel();
+            this.cboProcessGroup = new System.Windows.Forms.ComboBox();
+            this.cboUse_YN = new System.Windows.Forms.ComboBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.txtRemark = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@ namespace Team5_XN
             this.label3 = new System.Windows.Forms.Label();
             this.pnlBorder = new System.Windows.Forms.Panel();
             this.pnlSelect = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,34 +65,15 @@ namespace Team5_XN
             this.txtSelectProcessCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSubject1.SuspendLayout();
+            this.pnlDetail2.SuspendLayout();
             this.pnlDetail.SuspendLayout();
-            this.txtRemark.SuspendLayout();
             this.pnlSubject2.SuspendLayout();
             this.pnlBorder.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cboUse_YN
-            // 
-            this.cboUse_YN.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboUse_YN.FormattingEnabled = true;
-            this.cboUse_YN.Location = new System.Drawing.Point(484, 7);
-            this.cboUse_YN.Name = "cboUse_YN";
-            this.cboUse_YN.Size = new System.Drawing.Size(121, 21);
-            this.cboUse_YN.TabIndex = 101;
-            // 
-            // cboProcessGroup
-            // 
-            this.cboProcessGroup.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboProcessGroup.FormattingEnabled = true;
-            this.cboProcessGroup.Location = new System.Drawing.Point(110, 60);
-            this.cboProcessGroup.Name = "cboProcessGroup";
-            this.cboProcessGroup.Size = new System.Drawing.Size(121, 21);
-            this.cboProcessGroup.TabIndex = 17;
             // 
             // pnlDgv
             // 
@@ -115,7 +97,13 @@ namespace Team5_XN
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1274, 438);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
+            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
+            this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
+            this.dataGridView1.Leave += new System.EventHandler(this.dataGridView1_Leave);
             // 
             // pnlSubject1
             // 
@@ -141,42 +129,72 @@ namespace Team5_XN
             this.label9.Text = "조회내역";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlDetail2
+            // 
+            this.pnlDetail2.BackColor = System.Drawing.Color.White;
+            this.pnlDetail2.Controls.Add(this.pnlDetail);
+            this.pnlDetail2.Controls.Add(this.pnlSubject2);
+            this.pnlDetail2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDetail2.Location = new System.Drawing.Point(5, 533);
+            this.pnlDetail2.Name = "pnlDetail2";
+            this.pnlDetail2.Size = new System.Drawing.Size(1274, 123);
+            this.pnlDetail2.TabIndex = 4;
+            // 
             // pnlDetail
             // 
-            this.pnlDetail.BackColor = System.Drawing.Color.White;
+            this.pnlDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
+            this.pnlDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDetail.Controls.Add(this.cboProcessGroup);
+            this.pnlDetail.Controls.Add(this.cboUse_YN);
+            this.pnlDetail.Controls.Add(this.label39);
             this.pnlDetail.Controls.Add(this.txtRemark);
-            this.pnlDetail.Controls.Add(this.pnlSubject2);
-            this.pnlDetail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDetail.Location = new System.Drawing.Point(5, 533);
+            this.pnlDetail.Controls.Add(this.label44);
+            this.pnlDetail.Controls.Add(this.label43);
+            this.pnlDetail.Controls.Add(this.label40);
+            this.pnlDetail.Controls.Add(this.label6);
+            this.pnlDetail.Controls.Add(this.txtProcessCode);
+            this.pnlDetail.Controls.Add(this.label2);
+            this.pnlDetail.Controls.Add(this.label8);
+            this.pnlDetail.Controls.Add(this.label7);
+            this.pnlDetail.Controls.Add(this.txtProcessName);
+            this.pnlDetail.Controls.Add(this.label4);
+            this.pnlDetail.Controls.Add(this.label5);
+            this.pnlDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDetail.Location = new System.Drawing.Point(0, 30);
+            this.pnlDetail.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDetail.Name = "pnlDetail";
-            this.pnlDetail.Size = new System.Drawing.Size(1274, 123);
-            this.pnlDetail.TabIndex = 4;
+            this.pnlDetail.Size = new System.Drawing.Size(1274, 93);
+            this.pnlDetail.TabIndex = 12;
             // 
-            // txtRemark
+            // cboProcessGroup
             // 
-            this.txtRemark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
-            this.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRemark.Controls.Add(this.cboUse_YN);
-            this.txtRemark.Controls.Add(this.cboProcessGroup);
-            this.txtRemark.Controls.Add(this.label39);
-            this.txtRemark.Controls.Add(this.textBox23);
-            this.txtRemark.Controls.Add(this.label44);
-            this.txtRemark.Controls.Add(this.label43);
-            this.txtRemark.Controls.Add(this.label40);
-            this.txtRemark.Controls.Add(this.label6);
-            this.txtRemark.Controls.Add(this.txtProcessCode);
-            this.txtRemark.Controls.Add(this.label2);
-            this.txtRemark.Controls.Add(this.label8);
-            this.txtRemark.Controls.Add(this.label7);
-            this.txtRemark.Controls.Add(this.txtProcessName);
-            this.txtRemark.Controls.Add(this.label4);
-            this.txtRemark.Controls.Add(this.label5);
-            this.txtRemark.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtRemark.Location = new System.Drawing.Point(0, 30);
-            this.txtRemark.Margin = new System.Windows.Forms.Padding(0);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(1274, 93);
-            this.txtRemark.TabIndex = 12;
+            this.cboProcessGroup.BackColor = System.Drawing.Color.White;
+            this.cboProcessGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProcessGroup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboProcessGroup.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboProcessGroup.FormattingEnabled = true;
+            this.cboProcessGroup.Location = new System.Drawing.Point(110, 61);
+            this.cboProcessGroup.Name = "cboProcessGroup";
+            this.cboProcessGroup.Size = new System.Drawing.Size(121, 21);
+            this.cboProcessGroup.TabIndex = 69;
+            this.cboProcessGroup.Tag = "Process_Group";
+            this.cboProcessGroup.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.cboProcessGroup.Leave += new System.EventHandler(this.txtBox_TextChanged);
+            // 
+            // cboUse_YN
+            // 
+            this.cboUse_YN.BackColor = System.Drawing.Color.White;
+            this.cboUse_YN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUse_YN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboUse_YN.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboUse_YN.FormattingEnabled = true;
+            this.cboUse_YN.Location = new System.Drawing.Point(484, 7);
+            this.cboUse_YN.Name = "cboUse_YN";
+            this.cboUse_YN.Size = new System.Drawing.Size(121, 21);
+            this.cboUse_YN.TabIndex = 4;
+            this.cboUse_YN.Tag = "Use_YN";
+            this.cboUse_YN.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.cboUse_YN.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // label39
             // 
@@ -190,15 +208,18 @@ namespace Team5_XN
             this.label39.Text = "*";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox23
+            // txtRemark
             // 
-            this.textBox23.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox23.Location = new System.Drawing.Point(484, 34);
-            this.textBox23.Multiline = true;
-            this.textBox23.Name = "textBox23";
-            this.textBox23.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox23.Size = new System.Drawing.Size(290, 47);
-            this.textBox23.TabIndex = 67;
+            this.txtRemark.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtRemark.Location = new System.Drawing.Point(484, 34);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtRemark.Size = new System.Drawing.Size(290, 47);
+            this.txtRemark.TabIndex = 3;
+            this.txtRemark.Tag = "Remark";
+            this.txtRemark.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.txtRemark.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // label44
             // 
@@ -250,7 +271,10 @@ namespace Team5_XN
             this.txtProcessCode.Location = new System.Drawing.Point(110, 8);
             this.txtProcessCode.Name = "txtProcessCode";
             this.txtProcessCode.Size = new System.Drawing.Size(151, 22);
-            this.txtProcessCode.TabIndex = 18;
+            this.txtProcessCode.TabIndex = 0;
+            this.txtProcessCode.Tag = "Process_Code";
+            this.txtProcessCode.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.txtProcessCode.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // label2
             // 
@@ -291,7 +315,10 @@ namespace Team5_XN
             this.txtProcessName.Location = new System.Drawing.Point(110, 34);
             this.txtProcessName.Name = "txtProcessName";
             this.txtProcessName.Size = new System.Drawing.Size(151, 22);
-            this.txtProcessName.TabIndex = 12;
+            this.txtProcessName.TabIndex = 1;
+            this.txtProcessName.Tag = "Process_Name";
+            this.txtProcessName.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.txtProcessName.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // label4
             // 
@@ -341,7 +368,7 @@ namespace Team5_XN
             // 
             this.pnlBorder.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pnlBorder.Controls.Add(this.pnlDgv);
-            this.pnlBorder.Controls.Add(this.pnlDetail);
+            this.pnlBorder.Controls.Add(this.pnlDetail2);
             this.pnlBorder.Controls.Add(this.pnlSelect);
             this.pnlBorder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBorder.Location = new System.Drawing.Point(0, 0);
@@ -372,6 +399,15 @@ namespace Team5_XN
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1274, 50);
             this.pnlSelect.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1171, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 105;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -411,6 +447,9 @@ namespace Team5_XN
             // 
             // cboSelectUse_YN
             // 
+            this.cboSelectUse_YN.BackColor = System.Drawing.Color.White;
+            this.cboSelectUse_YN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSelectUse_YN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboSelectUse_YN.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboSelectUse_YN.FormattingEnabled = true;
             this.cboSelectUse_YN.Location = new System.Drawing.Point(672, 13);
@@ -473,16 +512,6 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(19, 48);
             this.panel2.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1171, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 105;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -495,9 +524,9 @@ namespace Team5_XN
             this.pnlDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
+            this.pnlDetail2.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
-            this.txtRemark.ResumeLayout(false);
-            this.txtRemark.PerformLayout();
+            this.pnlDetail.PerformLayout();
             this.pnlSubject2.ResumeLayout(false);
             this.pnlBorder.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
@@ -507,28 +536,11 @@ namespace Team5_XN
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cboUse_YN;
-        private System.Windows.Forms.ComboBox cboProcessGroup;
         private System.Windows.Forms.Panel pnlDgv;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel pnlSubject1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel pnlDetail;
-        private System.Windows.Forms.Panel txtRemark;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtProcessCode;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtProcessName;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pnlDetail2;
         private System.Windows.Forms.Panel pnlSubject2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnlBorder;
@@ -544,5 +556,21 @@ namespace Team5_XN
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pnlDetail;
+        private System.Windows.Forms.ComboBox cboProcessGroup;
+        private System.Windows.Forms.ComboBox cboUse_YN;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtRemark;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtProcessCode;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtProcessName;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

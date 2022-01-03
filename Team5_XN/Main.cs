@@ -26,6 +26,8 @@ namespace Team5_XN
         public event EventHandler Update; //수정버튼
         public event EventHandler Save;   //저장버튼
         public event EventHandler Delete; //삭제버튼
+        public event EventHandler Cancle; //취소버튼
+
 
         public Main(string userID)
         {
@@ -223,10 +225,13 @@ namespace Team5_XN
                 Save(this, null);
             }
         }
-        //취소
-        private void toolSelect_Click(object sender, EventArgs e)
-        {
 
+        private void toolCancle_Click(object sender, EventArgs e)
+        {
+            if (Cancle != null)
+            {
+                Cancle(this, null);
+            }
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -306,5 +311,7 @@ namespace Team5_XN
             if (e.Item.Text == "" || e.Item.Text == "최소화(&N)" || e.Item.Text == "이전 크기로(&R)" || e.Item.Text == "닫기(&C)") //최소화(&N) 이전 크기로(&R) 닫기(&C)
                 e.Item.Visible = false;
         }
+
+
     }
 }
