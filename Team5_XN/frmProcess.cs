@@ -54,7 +54,7 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정그룹", "Process_Group", colWidth: 200);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고", "Remark", colWidth: 150);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "사용유무", "Use_YN", colWidth: 80);
-            dataGridView1.ReadOnly = false;
+            //dataGridView1.ReadOnly = false;
 
             //GetCommonCodeList
             string[] code = { "USE_YN", "PROC_GROUP" };
@@ -137,6 +137,12 @@ namespace Team5_XN
             DataRow dr = dt.NewRow();
             dt.Rows.Add(dr);
             dt.AcceptChanges();
+            //dataGridView1.Rows[dataGridView1.RowCount - 1].DefaultCellStyle.BackColor = Color.AliceBlue;
+            
+            //if (dataGridView1.Rows.Count-1 >= rowCount)
+            //{
+            //    dataGridView1.Rows[dt.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Yellow;
+            //}
             dataGridView1.DataSource = dt;
             dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.RowCount-1];
 
@@ -187,7 +193,7 @@ namespace Team5_XN
                             if (dataGridView1[i,q].Value.ToString().Length < 1)
                             {
                                 if (i == 3) continue;
-                                MessageBox.Show("입력하지 않은 항목이 있습니다. \n{dataGridView1.Columns[i].HeaderText} -- {q}행, {i}열");
+                                MessageBox.Show($"입력하지 않은 항목이 있습니다. \n{dataGridView1.Columns[i].HeaderText} -- {q+1}행, {i+1}열");
                                 return;
                             }
                         }

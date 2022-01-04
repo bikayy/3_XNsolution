@@ -45,7 +45,6 @@ namespace Team5_XN
             this.label6 = new System.Windows.Forms.Label();
             this.txtProcessCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtProcessName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@ namespace Team5_XN
             this.txtSelectProcessCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSubject1.SuspendLayout();
@@ -100,7 +100,6 @@ namespace Team5_XN
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             this.dataGridView1.Leave += new System.EventHandler(this.dataGridView1_Leave);
@@ -144,6 +143,7 @@ namespace Team5_XN
             // 
             this.pnlDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDetail.Controls.Add(this.label8);
             this.pnlDetail.Controls.Add(this.cboProcessGroup);
             this.pnlDetail.Controls.Add(this.cboUse_YN);
             this.pnlDetail.Controls.Add(this.label39);
@@ -154,7 +154,6 @@ namespace Team5_XN
             this.pnlDetail.Controls.Add(this.label6);
             this.pnlDetail.Controls.Add(this.txtProcessCode);
             this.pnlDetail.Controls.Add(this.label2);
-            this.pnlDetail.Controls.Add(this.label8);
             this.pnlDetail.Controls.Add(this.label7);
             this.pnlDetail.Controls.Add(this.txtProcessName);
             this.pnlDetail.Controls.Add(this.label4);
@@ -285,18 +284,6 @@ namespace Team5_XN
             this.label2.TabIndex = 17;
             this.label2.Text = "공정코드";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(10, 62);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 23);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "*";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
@@ -512,6 +499,17 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(19, 48);
             this.panel2.TabIndex = 0;
             // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(7, 62);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(20, 23);
+            this.label8.TabIndex = 70;
+            this.label8.Text = "*";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -567,10 +565,10 @@ namespace Team5_XN
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtProcessCode;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtProcessName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
     }
 }

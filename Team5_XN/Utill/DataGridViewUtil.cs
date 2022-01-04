@@ -26,7 +26,7 @@ namespace Team5_XN
             //  dgv.CurrentCell = null;
             //dgv.ClearSelection();
             //
-
+            
             dgv.RowHeadersWidth = 30;
             dgv.EnableHeadersVisualStyles = false;
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
@@ -45,7 +45,7 @@ namespace Team5_XN
             dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.SandyBrown;// SystemColors.ControlDark;
             //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             dgv.BackgroundColor = Color.WhiteSmoke;//SystemColors.ControlLight;
-            dgv.Font = new Font("consolas", 11);
+            dgv.Font = new Font("맑은 고딕", 8);
 
 
         }

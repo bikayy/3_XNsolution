@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Team5_XN
 {
@@ -61,6 +62,7 @@ FROM
             catch(Exception err)
             {
                 Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
                 return -1;
             }
         }
@@ -83,6 +85,7 @@ FROM
             catch(Exception err)
             {
                 Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
                 return false;
             }
         }
