@@ -187,7 +187,7 @@ namespace Team5_XN
                             if (dataGridView1[i,q].Value.ToString().Length < 1)
                             {
                                 if (i == 3) continue;
-                                MessageBox.Show("입력하지 않은 항목이 있습니다.");
+                                MessageBox.Show("입력하지 않은 항목이 있습니다. \n{dataGridView1.Columns[i].HeaderText} -- {q}행, {i}열");
                                 return;
                             }
                         }
