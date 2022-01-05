@@ -323,7 +323,7 @@ namespace Team5_XN
 
             PlanService planServ = new PlanService();
 
-            #region 유효성 검사
+            #region 유효성 검사, 출력 정보 입력
             TextBox[] textboxes = { pp_txtPlanNo, pp_txtItemName, pp_txtWCName, pp_txtPlanQty, pp_txtRemark};
             Label[] labels = { pp_lblPlanNo, pp_lblItme, pp_lblWC, pp_lblPlanQty, pp_lblRemark };
             StringBuilder sb = new StringBuilder();
@@ -343,7 +343,7 @@ namespace Team5_XN
                     MessageBox.Show($"{labels[i].Text}을(를) 입력해주세요.");
                     return;
                 }
-                else
+                else //출력 정보 입력
                 {
                     sb.AppendLine($"{labels[i].Text} : {textboxes[i].Text}");
                 }
@@ -443,47 +443,28 @@ namespace Team5_XN
         {
             dgvPlan.EndEdit();
 
-            //List<string> planNoList = new List<string>();
+            TextBox[] textboxes = { pp_txtPlanNo, pp_txtItemName, pp_txtWCName, pp_txtPlanQty};
+            Label[] labels = { pp_lblPlanNo, pp_lblItme, pp_lblWC, pp_lblPlanQty };
+            StringBuilder sb = new StringBuilder();
 
-            //foreach (DataGridViewRow row in dgvPlan.Rows)
-            //{
-            //    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-            //    if (Convert.ToBoolean(chk.Value))
-            //    {
-            //        planNoList.Add(row.Cells["Prd_Plan_No"].Value.ToString());
-            //    }
-            //    if (row.Cells["Prd_Plan_Status"].Value.ToString() != "대기중")
-            //    {
-            //        MessageBox.Show("생산계획상태가 대기중인 생산계획만 수정할 수 있습니다.");
-            //        return;
-            //    }
-            //}
+            for (int i = 0; i < textboxes.Length; i++)
+            {
+                sb.AppendLine($"{labels[i].Text} : {textboxes[i].Text}");
+            }
 
-            //if (planNoList.Count < 1)
-            //{
-            //    MessageBox.Show("선택된 생산계획이 없습니다.");
-            //    return;
-            //}
+            sb.AppendLine("해당 생산계획을 삭제하시겠습니까?");
+            DialogResult dResult = MessageBox.Show(sb.ToString(), "생산계획 삭제", MessageBoxButtons.YesNo);
 
-            //DialogResult reqResult = MessageBox.Show("선택된 생산계획을 삭제하시겠습니까?", "생산계획 삭제", MessageBoxButtons.YesNo);
-
-            //if (reqResult == DialogResult.Yes)
-            //{
-            //    bool result = false;
-
-            //    for (int i = 0; i < planNoList.Count; i++)
-            //    {
-            //        string id = planNoList[i];
-            //        result = planServ.DeletePlan(id);
-            //    }
-
-            //    if (result)
-            //    {
-            //        MessageBox.Show("삭제가 완료되었습니다.");
-            //        LoadDataPlan();
-            //    }
-            //    else MessageBox.Show("삭제에 실패하였습니다.\n다시 시도하여주십시오.");
-            //}
+            if (dResult == DialogResult.Yes)
+            {
+                bool result = planServ.DeletePlan(pp_txtPlanNo.Text);
+                if (result)
+                {
+                    MessageBox.Show("삭제가 완료되었습니다.");
+                    LoadDataPlan();
+                }
+                else MessageBox.Show("삭제에 실패하였습니다.\n다시 시도하여주십시오.");
+            }
         }
 
         /// <summary>

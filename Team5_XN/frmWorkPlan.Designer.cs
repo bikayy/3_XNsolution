@@ -219,10 +219,11 @@ namespace Team5_XN
             // 
             // pp_txtPlanQty
             // 
+            this.pp_txtPlanQty.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pp_txtPlanQty.Location = new System.Drawing.Point(153, 142);
             this.pp_txtPlanQty.Name = "pp_txtPlanQty";
             this.pp_txtPlanQty.ReadOnly = true;
-            this.pp_txtPlanQty.Size = new System.Drawing.Size(378, 27);
+            this.pp_txtPlanQty.Size = new System.Drawing.Size(378, 25);
             this.pp_txtPlanQty.TabIndex = 122;
             this.pp_txtPlanQty.Tag = "";
             // 
@@ -367,6 +368,7 @@ namespace Team5_XN
             // 
             // pp_txtRemark
             // 
+            this.pp_txtRemark.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pp_txtRemark.Location = new System.Drawing.Point(724, 78);
             this.pp_txtRemark.Multiline = true;
             this.pp_txtRemark.Name = "pp_txtRemark";
@@ -399,10 +401,11 @@ namespace Team5_XN
             // 
             this.pp_dtpPlanMonth.CustomFormat = "yyyy-MM";
             this.pp_dtpPlanMonth.Enabled = false;
+            this.pp_dtpPlanMonth.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pp_dtpPlanMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.pp_dtpPlanMonth.Location = new System.Drawing.Point(153, 47);
             this.pp_dtpPlanMonth.Name = "pp_dtpPlanMonth";
-            this.pp_dtpPlanMonth.Size = new System.Drawing.Size(138, 27);
+            this.pp_dtpPlanMonth.Size = new System.Drawing.Size(138, 25);
             this.pp_dtpPlanMonth.TabIndex = 117;
             // 
             // label36
