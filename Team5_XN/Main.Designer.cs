@@ -86,7 +86,7 @@ namespace Team5_XN
             this.toolUpdate,
             this.toolDelete,
             this.toolSave,
-            this.toolCancle
+            this.toolCancle,
             this.toolReset});
             this.toolStrip1.Location = new System.Drawing.Point(228, -1);
             this.toolStrip1.Name = "toolStrip1";

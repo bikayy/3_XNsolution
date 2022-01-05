@@ -238,7 +238,6 @@ namespace Team5_XN
             this.Controls.Add(this.pnlSubject1);
             this.Name = "frmDashBoard";
             this.Text = "DashBoard";
-            this.Load += new System.EventHandler(this.frmDashBoard_Load);
             this.pnlSubject1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimeProduct)).EndInit();
             this.panel2.ResumeLayout(false);
