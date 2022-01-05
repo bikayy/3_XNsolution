@@ -131,6 +131,7 @@ namespace Team5_XN
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(783, 52);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -160,6 +161,7 @@ namespace Team5_XN
             // 
             // rp_txtRemark
             // 
+            this.rp_txtRemark.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rp_txtRemark.Location = new System.Drawing.Point(783, 83);
             this.rp_txtRemark.Multiline = true;
             this.rp_txtRemark.Name = "rp_txtRemark";
@@ -190,6 +192,7 @@ namespace Team5_XN
             // 
             // txtProjName
             // 
+            this.txtProjName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtProjName.Location = new System.Drawing.Point(156, 114);
             this.txtProjName.Name = "txtProjName";
             this.txtProjName.ReadOnly = true;
@@ -198,6 +201,7 @@ namespace Team5_XN
             // 
             // txtCusName
             // 
+            this.txtCusName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtCusName.Location = new System.Drawing.Point(157, 83);
             this.txtCusName.Name = "txtCusName";
             this.txtCusName.ReadOnly = true;
@@ -206,6 +210,7 @@ namespace Team5_XN
             // 
             // txtReqQty
             // 
+            this.txtReqQty.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtReqQty.Location = new System.Drawing.Point(157, 52);
             this.txtReqQty.Name = "txtReqQty";
             this.txtReqQty.ReadOnly = true;
@@ -257,6 +262,7 @@ namespace Team5_XN
             // dtpDeliDate
             // 
             this.dtpDeliDate.Enabled = false;
+            this.dtpDeliDate.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpDeliDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDeliDate.Location = new System.Drawing.Point(783, 21);
             this.dtpDeliDate.Name = "dtpDeliDate";
