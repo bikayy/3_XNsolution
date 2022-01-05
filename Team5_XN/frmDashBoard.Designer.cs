@@ -31,7 +31,7 @@ namespace Team5_XN
         {
             this.label2 = new System.Windows.Forms.Label();
             this.pnlSubject1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTimeProduct = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -46,7 +46,7 @@ namespace Team5_XN
             this.panel7 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlSubject1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTimeProduct)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -82,19 +82,19 @@ namespace Team5_XN
             this.pnlSubject1.Size = new System.Drawing.Size(640, 25);
             this.pnlSubject1.TabIndex = 9;
             // 
-            // dataGridView1
+            // dgvTimeProduct
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(640, 305);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvTimeProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTimeProduct.Location = new System.Drawing.Point(0, 0);
+            this.dgvTimeProduct.Name = "dgvTimeProduct";
+            this.dgvTimeProduct.RowTemplate.Height = 23;
+            this.dgvTimeProduct.Size = new System.Drawing.Size(640, 305);
+            this.dgvTimeProduct.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvTimeProduct);
             this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(640, 305);
@@ -239,7 +239,7 @@ namespace Team5_XN
             this.Name = "frmDashBoard";
             this.Text = "DashBoard";
             this.pnlSubject1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTimeProduct)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -258,7 +258,7 @@ namespace Team5_XN
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlSubject1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTimeProduct;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView2;

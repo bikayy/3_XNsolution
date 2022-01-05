@@ -40,6 +40,7 @@ namespace Team5_XN
             this.toolDelete = new System.Windows.Forms.ToolStripButton();
             this.toolSave = new System.Windows.Forms.ToolStripButton();
             this.toolCancle = new System.Windows.Forms.ToolStripButton();
+            this.toolReset = new System.Windows.Forms.ToolStripButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -85,7 +86,8 @@ namespace Team5_XN
             this.toolUpdate,
             this.toolDelete,
             this.toolSave,
-            this.toolCancle});
+            this.toolCancle,
+            this.toolReset});
             this.toolStrip1.Location = new System.Drawing.Point(228, -1);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 2, 1, 0);
@@ -178,13 +180,27 @@ namespace Team5_XN
             this.toolCancle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolCancle.Click += new System.EventHandler(this.toolCancle_Click);
             // 
+            // toolReset
+            // 
+            this.toolReset.BackColor = System.Drawing.Color.DarkGray;
+            this.toolReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolReset.Image = global::Team5_XN.Properties.Resources.reset;
+            this.toolReset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolReset.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
+            this.toolReset.Name = "toolReset";
+            this.toolReset.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolReset.Size = new System.Drawing.Size(57, 68);
+            this.toolReset.Text = "초기화";
+            this.toolReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolReset.Click += new System.EventHandler(this.toolReset_Click);
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 80);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 5, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(225, 782);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(199, 782);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // imageList1
@@ -207,11 +223,14 @@ namespace Team5_XN
             // 
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Location = new System.Drawing.Point(225, 80);
+            this.tabControl1.Font = new System.Drawing.Font("Consolas", 9F);
+            this.tabControl1.Location = new System.Drawing.Point(199, 80);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1059, 24);
-            this.tabControl1.TabIndex = 14;
+            this.tabControl1.Size = new System.Drawing.Size(1085, 24);
+            this.tabControl1.TabIndex = 120;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
             // 
@@ -256,6 +275,7 @@ namespace Team5_XN
         public System.Windows.Forms.ToolStripButton toolSave;
         public System.Windows.Forms.ToolStripButton toolSelect;
         public System.Windows.Forms.ToolStripButton toolCreate;
+        private System.Windows.Forms.ToolStripButton toolReset;
     }
 }
 

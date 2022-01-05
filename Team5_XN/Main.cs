@@ -27,6 +27,7 @@ namespace Team5_XN
         public event EventHandler Save;   //저장버튼
         public event EventHandler Delete; //삭제버튼
         public event EventHandler Cancle; //취소버튼
+        public event EventHandler Reset; //초기화버튼
 
 
         public Main(string userID)
@@ -171,9 +172,9 @@ namespace Team5_XN
             {
                 Form frm = (Form)Activator.CreateInstance(frmType);
                 frm.Text = formText;
-                frm.MdiParent = this;
-                frm.WindowState = FormWindowState.Maximized;                
+                frm.MdiParent = this;                           
                 frm.Show();
+                frm.WindowState = FormWindowState.Maximized;
             }
             catch
             {
@@ -233,6 +234,14 @@ namespace Team5_XN
                 Cancle(this, null);
             }
         }
+        //초기화
+        private void toolReset_Click(object sender, EventArgs e)
+        {
+            if (Reset != null)
+            {
+                Reset(this, null);
+            }
+        }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl1.SelectedTab != null)
@@ -272,7 +281,7 @@ namespace Team5_XN
 
                 if (this.ActiveMdiChild.Tag == null)
                 {
-                    StringBuilder sb = new StringBuilder(this.ActiveMdiChild.Text);
+                    StringBuilder sb = new StringBuilder(this.ActiveMdiChild.Text + "      ");
                     for (int i = 0; i < sb.Length; i++)
                     {
                         if (sb.Length < 9)
@@ -312,6 +321,6 @@ namespace Team5_XN
                 e.Item.Visible = false;
         }
 
-
+        
     }
 }
