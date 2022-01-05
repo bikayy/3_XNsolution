@@ -26,6 +26,7 @@ namespace Team5_XN
         public event EventHandler Update; //수정버튼
         public event EventHandler Save;   //저장버튼
         public event EventHandler Delete; //삭제버튼
+        public event EventHandler Reset; //초기화버튼
 
         public Main(string userID)
         {
@@ -169,9 +170,9 @@ namespace Team5_XN
             {
                 Form frm = (Form)Activator.CreateInstance(frmType);
                 frm.Text = formText;
-                frm.MdiParent = this;
-                frm.WindowState = FormWindowState.Maximized;                
+                frm.MdiParent = this;                           
                 frm.Show();
+                frm.WindowState = FormWindowState.Maximized;
             }
             catch
             {
@@ -228,6 +229,14 @@ namespace Team5_XN
         {
 
         }
+        //초기화
+        private void toolReset_Click(object sender, EventArgs e)
+        {
+            if (Reset != null)
+            {
+                Reset(this, null);
+            }
+        }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl1.SelectedTab != null)
@@ -267,7 +276,7 @@ namespace Team5_XN
 
                 if (this.ActiveMdiChild.Tag == null)
                 {
-                    StringBuilder sb = new StringBuilder(this.ActiveMdiChild.Text);
+                    StringBuilder sb = new StringBuilder(this.ActiveMdiChild.Text + "      ");
                     for (int i = 0; i < sb.Length; i++)
                     {
                         if (sb.Length < 9)
@@ -306,5 +315,7 @@ namespace Team5_XN
             if (e.Item.Text == "" || e.Item.Text == "최소화(&N)" || e.Item.Text == "이전 크기로(&R)" || e.Item.Text == "닫기(&C)") //최소화(&N) 이전 크기로(&R) 닫기(&C)
                 e.Item.Visible = false;
         }
+
+        
     }
 }

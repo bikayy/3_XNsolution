@@ -39,7 +39,8 @@ namespace Team5_XN
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolSelect = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolReset = new System.Windows.Forms.ToolStripButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -85,7 +86,8 @@ namespace Team5_XN
             this.toolStripButton3,
             this.toolStripButton2,
             this.toolStripButton1,
-            this.toolSelect});
+            this.toolStripButton6,
+            this.toolReset});
             this.toolStrip1.Location = new System.Drawing.Point(228, -1);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(10, 2, 1, 0);
@@ -164,19 +166,32 @@ namespace Team5_XN
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolSelect
+            // toolStripButton6
             // 
-            this.toolSelect.BackColor = System.Drawing.Color.DarkGray;
-            this.toolSelect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolSelect.Image = global::Team5_XN.Properties.Resources.icon_xn_cancle;
-            this.toolSelect.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolSelect.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
-            this.toolSelect.Name = "toolSelect";
-            this.toolSelect.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolSelect.Size = new System.Drawing.Size(56, 68);
-            this.toolSelect.Text = "취소";
-            this.toolSelect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolSelect.Click += new System.EventHandler(this.toolSelect_Click);
+            this.toolStripButton6.BackColor = System.Drawing.Color.DarkGray;
+            this.toolStripButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolStripButton6.Image = global::Team5_XN.Properties.Resources.icon_xn_cancle;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolStripButton6.Size = new System.Drawing.Size(56, 68);
+            this.toolStripButton6.Text = "취소";
+            this.toolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolReset
+            // 
+            this.toolReset.BackColor = System.Drawing.Color.DarkGray;
+            this.toolReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.toolReset.Image = global::Team5_XN.Properties.Resources.reset;
+            this.toolReset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolReset.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
+            this.toolReset.Name = "toolReset";
+            this.toolReset.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolReset.Size = new System.Drawing.Size(57, 68);
+            this.toolReset.Text = "초기화";
+            this.toolReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolReset.Click += new System.EventHandler(this.toolReset_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -184,7 +199,7 @@ namespace Team5_XN
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 80);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 5, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(225, 782);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(199, 782);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // imageList1
@@ -207,11 +222,14 @@ namespace Team5_XN
             // 
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Location = new System.Drawing.Point(225, 80);
+            this.tabControl1.Font = new System.Drawing.Font("Consolas", 9F);
+            this.tabControl1.Location = new System.Drawing.Point(199, 80);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1059, 24);
-            this.tabControl1.TabIndex = 14;
+            this.tabControl1.Size = new System.Drawing.Size(1085, 24);
+            this.tabControl1.TabIndex = 120;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
             // 
@@ -247,7 +265,7 @@ namespace Team5_XN
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolSelect;
+        private System.Windows.Forms.ToolStripButton toolReset;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
@@ -256,6 +274,7 @@ namespace Team5_XN
         private ucTabControl tabControl1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
     }
 }
 
