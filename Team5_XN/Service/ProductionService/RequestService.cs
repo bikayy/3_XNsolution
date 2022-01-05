@@ -45,5 +45,14 @@ namespace Team5_XN
 
             return result;
         }
+
+        public List<RequestVO> GetRequestSearch(string tag, string fromDate, string toDate, string item)
+        {
+            RequestDAC db = new RequestDAC();
+            List<RequestVO> list = db.GetRequestSearch(tag, fromDate, toDate, item);
+            db.Dispose();
+
+            return list;
+        }
     }
 }

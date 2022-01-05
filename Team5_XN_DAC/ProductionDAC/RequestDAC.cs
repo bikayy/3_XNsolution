@@ -104,7 +104,7 @@ where Prd_Req_No = @Prd_Req_No";
                 trans.Commit();
                 return true;
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 trans.Rollback();
                 Debug.WriteLine(err.Message);
@@ -136,6 +136,30 @@ where Prd_Req_No = @Prd_Req_No";
                 Debug.WriteLine(err.Message);
                 return false;
             }
+        }
+
+        public List<RequestVO> GetRequestSearch(string tag, string fromDate, string toDate, string item)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SP_Req_Search";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Tag", tag);
+            cmd.Parameters.AddWithValue("@From_Date", fromDate);
+            cmd.Parameters.AddWithValue("@To_Date", toDate);
+            cmd.Parameters.AddWithValue("@Item_Code", item);
+            return Helper.DataReaderMapToList<RequestVO>(cmd.ExecuteReader());
+
+            //try
+            //{
+
+            //}
+            //catch (Exception err)
+            //{
+            //    Debug.WriteLine(err.Message);
+            //    return null;
+            //}
         }
     }
 }
