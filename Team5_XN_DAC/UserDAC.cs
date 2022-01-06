@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Team5_XN_VO;
 using Team5_XN_DAC;
+using System.Data;
 
 namespace Team5_XN_DAC
 {
@@ -29,23 +30,19 @@ namespace Team5_XN_DAC
         }
         public bool AddID(UserVO user) // 계정추가
         {
-            string sql = @"insert into User_Master(User_ID, User_Name, User_PW, Customer_Code, DefaultLanguage, 
-                                              User_Type, Price_Visible_YN, IP_Security_YN, PW_Reset_Count, Default_Screen_Code, 
-                                              Default_Major_Process_Code, Monitoring_YN, Use_YN)
-                    values(@User_ID, @User_Name, @User_PW, NULL, NULL, @User_Type, @Price_Visible_YN, @IP_Security_YN, 0, NULL, NULL, NULL, @Use_YN)";
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = conn;
-                cmd.CommandText = sql;
-                cmd.Parameters.AddWithValue("@User_ID", user.User_ID);
-                cmd.Parameters.AddWithValue("@User_Name", user.User_Name);
-                cmd.Parameters.AddWithValue("@User_PW", user.User_PW);
-                cmd.Parameters.AddWithValue("@User_Type", '1');
-                cmd.Parameters.AddWithValue("@Price_Visible_YN", 'Y');
-                cmd.Parameters.AddWithValue("@IP_Security_YN", 'Y');
-                cmd.Parameters.AddWithValue("@Use_YN", 'Y');
-                return 0 < cmd.ExecuteNonQuery();
-            }
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SP_Register_Grouping";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@User_ID", user.User_ID);
+            cmd.Parameters.AddWithValue("@User_Name", user.User_Name);
+            cmd.Parameters.AddWithValue("@User_PW", user.User_PW);
+            cmd.Parameters.AddWithValue("@User_Type", '1');
+            cmd.Parameters.AddWithValue("@Price_Visible_YN", 'Y');
+            cmd.Parameters.AddWithValue("@IP_Security_YN", 'Y');
+            cmd.Parameters.AddWithValue("@Use_YN", 'Y');
+            return 0 < cmd.ExecuteNonQuery();
         }
         public bool UpdateID(UserVO user) // 업데이트
         {
@@ -59,22 +56,21 @@ namespace Team5_XN_DAC
                 return 0 < cmd.ExecuteNonQuery();
             }
         }
-        public UserVO GetCustomerInfo(string id)
+        public DataTable GetUserInfo()
         {
-            string sql = @"SELECT User_ID, User_PW, User_Name
-                            FROM User_Master WHERE User_ID = @User_ID";
-            using (SqlCommand cmd = new SqlCommand())
+            string sql = @"SELECT User_ID, User_Name, U.Customer_Code, M.UserGroup_Name, U.Default_Major_Process_Code, P.Process_Name,
+IP_Security_YN, PW_Reset_Count, U.Use_YN
+FROM User_Master U
+INNER JOIN UserGroup_Master M ON U.Customer_Code = M.UserGroup_Code
+LEFT OUTER JOIN Process_Master P ON U.Default_Major_Process_Code = P.Process_Code";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
-                cmd.Connection = conn;
-                cmd.CommandText = sql;
-                cmd.Parameters.AddWithValue("@User_ID", id);
-
-                var temp = Helper.DataReaderMapToList<UserVO>(cmd.ExecuteReader());
-                return temp[0];
+                da.Fill(dt);
             }
-
-
+            return dt;
         }
+
         public bool LoginCheck(UserVO user, bool IsUser) // 로그인
         {
             string sql = @"SELECT count(*) FROM User_Master WHERE User_ID=@User_ID AND User_PW=@User_PW AND Use_YN=@Use_YN";
