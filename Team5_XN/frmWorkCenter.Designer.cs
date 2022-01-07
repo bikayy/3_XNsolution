@@ -284,7 +284,7 @@ namespace Team5_XN
             // txtWcCode
             // 
             this.txtWcCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtWcCode.Location = new System.Drawing.Point(110, 10);
+            this.txtWcCode.Location = new System.Drawing.Point(117, 10);
             this.txtWcCode.Name = "txtWcCode";
             this.txtWcCode.Size = new System.Drawing.Size(151, 22);
             this.txtWcCode.TabIndex = 18;
@@ -297,7 +297,7 @@ namespace Team5_XN
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(24, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 21);
+            this.label2.Size = new System.Drawing.Size(95, 21);
             this.label2.TabIndex = 17;
             this.label2.Text = "작업장코드";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -316,7 +316,7 @@ namespace Team5_XN
             // txtWcName
             // 
             this.txtWcName.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtWcName.Location = new System.Drawing.Point(110, 36);
+            this.txtWcName.Location = new System.Drawing.Point(117, 36);
             this.txtWcName.Name = "txtWcName";
             this.txtWcName.Size = new System.Drawing.Size(151, 22);
             this.txtWcName.TabIndex = 12;
@@ -329,7 +329,7 @@ namespace Team5_XN
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(24, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 21);
+            this.label4.Size = new System.Drawing.Size(95, 21);
             this.label4.TabIndex = 11;
             this.label4.Text = "작업장명";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -374,7 +374,7 @@ namespace Team5_XN
             // txtProcessName
             // 
             this.txtProcessName.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtProcessName.Location = new System.Drawing.Point(234, 88);
+            this.txtProcessName.Location = new System.Drawing.Point(241, 88);
             this.txtProcessName.Name = "txtProcessName";
             this.txtProcessName.Size = new System.Drawing.Size(114, 22);
             this.txtProcessName.TabIndex = 86;
@@ -384,7 +384,7 @@ namespace Team5_XN
             // txtProcessCode
             // 
             this.txtProcessCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtProcessCode.Location = new System.Drawing.Point(110, 88);
+            this.txtProcessCode.Location = new System.Drawing.Point(117, 88);
             this.txtProcessCode.Name = "txtProcessCode";
             this.txtProcessCode.Size = new System.Drawing.Size(95, 22);
             this.txtProcessCode.TabIndex = 85;
@@ -407,7 +407,7 @@ namespace Team5_XN
             this.label00.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label00.Location = new System.Drawing.Point(24, 88);
             this.label00.Name = "label00";
-            this.label00.Size = new System.Drawing.Size(69, 21);
+            this.label00.Size = new System.Drawing.Size(95, 21);
             this.label00.TabIndex = 102;
             this.label00.Text = "공정";
             this.label00.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -464,7 +464,7 @@ namespace Team5_XN
             this.cboWcGroup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboWcGroup.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboWcGroup.FormattingEnabled = true;
-            this.cboWcGroup.Location = new System.Drawing.Point(110, 62);
+            this.cboWcGroup.Location = new System.Drawing.Point(117, 62);
             this.cboWcGroup.Name = "cboWcGroup";
             this.cboWcGroup.Size = new System.Drawing.Size(121, 21);
             this.cboWcGroup.TabIndex = 17;
@@ -604,7 +604,7 @@ namespace Team5_XN
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(24, 62);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 21);
+            this.label5.Size = new System.Drawing.Size(95, 21);
             this.label5.TabIndex = 13;
             this.label5.Text = "작업장그룹";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -689,7 +689,7 @@ namespace Team5_XN
             this.btnProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProcess.Location = new System.Drawing.Point(208, 88);
+            this.btnProcess.Location = new System.Drawing.Point(215, 88);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(22, 22);
             this.btnProcess.TabIndex = 84;

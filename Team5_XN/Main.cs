@@ -64,7 +64,7 @@ namespace Team5_XN
                 p_menu.Size = new System.Drawing.Size(199, 50);
                 p_menu.Tag = dv1[i]["Screen_Code"].ToString();
                 p_menu.Click += btnSystem_Click;
-
+                p_menu.Font = new Font("맑은 고딕", 9);
                 flowLayoutPanel1.Controls.Add(p_menu);
 
                 if (i == 0)
