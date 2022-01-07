@@ -59,7 +59,7 @@ namespace Team5_XN
                 MessageBox.Show("이름을 입력해주세요.");
                 return;
             }
-            UserVO customer = new UserVO()
+            UserVO user = new UserVO()
             {
                 
                 User_ID = txtID.Text,
@@ -71,7 +71,7 @@ namespace Team5_XN
             {
                 bool result = false;
 
-                result = srv.AddID(customer);
+                result = srv.AddID(user);
                 if (result)
                 {
                     MessageBox.Show("회원가입 완료");

@@ -17,6 +17,7 @@ namespace Team5_XN
         string userID;
         DataTable dtMenu;
         Button btnInit;
+        Button btnSelect;
         Panel panel1;
         TreeView treeView1;
 
@@ -86,8 +87,14 @@ namespace Team5_XN
             treeView1.ItemHeight = 20;
             treeView1.ImageList = imageList1;
             treeView1.Size = new System.Drawing.Size(193, 300);
-            treeView1.AfterSelect += treeView1_AfterSelect;
+            //treeView1.AfterSelect += treeView1_AfterSelect;
+            treeView1.NodeMouseClick += TreeView1_NodeMouseClick;
             panel1.Controls.Add(this.treeView1);
+        }
+
+        private void TreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            OpenCreateForm(e.Node.Tag.ToString(), e.Node.Text);
         }
 
         //private void DrawMenuStrip()
@@ -130,6 +137,7 @@ namespace Team5_XN
         private void btnSystem_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            btnSelect = btn;
             flowLayoutPanel1.Controls.SetChildIndex(panel1, Convert.ToInt32(btn.Name.Replace("p_btn", "")) + 1);
             flowLayoutPanel1.Invalidate();
 
@@ -263,6 +271,7 @@ namespace Team5_XN
                 if (closeRect.Contains(e.Location))
                 {
                     this.ActiveMdiChild.Close();
+                    if (btnSelect != null) btnSelect.Focus();
                     break;
                 }
             }

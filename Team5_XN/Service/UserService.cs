@@ -45,6 +45,15 @@ namespace Team5_XN.Service
 
             return dt;
         }
+        public DataTable GetUserGroupMaster()
+        {
+            UserDAC db = new UserDAC();
+            DataTable dt = db.GetUserGroupMaster();
+            db.Dispose();
+
+            return dt;
+        }
+        
         public bool LoginCheck(UserVO user, bool IsUser)
         {
             UserDAC db = new UserDAC();
