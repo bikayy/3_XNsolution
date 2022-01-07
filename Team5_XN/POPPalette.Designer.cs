@@ -72,12 +72,12 @@ namespace Team5_XN
             this.label14 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ucPaletteList1 = new Team5_XN.Controls.ucPaletteList();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ucPaletteList1 = new Team5_XN.Controls.ucPaletteList();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -185,14 +185,14 @@ namespace Team5_XN
             this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(11, 12);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(150, 28);
+            this.label16.Size = new System.Drawing.Size(122, 21);
             this.label16.TabIndex = 5;
             this.label16.Text = "SWD-F트렌토G";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel12
             // 
-            this.panel12.BackgroundImage = global::Team5_XN.Properties.Resources.backColor6;
+            this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
             this.panel12.Controls.Add(this.label9);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(723, 63);
@@ -208,14 +208,14 @@ namespace Team5_XN
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(61, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 28);
+            this.label9.Size = new System.Drawing.Size(42, 21);
             this.label9.TabIndex = 5;
             this.label9.Text = "단위";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel10
             // 
-            this.panel10.BackgroundImage = global::Team5_XN.Properties.Resources.backColor6;
+            this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
             this.panel10.Controls.Add(this.label7);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(363, 63);
@@ -231,14 +231,14 @@ namespace Team5_XN
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(40, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 28);
+            this.label7.Size = new System.Drawing.Size(74, 21);
             this.label7.TabIndex = 5;
             this.label7.Text = "실적수량";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
             // 
-            this.panel8.BackgroundImage = global::Team5_XN.Properties.Resources.backColor6;
+            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
             this.panel8.Controls.Add(this.label5);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 63);
@@ -254,14 +254,14 @@ namespace Team5_XN
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(50, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 28);
+            this.label5.Size = new System.Drawing.Size(58, 21);
             this.label5.TabIndex = 4;
             this.label5.Text = "계획일";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
-            this.panel6.BackgroundImage = global::Team5_XN.Properties.Resources.backColor6;
+            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Controls.Add(this.label8);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(723, 3);
@@ -277,14 +277,14 @@ namespace Team5_XN
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(52, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 28);
+            this.label8.Size = new System.Drawing.Size(58, 21);
             this.label8.TabIndex = 5;
             this.label8.Text = "작업장";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
-            this.panel4.BackgroundImage = global::Team5_XN.Properties.Resources.backColor6;
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.Controls.Add(this.label6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(363, 3);
@@ -300,14 +300,14 @@ namespace Team5_XN
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(50, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 28);
+            this.label6.Size = new System.Drawing.Size(58, 21);
             this.label6.TabIndex = 5;
             this.label6.Text = "품목명";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::Team5_XN.Properties.Resources.backColor6;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -323,7 +323,7 @@ namespace Team5_XN
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(22, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 28);
+            this.label4.Size = new System.Drawing.Size(106, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "작업지시번호";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -346,7 +346,7 @@ namespace Team5_XN
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(8, 12);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(158, 28);
+            this.label15.Size = new System.Drawing.Size(121, 21);
             this.label15.TabIndex = 4;
             this.label15.Text = "G20211220011";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -488,7 +488,7 @@ namespace Team5_XN
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(16, 26);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 28);
+            this.label10.Size = new System.Drawing.Size(74, 21);
             this.label10.TabIndex = 5;
             this.label10.Text = "팔렛번호";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -511,7 +511,7 @@ namespace Team5_XN
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(35, 25);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 28);
+            this.label11.Size = new System.Drawing.Size(42, 21);
             this.label11.TabIndex = 5;
             this.label11.Text = "등급";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -534,7 +534,7 @@ namespace Team5_XN
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(16, 26);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 28);
+            this.label12.Size = new System.Drawing.Size(74, 21);
             this.label12.TabIndex = 5;
             this.label12.Text = "등급상세";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -557,7 +557,7 @@ namespace Team5_XN
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(16, 28);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 28);
+            this.label13.Size = new System.Drawing.Size(74, 21);
             this.label13.TabIndex = 5;
             this.label13.Text = "박스수량";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -581,7 +581,7 @@ namespace Team5_XN
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(49, 25);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 32);
+            this.label14.Size = new System.Drawing.Size(45, 25);
             this.label14.TabIndex = 6;
             this.label14.Text = "100";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -611,6 +611,14 @@ namespace Team5_XN
             this.panel5.Size = new System.Drawing.Size(744, 541);
             this.panel5.TabIndex = 10;
             // 
+            // ucPaletteList1
+            // 
+            this.ucPaletteList1.BackColor = System.Drawing.Color.LightGray;
+            this.ucPaletteList1.Location = new System.Drawing.Point(4, 6);
+            this.ucPaletteList1.Name = "ucPaletteList1";
+            this.ucPaletteList1.Size = new System.Drawing.Size(713, 61);
+            this.ucPaletteList1.TabIndex = 0;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -633,7 +641,7 @@ namespace Team5_XN
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(366, 36);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(344, 38);
+            this.label17.Size = new System.Drawing.Size(272, 30);
             this.label17.TabIndex = 3;
             this.label17.Text = "팔레트 생성 : PACKING 2";
             // 
@@ -645,7 +653,7 @@ namespace Team5_XN
             this.label3.ForeColor = System.Drawing.Color.Yellow;
             this.label3.Location = new System.Drawing.Point(12, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 32);
+            this.label3.Size = new System.Drawing.Size(149, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "14시 20분 59초";
             // 
@@ -657,7 +665,7 @@ namespace Team5_XN
             this.label2.ForeColor = System.Drawing.Color.Yellow;
             this.label2.Location = new System.Drawing.Point(160, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 32);
+            this.label2.Size = new System.Drawing.Size(83, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "(수요일)";
             // 
@@ -669,17 +677,9 @@ namespace Team5_XN
             this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 32);
+            this.label1.Size = new System.Drawing.Size(116, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "2021-12-22";
-            // 
-            // ucPaletteList1
-            // 
-            this.ucPaletteList1.BackColor = System.Drawing.Color.LightGray;
-            this.ucPaletteList1.Location = new System.Drawing.Point(4, 6);
-            this.ucPaletteList1.Name = "ucPaletteList1";
-            this.ucPaletteList1.Size = new System.Drawing.Size(713, 61);
-            this.ucPaletteList1.TabIndex = 0;
             // 
             // POPPalette
             // 

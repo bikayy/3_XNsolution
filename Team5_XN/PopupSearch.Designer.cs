@@ -104,13 +104,13 @@ namespace Team5_XN
             this.txtSearch.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSearch.Location = new System.Drawing.Point(12, 12);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(339, 25);
+            this.txtSearch.Size = new System.Drawing.Size(339, 21);
             this.txtSearch.TabIndex = 66;
             // 
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.Black;
-            this.btnRefresh.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnRefresh.BackgroundImage = global::Team5_XN.Properties.Resources.icon_xn_refresh;
             this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -130,7 +130,7 @@ namespace Team5_XN
             this.r_txtItemName.PlaceholderText = "품목 명";
             this.r_txtItemName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
             this.r_txtItemName.ReadOnly = true;
-            this.r_txtItemName.Size = new System.Drawing.Size(190, 25);
+            this.r_txtItemName.Size = new System.Drawing.Size(190, 21);
             this.r_txtItemName.TabIndex = 65;
             // 
             // r_txtItemCode
@@ -141,7 +141,7 @@ namespace Team5_XN
             this.r_txtItemCode.PlaceholderText = "품목코드";
             this.r_txtItemCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
             this.r_txtItemCode.ReadOnly = true;
-            this.r_txtItemCode.Size = new System.Drawing.Size(190, 25);
+            this.r_txtItemCode.Size = new System.Drawing.Size(190, 21);
             this.r_txtItemCode.TabIndex = 64;
             // 
             // PopupSearch

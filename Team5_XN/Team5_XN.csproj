@@ -637,6 +637,7 @@
     <None Include="Resources\buttonBackColor3.JPG" />
     <None Include="Resources\backColor11.JPG" />
     <None Include="Resources\backColor12.JPG" />
+    <None Include="Resources\backColor61.JPG" />
     <Content Include="Resources\free-icon-add-file-12658752.png" />
     <Content Include="Resources\free-icon-document-63012642.png" />
     <None Include="Resources\keyboard.png" />
@@ -646,6 +647,7 @@
     <None Include="Resources\icon_xn_refresh.png" />
     <None Include="Resources\icon_xn_refresh-green.png" />
     <None Include="Resources\icon_xn_refresh-green1.png" />
+    <None Include="Resources\icon_xn_refresh1.png" />
     <Content Include="Resources\premium-icon-cancel-3815923.png" />
     <Content Include="Resources\premium-icon-search-engine-32766562.png" />
     <Content Include="Resources\previous1.png" />
