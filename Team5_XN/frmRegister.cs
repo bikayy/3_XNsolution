@@ -39,6 +39,26 @@ namespace Team5_XN
 
         private void btnCreateID_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtID.Text.Trim()))
+            {
+                MessageBox.Show("아이디를 입력해주세요.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtPassword1.Text.Trim()))
+            {
+                MessageBox.Show("비밀번호를 입력해주세요.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtPassword2.Text.Trim()))
+            {
+                MessageBox.Show("비밀번호를 입력해주세요.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtName.Text.Trim()))
+            {
+                MessageBox.Show("이름을 입력해주세요.");
+                return;
+            }
             UserVO customer = new UserVO()
             {
                 
@@ -46,20 +66,21 @@ namespace Team5_XN
                 User_PW = txtPassword1.Text,
                 User_Name = txtName.Text
             };
-
-            bool result = false;
-
-            result = srv.AddID(customer);
-
-
-            if (result)
+            DialogResult message = MessageBox.Show("회원 가입 하시겠습니까?", "회원가입", MessageBoxButtons.YesNo);
+            if (message == DialogResult.Yes)
             {
-                MessageBox.Show("회원가입 완료");
-                // this.Close();
-            }
-            else
-            {
-                MessageBox.Show("회원가입 실패");
+                bool result = false;
+
+                result = srv.AddID(customer);
+                if (result)
+                {
+                    MessageBox.Show("회원가입 완료");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("회원가입 실패");
+                }
             }
         }
 

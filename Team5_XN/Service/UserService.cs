@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,13 +37,13 @@ namespace Team5_XN.Service
 
             return result;
         }
-        public UserVO GetCustomerInfo(string id)
+        public DataTable GetUserInfo()
         {
             UserDAC db = new UserDAC();
-            var result = db.GetCustomerInfo(id);
+            DataTable dt = db.GetUserInfo();
             db.Dispose();
 
-            return result;
+            return dt;
         }
         public bool LoginCheck(UserVO user, bool IsUser)
         {

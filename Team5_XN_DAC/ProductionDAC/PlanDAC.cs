@@ -107,7 +107,7 @@ join Production_Req pr
                     cmd.Transaction = trans;
 
                     cmd.CommandText = @"update Production_Plan_Detail
-set Wc_Code = @Wc_Code,  Item_Code = @Item_Code,  Plan_Month = @Plan_Month,
+set Wc_Code = @Wc_Code,  Item_Code = @Item_Code, 
 Plan_Qty = @Plan_Qty, Remark = @Remark,
 Up_Date = getdate(), Up_Emp = @Up_Emp
 where Prd_Plan_No = @Prd_Plan_No";
@@ -117,7 +117,7 @@ where Prd_Plan_No = @Prd_Plan_No";
                     cmd.Parameters.AddWithValue("@Plan_Qty", up.Plan_Qty);
                     cmd.Parameters.AddWithValue("@Remark", up.Remark);
                     cmd.Parameters.AddWithValue("@Up_Emp", up.Ins_Emp);
-                    cmd.Parameters.AddWithValue("@Plan_Month", up.Plan_Month);
+                    //cmd.Parameters.AddWithValue("@Plan_Month", up.Plan_Month);
                     cmd.Parameters.AddWithValue("@Prd_Plan_No", up.Prd_Plan_No);
 
 

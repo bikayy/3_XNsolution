@@ -47,5 +47,16 @@ where C.Seq in (select C.Seq
             }
             return dt;
         }
+        public DataTable GetTimeProductHistory()
+        {
+            string sql = @"SELECT WorkOrderNo, Start_Hour, In_Qty_Sub, In_Qty_Main, Out_Qty_Main, Out_Qty_Sub, Prd_Qty, Prd_Unit FROM Time_Production_History";
+
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+            }
+            return dt;
+        }
     }
 }
