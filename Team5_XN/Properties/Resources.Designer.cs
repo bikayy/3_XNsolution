@@ -173,6 +173,16 @@ namespace Team5_XN.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_xn_refresh_green1 {
+            get {
+                object obj = ResourceManager.GetObject("icon_xn_refresh-green1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_xn_save {
             get {
                 object obj = ResourceManager.GetObject("icon_xn_save", resourceCulture);
