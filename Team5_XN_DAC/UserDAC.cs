@@ -70,7 +70,17 @@ LEFT OUTER JOIN Process_Master P ON U.Default_Major_Process_Code = P.Process_Cod
             }
             return dt;
         }
-
+        public DataTable GetUserGroupMaster()
+        {
+            string sql = @"  SELECT UserGroup_Code, UserGroup_Name, Admin, Use_YN
+  FROM UserGroup_Master";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+            }
+            return dt;
+        }
         public bool LoginCheck(UserVO user, bool IsUser) // 로그인
         {
             string sql = @"SELECT count(*) FROM User_Master WHERE User_ID=@User_ID AND User_PW=@User_PW AND Use_YN=@Use_YN";

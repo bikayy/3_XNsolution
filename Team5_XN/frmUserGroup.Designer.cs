@@ -33,11 +33,7 @@ namespace Team5_XN
             this.pnlSubject2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlDgv = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUserGroup = new System.Windows.Forms.DataGridView();
             this.pnlSubject1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
@@ -55,6 +51,7 @@ namespace Team5_XN
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -62,13 +59,12 @@ namespace Team5_XN
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlBorder.SuspendLayout();
             this.pnlSubject2.SuspendLayout();
             this.pnlDgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroup)).BeginInit();
             this.pnlSubject1.SuspendLayout();
             this.pnlDetail.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -116,7 +112,7 @@ namespace Team5_XN
             // pnlDgv
             // 
             this.pnlDgv.BackColor = System.Drawing.Color.White;
-            this.pnlDgv.Controls.Add(this.dataGridView1);
+            this.pnlDgv.Controls.Add(this.dgvUserGroup);
             this.pnlDgv.Controls.Add(this.pnlSubject1);
             this.pnlDgv.Location = new System.Drawing.Point(5, 59);
             this.pnlDgv.Margin = new System.Windows.Forms.Padding(10);
@@ -125,42 +121,15 @@ namespace Team5_XN
             this.pnlDgv.Size = new System.Drawing.Size(1274, 488);
             this.pnlDgv.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvUserGroup
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1274, 448);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "사용자그룹코드";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "사용자그룹명";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "사용여부";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Admin 여부";
-            this.Column4.Name = "Column4";
+            this.dgvUserGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserGroup.Location = new System.Drawing.Point(0, 35);
+            this.dgvUserGroup.Name = "dgvUserGroup";
+            this.dgvUserGroup.RowTemplate.Height = 23;
+            this.dgvUserGroup.Size = new System.Drawing.Size(1274, 448);
+            this.dgvUserGroup.TabIndex = 1;
             // 
             // pnlSubject1
             // 
@@ -359,6 +328,14 @@ namespace Team5_XN
             this.pnlSelect.Size = new System.Drawing.Size(1274, 54);
             this.pnlSelect.TabIndex = 1;
             // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.textBox6.Location = new System.Drawing.Point(337, 15);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(122, 21);
+            this.textBox6.TabIndex = 30;
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
@@ -433,14 +410,6 @@ namespace Team5_XN
             this.label1.Text = "사용자그룹코드";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox6.Location = new System.Drawing.Point(337, 15);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(122, 21);
-            this.textBox6.TabIndex = 30;
-            // 
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
@@ -468,10 +437,11 @@ namespace Team5_XN
             this.Controls.Add(this.pnlBorder);
             this.Name = "frmUserGroup";
             this.Text = "사용자그룹관리";
+            this.Load += new System.EventHandler(this.frmUserGroup_Load);
             this.pnlBorder.ResumeLayout(false);
             this.pnlSubject2.ResumeLayout(false);
             this.pnlDgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroup)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -486,7 +456,7 @@ namespace Team5_XN
 
         private System.Windows.Forms.Panel pnlBorder;
         private System.Windows.Forms.Panel pnlDgv;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUserGroup;
         private System.Windows.Forms.Panel pnlSubject1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnlDetail;
@@ -505,10 +475,6 @@ namespace Team5_XN
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;

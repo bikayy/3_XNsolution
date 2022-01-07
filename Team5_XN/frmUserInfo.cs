@@ -27,12 +27,12 @@ namespace Team5_XN
         {
             main = (Main)this.MdiParent;
             main.Select += OnSelect;
-            LoadData();
+            //LoadData();
         }
 
         private void OnSelect(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            LoadData();
         }
 
         private void LoadData()
