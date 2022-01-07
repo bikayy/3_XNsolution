@@ -157,6 +157,7 @@ namespace Team5_XN
             string appName = Assembly.GetEntryAssembly().GetName().Name;
             Type frmType = Type.GetType($"{appName}.{pgmName}");
 
+
             foreach (Form frm in Application.OpenForms)
             {
                 if (frm.GetType() == frmType)
