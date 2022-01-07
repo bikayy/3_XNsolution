@@ -62,35 +62,43 @@ namespace Team5_XN
             // 
             // btnLogin
             // 
+            this.btnLogin.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnLogin.Location = new System.Drawing.Point(668, 389);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Size = new System.Drawing.Size(75, 27);
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "로그인";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtID
             // 
+            this.txtID.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtID.Location = new System.Drawing.Point(668, 310);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(156, 21);
-            this.txtID.TabIndex = 3;
+            this.txtID.Size = new System.Drawing.Size(156, 23);
+            this.txtID.TabIndex = 1;
+            this.txtID.Text = "admin";
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLogin_KeyDown);
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPassword.Location = new System.Drawing.Point(668, 349);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(156, 21);
-            this.txtPassword.TabIndex = 4;
+            this.txtPassword.Size = new System.Drawing.Size(156, 23);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "admin";
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLogin_KeyDown);
             // 
             // btnRegister
             // 
+            this.btnRegister.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRegister.Location = new System.Drawing.Point(749, 389);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnRegister.TabIndex = 5;
+            this.btnRegister.Size = new System.Drawing.Size(75, 27);
+            this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "회원가입";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);

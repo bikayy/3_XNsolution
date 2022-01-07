@@ -39,6 +39,10 @@ namespace Team5_XN
             Regi.Show();
         }
 
-        
+        private void txtLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnLogin_Click(sender, e);
+        }
     }
 }

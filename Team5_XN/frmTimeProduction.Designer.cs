@@ -29,9 +29,9 @@ namespace Team5_XN
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -51,17 +51,17 @@ namespace Team5_XN
             this.label14 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtSelectProcessCode2 = new System.Windows.Forms.TextBox();
+            this.txtSelectProcessCode1 = new System.Windows.Forms.TextBox();
+            this.btnSelectProcess = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSubject1.SuspendLayout();
             this.pnlDgv.SuspendLayout();
@@ -167,17 +167,17 @@ namespace Team5_XN
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(7, 8);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(1259, 160);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -210,6 +210,12 @@ namespace Team5_XN
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSelect.Controls.Add(this.textBox1);
+            this.pnlSelect.Controls.Add(this.textBox2);
+            this.pnlSelect.Controls.Add(this.button1);
+            this.pnlSelect.Controls.Add(this.txtSelectProcessCode2);
+            this.pnlSelect.Controls.Add(this.txtSelectProcessCode1);
+            this.pnlSelect.Controls.Add(this.btnSelectProcess);
             this.pnlSelect.Controls.Add(this.label2);
             this.pnlSelect.Controls.Add(this.label13);
             this.pnlSelect.Controls.Add(this.comboBox1);
@@ -217,12 +223,6 @@ namespace Team5_XN
             this.pnlSelect.Controls.Add(this.label14);
             this.pnlSelect.Controls.Add(this.label48);
             this.pnlSelect.Controls.Add(this.label49);
-            this.pnlSelect.Controls.Add(this.textBox29);
-            this.pnlSelect.Controls.Add(this.textBox30);
-            this.pnlSelect.Controls.Add(this.button7);
-            this.pnlSelect.Controls.Add(this.textBox31);
-            this.pnlSelect.Controls.Add(this.textBox32);
-            this.pnlSelect.Controls.Add(this.button8);
             this.pnlSelect.Controls.Add(this.dateTimePicker2);
             this.pnlSelect.Controls.Add(this.label47);
             this.pnlSelect.Controls.Add(this.dateTimePicker1);
@@ -240,7 +240,7 @@ namespace Team5_XN
             // 
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(351, 11);
+            this.label2.Location = new System.Drawing.Point(397, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 21);
@@ -252,7 +252,7 @@ namespace Team5_XN
             // 
             this.label13.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(27, 62);
+            this.label13.Location = new System.Drawing.Point(27, 61);
             this.label13.Margin = new System.Windows.Forms.Padding(0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(17, 21);
@@ -264,7 +264,7 @@ namespace Team5_XN
             // 
             this.comboBox1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(445, 9);
+            this.comboBox1.Location = new System.Drawing.Point(495, 7);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 153;
@@ -272,7 +272,7 @@ namespace Team5_XN
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(363, 9);
+            this.label4.Location = new System.Drawing.Point(409, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 23);
             this.label4.TabIndex = 152;
@@ -283,7 +283,7 @@ namespace Team5_XN
             // 
             this.label14.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(27, 37);
+            this.label14.Location = new System.Drawing.Point(27, 35);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(17, 21);
@@ -294,7 +294,7 @@ namespace Team5_XN
             // label48
             // 
             this.label48.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label48.Location = new System.Drawing.Point(39, 60);
+            this.label48.Location = new System.Drawing.Point(39, 61);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(80, 23);
             this.label48.TabIndex = 99;
@@ -305,90 +305,32 @@ namespace Team5_XN
             // 
             this.label49.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label49.ForeColor = System.Drawing.Color.Red;
-            this.label49.Location = new System.Drawing.Point(27, 12);
+            this.label49.Location = new System.Drawing.Point(27, 9);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(17, 21);
             this.label49.TabIndex = 143;
             this.label49.Text = "*";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox29
-            // 
-            this.textBox29.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox29.Location = new System.Drawing.Point(225, 60);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(77, 22);
-            this.textBox29.TabIndex = 98;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox30.Location = new System.Drawing.Point(121, 60);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(77, 22);
-            this.textBox30.TabIndex = 97;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Black;
-            this.button7.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Location = new System.Drawing.Point(201, 60);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(22, 22);
-            this.button7.TabIndex = 96;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // textBox31
-            // 
-            this.textBox31.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox31.Location = new System.Drawing.Point(225, 35);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(77, 22);
-            this.textBox31.TabIndex = 95;
-            // 
-            // textBox32
-            // 
-            this.textBox32.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox32.Location = new System.Drawing.Point(121, 35);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(77, 22);
-            this.textBox32.TabIndex = 94;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Black;
-            this.button8.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button8.Location = new System.Drawing.Point(201, 35);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(22, 22);
-            this.button8.TabIndex = 93;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CalendarFont = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(215, 9);
+            this.dateTimePicker2.Location = new System.Drawing.Point(245, 9);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(78, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(95, 22);
             this.dateTimePicker2.TabIndex = 19;
             // 
             // label47
             // 
             this.label47.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label47.Location = new System.Drawing.Point(200, 9);
+            this.label47.Location = new System.Drawing.Point(219, 9);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(17, 23);
+            this.label47.Size = new System.Drawing.Size(22, 23);
             this.label47.TabIndex = 20;
             this.label47.Text = "~";
-            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dateTimePicker1
             // 
@@ -397,7 +339,7 @@ namespace Team5_XN
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(121, 9);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(78, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(95, 22);
             this.dateTimePicker1.TabIndex = 18;
             // 
             // label12
@@ -413,12 +355,70 @@ namespace Team5_XN
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(39, 10);
+            this.label1.Location = new System.Drawing.Point(39, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "생산일자";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtSelectProcessCode2
+            // 
+            this.txtSelectProcessCode2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSelectProcessCode2.Location = new System.Drawing.Point(245, 35);
+            this.txtSelectProcessCode2.Name = "txtSelectProcessCode2";
+            this.txtSelectProcessCode2.Size = new System.Drawing.Size(113, 22);
+            this.txtSelectProcessCode2.TabIndex = 157;
+            // 
+            // txtSelectProcessCode1
+            // 
+            this.txtSelectProcessCode1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSelectProcessCode1.Location = new System.Drawing.Point(121, 35);
+            this.txtSelectProcessCode1.Name = "txtSelectProcessCode1";
+            this.txtSelectProcessCode1.Size = new System.Drawing.Size(95, 22);
+            this.txtSelectProcessCode1.TabIndex = 156;
+            // 
+            // btnSelectProcess
+            // 
+            this.btnSelectProcess.BackColor = System.Drawing.Color.Black;
+            this.btnSelectProcess.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnSelectProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSelectProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectProcess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSelectProcess.Location = new System.Drawing.Point(219, 35);
+            this.btnSelectProcess.Name = "btnSelectProcess";
+            this.btnSelectProcess.Size = new System.Drawing.Size(22, 22);
+            this.btnSelectProcess.TabIndex = 155;
+            this.btnSelectProcess.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(245, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(113, 22);
+            this.textBox1.TabIndex = 160;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox2.Location = new System.Drawing.Point(121, 61);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(95, 22);
+            this.textBox2.TabIndex = 159;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(219, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(22, 22);
+            this.button1.TabIndex = 158;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmTimeProduction
             // 
@@ -458,12 +458,6 @@ namespace Team5_XN
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel pnlDetail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlSubject2;
@@ -473,5 +467,11 @@ namespace Team5_XN
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtSelectProcessCode2;
+        private System.Windows.Forms.TextBox txtSelectProcessCode1;
+        private System.Windows.Forms.Button btnSelectProcess;
     }
 }

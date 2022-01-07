@@ -130,6 +130,7 @@ namespace Team5_XN
         {
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
+            if (dt == null) return;
             ChangeValue_Check(1); //추가
             //dataGridView1.AllowUserToAddRows = true;
             DataRow dr = dt.NewRow();

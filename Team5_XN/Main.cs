@@ -61,10 +61,10 @@ namespace Team5_XN
                 p_menu.Dock = DockStyle.Top;
                 p_menu.Location = new Point(0, 0);
                 p_menu.Margin = new Padding(0);
-                p_menu.Size = new System.Drawing.Size(197, 50);
+                p_menu.Size = new System.Drawing.Size(199, 50);
                 p_menu.Tag = dv1[i]["Screen_Code"].ToString();
                 p_menu.Click += btnSystem_Click;
-
+                p_menu.Font = new Font("맑은 고딕", 9);
                 flowLayoutPanel1.Controls.Add(p_menu);
 
                 if (i == 0)
@@ -77,7 +77,7 @@ namespace Team5_XN
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(3, (dv1.Count * 40));
             panel1.Name = "panel1";
-            panel1.Size = new Size(193, 300);
+            panel1.Size = new Size(195, 300);
             flowLayoutPanel1.Controls.Add(this.panel1);
 
             treeView1 = new TreeView();
