@@ -184,7 +184,7 @@ namespace Team5_XN
             // 
             this.toolReset.BackColor = System.Drawing.Color.DarkGray;
             this.toolReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.toolReset.Image = global::Team5_XN.Properties.Resources.reset;
+            this.toolReset.Image = global::Team5_XN.Properties.Resources.icon_xn_refresh_green;
             this.toolReset.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolReset.Margin = new System.Windows.Forms.Padding(2, 5, 8, 8);
             this.toolReset.Name = "toolReset";

@@ -83,16 +83,6 @@ namespace Team5_XN.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap backColor6 {
-            get {
-                object obj = ResourceManager.GetObject("backColor6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
         internal static System.Drawing.Bitmap buttonBackColor3 {
             get {
                 object obj = ResourceManager.GetObject("buttonBackColor3", resourceCulture);
@@ -173,9 +163,9 @@ namespace Team5_XN.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_xn_refresh {
+        internal static System.Drawing.Bitmap icon_xn_refresh_green {
             get {
-                object obj = ResourceManager.GetObject("icon_xn_refresh", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_xn_refresh-green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
