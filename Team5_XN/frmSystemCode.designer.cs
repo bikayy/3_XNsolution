@@ -30,7 +30,7 @@ namespace Team5_XN
         private void InitializeComponent()
         {
             this.pnlDgv2 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvSysDetail = new System.Windows.Forms.DataGridView();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,25 +40,25 @@ namespace Team5_XN
             this.label2 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.placeholderTextBox1 = new WinReflectionSettings.PlaceholderTextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlSubject2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.pnlDgv1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSysMaster = new System.Windows.Forms.DataGridView();
             this.pnlSubject1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
@@ -69,17 +69,14 @@ namespace Team5_XN
             this.label13 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.placeholderTextBox1 = new WinReflectionSettings.PlaceholderTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pnlDgv2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSysDetail)).BeginInit();
             this.panel3.SuspendLayout();
             this.pnlDetail.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlSubject2.SuspendLayout();
             this.pnlDgv1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSysMaster)).BeginInit();
             this.pnlSubject1.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +84,7 @@ namespace Team5_XN
             // pnlDgv2
             // 
             this.pnlDgv2.BackColor = System.Drawing.Color.White;
-            this.pnlDgv2.Controls.Add(this.dataGridView2);
+            this.pnlDgv2.Controls.Add(this.dgvSysDetail);
             this.pnlDgv2.Controls.Add(this.panel3);
             this.pnlDgv2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDgv2.Location = new System.Drawing.Point(535, 54);
@@ -97,21 +94,21 @@ namespace Team5_XN
             this.pnlDgv2.Size = new System.Drawing.Size(749, 445);
             this.pnlDgv2.TabIndex = 20;
             // 
-            // dataGridView2
+            // dgvSysDetail
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSysDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSysDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
             this.Column5,
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 35);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(749, 405);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvSysDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSysDetail.Location = new System.Drawing.Point(0, 35);
+            this.dgvSysDetail.Name = "dgvSysDetail";
+            this.dgvSysDetail.RowTemplate.Height = 23;
+            this.dgvSysDetail.Size = new System.Drawing.Size(749, 405);
+            this.dgvSysDetail.TabIndex = 1;
             // 
             // Column4
             // 
@@ -202,6 +199,24 @@ namespace Team5_XN
             this.panel4.Size = new System.Drawing.Size(749, 132);
             this.panel4.TabIndex = 12;
             // 
+            // placeholderTextBox1
+            // 
+            this.placeholderTextBox1.Location = new System.Drawing.Point(412, 34);
+            this.placeholderTextBox1.Multiline = true;
+            this.placeholderTextBox1.Name = "placeholderTextBox1";
+            this.placeholderTextBox1.PlaceholderText = "비고";
+            this.placeholderTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.placeholderTextBox1.Size = new System.Drawing.Size(231, 52);
+            this.placeholderTextBox1.TabIndex = 8;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.textBox4.Location = new System.Drawing.Point(412, 7);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(101, 21);
+            this.textBox4.TabIndex = 14;
+            // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
@@ -266,6 +281,14 @@ namespace Team5_XN
             this.label6.Text = "*";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.textBox2.Location = new System.Drawing.Point(191, 10);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(122, 21);
+            this.textBox2.TabIndex = 18;
+            // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
@@ -299,13 +322,13 @@ namespace Team5_XN
             this.label7.Text = "*";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox4
+            // textBox3
             // 
-            this.textBox4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox4.Location = new System.Drawing.Point(412, 7);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(101, 21);
-            this.textBox4.TabIndex = 14;
+            this.textBox3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.textBox3.Location = new System.Drawing.Point(191, 39);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(122, 21);
+            this.textBox3.TabIndex = 12;
             // 
             // label4
             // 
@@ -354,7 +377,7 @@ namespace Team5_XN
             // pnlDgv1
             // 
             this.pnlDgv1.BackColor = System.Drawing.Color.White;
-            this.pnlDgv1.Controls.Add(this.dataGridView1);
+            this.pnlDgv1.Controls.Add(this.dgvSysMaster);
             this.pnlDgv1.Controls.Add(this.pnlSubject1);
             this.pnlDgv1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlDgv1.Location = new System.Drawing.Point(0, 54);
@@ -364,37 +387,16 @@ namespace Team5_XN
             this.pnlDgv1.Size = new System.Drawing.Size(535, 607);
             this.pnlDgv1.TabIndex = 19;
             // 
-            // dataGridView1
+            // dgvSysMaster
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(530, 572);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "시스템정의 대분류코드";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 160;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "시스템정의 대분류명";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 140;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "비고";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 180;
+            this.dgvSysMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSysMaster.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSysMaster.Location = new System.Drawing.Point(0, 35);
+            this.dgvSysMaster.Name = "dgvSysMaster";
+            this.dgvSysMaster.RowTemplate.Height = 23;
+            this.dgvSysMaster.Size = new System.Drawing.Size(530, 572);
+            this.dgvSysMaster.TabIndex = 1;
+            this.dgvSysMaster.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSysMaster_CellClick);
             // 
             // pnlSubject1
             // 
@@ -508,32 +510,6 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(19, 52);
             this.panel2.TabIndex = 0;
             // 
-            // placeholderTextBox1
-            // 
-            this.placeholderTextBox1.Location = new System.Drawing.Point(412, 34);
-            this.placeholderTextBox1.Multiline = true;
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.PlaceholderText = "비고";
-            this.placeholderTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.placeholderTextBox1.Size = new System.Drawing.Size(231, 52);
-            this.placeholderTextBox1.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox3.Location = new System.Drawing.Point(191, 39);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 21);
-            this.textBox3.TabIndex = 12;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox2.Location = new System.Drawing.Point(191, 10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 21);
-            this.textBox2.TabIndex = 18;
-            // 
             // frmSystemCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -545,15 +521,16 @@ namespace Team5_XN
             this.Controls.Add(this.pnlSelect);
             this.Name = "frmSystemCode";
             this.Text = "시스템코드 상세분류";
+            this.Load += new System.EventHandler(this.frmSystemCode_Load);
             this.pnlDgv2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSysDetail)).EndInit();
             this.panel3.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnlSubject2.ResumeLayout(false);
             this.pnlDgv1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSysMaster)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
@@ -564,7 +541,7 @@ namespace Team5_XN
         #endregion
 
         private System.Windows.Forms.Panel pnlDgv2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvSysDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
@@ -589,10 +566,7 @@ namespace Team5_XN
         private System.Windows.Forms.Panel pnlSubject2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel pnlDgv1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridView dgvSysMaster;
         private System.Windows.Forms.Panel pnlSubject1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnlSelect;

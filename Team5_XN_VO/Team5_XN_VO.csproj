@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonVO.cs" />
     <Compile Include="ProcessVO.cs" />
     <Compile Include="ProductionVO\PlanVO.cs" />
     <Compile Include="ProductionVO\RequestVO.cs" />
