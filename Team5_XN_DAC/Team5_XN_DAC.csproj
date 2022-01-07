@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CommonDAC.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="ItemDAC.cs" />
     <Compile Include="MenuDAC.cs" />
     <Compile Include="ProcessDAC.cs" />
     <Compile Include="ProductionDAC\PlanDAC.cs" />

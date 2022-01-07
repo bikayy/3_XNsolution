@@ -13,8 +13,6 @@ namespace Team5_XN
 {
     public partial class frmProcess : Form
     {
-        ProcessDAC pdac;
-        CommonDAC cdac;
         ProcessService pserv;
         CommonService cserv;
 
@@ -59,7 +57,7 @@ namespace Team5_XN
             //GetCommonCodeList
             string[] code = { "USE_YN", "PROC_GROUP" };
 
-            cdac = new CommonDAC();
+            //cdac = new CommonDAC();
             cserv = new CommonService();
 
             DataTable dtSysCode = cserv.GetCommonCodeSys(code); 
@@ -93,7 +91,7 @@ namespace Team5_XN
 
             ChangeValue_Check(0);
 
-            pdac = new ProcessDAC();
+            //pdac = new ProcessDAC();
             pserv = new ProcessService();
             dt = pserv.GetProcess();
             dt_DB = dt.Copy();
@@ -123,6 +121,7 @@ namespace Team5_XN
             dataGridView1.DataSource = dv_SerchList;
             rowCount = dv_SerchList.Count;
             dataGridView1.CurrentCell = null;
+            ControlTextReset();
 
         }
 
@@ -131,21 +130,14 @@ namespace Team5_XN
         {
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
-
             ChangeValue_Check(1); //추가
             //dataGridView1.AllowUserToAddRows = true;
             DataRow dr = dt.NewRow();
             dt.Rows.Add(dr);
             dt.AcceptChanges();
-            //dataGridView1.Rows[dataGridView1.RowCount - 1].DefaultCellStyle.BackColor = Color.AliceBlue;
-            
-            //if (dataGridView1.Rows.Count-1 >= rowCount)
-            //{
-            //    dataGridView1.Rows[dt.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Yellow;
-            //}
             dataGridView1.DataSource = dt;
-            dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.RowCount-1];
-
+            dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.RowCount - 1];
+            dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, dataGridView1.RowCount - 1));
         }
 
         //편집 이벤트
@@ -153,9 +145,9 @@ namespace Team5_XN
         {
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
-
             ChangeValue_Check(2); //편집
-            
+            if (dataGridView1.CurrentRow != null)
+                dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, dataGridView1.CurrentRow.Index));
         }
 
         //저장 이벤트
@@ -163,8 +155,8 @@ namespace Team5_XN
         { 
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
-            int result=0;
-            string use_YN;
+            int result = 0;
+
             //dataGridView1_CellValueChanged(dataGridView1, new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentRow.Index));
 
             DataTable dt2 = new DataTable();
@@ -179,34 +171,46 @@ namespace Team5_XN
             dt2.Columns.Add(new DataColumn("Up_Emp", typeof(string)));
 
             pserv = new ProcessService();
+
             //저장-추가
-            if (check==1)
+            if (check == 1)
             {
 
                 foreach (DataRow dr in dt.Rows)
                 {
                     if (dt.Rows.IndexOf(dr) >= rowCount)
                     {
-                        for(int i=0; i<5; i++)
-                        {
-                            int q = dt.Rows.IndexOf(dr);
-                            if (dataGridView1[i,q].Value.ToString().Length < 1)
+                        int r = dt.Rows.IndexOf(dr);
+
+                        DataView dv_duple = new DataView(dt_DB);
+                        dv_duple.RowFilter = $"Process_Code = '{dataGridView1[0, r].Value.ToString()}'";
+                        if (dv_duple.Count > 0) 
+                        { 
+                            MessageBox.Show($"공정코드 값은 중복될 수 없습니다. ({dataGridView1[0, r].Value.ToString()}) \n → {r + 1}행, 1열");
+                            dataGridView1.CurrentCell = dataGridView1[0, r];
+                            dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, r));
+                            return;
+                        }
+
+
+                        for (int c=0; c<5; c++)
+                        {                           
+                            if (dataGridView1[c,r].Value.ToString().Length < 1)
                             {
-                                if (i == 3) continue;
-                                MessageBox.Show($"입력하지 않은 항목이 있습니다. \n{dataGridView1.Columns[i].HeaderText} -- {q+1}행, {i+1}열");
+                                if (c == 3) continue;
+                                MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dataGridView1.Columns[c].HeaderText}) \n → {r+1}행, {c+1}열");
+                                dataGridView1.CurrentCell = dataGridView1[c, r];
+                                dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(c, r));
                                 return;
                             }
                         }
-                        
-                        if (dr["Use_YN"] == "예") use_YN = "Y";
-                        else use_YN = "N";
 
                         DataRow drNew = dt2.NewRow();
                         drNew["Process_Code"] = dr["Process_Code"];
                         drNew["Process_Name"] = dr["Process_Name"];
                         drNew["Process_Group"] = dr["Process_Group"];
                         drNew["Remark"] = dr["Remark"];
-                        drNew["Use_YN"] = use_YN;
+                        drNew["Use_YN"] = (dr["use_YN"].ToString() == "예") ? "Y" : "N";
                         drNew["Ins_Date"] = dr["Ins_Date"];
                         drNew["Ins_Emp"] = dr["Ins_Emp"];
                         drNew["Up_Date"] = dr["Up_Date"];
@@ -233,16 +237,12 @@ namespace Team5_XN
                         string b = dr[dc].ToString();
                         if (b != a)
                         {
-                            string c = dr["Use_YN"].ToString();
-                            if (dr["Use_YN"].ToString() == "예") use_YN = "Y";
-                            else use_YN = "N";
-
                             DataRow drNew = dt2.NewRow();
                             drNew["Process_Code"] = dr["Process_Code"];
                             drNew["Process_Name"] = dr["Process_Name"];
                             drNew["Process_Group"] = dr["Process_Group"];
                             drNew["Remark"] = dr["Remark"];
-                            drNew["Use_YN"] = use_YN;
+                            drNew["Use_YN"] = (dr["use_YN"].ToString() == "예") ? "Y" : "N";
                             drNew["Ins_Date"] = dr["Ins_Date"];
                             drNew["Ins_Emp"] = dr["Ins_Emp"];
                             drNew["Up_Date"] = dr["Up_Date"];
@@ -254,7 +254,7 @@ namespace Team5_XN
                         }
                     }
                 }
-
+                dt2.AcceptChanges();
                 result = pserv.SaveProcess(dt2, check);
 
             }
@@ -294,6 +294,8 @@ namespace Team5_XN
                 if (dataGridView1.CurrentCell.RowIndex >= rowCount)
                 {
                     dt.Rows.Remove(dt.Rows[dataGridView1.CurrentCell.RowIndex]);
+                    dt.AcceptChanges();
+                    dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex));
                 }
                 else
                 {
@@ -358,19 +360,19 @@ namespace Team5_XN
                 main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = true;
                 main.toolSave.Enabled = main.toolCancle.Enabled = false;
                 main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
-                foreach (Control ctrl in pnlDetail.Controls)
-                {
-                    if (ctrl is TextBox txt)
-                    {
-                        txt.ReadOnly = true;
-                        txt.Text = "";
-                    }
-                    else if (ctrl is ComboBox cbo)
-                    {
-                        cbo.Enabled = false;
-                        cbo.Text = "";
-                    }
-                }
+                //foreach (Control ctrl in pnlDetail.Controls)
+                //{
+                //    if (ctrl is TextBox txt)
+                //    {
+                //        txt.ReadOnly = true;
+                //        txt.Text = "";
+                //    }
+                //    else if (ctrl is ComboBox cbo)
+                //    {
+                //        cbo.Enabled = false;
+                //        cbo.Text = "";
+                //    }
+                //}
                 
             }
             //추가
@@ -390,6 +392,8 @@ namespace Team5_XN
 
                 main.toolUpdate.BackColor = Color.Yellow;
             }
+
+            ControlState();
             //삭제
             //else if (check == 3)
             //{
@@ -402,40 +406,43 @@ namespace Team5_XN
         //셀 클릭시 입력정보 출력
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 ) return;
+            if (e.RowIndex < 0) return;
 
-            if (check <= 1) //0:기본, 1:추가
-                if (e.RowIndex >= rowCount) //추가한 행
-                {
-                    foreach (Control ctrl in pnlDetail.Controls)
-                    {
-                        if (ctrl is TextBox txt)
-                            txt.ReadOnly = false;
-                        else if (ctrl is ComboBox cbo)
-                            cbo.Enabled = true;
-                    }
-                }
-                else //기존 행
-                {
-                    foreach (Control ctrl in pnlDetail.Controls)
-                    {
-                        if (ctrl is TextBox txt)
-                            txt.ReadOnly = true;
-                        else if (ctrl is ComboBox cbo)
-                            cbo.Enabled = false;
-                    }
-                }
-            else if (check == 2) //2:편집
-            {
-                foreach (Control ctrl in pnlDetail.Controls)
-                {
-                    if (ctrl.Name == "txtProcessCode") continue;
-                    else if (ctrl is TextBox txt)
-                        txt.ReadOnly = false;
-                    else if (ctrl is ComboBox cbo)
-                        cbo.Enabled = true;
-                }
-            }
+
+            if (check == 1) ControlState();
+
+            //if (check <= 1) //0:기본, 1:추가
+            //    if (e.RowIndex >= rowCount) //추가한 행
+            //    {
+            //        foreach (Control ctrl in pnlDetail.Controls)
+            //        {
+            //            if (ctrl is TextBox txt)
+            //                txt.ReadOnly = false;
+            //            else if (ctrl is ComboBox cbo)
+            //                cbo.Enabled = true;
+            //        }
+            //    }
+            //    else //기존 행
+            //    {
+            //        foreach (Control ctrl in pnlDetail.Controls)
+            //        {
+            //            if (ctrl is TextBox txt)
+            //                txt.ReadOnly = true;
+            //            else if (ctrl is ComboBox cbo)
+            //                cbo.Enabled = false;
+            //        }
+            //    }
+            //else if (check == 2) //2:편집
+            //{
+            //    foreach (Control ctrl in pnlDetail.Controls)
+            //    {
+            //        if (ctrl.Name == "txtProcessCode") continue;
+            //        else if (ctrl is TextBox txt)
+            //            txt.ReadOnly = false;
+            //        else if (ctrl is ComboBox cbo)
+            //            cbo.Enabled = true;
+            //    }
+            //}
 
             //dataGridView1.ReadOnly = true;
             //DataView dv1 = new DataView(dt);
@@ -453,10 +460,84 @@ namespace Team5_XN
             //= dv_SerchList[e.RowIndex]["Use_YN"].ToString();
         }
 
+        private void ControlState()
+        {
+            if (check <= 1) //0:기본, 1:추가
+                if (check == 1 && dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index >= rowCount) //추가한 행
+                {
+
+                    foreach (Control ctrl in pnlDetail.Controls)
+                    {
+                        if (ctrl is Label) continue;
+
+                        else if (ctrl is TextBox txt)
+                            txt.ReadOnly = false;
+                        else if (ctrl is ComboBox cbo)
+                            cbo.Enabled = true;
+                    }
+                }
+                else //기존 행
+                {
+                    foreach (Control ctrl in pnlDetail.Controls)
+                    {
+                        if (ctrl is Label) continue;
+                        else if(ctrl is TextBox txt)
+                            txt.ReadOnly = true;
+                        else if (ctrl is ComboBox cbo)
+                            cbo.Enabled = false;
+                    }
+                }
+            else if (check == 2) //2:편집
+            {
+                
+                foreach (Control ctrl in pnlDetail.Controls)
+                {
+                    if (ctrl is Label) continue;
+                    else if(ctrl is TextBox txt)
+                    {
+                        if (ctrl.Name.Equals("txtProcessCode")) continue;
+                        txt.ReadOnly = false;
+                    }
+                    else if (ctrl is ComboBox cbo)
+                        cbo.Enabled = true;
+                }
+            }
+        }
+
+        private void ControlTextReset()
+        {
+            txtProcessCode.Text =
+            txtProcessName.Text =
+            txtRemark.Text =
+            cboProcessGroup.Text =
+            cboUse_YN.Text = "";
+        }
+
+       
+
+        // 하단 입력정보에 값 입력시, 상단 dgv에도 값이 입력됨
+        private void txtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell == null) return;
+            if ((check == 1 && dataGridView1.CurrentRow.Index >= rowCount) || check == 2)
+            {
+                //if (dt == null) return;
+                Control ctrl = ((Control)sender);
+                dataGridView1[ctrl.Tag.ToString(), dataGridView1.CurrentCell.RowIndex].Value = ctrl.Text;
+                //dt.Rows[dataGridView1.CurrentCell.RowIndex][ctrl.TabIndex] = ctrl.Text;
+            }
+        }
+
+
+
+/************************************************************************************************************/
+/************************************************************************************************************/
+
+
         //셀편집기능
         private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            
+
             DataGridView dgv = (DataGridView)sender;
             //기본, 추가
             if (check <= 1)
@@ -467,7 +548,7 @@ namespace Team5_XN
             //편집
             else if (check == 2)
             {
-                if (e.ColumnIndex == 0) 
+                if (e.ColumnIndex == 0)
                     e.Cancel = true;
             }
         }
@@ -477,24 +558,15 @@ namespace Team5_XN
         {
             if (check < 1) return;
             DataGridView col = ((DataGridView)sender);
-            foreach(Control ctrl in pnlDetail.Controls)
+            foreach (Control ctrl in pnlDetail.Controls)
             {
-                if (ctrl.Tag == col.Columns[e.ColumnIndex].DataPropertyName) { 
+                if (ctrl.Tag == col.Columns[e.ColumnIndex].DataPropertyName)
+                {
                     ctrl.Text = col[e.ColumnIndex, e.RowIndex].Value.ToString();
                     return;
                 }
 
             }
-        }
-
-        // 하단 입력정보에 값 입력시, 상단 dgv에도 값이 입력됨
-        private void txtBox_TextChanged(object sender, EventArgs e)
-        {
-            if (check < 1) return;
-            //if (dt == null) return;
-            Control ctrl = ((Control)sender);
-            dataGridView1[ctrl.Tag.ToString(), dataGridView1.CurrentCell.RowIndex].Value = ctrl.Text;
-            //dt.Rows[dataGridView1.CurrentCell.RowIndex][ctrl.TabIndex] = ctrl.Text;
         }
 
         private void dataGridView1_Leave(object sender, EventArgs e)

@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
-using System.Data;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Team5_XN
 {
-    public class WorkCenterDAC : IDisposable
+    public class ItemDAC : IDisposable
     {
         SqlConnection conn;
-        public WorkCenterDAC()
+        public ItemDAC()
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["local"].ConnectionString);
         }
@@ -23,18 +23,17 @@ namespace Team5_XN
             //throw new NotImplementedException();
         }
 
-        public DataTable GetWorkCenter()
+        /// <summary>
+        /// frmItem 폼의 조회(Select) 기능
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetItem()
         {
             string sql = @"
-SELECT 
-    Wc_Code, Wc_Name, Wc_Group, Process_Code
-	, (select Process_Name from Process_Master pm where pm.Process_Code = wm.Process_Code)Process_Name 
-	, (select DetailName from CommonCodeSystem where DetailCode = Use_YN)Use_YN
-	, (select DetailName from CommonCodeSystem where DetailCode = Pallet_YN)Pallet_YN
-    , (select DetailName from CommonCodeSystem where DetailCode = Monitoring_YN) Monitoring_YN
-    , Remark, Ins_Date, Up_Date, Ins_Emp, Up_Emp
-FROM 
-    WorkCenter_Master wm";
+SELECT Item_Code, Item_Name, Item_Name_Eng, Item_Type,  Item_Unit, Remark
+    ,(select DetailName from CommonCodeSystem where DetailCode = Use_YN) Use_YN
+    ,PrdQty_Per_Hour, Cavity_qty, Ins_Date, Ins_Emp, Up_Date, Up_Emp
+FROM Item_Master;";
             //, Ins_Date, Ins_Emp, Up_Date, Up_Emp
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
@@ -44,18 +43,23 @@ FROM
             return dt;
         }
 
-
-        public int SaveWorkCenter(DataTable dt, int check)
+        /// <summary>
+        /// frmItem 폼의 저장(save) 기능 SP
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="check"></param>
+        /// <returns></returns>
+        public int SaveItem(DataTable dt, int check)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("SP_WorkCenter_Save", conn);
+                SqlCommand cmd = new SqlCommand("SP_Item_Save", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Connection.Open();
 
-                cmd.Parameters.Add(new SqlParameter("@WorkCenter_Data", System.Data.SqlDbType.Structured)
+                cmd.Parameters.Add(new SqlParameter("@Item_Data", System.Data.SqlDbType.Structured)
                 {
-                    TypeName = "dbo.WorkCenter_Master_Type",
+                    TypeName = "dbo.Item_Master_Type",
                     Value = dt
                 });
                 cmd.Parameters.AddWithValue("@Check", check);
@@ -70,14 +74,19 @@ FROM
             }
         }
 
-        public bool DeleteWorkCenter(string wcCode)
+        /// <summary>
+        /// frmItem 폼의 삭제(Delete) 기능 SP 
+        /// </summary>
+        /// <param name="itemCode"></param>
+        /// <returns></returns>
+        public bool DeleteItem(string itemCode)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("SP_WorkCenter_Delete", conn);
+                SqlCommand cmd = new SqlCommand("SP_Item_Delete", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Connection.Open();
-                cmd.Parameters.AddWithValue("@Wc_Code", wcCode);
+                cmd.Parameters.AddWithValue("@Item_Code", itemCode);
 
                 return cmd.ExecuteNonQuery() > 0;
             }

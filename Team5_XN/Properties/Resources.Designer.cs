@@ -103,6 +103,16 @@ namespace Team5_XN.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_refresh_page_option_25429 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-refresh-page-option-25429", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_close_black {
             get {
                 object obj = ResourceManager.GetObject("icon_close_black", resourceCulture);
@@ -156,6 +166,16 @@ namespace Team5_XN.Properties {
         internal static System.Drawing.Bitmap icon_xn_delete {
             get {
                 object obj = ResourceManager.GetObject("icon_xn_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_xn_refresh {
+            get {
+                object obj = ResourceManager.GetObject("icon_xn_refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

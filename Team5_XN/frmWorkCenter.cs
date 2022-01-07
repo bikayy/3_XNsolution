@@ -12,8 +12,8 @@ namespace Team5_XN
 {
     public partial class frmWorkCenter : Form
     {
-        WorkCenterDAC wdac;
-        CommonDAC cdac;
+        //WorkCenterDAC wdac;
+        //CommonDAC cdac;
         WorkCenterService wserv;
         CommonService cserv;
 
@@ -50,18 +50,18 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장코드", "Wc_Code", colWidth: 200);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장명", "Wc_Name", colWidth: 250, align: DataGridViewContentAlignment.MiddleLeft);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장그룹", "Wc_Group", colWidth: 150);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정그룹", "Process_Code", colWidth: 150);
-
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정코드", "Process_Code", colWidth: 150);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정명", "Process_Name", colWidth: 150);
+            
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "모니터링여부", "Monitoring_YN", colWidth: 80);            
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "팔렛생성유무", "Pallet_YN", colWidth: 80);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "사용유무", "Use_YN", colWidth: 80);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고", "Remark", colWidth: 150);
-            dataGridView1.ReadOnly = false;
 
 
             string[] code = { "USE_YN", "WC_GROUP" };
 
-            cdac = new CommonDAC();
+            //cdac = new CommonDAC();
             cserv = new CommonService();
 
             DataTable dtSysCode = cserv.GetCommonCodeSys(code);
@@ -76,12 +76,22 @@ namespace Team5_XN
 
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
         }
+
         private void OnSelect(object sender, EventArgs e)
         {
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
+            if (check > 0)
+            {
+                OnCancle(this, e);
+
+                if (this.DialogResult == DialogResult.No)
+                    return;
+            }
+
             ChangeValue_Check(0);
 
-            wdac = new WorkCenterDAC();
+            //wdac = new WorkCenterDAC();
             wserv = new WorkCenterService();
             dt = wserv.GetWorkCenter();
             dt_DB = dt.Copy();
@@ -101,44 +111,196 @@ namespace Team5_XN
                 //if (sb.Length > 0) sb.Append(" AND ");
                 sb.Append(" AND Wc_Name LIKE '%" + txtSelectWcName.Text + "%'");
             }
+            if (!string.IsNullOrWhiteSpace(txtSelectProcessCode1.Text))
+            {
+                //if (sb.Length > 0) sb.Append(" AND ");
+                sb.Append(" AND Process_Code LIKE '%" + txtSelectProcessCode1.Text + "%'");
+            }
             if (!cboSelectUse_YN.Text.Equals("전체"))
             {
                 //if (sb.Length > 0) sb.Append(" AND ");
                 sb.Append(" AND Use_YN = '" + cboSelectUse_YN.Text + "'");
             }
-            /******* --- (!!)if 공정그룹 추가 필요 ! *********/
 
             dv_SerchList.RowFilter = sb.ToString();
             dataGridView1.DataSource = dv_SerchList;
             rowCount = dv_SerchList.Count;
             dataGridView1.CurrentCell = null;
-
+            ControlTextReset();
 
 
         }
         private void OnCreate(object sender, EventArgs e)
         {
-            if (((Main)this.MdiParent).ActiveMdiChild != this) return; 
-            
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
             ChangeValue_Check(1); //추가
+
             //dataGridView1.AllowUserToAddRows = true;
             DataRow dr = dt.NewRow();
             dt.Rows.Add(dr);
             dt.AcceptChanges();
             dataGridView1.DataSource = dt;
             dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.RowCount - 1];
+            dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, dataGridView1.RowCount - 1));
+
+            
         }
 
         private void OnUpdate(object sender, EventArgs e)
         {
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
             ChangeValue_Check(2); //편집
+            if (dataGridView1.CurrentRow != null)
+                dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, dataGridView1.CurrentRow.Index));
         }
 
 
         private void OnSave(object sender, EventArgs e)
         {
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
+            int result = 0;
+
+            //dataGridView1_CellValueChanged(dataGridView1, new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentRow.Index));
+
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add(new DataColumn("Wc_Code", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Wc_Name", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Wc_Group", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Process_Code", typeof(string)));
+
+            dt2.Columns.Add(new DataColumn("Monitoring_YN", typeof(char)));
+            dt2.Columns.Add(new DataColumn("Pallet_YN", typeof(char)));
+            dt2.Columns.Add(new DataColumn("Use_YN", typeof(char)));
+            dt2.Columns.Add(new DataColumn("Remark", typeof(string)));
+
+            dt2.Columns.Add(new DataColumn("Ins_Date", typeof(DateTime)));
+            dt2.Columns.Add(new DataColumn("Ins_Emp", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Up_Date", typeof(DateTime)));
+            dt2.Columns.Add(new DataColumn("Up_Emp", typeof(string)));
+
+            wserv = new WorkCenterService();
+
+            //저장-추가
+            if (check == 1)
+            {
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (dt.Rows.IndexOf(dr) >= rowCount)
+                    {
+                        int r = dt.Rows.IndexOf(dr);
+
+                        DataView dv_duple = new DataView(dt_DB);
+                        dv_duple.RowFilter = $"Wc_Code = '{dataGridView1[0, r].Value.ToString()}'";
+                        if (dv_duple.Count > 0)
+                        {
+                            MessageBox.Show($"작업장코드 값은 중복될 수 없습니다. ({dataGridView1[0, r].Value.ToString()}) \n → {r + 1}행, 1열");
+                            dataGridView1.CurrentCell = dataGridView1[0, r];
+                            dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, r));
+                            return;
+                        }
+
+
+                        for (int c = 0; c < 9; c++)
+                        {
+                            if (dataGridView1[c, r].Value.ToString().Length < 1)
+                            {
+                                if (dataGridView1.Columns[c].DataPropertyName == "Remark") continue;
+                                MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dataGridView1.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
+                                dataGridView1.CurrentCell = dataGridView1[c, r];
+                                dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(c, r));
+                                return;
+                            }
+                        }
+
+                        DataRow drNew = dt2.NewRow();
+                        drNew["Wc_Code"] = dr["Wc_Code"];
+                        drNew["Wc_Name"] = dr["Wc_Name"];
+                        drNew["Wc_Group"] = dr["Wc_Group"];
+                        drNew["Process_Code"] = dr["Process_Code"];
+                        //drNew["Process_Name"] = dr["Process_Name"];
+                        
+                        drNew["Monitoring_YN"] = (dr["Monitoring_YN"].ToString() == "예") ? "Y" : "N";
+                        drNew["Pallet_YN"] = (dr["Pallet_YN"].ToString() == "예") ? "Y" : "N";
+                        drNew["Use_YN"] = (dr["use_YN"].ToString() == "예") ? "Y" : "N";
+
+                        drNew["Remark"] = dr["Remark"];
+
+                        drNew["Ins_Date"] = dr["Ins_Date"];
+                        drNew["Ins_Emp"] = dr["Ins_Emp"];
+                        drNew["Up_Date"] = dr["Up_Date"];
+                        drNew["Up_Emp"] = dr["Up_Emp"];
+
+                        dt2.Rows.Add(drNew);
+                    }
+                }
+                dt2.AcceptChanges();
+
+                result = wserv.SaveWorkCenter(dt2, check);
+
+            }
+            //저장-편집
+            else if (check == 2)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    foreach (DataColumn dc in dt.Columns)
+                    {
+
+                        string dataDB = dt_DB.Rows[dt.Rows.IndexOf(dr)][dt.Columns.IndexOf(dc)].ToString();
+                        string dataNow = dr[dc].ToString();
+                        if (dataNow != dataDB)
+                        {
+                            DataRow drNew = dt2.NewRow();
+                            drNew["Wc_Code"] = dr["Wc_Code"];
+                            drNew["Wc_Name"] = dr["Wc_Name"];
+                            drNew["Wc_Group"] = dr["Wc_Group"];
+                            drNew["Process_Code"] = dr["Process_Code"];
+                            //drNew["Process_Name"] = dr["Process_Name"];
+
+                            drNew["Monitoring_YN"] = (dr["Monitoring_YN"].ToString() == "예") ? "Y" : "N";
+                            drNew["Pallet_YN"] = (dr["Pallet_YN"].ToString() == "예") ? "Y" : "N";
+                            drNew["Use_YN"] = (dr["use_YN"].ToString() == "예") ? "Y" : "N";
+
+                            drNew["Remark"] = dr["Remark"];
+
+                            drNew["Ins_Date"] = dr["Ins_Date"];
+                            drNew["Ins_Emp"] = dr["Ins_Emp"];
+                            drNew["Up_Date"] = dr["Up_Date"];
+                            drNew["Up_Emp"] = dr["Up_Emp"];
+
+                            dt2.Rows.Add(drNew);
+                            
+                           break;
+                            // dt2.ImportRow(dr);
+                        }
+                    }
+                }
+                dt2.AcceptChanges();
+
+                result = wserv.SaveWorkCenter(dt2, check);
+
+            }
+
+            if (result > 0)
+            {
+                MessageBox.Show("저장 완료");
+                ChangeValue_Check(0);
+                OnSelect(this, e);
+
+            }
+            else if (result < 0)
+            {
+                MessageBox.Show("저장 실패");
+            }
+            else
+            {
+                MessageBox.Show("저장할 데이터가 없습니다.");
+            }
+
 
         }
 
@@ -157,6 +319,11 @@ namespace Team5_XN
                 if (dataGridView1.CurrentCell.RowIndex >= rowCount)
                 {
                     dt.Rows.Remove(dt.Rows[dataGridView1.CurrentCell.RowIndex]);
+                    dt.AcceptChanges();
+
+                    //if (dataGridView1.RowCount == rowCount)
+                    //    dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.RowCount-1];
+                    dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex));
                 }
                 else
                 {
@@ -165,11 +332,11 @@ namespace Team5_XN
             }
             else //if (check == 3) //3:삭제
             {
-                if (MessageBox.Show($"[{txtSelectWcCode.Text}] 데이터를 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show($"[{txtWcCode.Text}] 데이터를 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
 
                     wserv = new WorkCenterService();
-                    bool result = true;// = wserv.DeleteProcess(txtSelectWcCode.Text);
+                    bool result = wserv.DeleteProcess(txtWcCode.Text);
                     if (result)
                     {
                         MessageBox.Show("삭제 완료");
@@ -214,20 +381,21 @@ namespace Team5_XN
         private void ChangeValue_Check(int check)
         {
             this.check = check;
-
+            
             //기본
             if (check == 0)
             {
                 main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = true;
                 main.toolSave.Enabled = main.toolCancle.Enabled = false;
                 main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
-                foreach (Control ctrl in pnlDetail.Controls)
-                {
-                    if (ctrl is TextBox txt)
-                        txt.ReadOnly = true;
-                    else if (ctrl is ComboBox cbo)
-                        cbo.Enabled = false;
-                }
+                //foreach (Control ctrl in pnlDetail2.Controls)
+                //{
+                //    if (ctrl is TextBox txt)
+                //        txt.ReadOnly = true;
+                //    else if (ctrl is ComboBox cbo)
+                //        cbo.Enabled = false;
+                //}
+                //return;
             }
             //추가
             else if (check == 1)
@@ -246,6 +414,8 @@ namespace Team5_XN
 
                 main.toolUpdate.BackColor = Color.Yellow;
             }
+
+            ControlState();
             //삭제
             //else if (check == 3)
             //{
@@ -253,45 +423,131 @@ namespace Team5_XN
             //}
         }
 
-        //셀편집기능
-        private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-
-            DataGridView dgv = (DataGridView)sender;
-            //기본, 추가
-            if (check <= 1)
-            {
-                if (e.RowIndex < rowCount)
-                    e.Cancel = true;
-            }
-            //편집
-            else if (check == 2)
-            {
-                if (e.ColumnIndex == 0)
-                    e.Cancel = true;
-            }
-        }
-
-        //상단 dgv에 값 입력시, 하단 입력정보에도 값이 입력됨
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (check < 1) return;
-            DataGridView col = ((DataGridView)sender);
-            foreach (Control ctrl in pnlDetail.Controls)
-            {
-                if (ctrl.Tag == col.Columns[e.ColumnIndex].DataPropertyName)
-                    ctrl.Text = col[e.ColumnIndex, e.RowIndex].Value.ToString();
-            }
-        }
 
         // 하단 입력정보에 값 입력시, 상단 dgv에도 값이 입력됨
         private void txtBox_TextChanged(object sender, EventArgs e)
         {
-            if (check < 1) return;
-            //if (dt == null) return;
-            Control ctrl = ((Control)sender);
-            dataGridView1[ctrl.Tag.ToString(), dataGridView1.CurrentCell.RowIndex].Value = ctrl.Text;
-            //dt.Rows[dataGridView1.CurrentCell.RowIndex][ctrl.TabIndex] = ctrl.Text;
+            if (dataGridView1.CurrentCell == null) return;
+            if ((check == 1 && dataGridView1.CurrentRow.Index >= rowCount) || check == 2)
+            {
+                //if (dt == null) return;
+                Control ctrl = ((Control)sender);
+                dataGridView1[ctrl.Tag.ToString(), dataGridView1.CurrentCell.RowIndex].Value = ctrl.Text;
+                //dt.Rows[dataGridView1.CurrentCell.RowIndex][ctrl.TabIndex] = ctrl.Text;
+            }
+        }
+
+        //셀 클릭시 입력정보 출력
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+
+            if(check==1) ControlState();
+
+            //dataGridView1.ReadOnly = true;
+            //DataView dv1 = new DataView(dt);
+            //dv1.RowFilter = "Parent_Screen_Code is null or Parent_Screen_Code = ''";
+
+            //txtProcessCode.Text = dv1[e.RowIndex]["Process_Code"].ToString();
+
+            txtWcCode.Text = dataGridView1["Wc_Code", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtWcName.Text = dataGridView1["Wc_Name", dataGridView1.CurrentRow.Index].Value.ToString();
+            cboWcGroup.Text = dataGridView1["Wc_Group", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtProcessCode.Text = dataGridView1["Process_Code", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtProcessName.Text = dataGridView1["Process_Name", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtRemark.Text = dataGridView1["Remark", dataGridView1.CurrentRow.Index].Value.ToString();
+
+            cboUse_YN.Text = dataGridView1["Use_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+            cboMonitoring_YN.Text = dataGridView1["Monitoring_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+            cboPallet_YN.Text = dataGridView1["Pallet_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+
+        }
+
+
+        private void ControlState()
+        {
+            if (check <= 1) //0:기본, 1:추가
+                if (check==1 && dataGridView1.CurrentRow!=null && dataGridView1.CurrentRow.Index >= rowCount) //추가한 행
+                {
+                    
+                    foreach (Control ctrl in pnlDetail.Controls)
+                    {
+                        if (ctrl is Label) continue;
+
+                        else if(ctrl is TextBox txt) 
+                        { 
+                            if (ctrl.Name.Contains("txtProcess")) continue;
+                            txt.ReadOnly = false;
+                        }
+                        else if (ctrl is ComboBox cbo)
+                            cbo.Enabled = true;
+                        else if(ctrl is Button btn)
+                            btn.Enabled = true;
+                    }
+                }
+                else //기존 행
+                {
+                    foreach (Control ctrl in pnlDetail.Controls)
+                    {
+                        if (ctrl is Label) continue;
+                        else if(ctrl is TextBox txt)
+                            txt.ReadOnly = true;
+                        else if (ctrl is ComboBox cbo)
+                            cbo.Enabled = false;
+                        else if (ctrl is Button btn)
+                            btn.Enabled = false;
+                    }
+                }
+            else if (check == 2) //2:편집
+            {
+                foreach (Control ctrl in pnlDetail.Controls)
+                {
+                    if (ctrl is Label) continue;
+                    else if(ctrl is TextBox txt)
+                    {
+                        if (ctrl.Name.Contains("txtProcess") || ctrl.Name.Equals("txtWcCode")) continue;
+                        txt.ReadOnly = false;
+                    }
+                    else if (ctrl is ComboBox cbo)
+                        cbo.Enabled = true;
+                    else if (ctrl is Button btn)
+                        btn.Enabled = true;
+                }
+            }
+        }
+
+        private void btnSelectProcess_Click(object sender, EventArgs e)
+        {
+            string btnName = ((Button)sender).Name;
+            PopupSearchProcess sp = new PopupSearchProcess();
+
+            if (sp.ShowDialog() == DialogResult.OK)
+            {
+                if (btnName.Contains("Select")) 
+                { 
+                    txtSelectProcessCode1.Text = sp.Send.Process_Code;
+                    txtSelectProcessCode2.Text = sp.Send.Process_Name;
+                }
+                else
+                {
+                    txtProcessCode.Text = sp.Send.Process_Code;
+                    txtProcessName.Text = sp.Send.Process_Name;
+                }
+            }
+        }
+
+        private void ControlTextReset()
+        {
+            txtWcCode.Text =
+            txtWcName.Text =
+            cboWcGroup.Text =
+            txtProcessCode.Text =
+            txtProcessName.Text =
+            txtRemark.Text =
+            cboUse_YN.Text =
+            cboMonitoring_YN.Text =
+            cboPallet_YN.Text = "";
         }
     }
 }

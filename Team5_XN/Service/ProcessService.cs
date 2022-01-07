@@ -35,5 +35,14 @@ namespace Team5_XN
 
             return result;
         }
+
+        public DataTable SearchProcess()
+        {
+            ProcessDAC db = new ProcessDAC();
+            DataTable result = db.SearchProcess();
+            db.Dispose();
+
+            return result;
+        }
     }
 }
