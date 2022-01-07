@@ -35,6 +35,7 @@ namespace Team5_XN
             this.label9 = new System.Windows.Forms.Label();
             this.pnlDetail2 = new System.Windows.Forms.Panel();
             this.pnlDetail = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.cboProcessGroup = new System.Windows.Forms.ComboBox();
             this.cboUse_YN = new System.Windows.Forms.ComboBox();
             this.label39 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@ namespace Team5_XN
             this.label3 = new System.Windows.Forms.Label();
             this.pnlBorder = new System.Windows.Forms.Panel();
             this.pnlSelect = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,7 +64,6 @@ namespace Team5_XN
             this.txtSelectProcessCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSubject1.SuspendLayout();
@@ -164,6 +163,17 @@ namespace Team5_XN
             this.pnlDetail.Name = "pnlDetail";
             this.pnlDetail.Size = new System.Drawing.Size(1274, 93);
             this.pnlDetail.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(7, 62);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(20, 23);
+            this.label8.TabIndex = 70;
+            this.label8.Text = "*";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboProcessGroup
             // 
@@ -369,7 +379,6 @@ namespace Team5_XN
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSelect.Controls.Add(this.button1);
             this.pnlSelect.Controls.Add(this.label13);
             this.pnlSelect.Controls.Add(this.label11);
             this.pnlSelect.Controls.Add(this.label10);
@@ -386,15 +395,6 @@ namespace Team5_XN
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1274, 50);
             this.pnlSelect.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1171, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 105;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -499,17 +499,6 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(19, 48);
             this.panel2.TabIndex = 0;
             // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(7, 62);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(20, 23);
-            this.label8.TabIndex = 70;
-            this.label8.Text = "*";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // frmProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -553,7 +542,6 @@ namespace Team5_XN
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlDetail;
         private System.Windows.Forms.ComboBox cboProcessGroup;
         private System.Windows.Forms.ComboBox cboUse_YN;
