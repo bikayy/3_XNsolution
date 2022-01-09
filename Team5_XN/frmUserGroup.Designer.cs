@@ -124,7 +124,7 @@ namespace Team5_XN
             // dgvUserGroup
             // 
             this.dgvUserGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserGroup.Dock = System.Windows.Forms.DockStyle.Right;
             this.dgvUserGroup.Location = new System.Drawing.Point(0, 35);
             this.dgvUserGroup.Name = "dgvUserGroup";
             this.dgvUserGroup.RowTemplate.Height = 23;

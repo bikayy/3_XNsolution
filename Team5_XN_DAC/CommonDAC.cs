@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using Team5_XN_VO;
 
 namespace Team5_XN
 {
@@ -49,6 +50,17 @@ ORDER BY DetailCode desc";
             string sql = $@"select CodeNum, Code, Name, DetailCode, DetailName
 from CommonCodeUser
 where Code in ('{code}');";
+
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+            }
+            return dt;
+        }
+        public DataTable GetSystemCodeMaster()
+        {
+            string sql = @"SELECT DISTINCT Code, Name FROM CommonCodeSystem";
 
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
