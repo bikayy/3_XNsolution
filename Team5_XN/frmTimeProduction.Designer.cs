@@ -44,9 +44,15 @@ namespace Team5_XN
             this.pnlSubject2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtSelectProcessCode2 = new System.Windows.Forms.TextBox();
+            this.txtSelectProcessCode1 = new System.Windows.Forms.TextBox();
+            this.btnSelectProcess = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboWoStatus = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
@@ -56,12 +62,6 @@ namespace Team5_XN
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSelectProcessCode2 = new System.Windows.Forms.TextBox();
-            this.txtSelectProcessCode1 = new System.Windows.Forms.TextBox();
-            this.btnSelectProcess = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSubject1.SuspendLayout();
             this.pnlDgv.SuspendLayout();
@@ -218,7 +218,7 @@ namespace Team5_XN
             this.pnlSelect.Controls.Add(this.btnSelectProcess);
             this.pnlSelect.Controls.Add(this.label2);
             this.pnlSelect.Controls.Add(this.label13);
-            this.pnlSelect.Controls.Add(this.comboBox1);
+            this.pnlSelect.Controls.Add(this.cboWoStatus);
             this.pnlSelect.Controls.Add(this.label4);
             this.pnlSelect.Controls.Add(this.label14);
             this.pnlSelect.Controls.Add(this.label48);
@@ -235,6 +235,64 @@ namespace Team5_XN
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1274, 94);
             this.pnlSelect.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(245, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(113, 22);
+            this.textBox1.TabIndex = 160;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox2.Location = new System.Drawing.Point(121, 61);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(95, 22);
+            this.textBox2.TabIndex = 159;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(219, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(22, 22);
+            this.button1.TabIndex = 158;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // txtSelectProcessCode2
+            // 
+            this.txtSelectProcessCode2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSelectProcessCode2.Location = new System.Drawing.Point(245, 35);
+            this.txtSelectProcessCode2.Name = "txtSelectProcessCode2";
+            this.txtSelectProcessCode2.Size = new System.Drawing.Size(113, 22);
+            this.txtSelectProcessCode2.TabIndex = 157;
+            // 
+            // txtSelectProcessCode1
+            // 
+            this.txtSelectProcessCode1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSelectProcessCode1.Location = new System.Drawing.Point(121, 35);
+            this.txtSelectProcessCode1.Name = "txtSelectProcessCode1";
+            this.txtSelectProcessCode1.Size = new System.Drawing.Size(95, 22);
+            this.txtSelectProcessCode1.TabIndex = 156;
+            // 
+            // btnSelectProcess
+            // 
+            this.btnSelectProcess.BackColor = System.Drawing.Color.Black;
+            this.btnSelectProcess.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnSelectProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSelectProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectProcess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSelectProcess.Location = new System.Drawing.Point(219, 35);
+            this.btnSelectProcess.Name = "btnSelectProcess";
+            this.btnSelectProcess.Size = new System.Drawing.Size(22, 22);
+            this.btnSelectProcess.TabIndex = 155;
+            this.btnSelectProcess.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -260,21 +318,21 @@ namespace Team5_XN
             this.label13.Text = "*";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // comboBox1
+            // cboWoStatus
             // 
-            this.comboBox1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(495, 7);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 153;
+            this.cboWoStatus.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboWoStatus.FormattingEnabled = true;
+            this.cboWoStatus.Location = new System.Drawing.Point(509, 7);
+            this.cboWoStatus.Name = "cboWoStatus";
+            this.cboWoStatus.Size = new System.Drawing.Size(121, 21);
+            this.cboWoStatus.TabIndex = 153;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(409, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 23);
+            this.label4.Size = new System.Drawing.Size(99, 23);
             this.label4.TabIndex = 152;
             this.label4.Text = "작업지시상태";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,7 +354,7 @@ namespace Team5_XN
             this.label48.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label48.Location = new System.Drawing.Point(39, 61);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(80, 23);
+            this.label48.Size = new System.Drawing.Size(93, 23);
             this.label48.TabIndex = 99;
             this.label48.Text = "품목명";
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -347,7 +405,7 @@ namespace Team5_XN
             this.label12.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label12.Location = new System.Drawing.Point(39, 35);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 23);
+            this.label12.Size = new System.Drawing.Size(93, 23);
             this.label12.TabIndex = 8;
             this.label12.Text = "공정";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -357,68 +415,10 @@ namespace Team5_XN
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(39, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 23);
+            this.label1.Size = new System.Drawing.Size(93, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "생산일자";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtSelectProcessCode2
-            // 
-            this.txtSelectProcessCode2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtSelectProcessCode2.Location = new System.Drawing.Point(245, 35);
-            this.txtSelectProcessCode2.Name = "txtSelectProcessCode2";
-            this.txtSelectProcessCode2.Size = new System.Drawing.Size(113, 22);
-            this.txtSelectProcessCode2.TabIndex = 157;
-            // 
-            // txtSelectProcessCode1
-            // 
-            this.txtSelectProcessCode1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtSelectProcessCode1.Location = new System.Drawing.Point(121, 35);
-            this.txtSelectProcessCode1.Name = "txtSelectProcessCode1";
-            this.txtSelectProcessCode1.Size = new System.Drawing.Size(95, 22);
-            this.txtSelectProcessCode1.TabIndex = 156;
-            // 
-            // btnSelectProcess
-            // 
-            this.btnSelectProcess.BackColor = System.Drawing.Color.Black;
-            this.btnSelectProcess.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.btnSelectProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSelectProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectProcess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelectProcess.Location = new System.Drawing.Point(219, 35);
-            this.btnSelectProcess.Name = "btnSelectProcess";
-            this.btnSelectProcess.Size = new System.Drawing.Size(22, 22);
-            this.btnSelectProcess.TabIndex = 155;
-            this.btnSelectProcess.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(245, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 22);
-            this.textBox1.TabIndex = 160;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(121, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(95, 22);
-            this.textBox2.TabIndex = 159;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(219, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 22);
-            this.button1.TabIndex = 158;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmTimeProduction
             // 
@@ -428,6 +428,7 @@ namespace Team5_XN
             this.Controls.Add(this.pnlBorder);
             this.Name = "frmTimeProduction";
             this.Text = "시간대별 생산현황";
+            this.Load += new System.EventHandler(this.frmTimeProduction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
             this.pnlDgv.ResumeLayout(false);
@@ -463,7 +464,7 @@ namespace Team5_XN
         private System.Windows.Forms.Panel pnlSubject2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboWoStatus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
