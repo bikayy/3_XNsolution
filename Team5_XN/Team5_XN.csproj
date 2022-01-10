@@ -247,6 +247,12 @@
     <Compile Include="frmSearchPopup.Designer.cs">
       <DependentUpon>frmSearchPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSiyuOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSiyuOrder.Designer.cs">
+      <DependentUpon>frmSiyuOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSystemCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -408,6 +414,7 @@
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\ItemService.cs" />
     <Compile Include="Service\ProcessService.cs" />
+    <Compile Include="Service\ProductionService\OrderService.cs" />
     <Compile Include="Service\ProductionService\PlanService.cs" />
     <Compile Include="Service\ProductionService\RequestService.cs" />
     <Compile Include="Service\SearchService\SearchService.cs" />
@@ -522,6 +529,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchPopup.resx">
       <DependentUpon>frmSearchPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSiyuOrder.resx">
+      <DependentUpon>frmSiyuOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemCode.resx">
       <DependentUpon>frmSystemCode.cs</DependentUpon>
