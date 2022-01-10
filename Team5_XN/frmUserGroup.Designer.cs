@@ -38,24 +38,24 @@ namespace Team5_XN
             this.label9 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboAdmin = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtGroupName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtGroupCode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtUserGroupName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cboUse = new System.Windows.Forms.ComboBox();
+            this.txtUserGroupCode = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -130,6 +130,7 @@ namespace Team5_XN
             this.dgvUserGroup.RowTemplate.Height = 23;
             this.dgvUserGroup.Size = new System.Drawing.Size(1274, 448);
             this.dgvUserGroup.TabIndex = 1;
+            this.dgvUserGroup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserGroup_CellClick);
             // 
             // pnlSubject1
             // 
@@ -168,16 +169,16 @@ namespace Team5_XN
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.cboAdmin);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtGroupName);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtGroupCode);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cboUseYN);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -187,15 +188,14 @@ namespace Team5_XN
             this.panel1.Size = new System.Drawing.Size(1274, 81);
             this.panel1.TabIndex = 12;
             // 
-            // comboBox3
+            // cboAdmin
             // 
-            this.comboBox3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(447, 43);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(101, 20);
-            this.comboBox3.TabIndex = 37;
-            this.comboBox3.Text = "예";
+            this.cboAdmin.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.cboAdmin.FormattingEnabled = true;
+            this.cboAdmin.Location = new System.Drawing.Point(463, 44);
+            this.cboAdmin.Name = "cboAdmin";
+            this.cboAdmin.Size = new System.Drawing.Size(101, 20);
+            this.cboAdmin.TabIndex = 37;
             // 
             // label10
             // 
@@ -213,18 +213,18 @@ namespace Team5_XN
             this.label11.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label11.Location = new System.Drawing.Point(365, 41);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 23);
+            this.label11.Size = new System.Drawing.Size(79, 23);
             this.label11.TabIndex = 35;
             this.label11.Text = "Admin 여부";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // txtGroupName
             // 
-            this.textBox3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox3.Location = new System.Drawing.Point(447, 13);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 21);
-            this.textBox3.TabIndex = 34;
+            this.txtGroupName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtGroupName.Location = new System.Drawing.Point(463, 13);
+            this.txtGroupName.Name = "txtGroupName";
+            this.txtGroupName.Size = new System.Drawing.Size(146, 21);
+            this.txtGroupName.TabIndex = 34;
             // 
             // label7
             // 
@@ -247,13 +247,13 @@ namespace Team5_XN
             this.label8.Text = "사용자그룹명";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // txtGroupCode
             // 
-            this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox2.Location = new System.Drawing.Point(157, 13);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 21);
-            this.textBox2.TabIndex = 31;
+            this.txtGroupCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtGroupCode.Location = new System.Drawing.Point(168, 13);
+            this.txtGroupCode.Name = "txtGroupCode";
+            this.txtGroupCode.Size = new System.Drawing.Size(131, 21);
+            this.txtGroupCode.TabIndex = 31;
             // 
             // label5
             // 
@@ -271,20 +271,19 @@ namespace Team5_XN
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label6.Location = new System.Drawing.Point(60, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 23);
+            this.label6.Size = new System.Drawing.Size(102, 23);
             this.label6.TabIndex = 29;
             this.label6.Text = "사용자그룹코드";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox1
+            // cboUseYN
             // 
-            this.comboBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(157, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(101, 20);
-            this.comboBox1.TabIndex = 28;
-            this.comboBox1.Text = "예";
+            this.cboUseYN.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.cboUseYN.FormattingEnabled = true;
+            this.cboUseYN.Location = new System.Drawing.Point(168, 44);
+            this.cboUseYN.Name = "cboUseYN";
+            this.cboUseYN.Size = new System.Drawing.Size(101, 20);
+            this.cboUseYN.TabIndex = 28;
             // 
             // label16
             // 
@@ -311,11 +310,11 @@ namespace Team5_XN
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSelect.Controls.Add(this.textBox6);
+            this.pnlSelect.Controls.Add(this.txtUserGroupName);
             this.pnlSelect.Controls.Add(this.label2);
             this.pnlSelect.Controls.Add(this.label4);
-            this.pnlSelect.Controls.Add(this.comboBox2);
-            this.pnlSelect.Controls.Add(this.textBox1);
+            this.pnlSelect.Controls.Add(this.cboUse);
+            this.pnlSelect.Controls.Add(this.txtUserGroupCode);
             this.pnlSelect.Controls.Add(this.label15);
             this.pnlSelect.Controls.Add(this.label14);
             this.pnlSelect.Controls.Add(this.label1);
@@ -328,19 +327,19 @@ namespace Team5_XN
             this.pnlSelect.Size = new System.Drawing.Size(1274, 54);
             this.pnlSelect.TabIndex = 1;
             // 
-            // textBox6
+            // txtUserGroupName
             // 
-            this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox6.Location = new System.Drawing.Point(337, 15);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(122, 21);
-            this.textBox6.TabIndex = 30;
+            this.txtUserGroupName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtUserGroupName.Location = new System.Drawing.Point(363, 15);
+            this.txtUserGroupName.Name = "txtUserGroupName";
+            this.txtUserGroupName.Size = new System.Drawing.Size(122, 21);
+            this.txtUserGroupName.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(236, 16);
+            this.label2.Location = new System.Drawing.Point(259, 16);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 23);
@@ -351,36 +350,36 @@ namespace Team5_XN
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label4.Location = new System.Drawing.Point(244, 15);
+            this.label4.Location = new System.Drawing.Point(271, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 23);
+            this.label4.Size = new System.Drawing.Size(86, 23);
             this.label4.TabIndex = 35;
             this.label4.Text = "사용자그룹명";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox2
+            // cboUse
             // 
-            this.comboBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(548, 17);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(101, 20);
-            this.comboBox2.TabIndex = 34;
+            this.cboUse.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.cboUse.FormattingEnabled = true;
+            this.cboUse.Location = new System.Drawing.Point(570, 16);
+            this.cboUse.Name = "cboUse";
+            this.cboUse.Size = new System.Drawing.Size(101, 20);
+            this.cboUse.TabIndex = 34;
             // 
-            // textBox1
+            // txtUserGroupCode
             // 
-            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox1.Location = new System.Drawing.Point(130, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 21);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtUserGroupCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtUserGroupCode.Location = new System.Drawing.Point(155, 15);
+            this.txtUserGroupCode.Name = "txtUserGroupCode";
+            this.txtUserGroupCode.Size = new System.Drawing.Size(96, 21);
+            this.txtUserGroupCode.TabIndex = 28;
+            this.txtUserGroupCode.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label15
             // 
             this.label15.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(472, 17);
+            this.label15.Location = new System.Drawing.Point(491, 16);
             this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(17, 23);
@@ -392,7 +391,7 @@ namespace Team5_XN
             // 
             this.label14.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(29, 16);
+            this.label14.Location = new System.Drawing.Point(41, 17);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(17, 23);
@@ -403,9 +402,9 @@ namespace Team5_XN
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label1.Location = new System.Drawing.Point(37, 15);
+            this.label1.Location = new System.Drawing.Point(53, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 23);
+            this.label1.Size = new System.Drawing.Size(98, 23);
             this.label1.TabIndex = 27;
             this.label1.Text = "사용자그룹코드";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -413,7 +412,7 @@ namespace Team5_XN
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label13.Location = new System.Drawing.Point(483, 16);
+            this.label13.Location = new System.Drawing.Point(505, 15);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 23);
             this.label13.TabIndex = 29;
@@ -465,26 +464,26 @@ namespace Team5_XN
         private System.Windows.Forms.Panel pnlSelect;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cboUse;
+        private System.Windows.Forms.TextBox txtUserGroupCode;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtUserGroupName;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboUseYN;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboAdmin;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtGroupName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtGroupCode;
     }
 }

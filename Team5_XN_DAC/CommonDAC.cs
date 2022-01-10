@@ -69,5 +69,19 @@ where Code in ('{code}');";
             }
             return dt;
         }
+        public DataTable GetSystemCodeDetail(string name)
+        {
+            string sql = @"SELECT DetailCode, DetailName, Remark, UseYN
+FROM CommonCodeSystem WHERE Name = @Name";
+
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.SelectCommand.Parameters.AddWithValue("@Name", name);
+
+                da.Fill(dt);
+            }
+            return dt;
+        }
     }
 }

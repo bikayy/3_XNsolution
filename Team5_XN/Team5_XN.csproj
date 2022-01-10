@@ -379,6 +379,12 @@
     <Compile Include="PopupUpdatePalette.Designer.cs">
       <DependentUpon>PopupUpdatePalette.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupUserGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupUserGroup.Designer.cs">
+      <DependentUpon>PopupUserGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopupWCSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -582,6 +588,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupUpdatePalette.resx">
       <DependentUpon>PopupUpdatePalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupUserGroup.resx">
+      <DependentUpon>PopupUserGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupWCSearch.resx">
       <DependentUpon>PopupWCSearch.cs</DependentUpon>

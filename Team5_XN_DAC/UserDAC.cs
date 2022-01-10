@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Team5_XN_VO;
 using Team5_XN_DAC;
 using System.Data;
+using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Team5_XN_DAC
 {
@@ -58,17 +60,43 @@ namespace Team5_XN_DAC
         }
         public DataTable GetUserInfo()
         {
-            string sql = @"SELECT User_ID, User_Name, U.Customer_Code, M.UserGroup_Name, U.Default_Major_Process_Code, P.Process_Name,
-IP_Security_YN, PW_Reset_Count, U.Use_YN
-FROM User_Master U
-INNER JOIN UserGroup_Master M ON U.Customer_Code = M.UserGroup_Code
-LEFT OUTER JOIN Process_Master P ON U.Default_Major_Process_Code = P.Process_Code";
+            string sql = @"SELECT 
+	User_ID, User_Name, M.UserGroup_Code, M.UserGroup_Name, 
+	U.Default_Major_Process_Code, P.Process_Name, PW_Reset_Count
+	, (select DetailName from CommonCodeSystem where Code ='IP_Security_YN' and DetailCode=U.IP_Security_YN) IP_Security_YN
+	, (select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = U.Use_YN) Use_YN
+	, U.Ins_Date, U.Ins_Emp, U.Up_Date, U.Up_Emp
+FROM 
+	User_Master U
+	INNER JOIN UserGroup_Master M ON U.Customer_Code = M.UserGroup_Code
+	LEFT OUTER JOIN Process_Master P ON U.Default_Major_Process_Code = P.Process_Code";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
                 da.Fill(dt);
             }
             return dt;
+        }
+        public List<string> GetUserName(string uname)
+        {
+            string sql = @"SELECT U.User_ID
+FROM User_Master U JOIN UserGroup_Mapping M ON U.User_ID = M.User_ID
+WHERE U.User_Name LIKE @UserName";
+
+            uname = $"%{uname}%";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@UserName", uname);
+            List<string> list = new List<string>();
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetString(0));
+            }
+
+            return list;
+
+
         }
         public DataTable GetUserGroupMaster()
         {
@@ -110,6 +138,29 @@ LEFT OUTER JOIN Process_Master P ON U.Default_Major_Process_Code = P.Process_Cod
                 return cmd.ExecuteScalar().ToString();
             }
 
+        }
+        public int SaveUser(DataTable dt, int check)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_UserInfo_Save", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+               
+                cmd.Parameters.Add(new SqlParameter("@UserInfo_Data", System.Data.SqlDbType.Structured)
+                {
+                    TypeName = "dbo.User_Master_Type",
+                    Value = dt
+                });
+                cmd.Parameters.AddWithValue("@Check", check);
+
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return -1;
+            }
         }
         public void Dispose()
         {

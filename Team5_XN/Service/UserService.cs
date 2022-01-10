@@ -45,6 +45,15 @@ namespace Team5_XN.Service
 
             return dt;
         }
+        public List<string> GetUserName(string uname)
+        {
+            UserDAC db = new UserDAC();
+            var result = db.GetUserName(uname);
+            db.Dispose();
+
+            return result;
+        }
+        
         public DataTable GetUserGroupMaster()
         {
             UserDAC db = new UserDAC();
@@ -66,6 +75,14 @@ namespace Team5_XN.Service
         {
             UserDAC db = new UserDAC();
             var result = db.GetMemberName(id);
+            db.Dispose();
+
+            return result;
+        }
+        public int SaveUser(DataTable dt, int check)
+        {
+            UserDAC db = new UserDAC();
+            int result = db.SaveUser(dt, check);
             db.Dispose();
 
             return result;

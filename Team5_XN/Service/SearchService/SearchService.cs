@@ -27,6 +27,13 @@ namespace Team5_XN
 
             return list;
         }
+        public List<UGSearchVO> GetUGList()
+        {
+            SearchDAC db = new SearchDAC();
+            List<UGSearchVO> list = db.GetUGList();
+            db.Dispose();
 
+            return list;
+        }
     }
 }
