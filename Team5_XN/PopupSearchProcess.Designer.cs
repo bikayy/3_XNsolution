@@ -180,6 +180,7 @@ namespace Team5_XN
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PopupSearchProcess";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "공정검색";
             this.Load += new System.EventHandler(this.PopupSearchProcess_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
