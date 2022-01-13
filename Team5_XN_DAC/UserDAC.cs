@@ -151,7 +151,7 @@ UserGroup_Master";
             {
                 SqlCommand cmd = new SqlCommand("SP_UserInfo_Save", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-               
+
                 cmd.Parameters.Add(new SqlParameter("@UserInfo_Data", System.Data.SqlDbType.Structured)
                 {
                     TypeName = "dbo.User_Master_Type",

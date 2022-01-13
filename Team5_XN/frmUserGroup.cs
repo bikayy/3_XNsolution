@@ -321,7 +321,6 @@ namespace Team5_XN
                 menu = "추가";
             else
                 menu = "편집";
-
             if (MessageBox.Show($"{menu}한 데이터를 저장하지 않고 기능을 취소하시겠습니까?.", "취소확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ChangeValue_Check(0);
@@ -442,7 +441,6 @@ namespace Team5_XN
             //list = UserServ.GetUserGroupMaster();
             //dgvUserGroup.DataSource = list;
         }
-
         private void dgvUserGroup_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;

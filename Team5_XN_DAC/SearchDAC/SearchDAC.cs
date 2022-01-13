@@ -71,23 +71,7 @@ on wc.Process_Code = pm.Process_Code";
                 return null;
             }
         }
-        public List<UGSearchVO> GetUGList()
-        {
-            string sql = @"select UserGroup_Code, UserGroup_Name from UserGroup_Master";
 
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    return Helper.DataReaderMapToList<UGSearchVO>(cmd.ExecuteReader());
-                }
-            }
-            catch (Exception err)
-            {
-                Debug.WriteLine(err.Message);
-                return null;
-            }
-        }
 
     }
 }

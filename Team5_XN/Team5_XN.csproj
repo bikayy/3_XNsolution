@@ -247,12 +247,6 @@
     <Compile Include="frmSearchPopup.Designer.cs">
       <DependentUpon>frmSearchPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSiyuOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSiyuOrder.Designer.cs">
-      <DependentUpon>frmSiyuOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSystemCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,12 +379,6 @@
     <Compile Include="PopupUpdatePalette.Designer.cs">
       <DependentUpon>PopupUpdatePalette.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopupUserGroup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopupUserGroup.Designer.cs">
-      <DependentUpon>PopupUserGroup.cs</DependentUpon>
-    </Compile>
     <Compile Include="PopupWCSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,10 +402,10 @@
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\ItemService.cs" />
     <Compile Include="Service\ProcessService.cs" />
-    <Compile Include="Service\ProductionService\OrderService.cs" />
     <Compile Include="Service\ProductionService\PlanService.cs" />
     <Compile Include="Service\ProductionService\RequestService.cs" />
     <Compile Include="Service\SearchService\SearchService.cs" />
+    <Compile Include="Service\TimeProductionService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WorkCenterService.cs" />
     <Compile Include="Utill\CommonUtil.cs" />
@@ -530,9 +518,6 @@
     <EmbeddedResource Include="frmSearchPopup.resx">
       <DependentUpon>frmSearchPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSiyuOrder.resx">
-      <DependentUpon>frmSiyuOrder.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSystemCode.resx">
       <DependentUpon>frmSystemCode.cs</DependentUpon>
     </EmbeddedResource>
@@ -598,9 +583,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupUpdatePalette.resx">
       <DependentUpon>PopupUpdatePalette.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopupUserGroup.resx">
-      <DependentUpon>PopupUserGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupWCSearch.resx">
       <DependentUpon>PopupWCSearch.cs</DependentUpon>

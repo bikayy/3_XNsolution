@@ -36,7 +36,7 @@ namespace Team5_XN
             main = (Main)this.MdiParent;
             main.Select += OnSelect;
             main.Create += OnCreate;
-            
+
             main.Update += OnUpdate;
             main.Save += OnSave;
             main.Delete += OnDelete;
@@ -72,7 +72,7 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboIPSecurity, "IP_Security_YN", dtSysCode.Copy());
-            
+
         }
 
         private void OnDelete(object sender, EventArgs e)
@@ -345,7 +345,7 @@ namespace Team5_XN
                 sb.Append(" AND Use_YN = '" + cboUse.Text + "'");
             }
             searchList.RowFilter = sb.ToString();
-            dgvUserInfo.DataSource = searchList; 
+            dgvUserInfo.DataSource = searchList;
             rowCount = searchList.Count;
             dgvUserInfo.CurrentCell = null;
             ControlTextReset();
@@ -358,7 +358,7 @@ namespace Team5_XN
 
             txtUserGroupCode.Text =
             txtUserGroupName.Text =
-            
+
             txtProcessCode.Text =
             txtProcessName.Text =
 
@@ -367,7 +367,7 @@ namespace Team5_XN
         }
 
         private void ChangeValue_Check(int check)
-        { 
+        {
             this.check = check;
 
             //기본
@@ -487,7 +487,7 @@ namespace Team5_XN
             {
                 MessageBox.Show(err.Message);
             }
-            
+
         }
 
         private void pnlSelect_Paint(object sender, PaintEventArgs e)
@@ -512,7 +512,7 @@ namespace Team5_XN
 
             cboIPSecurity.Text = dgvUserInfo["IP_Security_YN", dgvUserInfo.CurrentRow.Index].Value.ToString();
             cboUseYN.Text = dgvUserInfo["Use_YN", dgvUserInfo.CurrentRow.Index].Value.ToString();
-            
+
         }
         private void txtBox_TextChanged(object sender, EventArgs e)
         {

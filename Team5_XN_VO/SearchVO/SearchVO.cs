@@ -20,25 +20,4 @@ namespace Team5_XN_VO
         public string Process_Name { get; set; }
 
     }
-
-    public class ReqSearchVO
-    {
-        public string Tag { get; set; }
-        public string FromDate { get; set; }
-        public string ToDate { get; set; }
-        public string ItemCode { get; set; }
-    }
-
-    public class PlanSearchVO
-    {
-        public string PlanMonth { get; set; }
-        public string ItemCode { get; set; }
-        public string WCCode { get; set; }
-    }
-    public class UGSearchVO
-    {
-        //UserGroup_Code, UserGroup_Name
-        public string UserGroup_Code { get; set; }
-        public string UserGroup_Name { get; set; }
-    }
 }

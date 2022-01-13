@@ -37,19 +37,19 @@ namespace Team5_XN
             return result;
         }
 
-        public bool DeleteRequest(string no)
+        public bool DeleteRequest(string id)
         {
             RequestDAC db = new RequestDAC();
-            bool result = db.DeleteRequest(no);
+            bool result = db.DeleteRequest(id);
             db.Dispose();
 
             return result;
         }
 
-        public List<RequestVO> GetRequestSearch(ReqSearchVO rs)
+        public List<RequestVO> GetRequestSearch(string tag, string fromDate, string toDate, string item)
         {
             RequestDAC db = new RequestDAC();
-            List<RequestVO> list = db.GetRequestSearch(rs);
+            List<RequestVO> list = db.GetRequestSearch(tag, fromDate, toDate, item);
             db.Dispose();
 
             return list;

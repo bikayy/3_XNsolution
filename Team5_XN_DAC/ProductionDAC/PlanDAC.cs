@@ -25,21 +25,7 @@ namespace Team5_XN_DAC
             conn.Close();
         }
 
-        public List<GetPlanListVO> GetPlanList(PlanSearchVO ps)
-        {  //planMonth, ItemCode, WCCode
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "SP_Plan_Select";
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@PlanMonth", ps.PlanMonth);
-            cmd.Parameters.AddWithValue("@ItemCode", ps.ItemCode);
-            cmd.Parameters.AddWithValue("@WcCode", ps.WCCode);
-
-            return Helper.DataReaderMapToList<GetPlanListVO>(cmd.ExecuteReader());
-        }
-
-            public List<GetPlanListVO> GetPlanList2()
+        public List<GetPlanListVO> GetPlanList()
         {
             SqlTransaction trans = conn.BeginTransaction();
             SqlCommand cmd = null;
@@ -156,28 +142,6 @@ where Prd_Plan_No = @Prd_Plan_No";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Prd_Plan_No", id);
-            return cmd.ExecuteNonQuery() > 0;
-        }
-
-        public bool EndPlan(string no)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "SP_Plan_End";
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@Prd_Plan_No", no);
-            return cmd.ExecuteNonQuery() > 0;
-        }
-
-        public bool EndCanclePlan(string no)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "SP_Plan_End_Cancle";
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@Prd_Plan_No", no);
             return cmd.ExecuteNonQuery() > 0;
         }
     }

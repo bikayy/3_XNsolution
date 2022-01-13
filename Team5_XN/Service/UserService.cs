@@ -53,7 +53,6 @@ namespace Team5_XN.Service
 
             return result;
         }
-        
         public DataTable GetUserGroupMaster()
         {
             UserDAC db = new UserDAC();

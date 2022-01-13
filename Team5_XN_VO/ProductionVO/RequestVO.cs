@@ -35,7 +35,6 @@ namespace Team5_XN_VO
         public string Delivery_Date { get; set; }
         public int Plan_Qty { get; set; }
         public string Prd_Progress_Status { get; set; }
-        public string Remark { get; set; }
 
     }
 }

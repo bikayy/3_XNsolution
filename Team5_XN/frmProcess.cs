@@ -44,6 +44,8 @@ namespace Team5_XN
             main.Save += OnSave;
             main.Delete += OnDelete;
             main.Cancle += OnCancle;
+            main.Reset += OnReset;
+
 
             DataGridViewUtil.SetInitGridView(dataGridView1);
 
@@ -74,6 +76,14 @@ namespace Team5_XN
 
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled =  main.toolSave.Enabled = main.toolCancle.Enabled = false;
 
+        }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            txtSelectProcessCode.Text = txtSelectProcessName.Text = "";
+            cboSelectUse_YN.SelectedIndex = 0;
+            ControlTextReset();
         }
 
         //조회 이벤트

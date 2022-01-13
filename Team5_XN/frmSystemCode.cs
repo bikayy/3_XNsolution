@@ -252,15 +252,14 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvSysMaster, "시스템정의 대분류명", "Name", colWidth: 200);
             list = commServ.GetSystemCodeMaster();
             dgvSysMaster.DataSource = list;
-            
             dgvSysDetail.Columns.Clear();
+
             DataGridViewUtil.SetInitGridView(dgvSysDetail);
 
             DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "시스템정의 상세분류코드", "DetailCode", colWidth: 180);
             DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "시스템정의 상세분류명", "DetailName", colWidth: 170);
             DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "비고", "Remark", colWidth: 150);
             DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "사용여부", "UseYN", colWidth: 100);
-            
         }
 
         private void dgvSysMaster_CellClick(object sender, DataGridViewCellEventArgs e)
