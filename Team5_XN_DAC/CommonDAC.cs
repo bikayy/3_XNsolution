@@ -71,7 +71,8 @@ where Code in ('{code}');";
         }
         public DataTable GetSystemCodeDetail(string name)
         {
-            string sql = @"SELECT DetailCode, DetailName, Remark, UseYN
+            string sql = @"SELECT DetailCode, DetailName, Sort_Index, Remark, 
+(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = UseYN) UseYN
 FROM CommonCodeSystem WHERE Name = @Name";
 
             DataTable dt = new DataTable();

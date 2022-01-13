@@ -54,6 +54,7 @@ namespace Team5_XN_DAC
             {
                 cmd.Connection = conn;
                 cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@User_ID", user.User_ID);
                 cmd.Parameters.AddWithValue("@User_PW", user.User_PW);
                 return 0 < cmd.ExecuteNonQuery();
             }
@@ -100,8 +101,13 @@ WHERE U.User_Name LIKE @UserName";
         }
         public DataTable GetUserGroupMaster()
         {
-            string sql = @"  SELECT UserGroup_Code, UserGroup_Name, Admin, Use_YN
-  FROM UserGroup_Master";
+            string sql = @"  SELECT 
+UserGroup_Code, UserGroup_Name, 
+(select DetailName from CommonCodeSystem where Code ='Admin_YN' and DetailCode= Admin) Admin, 
+(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = Use_YN) Use_YN,
+Ins_Date, Ins_Emp, Up_Date, Up_Emp
+FROM 
+UserGroup_Master";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
@@ -160,6 +166,63 @@ WHERE U.User_Name LIKE @UserName";
                 Debug.WriteLine(err.Message);
                 MessageBox.Show(err.Message);
                 return -1;
+            }
+        }
+        public bool DeleteUser(string user)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_User_Delete", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@User_ID", user);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return false;
+            }
+        }
+        public int SaveUserGroup(DataTable dt, int check)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_UserGroup_Save", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@UserGroup_Data", System.Data.SqlDbType.Structured)
+                {
+                    TypeName = "dbo.UserGroup_Master_Type",
+                    Value = dt
+                });
+                cmd.Parameters.AddWithValue("@Check", check);
+
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return -1;
+            }
+        }
+        public bool DeleteUserGroup(string user)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_UserGroup_Delete", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@UserGroup_Code", user);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return false;
             }
         }
         public void Dispose()

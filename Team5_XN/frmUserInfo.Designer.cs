@@ -44,6 +44,8 @@ namespace Team5_XN
             this.label18 = new System.Windows.Forms.Label();
             this.txtProcessName = new System.Windows.Forms.TextBox();
             this.txtUserGroupName = new System.Windows.Forms.TextBox();
+            this.btnProcess = new System.Windows.Forms.Button();
+            this.btnUserGroup = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtProcessCode = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -64,6 +66,7 @@ namespace Team5_XN
             this.label23 = new System.Windows.Forms.Label();
             this.txtGroupName = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.cboUse = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -75,9 +78,6 @@ namespace Team5_XN
             this.btnPwChange = new System.Windows.Forms.Button();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnProcess = new System.Windows.Forms.Button();
-            this.btnUserGroup = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.pnlBorder.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).BeginInit();
@@ -279,6 +279,34 @@ namespace Team5_XN
             this.txtUserGroupName.Tag = "UserGroup_Name";
             this.txtUserGroupName.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
+            // btnProcess
+            // 
+            this.btnProcess.BackColor = System.Drawing.Color.Black;
+            this.btnProcess.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcess.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.btnProcess.Location = new System.Drawing.Point(284, 98);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(23, 23);
+            this.btnProcess.TabIndex = 23;
+            this.btnProcess.UseVisualStyleBackColor = false;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
+            // 
+            // btnUserGroup
+            // 
+            this.btnUserGroup.BackColor = System.Drawing.Color.Black;
+            this.btnUserGroup.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnUserGroup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUserGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserGroup.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.btnUserGroup.Location = new System.Drawing.Point(284, 69);
+            this.btnUserGroup.Name = "btnUserGroup";
+            this.btnUserGroup.Size = new System.Drawing.Size(23, 23);
+            this.btnUserGroup.TabIndex = 8;
+            this.btnUserGroup.UseVisualStyleBackColor = false;
+            this.btnUserGroup.Click += new System.EventHandler(this.btnUserGroup_Click);
+            // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
@@ -466,7 +494,7 @@ namespace Team5_XN
             this.groupBox1.Size = new System.Drawing.Size(368, 41);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "권한 그룹 일괄적용";
+            this.groupBox1.Text = "권한 그룹 조회";
             // 
             // txtGroupCode
             // 
@@ -505,6 +533,20 @@ namespace Team5_XN
             this.label24.TabIndex = 27;
             this.label24.Text = "권한그룹";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Black;
+            this.btnSearch.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(198, 14);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(23, 23);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cboUse
             // 
@@ -618,48 +660,6 @@ namespace Team5_XN
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(19, 52);
             this.panel2.TabIndex = 0;
-            // 
-            // btnProcess
-            // 
-            this.btnProcess.BackColor = System.Drawing.Color.Black;
-            this.btnProcess.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.btnProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcess.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.btnProcess.Location = new System.Drawing.Point(284, 98);
-            this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(23, 23);
-            this.btnProcess.TabIndex = 23;
-            this.btnProcess.UseVisualStyleBackColor = false;
-            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
-            // 
-            // btnUserGroup
-            // 
-            this.btnUserGroup.BackColor = System.Drawing.Color.Black;
-            this.btnUserGroup.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.btnUserGroup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUserGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserGroup.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.btnUserGroup.Location = new System.Drawing.Point(284, 69);
-            this.btnUserGroup.Name = "btnUserGroup";
-            this.btnUserGroup.Size = new System.Drawing.Size(23, 23);
-            this.btnUserGroup.TabIndex = 8;
-            this.btnUserGroup.UseVisualStyleBackColor = false;
-            this.btnUserGroup.Click += new System.EventHandler(this.btnUserGroup_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Black;
-            this.btnSearch.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearch.Location = new System.Drawing.Point(198, 14);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(23, 23);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // frmUserInfo
             // 

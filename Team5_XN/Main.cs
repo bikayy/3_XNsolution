@@ -305,7 +305,7 @@ namespace Team5_XN
                     tp.Parent = tabControl1;
                     tp.Tag = this.ActiveMdiChild;
                     tp.Name = this.ActiveMdiChild.Text;
-                    tp.Font = new Font("Consolas", 11, FontStyle.Regular);
+                    //tp.Font = new Font("Consolas", 11, FontStyle.Regular);
 
                     tabControl1.SelectedTab = tp;
 

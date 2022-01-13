@@ -15,6 +15,7 @@ namespace Team5_XN
 
     public partial class frmUserInfo : Form
     {
+        UserVO user;
         List<UserVO> list = null;
         CommonService commonServ;
         UserService userServ = new UserService();
@@ -38,7 +39,7 @@ namespace Team5_XN
             
             main.Update += OnUpdate;
             main.Save += OnSave;
-            //main.Delete += OnDelete;
+            main.Delete += OnDelete;
             main.Cancle += OnCancle;
             //LoadData();
             dgvUserInfo.Columns.Clear();
@@ -54,12 +55,70 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "IP 보안 적용여부", "IP_Security_YN", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "패스워드 초기화 횟수", "PW_Reset_Count", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "사용여부", "Use_YN", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "등록일", "Ins_Date", colWidth: 100, visibility: false);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "등록자", "Ins_Emp", colWidth: 100, visibility: false);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "수정일", "Up_Date", colWidth: 100, visibility: false);
+            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "작성일자", "Ins_Date", colWidth: 100, visibility: false);
+            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "작성자", "Ins_Emp", colWidth: 100, visibility: false);
+            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "수정일자", "Up_Date", colWidth: 100, visibility: false);
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "수정자", "Up_Emp", colWidth: 100, visibility: false);
 
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
+
+            //GetCommonCodeList
+            string[] code = { "USE_YN", "IP_Security_YN" };
+
+            //cdac = new CommonDAC();
+            commonServ = new CommonService();
+
+            DataTable dtSysCode = commonServ.GetCommonCodeSys(code);
+            CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy());
+            CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy());
+            CommonUtil.ComboBinding(cboIPSecurity, "IP_Security_YN", dtSysCode.Copy());
+            
+        }
+
+        private void OnDelete(object sender, EventArgs e)
+        {
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
+            if (dgvUserInfo.CurrentCell == null)
+            {
+                MessageBox.Show("삭제할 행을 선택하세요.");
+                return;
+            }
+
+            if (check == 1) //1:추가
+            {
+                if (dgvUserInfo.CurrentCell.RowIndex >= rowCount)
+                {
+                    dt.Rows.Remove(dt.Rows[dgvUserInfo.CurrentCell.RowIndex]);
+                    dt.AcceptChanges();
+
+                    //if (dataGridView1.RowCount == rowCount)
+                    //    dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.RowCount-1];
+                    dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(dgvUserInfo.CurrentCell.ColumnIndex, dgvUserInfo.CurrentCell.RowIndex));
+                }
+                else
+                {
+                    MessageBox.Show("추가한 행만 삭제가 가능합니다.");
+                }
+            }
+            else //if (check == 3) //3:삭제
+            {
+                if (MessageBox.Show($"[{txtID.Text}] 데이터를 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+
+                    userServ = new UserService();
+                    bool result = userServ.DeleteUser(txtID.Text);
+                    if (result)
+                    {
+                        MessageBox.Show("삭제 완료");
+                        OnSelect(this, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("삭제 실패");
+                    }
+                }
+            }
         }
 
         private void OnCreate(object sender, EventArgs e)
@@ -88,6 +147,7 @@ namespace Team5_XN
             DataTable dt2 = new DataTable();
             dt2.Columns.Add(new DataColumn("User_ID", typeof(string)));
             dt2.Columns.Add(new DataColumn("User_Name", typeof(string)));
+            dt2.Columns.Add(new DataColumn("User_PW", typeof(string)));
             dt2.Columns.Add(new DataColumn("UserGroup_Code", typeof(string)));
             dt2.Columns.Add(new DataColumn("IP_Security_YN", typeof(char)));
             dt2.Columns.Add(new DataColumn("Default_Major_Process_Code", typeof(string)));
@@ -135,6 +195,7 @@ namespace Team5_XN
                         DataRow drNew = dt2.NewRow();
                         drNew["User_ID"] = dr["User_ID"];
                         drNew["User_Name"] = dr["User_Name"];
+                        drNew["User_PW"] = dr["User_ID"];
                         drNew["UserGroup_Code"] = dr["UserGroup_Code"];
                         drNew["IP_Security_YN"] = (dr["IP_Security_YN"].ToString() == "허용") ? "A" : "D";
                         drNew["Default_Major_Process_Code"] = dr["Default_Major_Process_Code"];
@@ -241,6 +302,7 @@ namespace Team5_XN
 
         private void OnSelect(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (check > 0)
@@ -252,22 +314,12 @@ namespace Team5_XN
             }
 
             ChangeValue_Check(0);
-            
-            //GetCommonCodeList
-            string[] code = { "USE_YN", "IP_Security_YN" };
 
-            //cdac = new CommonDAC();
-            commonServ = new CommonService();
-
-            DataTable dtSysCode = commonServ.GetCommonCodeSys(code);
-            CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy());
-            CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
-            CommonUtil.ComboBinding(cboIPSecurity, "IP_Security_YN", dtSysCode.Copy());
             userServ = new UserService();
             dt = userServ.GetUserInfo();
             dt_DB = dt.Copy();
             dgvUserInfo.DataSource = dt;
-
+            //dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, 0));
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -293,12 +345,10 @@ namespace Team5_XN
                 sb.Append(" AND Use_YN = '" + cboUse.Text + "'");
             }
             searchList.RowFilter = sb.ToString();
-            dgvUserInfo.DataSource = searchList;
+            dgvUserInfo.DataSource = searchList; 
             rowCount = searchList.Count;
             dgvUserInfo.CurrentCell = null;
             ControlTextReset();
-
-            
         }
 
         private void ControlTextReset()
@@ -317,7 +367,7 @@ namespace Team5_XN
         }
 
         private void ChangeValue_Check(int check)
-        {
+        { 
             this.check = check;
 
             //기본
@@ -419,7 +469,25 @@ namespace Team5_XN
 
         private void btnPwChange_Click(object sender, EventArgs e)
         {
-            //userServ.UpdateID();
+            try
+            {
+                UserVO userPwd = new UserVO
+                {
+                    User_ID = txtID.Text,
+                    User_PW = txtID.Text
+                };
+
+                bool result = userServ.UpdateID(userPwd);
+
+                if (result) MessageBox.Show("수정되었습니다.");
+                else MessageBox.Show("오류가 발생하였습니다.\n다시 시도하여주십시오.");
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            
         }
 
         private void pnlSelect_Paint(object sender, PaintEventArgs e)

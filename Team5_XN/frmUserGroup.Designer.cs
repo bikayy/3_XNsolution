@@ -66,7 +66,6 @@ namespace Team5_XN
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroup)).BeginInit();
             this.pnlSubject1.SuspendLayout();
-            this.pnlDetail.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +73,7 @@ namespace Team5_XN
             // pnlBorder
             // 
             this.pnlBorder.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlBorder.Controls.Add(this.panel1);
             this.pnlBorder.Controls.Add(this.pnlSubject2);
             this.pnlBorder.Controls.Add(this.pnlDgv);
             this.pnlBorder.Controls.Add(this.pnlDetail);
@@ -88,6 +88,8 @@ namespace Team5_XN
             // 
             // pnlSubject2
             // 
+            this.pnlSubject2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSubject2.BackColor = System.Drawing.Color.White;
             this.pnlSubject2.Controls.Add(this.label3);
             this.pnlSubject2.Location = new System.Drawing.Point(5, 546);
@@ -111,6 +113,8 @@ namespace Team5_XN
             // 
             // pnlDgv
             // 
+            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDgv.BackColor = System.Drawing.Color.White;
             this.pnlDgv.Controls.Add(this.dgvUserGroup);
             this.pnlDgv.Controls.Add(this.pnlSubject1);
@@ -123,20 +127,24 @@ namespace Team5_XN
             // 
             // dgvUserGroup
             // 
+            this.dgvUserGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvUserGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserGroup.Dock = System.Windows.Forms.DockStyle.Right;
             this.dgvUserGroup.Location = new System.Drawing.Point(0, 35);
             this.dgvUserGroup.Name = "dgvUserGroup";
             this.dgvUserGroup.RowTemplate.Height = 23;
             this.dgvUserGroup.Size = new System.Drawing.Size(1274, 448);
             this.dgvUserGroup.TabIndex = 1;
             this.dgvUserGroup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserGroup_CellClick);
+            this.dgvUserGroup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserGroup_CellContentClick);
             // 
             // pnlSubject1
             // 
+            this.pnlSubject1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSubject1.BackColor = System.Drawing.Color.White;
             this.pnlSubject1.Controls.Add(this.label9);
-            this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
             this.pnlSubject1.Name = "pnlSubject1";
             this.pnlSubject1.Size = new System.Drawing.Size(1274, 30);
@@ -159,7 +167,6 @@ namespace Team5_XN
             // pnlDetail
             // 
             this.pnlDetail.BackColor = System.Drawing.Color.White;
-            this.pnlDetail.Controls.Add(this.panel1);
             this.pnlDetail.Location = new System.Drawing.Point(5, 575);
             this.pnlDetail.Name = "pnlDetail";
             this.pnlDetail.Size = new System.Drawing.Size(1274, 81);
@@ -181,8 +188,7 @@ namespace Team5_XN
             this.panel1.Controls.Add(this.cboUseYN);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(5, 575);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1274, 81);
@@ -196,6 +202,8 @@ namespace Team5_XN
             this.cboAdmin.Name = "cboAdmin";
             this.cboAdmin.Size = new System.Drawing.Size(101, 20);
             this.cboAdmin.TabIndex = 37;
+            this.cboAdmin.Tag = "Admin";
+            this.cboAdmin.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // label10
             // 
@@ -225,6 +233,8 @@ namespace Team5_XN
             this.txtGroupName.Name = "txtGroupName";
             this.txtGroupName.Size = new System.Drawing.Size(146, 21);
             this.txtGroupName.TabIndex = 34;
+            this.txtGroupName.Tag = "UserGroup_Name";
+            this.txtGroupName.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // label7
             // 
@@ -254,6 +264,8 @@ namespace Team5_XN
             this.txtGroupCode.Name = "txtGroupCode";
             this.txtGroupCode.Size = new System.Drawing.Size(131, 21);
             this.txtGroupCode.TabIndex = 31;
+            this.txtGroupCode.Tag = "UserGroup_Code";
+            this.txtGroupCode.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // label5
             // 
@@ -284,6 +296,8 @@ namespace Team5_XN
             this.cboUseYN.Name = "cboUseYN";
             this.cboUseYN.Size = new System.Drawing.Size(101, 20);
             this.cboUseYN.TabIndex = 28;
+            this.cboUseYN.Tag = "Use_YN";
+            this.cboUseYN.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // label16
             // 
@@ -308,6 +322,8 @@ namespace Team5_XN
             // 
             // pnlSelect
             // 
+            this.pnlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSelect.Controls.Add(this.txtUserGroupName);
@@ -320,7 +336,6 @@ namespace Team5_XN
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Controls.Add(this.label13);
             this.pnlSelect.Controls.Add(this.panel2);
-            this.pnlSelect.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSelect.Location = new System.Drawing.Point(5, 5);
             this.pnlSelect.Margin = new System.Windows.Forms.Padding(10);
             this.pnlSelect.Name = "pnlSelect";
@@ -442,7 +457,6 @@ namespace Team5_XN
             this.pnlDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroup)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
-            this.pnlDetail.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlSelect.ResumeLayout(false);

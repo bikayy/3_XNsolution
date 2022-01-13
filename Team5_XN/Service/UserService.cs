@@ -87,5 +87,30 @@ namespace Team5_XN.Service
 
             return result;
         }
+        public bool DeleteUser(String user)
+        {
+            UserDAC db = new UserDAC();
+            bool result = db.DeleteUser(user);
+            db.Dispose();
+
+            return result;
+        }
+        public int SaveUserGroup(DataTable dt, int check)
+        {
+            UserDAC db = new UserDAC();
+            int result = db.SaveUserGroup(dt, check);
+            db.Dispose();
+
+            return result;
+        }
+        public bool DeleteUserGroup(String user)
+        {
+            UserDAC db = new UserDAC();
+            bool result = db.DeleteUserGroup(user);
+            db.Dispose();
+
+            return result;
+        }
+        
     }
 }

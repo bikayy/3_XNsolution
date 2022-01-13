@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Team5_XN.Service;
+using Team5_XN_VO;
 
 namespace Team5_XN
 {
@@ -37,6 +38,10 @@ namespace Team5_XN
         {
             main = (Main)this.MdiParent;
             main.Select += OnSelect;
+            main.Create += OnCreate;
+            main.Update += OnUpdate;
+            main.Delete += OnDelete;
+            main.Save += OnSave;
             main.Cancle += OnCancle;
 
             dgvUserGroup.Columns.Clear();
@@ -47,12 +52,221 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "사용자그룹명", "UserGroup_Name", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "사용여부", "Use_YN", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "Admin 여부", "Admin", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "작성일자", "Ins_Date", colWidth: 100, visibility: false);
+            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "작성자", "Ins_Emp", colWidth: 100, visibility: false);
+            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "수정일자", "Up_Date", colWidth: 100, visibility: false);
+            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "수정자", "Up_Emp", colWidth: 100, visibility: false);
+            //GetCommonCodeList
+            string[] code = { "USE_YN", "Admin_YN" };
+
+            //cdac = new CommonDAC();
+            commonServ = new CommonService();
+
+            DataTable dtSysCode = commonServ.GetCommonCodeSys(code);
+            CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy());
+            CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
+            CommonUtil.ComboBinding(cboAdmin, "Admin_YN", dtSysCode.Copy());
             //dt = userServ.GetUserGroupMaster();
             //dgvUserGroup.DataSource = dt;
             //LoadData();
+            main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false; 
+        }
+
+        private void OnDelete(object sender, EventArgs e)
+        {
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
+            if (dgvUserGroup.CurrentCell == null)
+            {
+                MessageBox.Show("삭제할 행을 선택하세요.");
+                return;
+            }
+
+            if (check == 1) //1:추가
+            {
+                if (dgvUserGroup.CurrentCell.RowIndex >= rowCount)
+                {
+                    dt.Rows.Remove(dt.Rows[dgvUserGroup.CurrentCell.RowIndex]);
+                    dt.AcceptChanges();
+
+                    //if (dataGridView1.RowCount == rowCount)
+                    //    dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.RowCount-1];
+                    dgvUserGroup_CellClick(dgvUserGroup, new DataGridViewCellEventArgs(dgvUserGroup.CurrentCell.ColumnIndex, dgvUserGroup.CurrentCell.RowIndex));
+                }
+                else
+                {
+                    MessageBox.Show("추가한 행만 삭제가 가능합니다.");
+                }
+            }
+            else //if (check == 3) //3:삭제
+            {
+                if (MessageBox.Show($"[{txtGroupCode.Text}] 데이터를 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+
+                    userServ = new UserService();
+                    bool result = userServ.DeleteUserGroup(txtGroupCode.Text);
+                    if (result)
+                    {
+                        MessageBox.Show("삭제 완료");
+                        OnSelect(this, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("삭제 실패");
+                    }
+                }
+            }
+        }
+
+        private void OnSave(object sender, EventArgs e)
+        {
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
+            int result = 0;
+
+
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add(new DataColumn("UserGroup_Code", typeof(string)));
+            dt2.Columns.Add(new DataColumn("UserGroup_Name", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Admin", typeof(char)));
+            dt2.Columns.Add(new DataColumn("Use_YN", typeof(char)));
+            dt2.Columns.Add(new DataColumn("Ins_Date", typeof(DateTime)));
+            dt2.Columns.Add(new DataColumn("Ins_Emp", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Up_Date", typeof(DateTime)));
+            dt2.Columns.Add(new DataColumn("Up_Emp", typeof(string)));
+
+            userServ = new UserService();
+
+            //저장-추가
+            if (check == 1)
+            {
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (dt.Rows.IndexOf(dr) >= rowCount)
+                    {
+                        int r = dt.Rows.IndexOf(dr);
+
+                        DataView dv_duple = new DataView(dt_DB);
+                        dv_duple.RowFilter = $"UserGroup_Code = '{dgvUserGroup[0, r].Value.ToString()}'";
+                        if (dv_duple.Count > 0)
+                        {
+                            MessageBox.Show($"그룹코드는 중복 될 수 없습니다. ({dgvUserGroup[0, r].Value.ToString()}) \n → {r + 1}행, 1열");
+                            dgvUserGroup.CurrentCell = dgvUserGroup[0, r];
+                            dgvUserGroup_CellClick(dgvUserGroup, new DataGridViewCellEventArgs(0, r));
+                            return;
+                        }
+
+
+                        for (int c = 0; c < 4; c++)
+                        {
+                            if (dgvUserGroup[c, r].Value.ToString().Length < 1)
+                            {
+                                if (c == 3) continue;
+                                MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dgvUserGroup.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
+                                dgvUserGroup.CurrentCell = dgvUserGroup[c, r];
+                                dgvUserGroup_CellClick(dgvUserGroup, new DataGridViewCellEventArgs(c, r));
+                                return;
+                            }
+                        }
+
+                        DataRow drNew = dt2.NewRow();
+                        drNew["UserGroup_Code"] = dr["UserGroup_Code"];
+                        drNew["UserGroup_Name"] = dr["UserGroup_Name"];
+                        drNew["Admin"] = (dr["Admin"].ToString() == "예") ? "A" : "D";
+                        drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
+                        drNew["Ins_Date"] = dr["Ins_Date"];
+                        drNew["Ins_Emp"] = dr["Ins_Emp"];
+                        drNew["Up_Date"] = dr["Up_Date"];
+                        drNew["Up_Emp"] = dr["Up_Emp"];
+
+                        dt2.Rows.Add(drNew);
+                        // dt2.ImportRow(dr);
+                    }
+                }
+                dt2.AcceptChanges();
+
+                result = userServ.SaveUserGroup(dt2, check);
+
+            }
+            //저장-편집
+            else if (check == 2)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    foreach (DataColumn dc in dt.Columns)
+                    {
+
+                        string a = dt_DB.Rows[dt.Rows.IndexOf(dr)][dt.Columns.IndexOf(dc)].ToString();
+                        string b = dr[dc].ToString();
+                        if (b != a)
+                        {
+                            DataRow drNew = dt2.NewRow();
+                            drNew["UserGroup_Code"] = dr["UserGroup_Code"];
+                            drNew["UserGroup_Name"] = dr["UserGroup_Name"];
+                            drNew["Admin"] = (dr["Admin"].ToString() == "예") ? "A" : "D";
+                            drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
+                            drNew["Ins_Date"] = dr["Ins_Date"];
+                            drNew["Ins_Emp"] = dr["Ins_Emp"];
+                            drNew["Up_Date"] = dr["Up_Date"];
+                            drNew["Up_Emp"] = dr["Up_Emp"];
+
+                            dt2.Rows.Add(drNew);
+                            break;
+                            // dt2.ImportRow(dr);
+                        }
+                    }
+                }
+                dt2.AcceptChanges();
+                result = userServ.SaveUserGroup(dt2, check);
+
+            }
+
+            if (result > 0)
+            {
+                MessageBox.Show("저장 완료");
+                ChangeValue_Check(0);
+                OnSelect(this, e);
+
+            }
+            else if (result < 0)
+            {
+                MessageBox.Show("저장 실패");
+            }
+            else
+            {
+                MessageBox.Show("저장할 데이터가 없습니다.");
+            }
+        }
+
+        
+
+        private void OnCreate(object sender, EventArgs e)
+        {
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
+            ChangeValue_Check(1); //추가
+            //dataGridView1.AllowUserToAddRows = true;
+            DataRow dr = dt.NewRow();
+
+            dt.Rows.Add(dr);
+
+            dt.AcceptChanges();
+            dgvUserGroup.DataSource = dt;
+            dgvUserGroup.CurrentCell = dgvUserGroup[0, dgvUserGroup.RowCount - 1];
+            dgvUserGroup_CellClick(dgvUserGroup, new DataGridViewCellEventArgs(0, dgvUserGroup.RowCount - 1));
+        }
+        private void OnUpdate(object sender, EventArgs e)
+        {
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
+            ChangeValue_Check(2); //편집
+            if (dgvUserGroup.CurrentRow != null)
+                dgvUserGroup_CellClick(dgvUserGroup, new DataGridViewCellEventArgs(0, dgvUserGroup.CurrentRow.Index));
         }
         private void OnSelect(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (check > 0)
@@ -65,16 +279,7 @@ namespace Team5_XN
 
             ChangeValue_Check(0);
 
-            //GetCommonCodeList
-            string[] code = { "USE_YN", "Admin_YN" };
-
-            //cdac = new CommonDAC();
-            commonServ = new CommonService();
-
-            DataTable dtSysCode = commonServ.GetCommonCodeSys(code);
-            CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy());
-            CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
-            CommonUtil.ComboBinding(cboAdmin, "Admin_YN", dtSysCode.Copy());
+            
             userServ = new UserService();
             dt = userServ.GetUserGroupMaster();
             dt_DB = dt.Copy();
@@ -182,7 +387,7 @@ namespace Team5_XN
                 if (check == 1 && dgvUserGroup.CurrentRow != null && dgvUserGroup.CurrentRow.Index >= rowCount) //추가한 행
                 {
 
-                    foreach (Control ctrl in pnlDetail.Controls)
+                    foreach (Control ctrl in panel1.Controls)
                     {
                         if (ctrl is Label) continue;
 
@@ -196,7 +401,7 @@ namespace Team5_XN
                 }
                 else //기존 행
                 {
-                    foreach (Control ctrl in pnlDetail.Controls)
+                    foreach (Control ctrl in panel1.Controls)
                     {
                         if (ctrl is Label) continue;
                         else if (ctrl is TextBox txt)
@@ -209,7 +414,7 @@ namespace Team5_XN
                 }
             else if (check == 2) //2:편집
             {
-                foreach (Control ctrl in pnlDetail.Controls)
+                foreach (Control ctrl in panel1.Controls)
                 {
                     if (ctrl is Label) continue;
                     else if (ctrl is TextBox txt)
@@ -249,6 +454,27 @@ namespace Team5_XN
 
             cboAdmin.Text = dgvUserGroup["Admin", dgvUserGroup.CurrentRow.Index].Value.ToString();
             cboUseYN.Text = dgvUserGroup["Use_YN", dgvUserGroup.CurrentRow.Index].Value.ToString();
+
+        }
+        private void txtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (dgvUserGroup.CurrentCell == null) return;
+            if ((check == 1 && dgvUserGroup.CurrentRow.Index >= rowCount) || check == 2)
+            {
+                //if (dt == null) return;
+                Control ctrl = ((Control)sender);
+
+                if (ctrl.Text.Length > 0)
+                {
+                    dgvUserGroup[ctrl.Tag.ToString(), dgvUserGroup.CurrentCell.RowIndex].Value = ctrl.Text;
+                }
+                else
+                    dgvUserGroup.Rows[dgvUserGroup.CurrentCell.RowIndex].Cells[ctrl.Tag.ToString()].Value = DBNull.Value;
+            }
+        }
+
+        private void dgvUserGroup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
