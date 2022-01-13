@@ -34,6 +34,17 @@ namespace Team5_XN
 
             return result;
         }
-        
+
+
+        public DataTable GetSystemCodeDetail(string name)
+        {
+            CommonDAC db = new CommonDAC();
+            DataTable result = db.GetSystemCodeDetail(name);
+            db.Dispose();
+
+            return result;
+        }
+
+
     }
 }
