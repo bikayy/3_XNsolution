@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="POPNopRegister.cs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POPNopRegister.cs.resx">
       <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
     </EmbeddedResource>
@@ -65,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,13 +93,13 @@
     <None Include="Resources\backColor.JPG" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\backColor6.JPG" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\backColor11.JPG" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\backColor12.JPG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\backColor6.JPG" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\backColor61.JPG" />
@@ -101,18 +111,37 @@
     <None Include="Resources\free-icon-refresh-page-option-25429.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon_close_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_close_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xn_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xn_refresh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xn_refresh-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xn_refresh-green1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_xn_refresh-green2.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\icon-find.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\icon_close_black.png" />
-    <Content Include="Resources\icon_close_red.png" />
-    <None Include="Resources\reset.png" />
     <None Include="Resources\keyboard.png" />
-    <None Include="Resources\icon_xn_refresh1.png" />
-    <None Include="Resources\icon_xn_refresh.png" />
-    <None Include="Resources\icon_xn_refresh-green2.png" />
-    <None Include="Resources\icon_xn_refresh-green1.png" />
-    <None Include="Resources\icon_xn_refresh-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonBackColor_red.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
