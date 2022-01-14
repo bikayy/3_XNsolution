@@ -1,5 +1,5 @@
 ﻿
-namespace Team5_XN
+namespace POP_Team5_XN
 {
     partial class POPWorkCenter
     {
@@ -43,7 +43,7 @@ namespace Team5_XN
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ucDateTime1 = new Team5_XN.Controls.ucDateTime();
+            this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnlWcList.SuspendLayout();

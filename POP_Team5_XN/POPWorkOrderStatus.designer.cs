@@ -1,5 +1,5 @@
 ﻿
-namespace Team5_XN
+namespace POP_Team5_XN
 {
     partial class POPWorkOrderStatus
     {
@@ -63,7 +63,7 @@ namespace Team5_XN
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ucDateTime1 = new Team5_XN.Controls.ucDateTime();
+            this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
             this.btnNopReg = new System.Windows.Forms.Button();
             this.pnlOrList.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();

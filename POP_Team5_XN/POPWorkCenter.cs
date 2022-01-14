@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Team5_XN_VO;
+using Team5_XN;
 
-namespace Team5_XN
+namespace POP_Team5_XN
 {
     public partial class POPWorkCenter : Form
     {
