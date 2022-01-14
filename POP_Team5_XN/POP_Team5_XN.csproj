@@ -58,6 +58,18 @@
     <Compile Include="POPNopRegister.cs.Designer.cs">
       <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
     </Compile>
+    <Compile Include="POPWorkCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPWorkCenter.designer.cs">
+      <DependentUpon>POPWorkCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPWorkOrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPWorkOrderStatus.designer.cs">
+      <DependentUpon>POPWorkOrderStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -65,6 +77,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POPNopRegister.cs.resx">
       <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPWorkCenter.resx">
+      <DependentUpon>POPWorkCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPWorkOrderStatus.resx">
+      <DependentUpon>POPWorkOrderStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,6 +160,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buttonBackColor_red.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Team5_XN\Team5_XN.csproj">
+      <Project>{1890525f-3f59-4f76-b5e3-2daa75d8a277}</Project>
+      <Name>Team5_XN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Team5_XN_DAC\Team5_XN_DAC.csproj">
+      <Project>{adfa7088-e2e5-4c5d-9325-47c5c64e0a42}</Project>
+      <Name>Team5_XN_DAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Team5_XN_VO\Team5_XN_VO.csproj">
+      <Project>{242fb483-6cca-475c-95dc-387108ce084b}</Project>
+      <Name>Team5_XN_VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
