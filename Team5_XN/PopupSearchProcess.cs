@@ -70,7 +70,12 @@ namespace Team5_XN
             var result = from row in dt.AsEnumerable()
                          where row.Field<string>("Process_Code").Contains(search) || row.Field<string>("Process_Name").Contains(search)
                          select row;
-            dataGridView1.DataSource = result.CopyToDataTable();
+
+            //DataTable dt_search = result.CopyToDataTable();
+            if (result.Count() > 0)
+                dataGridView1.DataSource = result.CopyToDataTable();
+            else
+                dataGridView1.DataSource = null;
             dataGridView1.CurrentCell = null;
 
         }
@@ -85,6 +90,7 @@ namespace Team5_XN
         {
             sendInfo.Process_Code = txtProcessCode.Text;
             sendInfo.Process_Name = txtProcessName.Text;
+            sendInfo.Process_Group = dataGridView1["Process_Group", dataGridView1.CurrentRow.Index].Value.ToString();
         }
 
         private void bntCancle_Click(object sender, EventArgs e)

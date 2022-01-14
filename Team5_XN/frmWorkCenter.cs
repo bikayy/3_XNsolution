@@ -52,8 +52,8 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장그룹", "Wc_Group", colWidth: 150);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정코드", "Process_Code", colWidth: 150);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정명", "Process_Name", colWidth: 150);
-            
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "모니터링여부", "Monitoring_YN", colWidth: 80);            
+
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "모니터링여부", "Monitoring_YN", colWidth: 80);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "팔렛생성유무", "Pallet_YN", colWidth: 80);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "사용유무", "Use_YN", colWidth: 80);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고", "Remark", colWidth: 150);
@@ -79,6 +79,7 @@ namespace Team5_XN
 
         private void OnSelect(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (check > 0)
@@ -95,7 +96,7 @@ namespace Team5_XN
             wserv = new WorkCenterService();
             dt = wserv.GetWorkCenter();
             dt_DB = dt.Copy();
-            dataGridView1.DataSource = dt;
+            //dataGridView1.DataSource = dt;
 
             dv_SerchList = new DataView(dt);
 
@@ -114,7 +115,7 @@ namespace Team5_XN
             if (!string.IsNullOrWhiteSpace(txtSelectProcessCode1.Text))
             {
                 //if (sb.Length > 0) sb.Append(" AND ");
-                sb.Append(" AND Process_Code LIKE '%" + txtSelectProcessCode1.Text + "%'");
+                sb.Append(" AND Process_Code = '" + txtSelectProcessCode1.Text + "'");
             }
             if (!cboSelectUse_YN.Text.Equals("전체"))
             {
@@ -123,15 +124,18 @@ namespace Team5_XN
             }
 
             dv_SerchList.RowFilter = sb.ToString();
-            dataGridView1.DataSource = dv_SerchList;
+            dataGridView1.DataSource = dv_SerchList.ToTable();
             rowCount = dv_SerchList.Count;
-            dataGridView1.CurrentCell = null;
             ControlTextReset();
+
+            if (dataGridView1.Rows.Count > 0)
+                dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, 0));
 
 
         }
         private void OnCreate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(1); //추가
@@ -144,11 +148,12 @@ namespace Team5_XN
             dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.RowCount - 1];
             dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, dataGridView1.RowCount - 1));
 
-            
+
         }
 
         private void OnUpdate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(2); //편집
@@ -159,6 +164,7 @@ namespace Team5_XN
 
         private void OnSave(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             int result = 0;
@@ -222,7 +228,7 @@ namespace Team5_XN
                         drNew["Wc_Group"] = dr["Wc_Group"];
                         drNew["Process_Code"] = dr["Process_Code"];
                         //drNew["Process_Name"] = dr["Process_Name"];
-                        
+
                         drNew["Monitoring_YN"] = (dr["Monitoring_YN"].ToString() == "예") ? "Y" : "N";
                         drNew["Pallet_YN"] = (dr["Pallet_YN"].ToString() == "예") ? "Y" : "N";
                         drNew["Use_YN"] = (dr["use_YN"].ToString() == "예") ? "Y" : "N";
@@ -273,14 +279,13 @@ namespace Team5_XN
                             drNew["Up_Emp"] = dr["Up_Emp"];
 
                             dt2.Rows.Add(drNew);
-                            
-                           break;
+
+                            break;
                             // dt2.ImportRow(dr);
                         }
                     }
                 }
                 dt2.AcceptChanges();
-
                 result = wserv.SaveWorkCenter(dt2, check);
 
             }
@@ -288,8 +293,13 @@ namespace Team5_XN
             if (result > 0)
             {
                 MessageBox.Show("저장 완료");
+                dt.AcceptChanges();
+                if (check == 1)
+                    rowCount += result;
+
                 ChangeValue_Check(0);
-                OnSelect(this, e);
+                dt_DB = dt.Copy();
+                //OnSelect(this, e);
 
             }
             else if (result < 0)
@@ -306,6 +316,7 @@ namespace Team5_XN
 
         private void OnDelete(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (dataGridView1.CurrentCell == null)
@@ -352,6 +363,7 @@ namespace Team5_XN
 
         private void OnCancle(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             string menu;
@@ -363,8 +375,9 @@ namespace Team5_XN
             if (MessageBox.Show($"{menu}한 데이터를 저장하지 않고 기능을 취소하시겠습니까?.", "취소확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ChangeValue_Check(0);
-
-                OnSelect(this, e);
+                dt = dt_DB.Copy();
+                dataGridView1.DataSource = dt;
+                //OnSelect(this, e);
                 //this.DialogResult = DialogResult.Yes;
             }
             else
@@ -381,30 +394,30 @@ namespace Team5_XN
         private void ChangeValue_Check(int check)
         {
             this.check = check;
-            
+
             //기본
             if (check == 0)
             {
                 main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = true;
                 main.toolSave.Enabled = main.toolCancle.Enabled = false;
                 main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
-                //foreach (Control ctrl in pnlDetail2.Controls)
-                //{
-                //    if (ctrl is TextBox txt)
-                //        txt.ReadOnly = true;
-                //    else if (ctrl is ComboBox cbo)
-                //        cbo.Enabled = false;
-                //}
-                //return;
+
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
             }
             //추가
             else if (check == 1)
             {
                 main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = true;
                 main.toolUpdate.Enabled = false;
-
                 main.toolCreate.BackColor = Color.Yellow;
 
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
             }
             //편집
             else if (check == 2)
@@ -443,7 +456,7 @@ namespace Team5_XN
             if (e.RowIndex < 0) return;
 
 
-            if(check==1) ControlState();
+            if (check == 1) ControlState();
 
             //dataGridView1.ReadOnly = true;
             //DataView dv1 = new DataView(dt);
@@ -468,30 +481,33 @@ namespace Team5_XN
         private void ControlState()
         {
             if (check <= 1) //0:기본, 1:추가
-                if (check==1 && dataGridView1.CurrentRow!=null && dataGridView1.CurrentRow.Index >= rowCount) //추가한 행
+                if (check == 1 && dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index >= rowCount) //추가한 행
                 {
-                    
+
+                    //pnlDetail.Enabled = true;
+
                     foreach (Control ctrl in pnlDetail.Controls)
                     {
                         if (ctrl is Label) continue;
 
-                        else if(ctrl is TextBox txt) 
-                        { 
+                        else if (ctrl is TextBox txt)
+                        {
                             if (ctrl.Name.Contains("txtProcess")) continue;
                             txt.ReadOnly = false;
                         }
                         else if (ctrl is ComboBox cbo)
                             cbo.Enabled = true;
-                        else if(ctrl is Button btn)
+                        else if (ctrl is Button btn)
                             btn.Enabled = true;
                     }
                 }
                 else //기존 행
                 {
+                    //pnlDetail.Enabled = false;
                     foreach (Control ctrl in pnlDetail.Controls)
                     {
                         if (ctrl is Label) continue;
-                        else if(ctrl is TextBox txt)
+                        else if (ctrl is TextBox txt)
                             txt.ReadOnly = true;
                         else if (ctrl is ComboBox cbo)
                             cbo.Enabled = false;
@@ -501,10 +517,11 @@ namespace Team5_XN
                 }
             else if (check == 2) //2:편집
             {
+                //pnlDetail.Enabled = true;
                 foreach (Control ctrl in pnlDetail.Controls)
                 {
                     if (ctrl is Label) continue;
-                    else if(ctrl is TextBox txt)
+                    else if (ctrl is TextBox txt)
                     {
                         if (ctrl.Name.Contains("txtProcess") || ctrl.Name.Equals("txtWcCode")) continue;
                         txt.ReadOnly = false;
@@ -524,8 +541,8 @@ namespace Team5_XN
 
             if (sp.ShowDialog() == DialogResult.OK)
             {
-                if (btnName.Contains("Select")) 
-                { 
+                if (btnName.Contains("Select"))
+                {
                     txtSelectProcessCode1.Text = sp.Send.Process_Code;
                     txtSelectProcessCode2.Text = sp.Send.Process_Name;
                 }
@@ -544,10 +561,46 @@ namespace Team5_XN
             cboWcGroup.Text =
             txtProcessCode.Text =
             txtProcessName.Text =
-            txtRemark.Text =
-            cboUse_YN.Text =
-            cboMonitoring_YN.Text =
-            cboPallet_YN.Text = "";
+            txtRemark.Text = "";
+            cboUse_YN.SelectedIndex =
+            cboMonitoring_YN.SelectedIndex =
+            cboPallet_YN.SelectedIndex = 0;
+        }
+
+        private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex < 0) return;
+
+            //if (check == 1) ControlState();
+
+            //txtWcCode.Text = dataGridView1["Wc_Code", dataGridView1.CurrentRow.Index].Value.ToString();
+            //txtWcName.Text = dataGridView1["Wc_Name", dataGridView1.CurrentRow.Index].Value.ToString();
+            //cboWcGroup.Text = dataGridView1["Wc_Group", dataGridView1.CurrentRow.Index].Value.ToString();
+            //txtProcessCode.Text = dataGridView1["Process_Code", dataGridView1.CurrentRow.Index].Value.ToString();
+            //txtProcessName.Text = dataGridView1["Process_Name", dataGridView1.CurrentRow.Index].Value.ToString();
+            //txtRemark.Text = dataGridView1["Remark", dataGridView1.CurrentRow.Index].Value.ToString();
+
+            //cboUse_YN.Text = dataGridView1["Use_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+            //cboMonitoring_YN.Text = dataGridView1["Monitoring_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+            //cboPallet_YN.Text = dataGridView1["Pallet_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null) return;
+
+            if (check == 1) ControlState();
+
+            txtWcCode.Text = dataGridView1["Wc_Code", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtWcName.Text = dataGridView1["Wc_Name", dataGridView1.CurrentRow.Index].Value.ToString();
+            cboWcGroup.Text = dataGridView1["Wc_Group", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtProcessCode.Text = dataGridView1["Process_Code", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtProcessName.Text = dataGridView1["Process_Name", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtRemark.Text = dataGridView1["Remark", dataGridView1.CurrentRow.Index].Value.ToString();
+
+            cboUse_YN.Text = dataGridView1["Use_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+            cboMonitoring_YN.Text = dataGridView1["Monitoring_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+            cboPallet_YN.Text = dataGridView1["Pallet_YN", dataGridView1.CurrentRow.Index].Value.ToString();
         }
     }
 }

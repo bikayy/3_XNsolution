@@ -76,6 +76,7 @@ namespace Team5_XN
         }
         private void OnSelect(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (check > 0)
@@ -91,7 +92,7 @@ namespace Team5_XN
             iserv = new ItemService();
             dt = iserv.GetItem();
             dt_DB = dt.Copy();
-            dataGridView1.DataSource = dt;
+            //dataGridView1.DataSource = dt;
 
             dv_SerchList = new DataView(dt);
 
@@ -119,15 +120,17 @@ namespace Team5_XN
             }
 
             dv_SerchList.RowFilter = sb.ToString();
-            dataGridView1.DataSource = dv_SerchList;
+            dataGridView1.DataSource = dv_SerchList.ToTable();
             rowCount = dv_SerchList.Count;
-            dataGridView1.CurrentCell = null;
             ControlTextReset();
 
+            if (dataGridView1.Rows.Count > 0)
+                dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, 0));
 
         }
         private void OnCreate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(1); //추가
@@ -146,6 +149,7 @@ namespace Team5_XN
 
         private void OnUpdate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(2); //편집
@@ -156,6 +160,7 @@ namespace Team5_XN
 
         private void OnSave(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             int result = 0;
@@ -293,8 +298,12 @@ namespace Team5_XN
             if (result > 0)
             {
                 MessageBox.Show("저장 완료");
+                dt.AcceptChanges();
+                if (check == 1)
+                    rowCount += result;
                 ChangeValue_Check(0);
-                OnSelect(this, e);
+                dt_DB = dt.Copy();
+                //OnSelect(this, e);
 
             }
             else if (result < 0)
@@ -311,6 +320,7 @@ namespace Team5_XN
 
         private void OnDelete(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (dataGridView1.CurrentCell == null)
@@ -326,8 +336,6 @@ namespace Team5_XN
                     dt.Rows.Remove(dt.Rows[dataGridView1.CurrentCell.RowIndex]);
                     dt.AcceptChanges();
 
-                    //if (dataGridView1.RowCount == rowCount)
-                    //    dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.RowCount-1];
                     dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex));
                 }
                 else
@@ -357,6 +365,7 @@ namespace Team5_XN
 
         private void OnCancle(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             string menu;
@@ -368,8 +377,9 @@ namespace Team5_XN
             if (MessageBox.Show($"{menu}한 데이터를 저장하지 않고 기능을 취소하시겠습니까?.", "취소확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ChangeValue_Check(0);
-
-                OnSelect(this, e);
+                dt = dt_DB.Copy();
+                dataGridView1.DataSource = dt;
+                //OnSelect(this, e);
                 //this.DialogResult = DialogResult.Yes;
             }
             else
@@ -394,15 +404,22 @@ namespace Team5_XN
                 main.toolSave.Enabled = main.toolCancle.Enabled = false;
                 main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
 
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
             }
             //추가
             else if (check == 1)
             {
                 main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = true;
                 main.toolUpdate.Enabled = false;
-
                 main.toolCreate.BackColor = Color.Yellow;
 
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
             }
             //편집
             else if (check == 2)
@@ -545,18 +562,16 @@ namespace Team5_XN
 
         private void ControlTextReset()
         {
-
             txtItemCode.Text =
             txtItemName.Text =
-            txtItemNameEng.Text =
-
-            cboItemType.Text =
+            txtItemNameEng.Text =           
             txtItemUnit.Text =
-            cboUse_YN.Text = 
-
             txtPrdQty_Hour.Text =
             txtCavity.Text = 
             txtRemark.Text = "";
+
+            cboItemType.SelectedIndex =
+            cboUse_YN.SelectedIndex = 0;
         }
 
         private void txtPrdQty_Hour_KeyPress(object sender, KeyPressEventArgs e)
@@ -570,6 +585,50 @@ namespace Team5_XN
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8) // '\b'               
                 e.Handled = true;
+        }
+
+        private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (check == 1) ControlState();
+
+
+            //txtItemCode.Text = dataGridView1["Item_Code", dataGridView1.CurrentRow.Index].Value.ToString();
+            //txtItemName.Text = dataGridView1["Item_Name", dataGridView1.CurrentRow.Index].Value.ToString();
+            //txtItemNameEng.Text = dataGridView1["Item_Name_Eng", dataGridView1.CurrentRow.Index].Value.ToString();
+
+            //cboItemType.Text = dataGridView1["Item_Type", dataGridView1.CurrentRow.Index].Value.ToString();
+            //txtItemUnit.Text = dataGridView1["Item_Unit", dataGridView1.CurrentRow.Index].Value.ToString();
+            //cboUse_YN.Text = dataGridView1["Use_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+
+
+            //txtPrdQty_Hour.Text = dataGridView1["PrdQty_Per_Hour", dataGridView1.CurrentRow.Index].Value.ToString();
+            //txtCavity.Text = dataGridView1["Cavity_qty", dataGridView1.CurrentRow.Index].Value.ToString();
+            //txtRemark.Text = dataGridView1["Remark", dataGridView1.CurrentRow.Index].Value.ToString();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.CurrentRow == null) return;
+
+            if (check == 1) ControlState();
+
+            txtItemCode.Text = dataGridView1["Item_Code", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtItemName.Text = dataGridView1["Item_Name", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtItemNameEng.Text = dataGridView1["Item_Name_Eng", dataGridView1.CurrentRow.Index].Value.ToString();
+
+            cboItemType.Text = dataGridView1["Item_Type", dataGridView1.CurrentRow.Index].Value.ToString();
+            txtItemUnit.Text = dataGridView1["Item_Unit", dataGridView1.CurrentRow.Index].Value.ToString();
+            cboUse_YN.Text = dataGridView1["Use_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+
+            //txtPrdQty_Hour.Clear();
+            //if (dataGridView1["PrdQty_Per_Hour", dataGridView1.CurrentRow.Index].Value != DBNull.Value)
+            txtPrdQty_Hour.Text = dataGridView1["PrdQty_Per_Hour", dataGridView1.CurrentRow.Index].Value.ToString();
+
+            //if (dataGridView1["Cavity_qty", dataGridView1.CurrentRow.Index].Value != DBNull.Value)
+            txtCavity.Text = dataGridView1["Cavity_qty", dataGridView1.CurrentRow.Index].Value.ToString();
+
+            txtRemark.Text = dataGridView1["Remark", dataGridView1.CurrentRow.Index].Value.ToString();
         }
 
 

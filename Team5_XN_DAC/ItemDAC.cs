@@ -17,10 +17,13 @@ namespace Team5_XN
         public ItemDAC()
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["local"].ConnectionString);
+            conn.Open();
         }
         public void Dispose()
         {
             //throw new NotImplementedException();
+            if (conn != null && conn.State == ConnectionState.Open)
+                conn.Close();
         }
 
         /// <summary>
@@ -55,7 +58,7 @@ FROM Item_Master;";
             {
                 SqlCommand cmd = new SqlCommand("SP_Item_Save", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Connection.Open();
+                //cmd.Connection.Open();
 
                 cmd.Parameters.Add(new SqlParameter("@Item_Data", System.Data.SqlDbType.Structured)
                 {
@@ -85,15 +88,23 @@ FROM Item_Master;";
             {
                 SqlCommand cmd = new SqlCommand("SP_Item_Delete", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Connection.Open();
+                //cmd.Connection.Open();
                 cmd.Parameters.AddWithValue("@Item_Code", itemCode);
 
                 return cmd.ExecuteNonQuery() > 0;
             }
             catch (Exception err)
             {
-                Debug.WriteLine(err.Message);
-                MessageBox.Show(err.Message);
+                if(err.Message.Contains("DELETE 문이 REFERENCE 제약 조건 \"FK") && err.Message.Contains("과(와) 충돌했습니다."))
+                {
+                    MessageBox.Show("해당 항목은 다른 테이블에서 이미 사용중이므로 삭제할 수 없습니다.");
+                }
+                else
+                {
+                    Debug.WriteLine(err.Message);
+                    MessageBox.Show(err.Message);
+                }
+                    
                 return false;
             }
         }

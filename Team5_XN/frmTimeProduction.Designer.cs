@@ -33,16 +33,7 @@ namespace Team5_XN
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pnlSubject1 = new System.Windows.Forms.Panel();
-            this.pnlDgv = new System.Windows.Forms.Panel();
             this.pnlBorder = new System.Windows.Forms.Panel();
-            this.pnlDetail = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.pnlSubject2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.txtSelectItemName = new System.Windows.Forms.TextBox();
             this.txtSelectItemCode = new System.Windows.Forms.TextBox();
@@ -62,15 +53,24 @@ namespace Team5_XN
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.pnlSubject1.SuspendLayout();
-            this.pnlDgv.SuspendLayout();
+            this.pnlSubject2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pnlDetail = new System.Windows.Forms.Panel();
+            this.pnlSubject1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pnlDgv = new System.Windows.Forms.Panel();
             this.pnlBorder.SuspendLayout();
-            this.pnlDetail.SuspendLayout();
+            this.pnlSelect.SuspendLayout();
+            this.pnlSubject2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.pnlSubject2.SuspendLayout();
-            this.pnlSelect.SuspendLayout();
+            this.pnlDetail.SuspendLayout();
+            this.pnlSubject1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pnlDgv.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -81,54 +81,6 @@ namespace Team5_XN
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(16, 100);
             this.panel2.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Gainsboro;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 33);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "작업지시목록";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1276, 230);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // pnlSubject1
-            // 
-            this.pnlSubject1.BackColor = System.Drawing.Color.White;
-            this.pnlSubject1.Controls.Add(this.label9);
-            this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
-            this.pnlSubject1.Name = "pnlSubject1";
-            this.pnlSubject1.Size = new System.Drawing.Size(1276, 33);
-            this.pnlSubject1.TabIndex = 7;
-            // 
-            // pnlDgv
-            // 
-            this.pnlDgv.BackColor = System.Drawing.Color.White;
-            this.pnlDgv.Controls.Add(this.dataGridView1);
-            this.pnlDgv.Controls.Add(this.pnlSubject1);
-            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDgv.Location = new System.Drawing.Point(4, 107);
-            this.pnlDgv.Margin = new System.Windows.Forms.Padding(9, 11, 9, 11);
-            this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlDgv.Size = new System.Drawing.Size(1276, 273);
-            this.pnlDgv.TabIndex = 6;
             // 
             // pnlBorder
             // 
@@ -143,74 +95,6 @@ namespace Team5_XN
             this.pnlBorder.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlBorder.Size = new System.Drawing.Size(1284, 661);
             this.pnlBorder.TabIndex = 7;
-            // 
-            // pnlDetail
-            // 
-            this.pnlDetail.BackColor = System.Drawing.Color.White;
-            this.pnlDetail.Controls.Add(this.panel1);
-            this.pnlDetail.Controls.Add(this.pnlSubject2);
-            this.pnlDetail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDetail.Location = new System.Drawing.Point(4, 380);
-            this.pnlDetail.Name = "pnlDetail";
-            this.pnlDetail.Size = new System.Drawing.Size(1276, 276);
-            this.pnlDetail.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.chart1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 33);
-            this.panel1.Margin = new System.Windows.Forms.Padding(9, 11, 9, 11);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(9, 11, 9, 11);
-            this.panel1.Size = new System.Drawing.Size(1276, 243);
-            this.panel1.TabIndex = 12;
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(9, 11);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            this.chart1.PaletteCustomColors = new System.Drawing.Color[] {
-        System.Drawing.Color.DarkCyan};
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1256, 219);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
-            // pnlSubject2
-            // 
-            this.pnlSubject2.BackColor = System.Drawing.Color.White;
-            this.pnlSubject2.Controls.Add(this.label3);
-            this.pnlSubject2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubject2.Location = new System.Drawing.Point(0, 0);
-            this.pnlSubject2.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlSubject2.Name = "pnlSubject2";
-            this.pnlSubject2.Size = new System.Drawing.Size(1276, 33);
-            this.pnlSubject2.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Gainsboro;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 33);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "시간대별 실적";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlSelect
             // 
@@ -438,6 +322,123 @@ namespace Team5_XN
             this.label1.Text = "생산일자";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pnlSubject2
+            // 
+            this.pnlSubject2.BackColor = System.Drawing.Color.White;
+            this.pnlSubject2.Controls.Add(this.label3);
+            this.pnlSubject2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubject2.Location = new System.Drawing.Point(0, 0);
+            this.pnlSubject2.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSubject2.Name = "pnlSubject2";
+            this.pnlSubject2.Size = new System.Drawing.Size(1276, 33);
+            this.pnlSubject2.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Gainsboro;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 33);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "시간대별 실적";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.chart1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 33);
+            this.panel1.Margin = new System.Windows.Forms.Padding(9, 11, 9, 11);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(9, 11, 9, 11);
+            this.panel1.Size = new System.Drawing.Size(1276, 243);
+            this.panel1.TabIndex = 12;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(9, 11);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.chart1.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.DarkCyan};
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(1256, 219);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // pnlDetail
+            // 
+            this.pnlDetail.BackColor = System.Drawing.Color.White;
+            this.pnlDetail.Controls.Add(this.panel1);
+            this.pnlDetail.Controls.Add(this.pnlSubject2);
+            this.pnlDetail.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDetail.Location = new System.Drawing.Point(4, 380);
+            this.pnlDetail.Name = "pnlDetail";
+            this.pnlDetail.Size = new System.Drawing.Size(1276, 276);
+            this.pnlDetail.TabIndex = 4;
+            // 
+            // pnlSubject1
+            // 
+            this.pnlSubject1.BackColor = System.Drawing.Color.White;
+            this.pnlSubject1.Controls.Add(this.label9);
+            this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
+            this.pnlSubject1.Name = "pnlSubject1";
+            this.pnlSubject1.Size = new System.Drawing.Size(1276, 33);
+            this.pnlSubject1.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Gainsboro;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 33);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "작업지시목록";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 38);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(1276, 230);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            // 
+            // pnlDgv
+            // 
+            this.pnlDgv.BackColor = System.Drawing.Color.White;
+            this.pnlDgv.Controls.Add(this.dataGridView1);
+            this.pnlDgv.Controls.Add(this.pnlSubject1);
+            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDgv.Location = new System.Drawing.Point(4, 107);
+            this.pnlDgv.Margin = new System.Windows.Forms.Padding(9, 11, 9, 11);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnlDgv.Size = new System.Drawing.Size(1276, 273);
+            this.pnlDgv.TabIndex = 6;
+            // 
             // frmTimeProduction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,26 +449,22 @@ namespace Team5_XN
             this.Name = "frmTimeProduction";
             this.Text = "시간대별 생산현황";
             this.Load += new System.EventHandler(this.frmTimeProduction_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.pnlSubject1.ResumeLayout(false);
-            this.pnlDgv.ResumeLayout(false);
             this.pnlBorder.ResumeLayout(false);
-            this.pnlDetail.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.pnlSubject2.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
+            this.pnlSubject2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.pnlDetail.ResumeLayout(false);
+            this.pnlSubject1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.pnlDgv.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel pnlSubject1;
-        private System.Windows.Forms.Panel pnlDgv;
         private System.Windows.Forms.Panel pnlBorder;
         private System.Windows.Forms.Panel pnlSelect;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -478,20 +475,24 @@ namespace Team5_XN
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Panel pnlDetail;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnlSubject2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboWoStatus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.TextBox txtSelectItemName;
         private System.Windows.Forms.TextBox txtSelectItemCode;
         private System.Windows.Forms.Button btnSelectItem;
         private System.Windows.Forms.TextBox txtSelectProcessName;
         private System.Windows.Forms.TextBox txtSelectProcessCode;
         private System.Windows.Forms.Button btnSelectProcess;
+        private System.Windows.Forms.Panel pnlDgv;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel pnlSubject1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel pnlDetail;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel pnlSubject2;
+        private System.Windows.Forms.Label label3;
     }
 }
