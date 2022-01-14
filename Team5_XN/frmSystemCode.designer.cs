@@ -35,6 +35,7 @@ namespace Team5_XN
             this.label2 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.txtSort = new System.Windows.Forms.TextBox();
             this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@ namespace Team5_XN
             this.txtSysCode = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtRemark = new WinReflectionSettings.PlaceholderTextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.pnlDgv2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSysDetail)).BeginInit();
             this.panel3.SuspendLayout();
@@ -160,6 +160,17 @@ namespace Team5_XN
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(749, 132);
             this.panel4.TabIndex = 12;
+            // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(330, 10);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(20, 23);
+            this.label18.TabIndex = 26;
+            this.label18.Text = "*";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtSort
             // 
@@ -459,17 +470,6 @@ namespace Team5_XN
             this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtRemark.Size = new System.Drawing.Size(231, 52);
             this.txtRemark.TabIndex = 8;
-            // 
-            // label18
-            // 
-            this.label18.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(330, 10);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(20, 23);
-            this.label18.TabIndex = 26;
-            this.label18.Text = "*";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmSystemCode
             // 

@@ -405,6 +405,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BoxingGradeService.cs" />
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\DayProductionService.cs" />
     <Compile Include="Service\ItemService.cs" />
