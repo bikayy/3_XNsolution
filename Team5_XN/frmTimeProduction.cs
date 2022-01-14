@@ -35,12 +35,6 @@ namespace Team5_XN
         }
 
 
-
-
-
-
-
-
         private void frmTimeProduction_Load(object sender, EventArgs e)
         {
             main = (Main)this.MdiParent;
@@ -74,13 +68,13 @@ namespace Team5_XN
             dataGridView1.Columns["Prd_EndTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
 
 
-            string[] code = { "WC_STATUS" };
+            string[] code = { "WO_STATUS" };
 
             //cdac = new CommonDAC();
             cserv = new CommonService();
 
             DataTable dtSysCode = cserv.GetCommonCodeSys(code);
-            CommonUtil.ComboBinding(cboWoStatus, "WC_STATUS", dtSysCode.Copy());
+            CommonUtil.ComboBinding(cboWoStatus, "WO_STATUS", dtSysCode.Copy());
 
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
 
@@ -101,12 +95,13 @@ namespace Team5_XN
 
         private void OnSelect(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
 
             tserv = new TimeProductionService();
             dt = tserv.GetTimeProduction(dateTimePicker1.Value, dateTimePicker2.Value);
-            dataGridView1.DataSource = dt;
+            //dataGridView1.DataSource = dt;
 
             dv_SerchList = new DataView(dt);
 
@@ -130,12 +125,15 @@ namespace Team5_XN
 
             dv_SerchList.RowFilter = sb.ToString();
             dataGridView1.DataSource = dv_SerchList;
-            dataGridView1.CurrentCell = null;
             chart1.Series.Clear();
+            if (dataGridView1.Rows.Count > 0)
+                dataGridView1_RowEnter(dataGridView1, new DataGridViewCellEventArgs(0, 0));
+
         }
 
         private void OnReset(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             dateTimePicker1.Value = dateTimePicker2.Value = DateTime.Now;
@@ -145,7 +143,7 @@ namespace Team5_XN
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Chart(dataGridView1["WorkOrderNo", e.RowIndex].Value.ToString());
+            //Chart(dataGridView1["WorkOrderNo", e.RowIndex].Value.ToString());
         }
 
         private void Chart(string workOrderNo)
@@ -161,7 +159,7 @@ namespace Team5_XN
             //chart1.Legends[0].Docking = Docking.Top;
 
 
-            DataTable chart = tserv.GetChart(workOrderNo);
+            DataTable chart = tserv.GetTimeProduction_Chart(workOrderNo);
 
             chart1.DataSource = chart;
 
@@ -207,14 +205,14 @@ namespace Team5_XN
         }
 
 
-        private void dateTimePicker1_ValueChanged(object sender, CancelEventArgs e)
-        {
-            if (!(dateTimePicker1.Value.Date <= dateTimePicker2.Value.Date))
-            {
-                MessageBox.Show("선택한 생산일자의 시작 일자가 종료 일자보다 이후일 수 없습니다.");
-                e.Cancel = true;
-            }
-        }
+        //private void dateTimePicker1_ValueChanged(object sender, CancelEventArgs e)
+        //{
+        //    if (!(dateTimePicker1.Value.Date <= dateTimePicker2.Value.Date))
+        //    {
+        //        MessageBox.Show("선택한 생산일자의 시작 일자가 종료 일자보다 이후일 수 없습니다.");
+        //        e.Cancel = true;
+        //    }
+        //}
 
         private void dateTimePicker_Enter(object sender, EventArgs e)
         {
@@ -233,5 +231,9 @@ namespace Team5_XN
             date = ((DateTimePicker)sender).Value;
         }
 
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            Chart(dataGridView1["WorkOrderNo", e.RowIndex].Value.ToString());
+        }
     }
 }

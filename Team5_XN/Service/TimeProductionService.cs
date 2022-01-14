@@ -19,10 +19,10 @@ namespace Team5_XN
             return dt;
         }
 
-        public DataTable GetChart(string workOrderNo)
+        public DataTable GetTimeProduction_Chart(string workOrderNo)
         {
             TimeProductionDAC db = new TimeProductionDAC();
-            DataTable dt = db.GetChart(workOrderNo);
+            DataTable dt = db.GetTimeProduction_Chart(workOrderNo);
             db.Dispose();
 
             return dt;

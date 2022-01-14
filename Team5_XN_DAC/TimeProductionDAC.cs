@@ -17,10 +17,13 @@ namespace Team5_XN
         public TimeProductionDAC()
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["local"].ConnectionString);
+            conn.Open();
         }
         public void Dispose()
         {
             //throw new NotImplementedException();
+            if (conn != null && conn.State == ConnectionState.Open)
+                conn.Close();
         }
 
 
@@ -51,7 +54,7 @@ namespace Team5_XN
             DataTable dt = new DataTable();
             try
             {
-                conn.Open();
+                //conn.Open();
                 cmd = new SqlCommand("SP_TimeProduction_Select", conn);
                 //cmd.Connection = conn;
                 //cmd.CommandText = "SP_TimeProduction_Select";
@@ -69,13 +72,13 @@ namespace Team5_XN
             finally
             {
                 cmd.Dispose();
-                conn.Close();
+                //conn.Close();
             }
             return dt;
 
         }
 
-public DataTable GetChart(string workOrderNo)
+        public DataTable GetTimeProduction_Chart(string workOrderNo)
         {
 
             SqlCommand cmd = null;
@@ -83,7 +86,7 @@ public DataTable GetChart(string workOrderNo)
             DataTable dt = new DataTable();
             try
             {
-                conn.Open();
+                //conn.Open();
                 cmd = new SqlCommand("SP_TimeProduction_Chart_Select", conn);
                 //cmd.Connection = conn;
                 //cmd.CommandText = "SP_TimeProduction_Select";
@@ -100,7 +103,7 @@ public DataTable GetChart(string workOrderNo)
             finally
             {
                 cmd.Dispose();
-                conn.Close();
+                //conn.Close();
             }
             return dt;
         }

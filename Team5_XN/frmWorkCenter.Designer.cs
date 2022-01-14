@@ -208,6 +208,7 @@ namespace Team5_XN
             this.txtSelectProcessCode2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSelectProcessCode2.Location = new System.Drawing.Point(465, 11);
             this.txtSelectProcessCode2.Name = "txtSelectProcessCode2";
+            this.txtSelectProcessCode2.ReadOnly = true;
             this.txtSelectProcessCode2.Size = new System.Drawing.Size(98, 22);
             this.txtSelectProcessCode2.TabIndex = 15;
             // 
@@ -226,6 +227,7 @@ namespace Team5_XN
             this.txtSelectProcessCode1.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSelectProcessCode1.Location = new System.Drawing.Point(356, 11);
             this.txtSelectProcessCode1.Name = "txtSelectProcessCode1";
+            this.txtSelectProcessCode1.ReadOnly = true;
             this.txtSelectProcessCode1.Size = new System.Drawing.Size(82, 22);
             this.txtSelectProcessCode1.TabIndex = 12;
             // 
@@ -390,6 +392,7 @@ namespace Team5_XN
             this.txtProcessName.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtProcessName.Location = new System.Drawing.Point(207, 95);
             this.txtProcessName.Name = "txtProcessName";
+            this.txtProcessName.ReadOnly = true;
             this.txtProcessName.Size = new System.Drawing.Size(98, 22);
             this.txtProcessName.TabIndex = 86;
             this.txtProcessName.Tag = "Process_Name";
@@ -400,6 +403,7 @@ namespace Team5_XN
             this.txtProcessCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtProcessCode.Location = new System.Drawing.Point(100, 95);
             this.txtProcessCode.Name = "txtProcessCode";
+            this.txtProcessCode.ReadOnly = true;
             this.txtProcessCode.Size = new System.Drawing.Size(82, 22);
             this.txtProcessCode.TabIndex = 85;
             this.txtProcessCode.Tag = "Process_Code";
@@ -672,6 +676,8 @@ namespace Team5_XN
             this.dataGridView1.Size = new System.Drawing.Size(1276, 370);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowLeave);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // pnlSubject1
             // 
