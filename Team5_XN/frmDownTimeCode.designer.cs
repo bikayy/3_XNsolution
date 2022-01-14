@@ -53,6 +53,7 @@ namespace Team5_XN
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -82,14 +83,13 @@ namespace Team5_XN
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlDgv2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -108,11 +108,11 @@ namespace Team5_XN
             this.pnlDgv2.Controls.Add(this.dataGridView2);
             this.pnlDgv2.Controls.Add(this.panel3);
             this.pnlDgv2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDgv2.Location = new System.Drawing.Point(433, 54);
+            this.pnlDgv2.Location = new System.Drawing.Point(474, 54);
             this.pnlDgv2.Margin = new System.Windows.Forms.Padding(10);
             this.pnlDgv2.Name = "pnlDgv2";
             this.pnlDgv2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlDgv2.Size = new System.Drawing.Size(851, 445);
+            this.pnlDgv2.Size = new System.Drawing.Size(877, 445);
             this.pnlDgv2.TabIndex = 20;
             // 
             // dataGridView2
@@ -130,7 +130,7 @@ namespace Team5_XN
             this.dataGridView2.Location = new System.Drawing.Point(0, 35);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(851, 405);
+            this.dataGridView2.Size = new System.Drawing.Size(877, 405);
             this.dataGridView2.TabIndex = 1;
             // 
             // Column4
@@ -178,7 +178,7 @@ namespace Team5_XN
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(851, 30);
+            this.panel3.Size = new System.Drawing.Size(877, 30);
             this.panel3.TabIndex = 7;
             // 
             // label2
@@ -201,9 +201,9 @@ namespace Team5_XN
             this.pnlDetail.Controls.Add(this.panel4);
             this.pnlDetail.Controls.Add(this.pnlSubject2);
             this.pnlDetail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDetail.Location = new System.Drawing.Point(433, 499);
+            this.pnlDetail.Location = new System.Drawing.Point(474, 499);
             this.pnlDetail.Name = "pnlDetail";
-            this.pnlDetail.Size = new System.Drawing.Size(851, 162);
+            this.pnlDetail.Size = new System.Drawing.Size(877, 162);
             this.pnlDetail.TabIndex = 21;
             // 
             // panel4
@@ -243,14 +243,14 @@ namespace Team5_XN
             this.panel4.Location = new System.Drawing.Point(0, 30);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(851, 132);
+            this.panel4.Size = new System.Drawing.Size(877, 132);
             this.panel4.TabIndex = 12;
             // 
             // comboBox5
             // 
             this.comboBox5.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(697, 36);
+            this.comboBox5.Location = new System.Drawing.Point(763, 36);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(101, 20);
             this.comboBox5.TabIndex = 41;
@@ -260,7 +260,7 @@ namespace Team5_XN
             // 
             this.label24.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(608, 37);
+            this.label24.Location = new System.Drawing.Point(664, 36);
             this.label24.Margin = new System.Windows.Forms.Padding(0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(17, 23);
@@ -271,9 +271,9 @@ namespace Team5_XN
             // label25
             // 
             this.label25.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label25.Location = new System.Drawing.Point(622, 35);
+            this.label25.Location = new System.Drawing.Point(678, 34);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(69, 23);
+            this.label25.Size = new System.Drawing.Size(79, 23);
             this.label25.TabIndex = 39;
             this.label25.Text = "비가동구분";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -282,7 +282,7 @@ namespace Team5_XN
             // 
             this.comboBox4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(697, 11);
+            this.comboBox4.Location = new System.Drawing.Point(763, 11);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(101, 20);
             this.comboBox4.TabIndex = 38;
@@ -292,7 +292,7 @@ namespace Team5_XN
             // 
             this.label22.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(608, 13);
+            this.label22.Location = new System.Drawing.Point(664, 12);
             this.label22.Margin = new System.Windows.Forms.Padding(0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(17, 23);
@@ -303,9 +303,9 @@ namespace Team5_XN
             // label23
             // 
             this.label23.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label23.Location = new System.Drawing.Point(622, 11);
+            this.label23.Location = new System.Drawing.Point(678, 10);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(69, 23);
+            this.label23.Size = new System.Drawing.Size(79, 23);
             this.label23.TabIndex = 36;
             this.label23.Text = "비가동유형";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -314,7 +314,7 @@ namespace Team5_XN
             // 
             this.comboBox3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(432, 13);
+            this.comboBox3.Location = new System.Drawing.Point(449, 10);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(101, 20);
             this.comboBox3.TabIndex = 35;
@@ -323,7 +323,7 @@ namespace Team5_XN
             // textBox9
             // 
             this.textBox9.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox9.Location = new System.Drawing.Point(432, 97);
+            this.textBox9.Location = new System.Drawing.Point(449, 94);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(101, 21);
             this.textBox9.TabIndex = 34;
@@ -332,7 +332,7 @@ namespace Team5_XN
             // 
             this.label20.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(355, 100);
+            this.label20.Location = new System.Drawing.Point(372, 97);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(20, 23);
             this.label20.TabIndex = 33;
@@ -342,7 +342,7 @@ namespace Team5_XN
             // label21
             // 
             this.label21.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label21.Location = new System.Drawing.Point(372, 99);
+            this.label21.Location = new System.Drawing.Point(389, 96);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(69, 23);
             this.label21.TabIndex = 32;
@@ -352,10 +352,23 @@ namespace Team5_XN
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox8.Location = new System.Drawing.Point(259, 12);
+            this.textBox8.Location = new System.Drawing.Point(281, 12);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(82, 21);
+            this.textBox8.Size = new System.Drawing.Size(91, 21);
             this.textBox8.TabIndex = 31;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.button2.Location = new System.Drawing.Point(253, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(23, 23);
+            this.button2.TabIndex = 27;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // textBox7
             // 
@@ -381,9 +394,9 @@ namespace Team5_XN
             this.label19.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label19.Location = new System.Drawing.Point(24, 70);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(126, 23);
+            this.label19.Size = new System.Drawing.Size(135, 23);
             this.label19.TabIndex = 26;
-            this.label19.Text = "비가동 상세분류 코드";
+            this.label19.Text = "비가동 상세분류명";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // comboBox1
@@ -421,7 +434,7 @@ namespace Team5_XN
             // 
             this.label10.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(358, 41);
+            this.label10.Location = new System.Drawing.Point(375, 38);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 23);
@@ -432,17 +445,17 @@ namespace Team5_XN
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox5.Location = new System.Drawing.Point(432, 39);
+            this.textBox5.Location = new System.Drawing.Point(449, 36);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(152, 51);
+            this.textBox5.Size = new System.Drawing.Size(183, 51);
             this.textBox5.TabIndex = 21;
             // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label11.Location = new System.Drawing.Point(372, 39);
+            this.label11.Location = new System.Drawing.Point(389, 36);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 23);
             this.label11.TabIndex = 20;
@@ -465,7 +478,7 @@ namespace Team5_XN
             this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.textBox2.Location = new System.Drawing.Point(156, 12);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(69, 21);
+            this.textBox2.Size = new System.Drawing.Size(91, 21);
             this.textBox2.TabIndex = 18;
             // 
             // label3
@@ -473,7 +486,7 @@ namespace Team5_XN
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label3.Location = new System.Drawing.Point(24, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 23);
+            this.label3.Size = new System.Drawing.Size(108, 23);
             this.label3.TabIndex = 17;
             this.label3.Text = "비가동 대분류";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -482,7 +495,7 @@ namespace Team5_XN
             // 
             this.label8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(358, 13);
+            this.label8.Location = new System.Drawing.Point(375, 10);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(17, 23);
@@ -514,15 +527,15 @@ namespace Team5_XN
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label4.Location = new System.Drawing.Point(24, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 23);
+            this.label4.Size = new System.Drawing.Size(135, 23);
             this.label4.TabIndex = 11;
-            this.label4.Text = "비가동 상세분류 코드";
+            this.label4.Text = "비가동 상세분류코드";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label5.Location = new System.Drawing.Point(372, 11);
+            this.label5.Location = new System.Drawing.Point(389, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 23);
             this.label5.TabIndex = 13;
@@ -537,7 +550,7 @@ namespace Team5_XN
             this.pnlSubject2.Location = new System.Drawing.Point(0, 0);
             this.pnlSubject2.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSubject2.Name = "pnlSubject2";
-            this.pnlSubject2.Size = new System.Drawing.Size(851, 30);
+            this.pnlSubject2.Size = new System.Drawing.Size(877, 30);
             this.pnlSubject2.TabIndex = 11;
             // 
             // label12
@@ -563,7 +576,7 @@ namespace Team5_XN
             this.pnlDgv1.Margin = new System.Windows.Forms.Padding(10);
             this.pnlDgv1.Name = "pnlDgv1";
             this.pnlDgv1.Padding = new System.Windows.Forms.Padding(0, 5, 5, 0);
-            this.pnlDgv1.Size = new System.Drawing.Size(433, 607);
+            this.pnlDgv1.Size = new System.Drawing.Size(474, 607);
             this.pnlDgv1.TabIndex = 19;
             // 
             // dataGridView1
@@ -576,7 +589,7 @@ namespace Team5_XN
             this.dataGridView1.Location = new System.Drawing.Point(0, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(428, 572);
+            this.dataGridView1.Size = new System.Drawing.Size(469, 572);
             this.dataGridView1.TabIndex = 1;
             // 
             // Column1
@@ -603,7 +616,7 @@ namespace Team5_XN
             this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
             this.pnlSubject1.Name = "pnlSubject1";
-            this.pnlSubject1.Size = new System.Drawing.Size(428, 30);
+            this.pnlSubject1.Size = new System.Drawing.Size(469, 30);
             this.pnlSubject1.TabIndex = 7;
             // 
             // label9
@@ -637,7 +650,7 @@ namespace Team5_XN
             this.pnlSelect.Location = new System.Drawing.Point(0, 0);
             this.pnlSelect.Margin = new System.Windows.Forms.Padding(10);
             this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(1284, 54);
+            this.pnlSelect.Size = new System.Drawing.Size(1351, 54);
             this.pnlSelect.TabIndex = 18;
             // 
             // comboBox2
@@ -656,6 +669,19 @@ namespace Team5_XN
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(96, 21);
             this.textBox1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.button1.Location = new System.Drawing.Point(228, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 23);
+            this.button1.TabIndex = 25;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label15
             // 
@@ -718,37 +744,11 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(19, 52);
             this.panel2.TabIndex = 0;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.button2.Location = new System.Drawing.Point(231, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(23, 23);
-            this.button2.TabIndex = 27;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.button1.Location = new System.Drawing.Point(228, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 25;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // frmDownTimeCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 661);
+            this.ClientSize = new System.Drawing.Size(1351, 661);
             this.Controls.Add(this.pnlDgv2);
             this.Controls.Add(this.pnlDetail);
             this.Controls.Add(this.pnlDgv1);

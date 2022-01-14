@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Team5_XN.Service;
 
 namespace Team5_XN
 {
@@ -139,7 +138,7 @@ namespace Team5_XN
             dt = commServ.GetSystemCodeMaster(); 
             dt_DB = dt.Copy();
             dgvSysMaster.DataSource = dt;
-            //dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, 0));
+            dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, 0));
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -160,6 +159,7 @@ namespace Team5_XN
             dgvSysMaster.CurrentCell = null;
 
             //ControlTextReset();
+
         }
         private void ChangeValue_Check(int check)
         {

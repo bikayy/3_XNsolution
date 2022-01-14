@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Team5_XN.Service;
 using Team5_XN_VO;
 
 namespace Team5_XN

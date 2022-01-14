@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Team5_XN_DAC;
 using Team5_XN_VO;
 
-namespace Team5_XN.Service
+namespace Team5_XN
 {
     class UserService
     {
