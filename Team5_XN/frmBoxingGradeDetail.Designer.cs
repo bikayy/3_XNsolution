@@ -168,7 +168,7 @@ namespace Team5_XN
             // cboUseYN
             // 
             this.cboUseYN.FormattingEnabled = true;
-            this.cboUseYN.Location = new System.Drawing.Point(126, 66);
+            this.cboUseYN.Location = new System.Drawing.Point(149, 68);
             this.cboUseYN.Name = "cboUseYN";
             this.cboUseYN.Size = new System.Drawing.Size(121, 20);
             this.cboUseYN.TabIndex = 22;
@@ -208,7 +208,7 @@ namespace Team5_XN
             // txtBoxGradeCode
             // 
             this.txtBoxGradeCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtBoxGradeCode.Location = new System.Drawing.Point(126, 11);
+            this.txtBoxGradeCode.Location = new System.Drawing.Point(149, 13);
             this.txtBoxGradeCode.Name = "txtBoxGradeCode";
             this.txtBoxGradeCode.Size = new System.Drawing.Size(176, 21);
             this.txtBoxGradeCode.TabIndex = 18;
@@ -218,7 +218,7 @@ namespace Team5_XN
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label3.Location = new System.Drawing.Point(24, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 23);
+            this.label3.Size = new System.Drawing.Size(119, 23);
             this.label3.TabIndex = 17;
             this.label3.Text = "포장등급 상세코드";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -237,7 +237,7 @@ namespace Team5_XN
             // txtBoxGradeName
             // 
             this.txtBoxGradeName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtBoxGradeName.Location = new System.Drawing.Point(126, 38);
+            this.txtBoxGradeName.Location = new System.Drawing.Point(149, 40);
             this.txtBoxGradeName.Name = "txtBoxGradeName";
             this.txtBoxGradeName.Size = new System.Drawing.Size(176, 21);
             this.txtBoxGradeName.TabIndex = 12;
@@ -247,7 +247,7 @@ namespace Team5_XN
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label4.Location = new System.Drawing.Point(24, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 23);
+            this.label4.Size = new System.Drawing.Size(108, 23);
             this.label4.TabIndex = 11;
             this.label4.Text = "포장등급 상세명";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,7 +345,7 @@ namespace Team5_XN
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox6.Location = new System.Drawing.Point(234, 17);
+            this.textBox6.Location = new System.Drawing.Point(242, 18);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(99, 21);
             this.textBox6.TabIndex = 19;
@@ -353,7 +353,7 @@ namespace Team5_XN
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox1.Location = new System.Drawing.Point(101, 16);
+            this.textBox1.Location = new System.Drawing.Point(109, 17);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(99, 21);
             this.textBox1.TabIndex = 3;
@@ -375,7 +375,7 @@ namespace Team5_XN
             this.label13.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label13.Location = new System.Drawing.Point(46, 16);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 23);
+            this.label13.Size = new System.Drawing.Size(70, 23);
             this.label13.TabIndex = 17;
             this.label13.Text = "포장등급";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -387,7 +387,7 @@ namespace Team5_XN
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.button1.Location = new System.Drawing.Point(206, 15);
+            this.button1.Location = new System.Drawing.Point(214, 16);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 1;

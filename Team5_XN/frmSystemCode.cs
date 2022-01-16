@@ -12,15 +12,15 @@ namespace Team5_XN
 {
     public partial class frmSystemCode : Form
     {
-        DataTable list;
+        DataTable dt2;
         CommonService commServ = new CommonService();
         DataTable dt;
-        DataTable dt2;
         DataTable dt_DB;
         Main main = null;
         int rowCount;
         DataView searchList;
         int check = 0;
+        int detailCount;
         public frmSystemCode()
         {
             InitializeComponent();
@@ -94,7 +94,133 @@ namespace Team5_XN
 
         private void OnSave(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+
+            //int result = 0;
+
+
+            //DataTable dt2 = new DataTable();
+            //dt2.Columns.Add(new DataColumn("User_ID", typeof(string)));
+            //dt2.Columns.Add(new DataColumn("User_Name", typeof(string)));
+            //dt2.Columns.Add(new DataColumn("User_PW", typeof(string)));
+            //dt2.Columns.Add(new DataColumn("UserGroup_Code", typeof(string)));
+            //dt2.Columns.Add(new DataColumn("IP_Security_YN", typeof(char)));
+            //dt2.Columns.Add(new DataColumn("Default_Major_Process_Code", typeof(string)));
+            //dt2.Columns.Add(new DataColumn("Use_YN", typeof(char)));
+            //dt2.Columns.Add(new DataColumn("Ins_Date", typeof(DateTime)));
+            //dt2.Columns.Add(new DataColumn("Ins_Emp", typeof(string)));
+            //dt2.Columns.Add(new DataColumn("Up_Date", typeof(DateTime)));
+            //dt2.Columns.Add(new DataColumn("Up_Emp", typeof(string)));
+
+            //userServ = new UserService();
+
+            ////저장-추가
+            //if (check == 1)
+            //{
+
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        if (dt.Rows.IndexOf(dr) >= rowCount)
+            //        {
+            //            int r = dt.Rows.IndexOf(dr);
+
+            //            DataView dv_duple = new DataView(dt_DB);
+            //            dv_duple.RowFilter = $"User_ID = '{dgvUserInfo[0, r].Value.ToString()}'";
+            //            if (dv_duple.Count > 0)
+            //            {
+            //                MessageBox.Show($"아이디는 중복 될 수 없습니다. ({dgvUserInfo[0, r].Value.ToString()}) \n → {r + 1}행, 1열");
+            //                dgvUserInfo.CurrentCell = dgvUserInfo[0, r];
+            //                dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, r));
+            //                return;
+            //            }
+
+
+            //            for (int c = 0; c < 5; c++)
+            //            {
+            //                if (dgvUserInfo[c, r].Value.ToString().Length < 1)
+            //                {
+            //                    if (c == 3) continue;
+            //                    MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dgvUserInfo.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
+            //                    dgvUserInfo.CurrentCell = dgvUserInfo[c, r];
+            //                    dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(c, r));
+            //                    return;
+            //                }
+            //            }
+
+            //            DataRow drNew = dt2.NewRow();
+            //            drNew["User_ID"] = dr["User_ID"];
+            //            drNew["User_Name"] = dr["User_Name"];
+            //            drNew["User_PW"] = dr["User_ID"];
+            //            drNew["UserGroup_Code"] = dr["UserGroup_Code"];
+            //            drNew["IP_Security_YN"] = (dr["IP_Security_YN"].ToString() == "허용") ? "A" : "D";
+            //            drNew["Default_Major_Process_Code"] = dr["Default_Major_Process_Code"];
+            //            drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
+            //            drNew["Ins_Date"] = dr["Ins_Date"];
+            //            drNew["Ins_Emp"] = dr["Ins_Emp"];
+            //            drNew["Up_Date"] = dr["Up_Date"];
+            //            drNew["Up_Emp"] = dr["Up_Emp"];
+
+            //            dt2.Rows.Add(drNew);
+            //            // dt2.ImportRow(dr);
+            //        }
+            //    }
+            //    dt2.AcceptChanges();
+
+            //    result = userServ.SaveUser(dt2, check);
+
+            //}
+            ////저장-편집
+            //else if (check == 2)
+            //{
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        foreach (DataColumn dc in dt.Columns)
+            //        {
+
+            //            string a = dt_DB.Rows[dt.Rows.IndexOf(dr)][dt.Columns.IndexOf(dc)].ToString();
+            //            string b = dr[dc].ToString();
+            //            if (b != a)
+            //            {
+            //                DataRow drNew = dt2.NewRow();
+            //                drNew["User_ID"] = dr["User_ID"];
+            //                drNew["User_Name"] = dr["User_Name"];
+            //                drNew["UserGroup_Code"] = dr["UserGroup_Code"];
+            //                drNew["IP_Security_YN"] = (dr["IP_Security_YN"].ToString() == "허용") ? "A" : "D";
+            //                drNew["Default_Major_Process_Code"] = dr["Default_Major_Process_Code"];
+            //                drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
+            //                drNew["Ins_Date"] = dr["Ins_Date"];
+            //                drNew["Ins_Emp"] = dr["Ins_Emp"];
+            //                drNew["Up_Date"] = dr["Up_Date"];
+            //                drNew["Up_Emp"] = dr["Up_Emp"];
+
+            //                dt2.Rows.Add(drNew);
+            //                break;
+            //                // dt2.ImportRow(dr);
+            //            }
+            //        }
+            //    }
+            //    dt2.AcceptChanges();
+            //    result = userServ.SaveUser(dt2, check);
+
+            //}
+
+            //if (result > 0)
+            //{
+            //    MessageBox.Show("저장 완료");
+            //    ChangeValue_Check(0);
+            //    OnSelect(this, e);
+
+            //}
+            //else if (result < 0)
+            //{
+            //    MessageBox.Show("저장 실패");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("저장할 데이터가 없습니다.");
+            //}
+
+
         }
 
         private void OnUpdate(object sender, EventArgs e)
@@ -241,6 +367,36 @@ namespace Team5_XN
                         btn.Enabled = true;
                 }
             }
+            if (check <= 1) //0:기본, 1:추가
+                if (check == 1 && dgvSysDetail.CurrentRow != null && dgvSysDetail.CurrentRow.Index >= detailCount) //추가한 행
+                {
+
+                    foreach (Control ctrl in panel4.Controls)
+                    {
+                        if (ctrl is Label) continue;
+
+                        else if (ctrl is TextBox txt)
+                            txt.ReadOnly = false;
+                        else if (ctrl is ComboBox cbo)
+                            cbo.Enabled = true;
+                        else if (ctrl is Button btn)
+                            btn.Enabled = true;
+                    }
+                }
+                else //기존 행
+                {
+                    foreach (Control ctrl in panel4.Controls)
+                    {
+                        if (ctrl is Label) continue;
+                        else if (ctrl is TextBox txt)
+                            txt.ReadOnly = true;
+                        else if (ctrl is ComboBox cbo)
+                            cbo.Enabled = false;
+                        else if (ctrl is Button btn)
+                            btn.Enabled = false;
+                    }
+                }
+            
         }
         private void LoadData()
         {
@@ -250,8 +406,8 @@ namespace Team5_XN
 
             DataGridViewUtil.AddGridTextColumn(dgvSysMaster, "시스템정의 대분류코드", "Code", colWidth: 180);
             DataGridViewUtil.AddGridTextColumn(dgvSysMaster, "시스템정의 대분류명", "Name", colWidth: 200);
-            list = commServ.GetSystemCodeMaster();
-            dgvSysMaster.DataSource = list;
+            dt2 = commServ.GetSystemCodeMaster();
+            dgvSysMaster.DataSource = dt2;
             dgvSysDetail.Columns.Clear();
 
             DataGridViewUtil.SetInitGridView(dgvSysDetail);
@@ -265,14 +421,39 @@ namespace Team5_XN
         private void dgvSysMaster_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string name = Convert.ToString(dgvSysMaster.Rows[e.RowIndex].Cells[1].Value);
-            list = commServ.GetSystemCodeDetail(name);
-            dgvSysDetail.DataSource = list;
-
-            dgvSysDetail_CellClick(sender, e);
+            dt2 = commServ.GetSystemCodeDetail(name);
+            dgvSysDetail.DataSource = dt2;
+            detailCount = dt2.Rows.Count;
+            
+            //dgvSysDetail_CellClick(sender, e);
         }
 
 
         private void dgvSysDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string name = Convert.ToString(dgvSysMaster.Rows[e.RowIndex].Cells[1].Value);
+            dt2 = commServ.GetSystemCodeDetail(name);
+            dgvSysDetail.DataSource = dt2;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            //dataGridView1.AllowUserToAddRows = true;
+            DataRow dr2 = dt2.NewRow();
+
+            dt2.Rows.Add(dr2);
+
+            dt2.AcceptChanges();
+            dgvSysDetail.DataSource = dt2;
+            dgvSysDetail.CurrentCell = dgvSysDetail[0, dgvSysDetail.RowCount - 1];
+            ChangeValue_Check(1); //추가
+            dgvSysDetail.Enabled = false;
+            //dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, dgvSysDetail.RowCount - 1));
+            //dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, dgvSysDetail.RowCount - 1));
+        }
+
+        private void dgvSysDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
