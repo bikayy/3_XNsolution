@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Team5_XN
 {
-    public partial class POPWorkCenter : Form
+    public partial class POPNopRegister : Form
     {
-        public POPWorkCenter()
+        public POPNopRegister()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            POPWorkOrderStatus pop = new POPWorkOrderStatus();
-            pop.ShowDialog();
-            this.Hide();
         }
     }
 }

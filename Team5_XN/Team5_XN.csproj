@@ -61,10 +61,16 @@
     <Compile Include="Controls\ucCreateWorkList.Designer.cs">
       <DependentUpon>ucCreateWorkList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucDateTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucDateTime.Designer.cs">
+      <DependentUpon>ucDateTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucPaletteList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ucPaletteList.Designer.cs">
+    <Compile Include="Controls\ucPaletteList.designer.cs">
       <DependentUpon>ucPaletteList.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ucTabControl.cs">
@@ -319,12 +325,6 @@
     <Compile Include="POPNopRegister.cs.Designer.cs">
       <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
     </Compile>
-    <Compile Include="POPPalette.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="POPPalette.Designer.cs">
-      <DependentUpon>POPPalette.cs</DependentUpon>
-    </Compile>
     <Compile Include="PopupAddPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,24 +391,13 @@
     <Compile Include="PopupWCSearch.designer.cs">
       <DependentUpon>PopupWCSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="POPWorkCenter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="POPWorkCenter.designer.cs">
-      <DependentUpon>POPWorkCenter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="POPWorkOrderStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="POPWorkOrderStatus.Designer.cs">
-      <DependentUpon>POPWorkOrderStatus.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\BoxingGradeService.cs" />
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\DayProductionService.cs" />
     <Compile Include="Service\ItemService.cs" />
+    <Compile Include="Service\POPService\WcService.cs" />
     <Compile Include="Service\ProcessService.cs" />
     <Compile Include="Service\ProductionService\PlanService.cs" />
     <Compile Include="Service\ProductionService\RequestService.cs" />
@@ -432,6 +421,9 @@
     </Compile>
     <EmbeddedResource Include="Controls\ucCreateWorkList.resx">
       <DependentUpon>ucCreateWorkList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucDateTime.resx">
+      <DependentUpon>ucDateTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucPaletteList.resx">
       <DependentUpon>ucPaletteList.cs</DependentUpon>
@@ -562,9 +554,6 @@
     <EmbeddedResource Include="POPNopRegister.cs.resx">
       <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POPPalette.resx">
-      <DependentUpon>POPPalette.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PopupAddPlan.resx">
       <DependentUpon>PopupAddPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -594,12 +583,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupWCSearch.resx">
       <DependentUpon>PopupWCSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="POPWorkCenter.resx">
-      <DependentUpon>POPWorkCenter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="POPWorkOrderStatus.resx">
-      <DependentUpon>POPWorkOrderStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

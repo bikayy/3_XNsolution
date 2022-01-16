@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Team5_XN
+namespace POP_Team5_XN
 {
-    public partial class POPPalette : Form
+    public partial class Form1 : Form
     {
-        public POPPalette()
+        public Form1()
         {
             InitializeComponent();
         }

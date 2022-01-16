@@ -1,5 +1,5 @@
 ﻿
-namespace Team5_XN.Controls
+namespace Team5_XN
 {
     partial class ucWorkCenterList
     {
@@ -29,130 +29,137 @@ namespace Team5_XN.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.tpnlWc = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlWcGroup = new System.Windows.Forms.Panel();
+            this.lblWcGroup = new System.Windows.Forms.Label();
+            this.pnlWcName = new System.Windows.Forms.Panel();
+            this.lblWcName = new System.Windows.Forms.Label();
+            this.pnlWcStatus = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.tpnlWc.SuspendLayout();
+            this.pnlWcGroup.SuspendLayout();
+            this.pnlWcName.SuspendLayout();
+            this.pnlWcStatus.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tpnlWc
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.62857F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.85714F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.62857F));
-            this.tableLayoutPanel1.Controls.Add(this.panel7, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(875, 78);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tpnlWc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tpnlWc.ColumnCount = 3;
+            this.tpnlWc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.62857F));
+            this.tpnlWc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.85714F));
+            this.tpnlWc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.62857F));
+            this.tpnlWc.Controls.Add(this.pnlWcGroup, 2, 0);
+            this.tpnlWc.Controls.Add(this.pnlWcName, 1, 0);
+            this.tpnlWc.Controls.Add(this.pnlWcStatus, 0, 0);
+            this.tpnlWc.Location = new System.Drawing.Point(3, 4);
+            this.tpnlWc.Name = "tpnlWc";
+            this.tpnlWc.RowCount = 1;
+            this.tpnlWc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tpnlWc.Size = new System.Drawing.Size(875, 78);
+            this.tpnlWc.TabIndex = 1;
             // 
-            // panel7
+            // pnlWcGroup
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.label7);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.ForeColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(679, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(193, 72);
-            this.panel7.TabIndex = 2;
+            this.pnlWcGroup.BackColor = System.Drawing.Color.White;
+            this.pnlWcGroup.Controls.Add(this.lblWcGroup);
+            this.pnlWcGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlWcGroup.ForeColor = System.Drawing.Color.Black;
+            this.pnlWcGroup.Location = new System.Drawing.Point(679, 3);
+            this.pnlWcGroup.Name = "pnlWcGroup";
+            this.pnlWcGroup.Size = new System.Drawing.Size(193, 72);
+            this.pnlWcGroup.TabIndex = 2;
+            this.pnlWcGroup.Click += new System.EventHandler(this.WcClick);
             // 
-            // label7
+            // lblWcGroup
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(72, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 32);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "W1";
+            this.lblWcGroup.AutoSize = true;
+            this.lblWcGroup.BackColor = System.Drawing.Color.Transparent;
+            this.lblWcGroup.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblWcGroup.ForeColor = System.Drawing.Color.Black;
+            this.lblWcGroup.Location = new System.Drawing.Point(72, 20);
+            this.lblWcGroup.Name = "lblWcGroup";
+            this.lblWcGroup.Size = new System.Drawing.Size(53, 32);
+            this.lblWcGroup.TabIndex = 5;
+            this.lblWcGroup.Text = "W1";
+            this.lblWcGroup.Click += new System.EventHandler(this.WcClick);
             // 
-            // panel6
+            // pnlWcName
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.ForeColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(165, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(508, 72);
-            this.panel6.TabIndex = 1;
+            this.pnlWcName.BackColor = System.Drawing.Color.White;
+            this.pnlWcName.Controls.Add(this.lblWcName);
+            this.pnlWcName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlWcName.ForeColor = System.Drawing.Color.White;
+            this.pnlWcName.Location = new System.Drawing.Point(165, 3);
+            this.pnlWcName.Name = "pnlWcName";
+            this.pnlWcName.Size = new System.Drawing.Size(508, 72);
+            this.pnlWcName.TabIndex = 1;
+            this.pnlWcName.Click += new System.EventHandler(this.WcClick);
             // 
-            // label6
+            // lblWcName
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(162, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(189, 32);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "시유 1라인(W1)";
+            this.lblWcName.AutoSize = true;
+            this.lblWcName.BackColor = System.Drawing.Color.Transparent;
+            this.lblWcName.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblWcName.ForeColor = System.Drawing.Color.Black;
+            this.lblWcName.Location = new System.Drawing.Point(162, 20);
+            this.lblWcName.Name = "lblWcName";
+            this.lblWcName.Size = new System.Drawing.Size(189, 32);
+            this.lblWcName.TabIndex = 4;
+            this.lblWcName.Text = "시유 1라인(W1)";
+            this.lblWcName.Click += new System.EventHandler(this.WcClick);
             // 
-            // panel5
+            // pnlWcStatus
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.ForeColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(156, 72);
-            this.panel5.TabIndex = 0;
+            this.pnlWcStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.pnlWcStatus.Controls.Add(this.lblStatus);
+            this.pnlWcStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlWcStatus.ForeColor = System.Drawing.Color.White;
+            this.pnlWcStatus.Location = new System.Drawing.Point(3, 3);
+            this.pnlWcStatus.Name = "pnlWcStatus";
+            this.pnlWcStatus.Size = new System.Drawing.Size(156, 72);
+            this.pnlWcStatus.TabIndex = 0;
+            this.pnlWcStatus.Click += new System.EventHandler(this.WcClick);
             // 
-            // label5
+            // lblStatus
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(46, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 32);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "가동";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblStatus.ForeColor = System.Drawing.Color.White;
+            this.lblStatus.Location = new System.Drawing.Point(46, 20);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(63, 32);
+            this.lblStatus.TabIndex = 3;
+            this.lblStatus.Text = "가동";
+            this.lblStatus.Click += new System.EventHandler(this.WcClick);
             // 
             // ucWorkCenterList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tpnlWc);
             this.Name = "ucWorkCenterList";
-            this.Size = new System.Drawing.Size(880, 83);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.Size = new System.Drawing.Size(882, 86);
+            this.Load += new System.EventHandler(this.ucWorkCenterList_Load);
+            this.tpnlWc.ResumeLayout(false);
+            this.pnlWcGroup.ResumeLayout(false);
+            this.pnlWcGroup.PerformLayout();
+            this.pnlWcName.ResumeLayout(false);
+            this.pnlWcName.PerformLayout();
+            this.pnlWcStatus.ResumeLayout(false);
+            this.pnlWcStatus.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TableLayoutPanel tpnlWc;
+        private System.Windows.Forms.Panel pnlWcGroup;
+        private System.Windows.Forms.Label lblWcGroup;
+        private System.Windows.Forms.Panel pnlWcName;
+        private System.Windows.Forms.Label lblWcName;
+        private System.Windows.Forms.Panel pnlWcStatus;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
