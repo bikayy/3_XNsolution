@@ -93,7 +93,7 @@ namespace Team5_XN
 
             else if (((Button)sender).Name.Contains("Month"))///
             {
-
+                
                 if (((Button)sender).Name.Contains("Up"))
                 {
                     if (Convert.ToInt32(mskMonth.Text) >= 1 && Convert.ToInt32(mskMonth.Text) < 12)
@@ -109,13 +109,13 @@ namespace Team5_XN
                         mskMonth.Text = "12";
                 }
 
-
+                
             }
+            
 
-
-            else if (((Button)sender).Name.Contains("Day"))///
+            else if(((Button)sender).Name.Contains("Day"))///
             {
-
+                
                 if (((Button)sender).Name.Contains("Up"))
                 {
                     if (Convert.ToInt32(mskDay.Text) >= 1 && Convert.ToInt32(mskDay.Text) < lastday)
@@ -132,7 +132,7 @@ namespace Team5_XN
                 }
             }
 
-            else if (((Button)sender).Name.Contains("Hour"))///
+            else if(((Button)sender).Name.Contains("Hour"))///
             {
                 if (((Button)sender).Name.Contains("Up"))
                 {
@@ -150,7 +150,7 @@ namespace Team5_XN
                 }
             }
 
-            else if (((Button)sender).Name.Contains("Minute"))///
+            else if(((Button)sender).Name.Contains("Minute"))///
             {
                 if (((Button)sender).Name.Contains("Up"))
                 {
@@ -185,7 +185,7 @@ namespace Team5_XN
                         mskSecond.Text = "59";
                 }
 
-            }
+            }           
 
             if (lastday < Convert.ToInt32(mskDay.Text))
             {
@@ -208,7 +208,7 @@ namespace Team5_XN
 
         private void mskMonth_Validating(object sender, CancelEventArgs e)
         {
-
+            
             if (((Control)sender).Name.Equals("mskYear"))
             {
                 Convert.ToInt32(mskYear.Text).ToString().PadLeft(4, '0');
@@ -220,7 +220,7 @@ namespace Team5_XN
                 return;
             }
 
-
+            
 
             else if (((Control)sender).Name.Equals("mskMonth"))
             {
@@ -230,7 +230,7 @@ namespace Team5_XN
                     mskMonth.Text = "12";
             }
 
-
+            
             else if (((Control)sender).Name.Equals("mskDay"))
             {
                 lastday = DateTime.DaysInMonth(Convert.ToInt32(mskYear.Text), Convert.ToInt32(mskMonth.Text));

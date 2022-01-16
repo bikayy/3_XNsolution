@@ -31,6 +31,9 @@ namespace Team5_XN
         {
             this.pnlMain = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDay = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -104,7 +107,6 @@ namespace Team5_XN
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
             this.pnlMain.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -128,8 +130,10 @@ namespace Team5_XN
             // 
             this.pnlMain.BackColor = System.Drawing.SystemColors.Control;
             this.pnlMain.BackgroundImage = global::POP_Team5_XN.Properties.Resources.backColor;
-            this.pnlMain.Controls.Add(this.ucDateTime1);
             this.pnlMain.Controls.Add(this.label17);
+            this.pnlMain.Controls.Add(this.lblTime);
+            this.pnlMain.Controls.Add(this.lblDay);
+            this.pnlMain.Controls.Add(this.lblDate);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
@@ -147,6 +151,42 @@ namespace Team5_XN
             this.label17.Size = new System.Drawing.Size(145, 30);
             this.label17.TabIndex = 3;
             this.label17.Text = "비가동등록 : ";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTime.ForeColor = System.Drawing.Color.Yellow;
+            this.lblTime.Location = new System.Drawing.Point(12, 62);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(149, 25);
+            this.lblTime.TabIndex = 2;
+            this.lblTime.Text = "14시 20분 59초";
+            // 
+            // lblDay
+            // 
+            this.lblDay.AutoSize = true;
+            this.lblDay.BackColor = System.Drawing.Color.Transparent;
+            this.lblDay.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblDay.ForeColor = System.Drawing.Color.Yellow;
+            this.lblDay.Location = new System.Drawing.Point(160, 16);
+            this.lblDay.Name = "lblDay";
+            this.lblDay.Size = new System.Drawing.Size(83, 25);
+            this.lblDay.TabIndex = 1;
+            this.lblDay.Text = "(수요일)";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblDate.ForeColor = System.Drawing.Color.Yellow;
+            this.lblDate.Location = new System.Drawing.Point(12, 16);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(116, 25);
+            this.lblDate.TabIndex = 0;
+            this.lblDate.Text = "2021-12-22";
             // 
             // tableLayoutPanel3
             // 
@@ -1201,17 +1241,6 @@ namespace Team5_XN
             this.panel5.Size = new System.Drawing.Size(859, 663);
             this.panel5.TabIndex = 14;
             // 
-            // ucDateTime1
-            // 
-            this.ucDateTime1.BackColor = System.Drawing.Color.Transparent;
-            this.ucDateTime1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucDateTime1.Location = new System.Drawing.Point(0, 0);
-            this.ucDateTime1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ucDateTime1.Name = "ucDateTime1";
-            this.ucDateTime1.Padding = new System.Windows.Forms.Padding(20);
-            this.ucDateTime1.Size = new System.Drawing.Size(277, 110);
-            this.ucDateTime1.TabIndex = 16;
-            // 
             // POPNopRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1262,6 +1291,9 @@ namespace Team5_XN
 
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblDay;
+        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -1335,6 +1367,5 @@ namespace Team5_XN
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private POP_Team5_XN.Controls.ucDateTime ucDateTime1;
     }
 }

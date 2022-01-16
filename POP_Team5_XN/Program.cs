@@ -16,7 +16,7 @@ namespace POP_Team5_XN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new POPNop());
+            Application.Run(new POPWorkCenter());
         }
     }
 }
