@@ -41,6 +41,8 @@ namespace POP_Team5_XN
                 btnStart.BackColor = btnEnd.BackColor = btnPalette.BackColor = btnClosing.BackColor = btnPfm.BackColor = Color.Gray;
             }
 
+            lblTitle.Text = woInfo.Wc_Name;
+
             DataTable dt = new DataTable();
             dt = wcServ.SelectOr(woInfo.Wc_Code);
             int idx = 0;

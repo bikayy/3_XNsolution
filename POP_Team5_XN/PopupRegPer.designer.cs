@@ -428,9 +428,9 @@ namespace POP_Team5_XN
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(388, 36);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(62, 45);
+            this.lblTitle.Size = new System.Drawing.Size(82, 45);
             this.lblTitle.TabIndex = 3;
-            this.lblTitle.Text = "dd";
+            this.lblTitle.Text = "title";
             // 
             // tableLayoutPanel3
             // 

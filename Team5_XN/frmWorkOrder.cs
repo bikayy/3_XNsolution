@@ -84,24 +84,24 @@ namespace Team5_XN
 
         private void ClearItems(Panel pnl)
         {
-            i_txtOrNo.Text = "";
-            i_txtItemCode.Text = "";
-            i_txtItemName.Text = "";
-            i_txtPrCode.Text = "";
-            i_txtPrName.Text = "";
-            i_txtWcCode.Text = "";
-            i_txtWcName.Text = "";
+            //i_txtOrNo.Text = "";
+            //i_txtItemCode.Text = "";
+            //i_txtItemName.Text = "";
+            //i_txtPrCode.Text = "";
+            //i_txtPrName.Text = "";
+            //i_txtWcCode.Text = "";
+            //i_txtWcName.Text = "";
 
-            i_txtPlanQty.Text = "";
+            //i_txtPlanQty.Text = "";
             i_txtPlanQty.ReadOnly = true;
-            i_txtRemark.Text = "";
+            //i_txtRemark.Text = "";
             i_txtRemark.ReadOnly = true;
 
             foreach (Control ctrl in pnl.Controls)
             {
                 if (ctrl is DateTimePicker dtp)
                 {
-                    dtp.Value = DateTime.Now;
+                    //dtp.Value = DateTime.Now;
                     dtp.Enabled = false;
                 }
                 else
@@ -166,6 +166,11 @@ namespace Team5_XN
         private void button5_Click(object sender, EventArgs e)
         {
             ClearItems(pnlDetail);
+
+            LoadData(s_dtpFrom.Value.ToString("yyyy-MM-dd"), s_dtpTo.Value.ToString("yyyy-MM-dd"),
+                s_txtPrCode.Text, s_txtWcCode.Text);
+            DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
+            dgvWo_CellClick(this, args);
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
@@ -262,124 +267,176 @@ namespace Team5_XN
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //if (dgvWo.SelectedRows != null)
-            //{
-            //    MessageBox.Show("작업지시 생성을 먼저 클릭하여주십시오.");
-            //    return;
-            //}
-
-            TextBox[] textboxes = { i_txtItemName, i_txtPrName, i_txtWcName, i_txtPlanQty };
-            Label[] labels = { i_lblItem, i_lblProcess, i_lblWc, i_lblPlanQty };
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < textboxes.Length; i++)
+            if (string.IsNullOrWhiteSpace(i_txtOrNo.Text))
             {
-                bool isChecked = string.IsNullOrWhiteSpace(textboxes[i].Text.Trim());
-                if (isChecked)
+                TextBox[] textboxes = { i_txtItemName, i_txtPrName, i_txtWcName, i_txtPlanQty };
+                Label[] labels = { i_lblItem, i_lblProcess, i_lblWc, i_lblPlanQty };
+                StringBuilder sb = new StringBuilder();
+
+                for (int i = 0; i < textboxes.Length; i++)
                 {
-                    MessageBox.Show($"{labels[i].Text}을(를) 입력하여주십시오.");
-                    return;
+                    bool isChecked = string.IsNullOrWhiteSpace(textboxes[i].Text.Trim());
+                    if (isChecked)
+                    {
+                        MessageBox.Show($"{labels[i].Text}을(를) 입력하여주십시오.");
+                        return;
+                    }
+                    else
+                    {
+                        sb.AppendLine($"{labels[i].Text} : {textboxes[i].Text}");
+                    }
                 }
-                else
-                {
-                    sb.AppendLine($"{labels[i].Text} : {textboxes[i].Text}");
+
+                sb.AppendLine($"{i_lblPlanDate.Text} : {i_dtpPlanStart.Value.ToString("yyyy-MM-dd HH:mm")} ~ " +
+                    $"{i_dtpPlanEnd.Value.ToString("yyyy-MM-dd HH:mm")}");
+                sb.AppendLine($"{i_lblRemark.Text} : {i_txtRemark.Text}");
+                sb.AppendLine("위의 정보로 작업지시를 등록하시겠습니까?");
+
+                DialogResult result = MessageBox.Show(sb.ToString(), "작업지시생성", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                { //Plan_Date, Plan_Qty_Box, Item_Code, Wc_Code, Process_Code,
+                  //Plan_StartTime, Plan_EndTime, Remark, Ins_Emp
+
+                    WOUpsertVO woInsert = new WOUpsertVO
+                    {
+                        Plan_Date = i_dtpPlanStart.Value.ToString("yyyy-MM-dd"),
+                        Plan_Qty_Box = Convert.ToInt32(i_txtPlanQty.Text),
+                        Item_Code = i_txtItemCode.Text,
+                        Wc_Code = i_txtWcCode.Text,
+                        Process_Code = i_txtPrCode.Text,
+                        Plan_StartTime = i_dtpPlanStart.Value,
+                        Plan_EndTime = i_dtpPlanEnd.Value,
+                        Remark = i_txtRemark.Text,
+                        Ins_Emp = "홍길동수정"
+                    };
+
+                    bool inResult = woServ.WOInsert(woInsert);
+
+                    if (inResult)
+                    {
+                        MessageBox.Show("작업지시가 생성되었습니다.");
+                        LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
+                        s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                        s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                    }
+                    else MessageBox.Show("작업지시 생성에 실패하였습니다.\n다시 확인하여주십시오.");
                 }
             }
+            else
+            {
+                TextBox[] textboxes = { i_txtItemName, i_txtPrName, i_txtWcName, i_txtPlanQty };
+                Label[] labels = { i_lblItem, i_lblProcess, i_lblWc, i_lblPlanQty };
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine($"{i_lblOrNo.Text} : {i_txtOrNo.Text}");
 
-            sb.AppendLine($"{i_lblPlanDate.Text} : {i_dtpPlanStart.Value.ToString("yyyy-MM-dd HH:mm")} ~ " +
-                $"{i_dtpPlanEnd.Value.ToString("yyyy-MM-dd HH:mm")}");
-            sb.AppendLine($"{i_lblRemark.Text} : {i_txtRemark.Text}");
-            sb.AppendLine("위의 정보로 작업지시를 등록하시겠습니까?");
-
-            DialogResult result = MessageBox.Show(sb.ToString(), "작업지시생성", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            { //Plan_Date, Plan_Qty_Box, Item_Code, Wc_Code, Process_Code,
-              //Plan_StartTime, Plan_EndTime, Remark, Ins_Emp
-
-                WOUpsertVO woInsert = new WOUpsertVO
+                for (int i = 0; i < textboxes.Length; i++)
                 {
-                    Plan_Date = i_dtpPlanStart.Value.ToString("yyyy-MM-dd"),
-                    Plan_Qty_Box = Convert.ToInt32(i_txtPlanQty.Text),
-                    Item_Code = i_txtItemCode.Text,
-                    Wc_Code = i_txtWcCode.Text,
-                    Process_Code = i_txtPrCode.Text,
-                    Plan_StartTime = i_dtpPlanStart.Value,
-                    Plan_EndTime = i_dtpPlanEnd.Value,
-                    Remark = i_txtRemark.Text,
-                    Ins_Emp = "홍길동수정"
-                };
-
-                bool inResult = woServ.WOInsert(woInsert);
-
-                if (inResult)
-                {
-                    MessageBox.Show("작업지시가 생성되었습니다.");
-                    LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
-                    s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
-                    s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                    bool isChecked = string.IsNullOrWhiteSpace(textboxes[i].Text.Trim());
+                    if (isChecked)
+                    {
+                        MessageBox.Show($"{labels[i].Text}을(를) 입력하여주십시오.");
+                        return;
+                    }
+                    else
+                    {
+                        sb.AppendLine($"{labels[i].Text} : {textboxes[i].Text}");
+                    }
                 }
-                else MessageBox.Show("작업지시 생성에 실패하였습니다.\n다시 확인하여주십시오.");
 
+                sb.AppendLine($"{i_lblPlanDate.Text} : {i_dtpPlanStart.Value.ToString("yyyy-MM-dd HH:mm")} ~ " +
+                    $"{i_dtpPlanEnd.Value.ToString("yyyy-MM-dd HH:mm")}");
+                sb.AppendLine($"{i_lblRemark.Text} : {i_txtRemark.Text}");
+                sb.AppendLine("위의 정보로 작업지시를 수정하시겠습니까?");
 
+                DialogResult result = MessageBox.Show(sb.ToString(), "작업지시수정", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                { //Plan_Date, Plan_Qty_Box, Item_Code, Wc_Code, Process_Code,
+                  //Plan_StartTime, Plan_EndTime, Remark, Ins_Emp
+
+                    WOUpsertVO woUpdate = new WOUpsertVO
+                    {
+                        WorkOrderNo = i_txtOrNo.Text,
+                        Plan_Date = i_dtpPlanStart.Value.ToString("yyyy-MM-dd"),
+                        Plan_Qty_Box = Convert.ToInt32(i_txtPlanQty.Text),
+                        Item_Code = i_txtItemCode.Text,
+                        Wc_Code = i_txtWcCode.Text,
+                        Plan_StartTime = i_dtpPlanStart.Value,
+                        Plan_EndTime = i_dtpPlanEnd.Value,
+                        Remark = i_txtRemark.Text,
+                        Up_Emp = "홍길동업뎃수정"
+                    };
+
+                    bool inResult = woServ.WOUpdate(woUpdate);
+
+                    if (inResult)
+                    {
+                        MessageBox.Show("작업지시가 수정되었습니다.");
+                        LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
+                        s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                        s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                    }
+                    else MessageBox.Show("작업지시 수정에 실패하였습니다.\n작업지시상태가 '생산대기'인 경우에만 수정할 수 있습니다.");
+
+                }
             }
         }
 
         private void btnUSave_Click(object sender, EventArgs e)
         {
-            TextBox[] textboxes = { i_txtItemName, i_txtPrName, i_txtWcName, i_txtPlanQty };
-            Label[] labels = { i_lblItem, i_lblProcess, i_lblWc, i_lblPlanQty };
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"{i_lblOrNo.Text} : {i_txtOrNo.Text}");
+            //TextBox[] textboxes = { i_txtItemName, i_txtPrName, i_txtWcName, i_txtPlanQty };
+            //Label[] labels = { i_lblItem, i_lblProcess, i_lblWc, i_lblPlanQty };
+            //StringBuilder sb = new StringBuilder();
+            //sb.AppendLine($"{i_lblOrNo.Text} : {i_txtOrNo.Text}");
 
-            for (int i = 0; i < textboxes.Length; i++)
-            {
-                bool isChecked = string.IsNullOrWhiteSpace(textboxes[i].Text.Trim());
-                if (isChecked)
-                {
-                    MessageBox.Show($"{labels[i].Text}을(를) 입력하여주십시오.");
-                    return;
-                }
-                else
-                {
-                    sb.AppendLine($"{labels[i].Text} : {textboxes[i].Text}");
-                }
-            }
+            //for (int i = 0; i < textboxes.Length; i++)
+            //{
+            //    bool isChecked = string.IsNullOrWhiteSpace(textboxes[i].Text.Trim());
+            //    if (isChecked)
+            //    {
+            //        MessageBox.Show($"{labels[i].Text}을(를) 입력하여주십시오.");
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        sb.AppendLine($"{labels[i].Text} : {textboxes[i].Text}");
+            //    }
+            //}
 
-            sb.AppendLine($"{i_lblPlanDate.Text} : {i_dtpPlanStart.Value.ToString("yyyy-MM-dd HH:mm")} ~ " +
-                $"{i_dtpPlanEnd.Value.ToString("yyyy-MM-dd HH:mm")}");
-            sb.AppendLine($"{i_lblRemark.Text} : {i_txtRemark.Text}");
-            sb.AppendLine("위의 정보로 작업지시를 수정하시겠습니까?");
+            //sb.AppendLine($"{i_lblPlanDate.Text} : {i_dtpPlanStart.Value.ToString("yyyy-MM-dd HH:mm")} ~ " +
+            //    $"{i_dtpPlanEnd.Value.ToString("yyyy-MM-dd HH:mm")}");
+            //sb.AppendLine($"{i_lblRemark.Text} : {i_txtRemark.Text}");
+            //sb.AppendLine("위의 정보로 작업지시를 수정하시겠습니까?");
 
-            DialogResult result = MessageBox.Show(sb.ToString(), "작업지시수정", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            { //Plan_Date, Plan_Qty_Box, Item_Code, Wc_Code, Process_Code,
-              //Plan_StartTime, Plan_EndTime, Remark, Ins_Emp
+            //DialogResult result = MessageBox.Show(sb.ToString(), "작업지시수정", MessageBoxButtons.YesNo);
+            //if (result == DialogResult.Yes)
+            //{ //Plan_Date, Plan_Qty_Box, Item_Code, Wc_Code, Process_Code,
+            //  //Plan_StartTime, Plan_EndTime, Remark, Ins_Emp
 
-                WOUpsertVO woUpdate = new WOUpsertVO
-                {
-                    WorkOrderNo = i_txtOrNo.Text,
-                    Plan_Date = i_dtpPlanStart.Value.ToString("yyyy-MM-dd"),
-                    Plan_Qty_Box = Convert.ToInt32(i_txtPlanQty.Text),
-                    Item_Code = i_txtItemCode.Text,
-                    Wc_Code = i_txtWcCode.Text,
-                    Plan_StartTime = i_dtpPlanStart.Value,
-                    Plan_EndTime = i_dtpPlanEnd.Value,
-                    Remark = i_txtRemark.Text,
-                    Up_Emp = "홍길동업뎃수정"
-                };
+            //    WOUpsertVO woUpdate = new WOUpsertVO
+            //    {
+            //        WorkOrderNo = i_txtOrNo.Text,
+            //        Plan_Date = i_dtpPlanStart.Value.ToString("yyyy-MM-dd"),
+            //        Plan_Qty_Box = Convert.ToInt32(i_txtPlanQty.Text),
+            //        Item_Code = i_txtItemCode.Text,
+            //        Wc_Code = i_txtWcCode.Text,
+            //        Plan_StartTime = i_dtpPlanStart.Value,
+            //        Plan_EndTime = i_dtpPlanEnd.Value,
+            //        Remark = i_txtRemark.Text,
+            //        Up_Emp = "홍길동업뎃수정"
+            //    };
 
-                bool inResult = woServ.WOUpdate(woUpdate);
+            //    bool inResult = woServ.WOUpdate(woUpdate);
 
-                if (inResult)
-                {
-                    MessageBox.Show("작업지시가 수정되었습니다.");
-                    LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
-                    s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
-                    s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
-                }
-                else MessageBox.Show("작업지시 수정에 실패하였습니다.\n작업지시상태가 '생산대기'인 경우에만 수정할 수 있습니다.");
+            //    if (inResult)
+            //    {
+            //        MessageBox.Show("작업지시가 수정되었습니다.");
+            //        LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
+            //        s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+            //        s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+            //    }
+            //    else MessageBox.Show("작업지시 수정에 실패하였습니다.\n작업지시상태가 '생산대기'인 경우에만 수정할 수 있습니다.");
 
-            }
+            //}
         }
 
         private void dgvWo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -404,6 +461,7 @@ namespace Team5_XN
                 i_txtWcName.Text = wo.Wc_Name;
                 i_dtpPlanStart.Text = wo.Plan_StartTime.ToString("yyyy-MM-dd HH:mm");
                 i_dtpPlanEnd.Text = wo.Plan_EndTime.ToString("yyyy-MM-dd HH:mm");
+                i_txtPlanQty.Text = wo.Plan_Qty_Box.ToString();
                 i_txtRemark.Text = wo.Remark;
             }
         }

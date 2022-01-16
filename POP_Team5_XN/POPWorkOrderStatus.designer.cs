@@ -64,6 +64,7 @@ namespace POP_Team5_XN
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
             this.pnlOrList.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -488,7 +489,7 @@ namespace POP_Team5_XN
             this.btnClosing.Name = "btnClosing";
             this.btnClosing.Size = new System.Drawing.Size(123, 101);
             this.btnClosing.TabIndex = 3;
-            this.btnClosing.Text = " 작업지시   현장마감";
+            this.btnClosing.Text = "  작업지시    현장마감";
             this.btnClosing.UseVisualStyleBackColor = false;
             this.btnClosing.Click += new System.EventHandler(this.btnClosing_Click);
             // 
@@ -526,12 +527,25 @@ namespace POP_Team5_XN
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BackgroundImage = global::POP_Team5_XN.Properties.Resources.backColor;
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.ucDateTime1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1084, 111);
             this.panel1.TabIndex = 6;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(450, 33);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(82, 45);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "title";
             // 
             // ucDateTime1
             // 
@@ -569,6 +583,7 @@ namespace POP_Team5_XN
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -611,5 +626,6 @@ namespace POP_Team5_XN
         private System.Windows.Forms.Button btnPfm;
         private Controls.ucDateTime ucDateTime1;
         private System.Windows.Forms.Button btnNopReg;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

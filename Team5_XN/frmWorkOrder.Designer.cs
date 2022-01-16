@@ -39,9 +39,13 @@ namespace Team5_XN
             this.btnSelect = new System.Windows.Forms.Button();
             this.s_btnWc = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.s_txtWcName = new WinReflectionSettings.PlaceholderTextBox();
+            this.s_txtWcCode = new WinReflectionSettings.PlaceholderTextBox();
             this.s_lblWc = new System.Windows.Forms.Label();
             this.s_btnProcess = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.s_txtPrName = new WinReflectionSettings.PlaceholderTextBox();
+            this.s_txtPrCode = new WinReflectionSettings.PlaceholderTextBox();
             this.s_lblProcess = new System.Windows.Forms.Label();
             this.btnEndCancle = new System.Windows.Forms.Button();
             this.s_dtpTo = new System.Windows.Forms.DateTimePicker();
@@ -68,6 +72,7 @@ namespace Team5_XN
             this.pnlBorder = new System.Windows.Forms.Panel();
             this.pnlDetail2 = new System.Windows.Forms.Panel();
             this.pnlDetail = new System.Windows.Forms.Panel();
+            this.i_txtRemark = new WinReflectionSettings.PlaceholderTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.i_lblRemark = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,35 +80,30 @@ namespace Team5_XN
             this.i_dtpPlanStart = new System.Windows.Forms.DateTimePicker();
             this.label23 = new System.Windows.Forms.Label();
             this.i_lblPlanDate = new System.Windows.Forms.Label();
+            this.i_txtPlanQty = new WinReflectionSettings.PlaceholderTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.i_lblPlanQty = new System.Windows.Forms.Label();
             this.i_btnWc = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.i_txtWcName = new WinReflectionSettings.PlaceholderTextBox();
+            this.i_txtWcCode = new WinReflectionSettings.PlaceholderTextBox();
             this.i_lblWc = new System.Windows.Forms.Label();
             this.i_btnProcess = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.i_txtPrName = new WinReflectionSettings.PlaceholderTextBox();
+            this.i_txtPrCode = new WinReflectionSettings.PlaceholderTextBox();
             this.i_lblProcess = new System.Windows.Forms.Label();
             this.i_btnItem = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.i_txtItemName = new WinReflectionSettings.PlaceholderTextBox();
+            this.i_txtItemCode = new WinReflectionSettings.PlaceholderTextBox();
             this.i_lblItem = new System.Windows.Forms.Label();
+            this.i_txtOrNo = new WinReflectionSettings.PlaceholderTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.i_lblOrNo = new System.Windows.Forms.Label();
             this.pnlSubject2 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.i_txtRemark = new WinReflectionSettings.PlaceholderTextBox();
-            this.i_txtPlanQty = new WinReflectionSettings.PlaceholderTextBox();
-            this.i_txtWcName = new WinReflectionSettings.PlaceholderTextBox();
-            this.i_txtWcCode = new WinReflectionSettings.PlaceholderTextBox();
-            this.i_txtPrName = new WinReflectionSettings.PlaceholderTextBox();
-            this.i_txtPrCode = new WinReflectionSettings.PlaceholderTextBox();
-            this.i_txtItemName = new WinReflectionSettings.PlaceholderTextBox();
-            this.i_txtItemCode = new WinReflectionSettings.PlaceholderTextBox();
-            this.i_txtOrNo = new WinReflectionSettings.PlaceholderTextBox();
-            this.s_txtWcName = new WinReflectionSettings.PlaceholderTextBox();
-            this.s_txtWcCode = new WinReflectionSettings.PlaceholderTextBox();
-            this.s_txtPrName = new WinReflectionSettings.PlaceholderTextBox();
-            this.s_txtPrCode = new WinReflectionSettings.PlaceholderTextBox();
             this.pnlSelect.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWo)).BeginInit();
@@ -135,13 +135,11 @@ namespace Team5_XN
             this.pnlSelect.Controls.Add(this.s_txtPrName);
             this.pnlSelect.Controls.Add(this.s_txtPrCode);
             this.pnlSelect.Controls.Add(this.s_lblProcess);
-            this.pnlSelect.Controls.Add(this.btnEndCancle);
             this.pnlSelect.Controls.Add(this.s_dtpTo);
             this.pnlSelect.Controls.Add(this.label17);
             this.pnlSelect.Controls.Add(this.s_dtpFrom);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Controls.Add(this.s_lblPlanDate);
-            this.pnlSelect.Controls.Add(this.btnEnd);
             this.pnlSelect.Controls.Add(this.panel2);
             this.pnlSelect.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSelect.Location = new System.Drawing.Point(6, 6);
@@ -156,7 +154,7 @@ namespace Team5_XN
             this.btnUSave.BackColor = System.Drawing.Color.White;
             this.btnUSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUSave.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUSave.Location = new System.Drawing.Point(879, 67);
+            this.btnUSave.Location = new System.Drawing.Point(821, 66);
             this.btnUSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUSave.Name = "btnUSave";
             this.btnUSave.Size = new System.Drawing.Size(76, 38);
@@ -171,12 +169,12 @@ namespace Team5_XN
             this.btnCreate.BackColor = System.Drawing.Color.White;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCreate.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCreate.Location = new System.Drawing.Point(634, 67);
+            this.btnCreate.Location = new System.Drawing.Point(1037, 70);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(76, 38);
+            this.btnCreate.Size = new System.Drawing.Size(121, 55);
             this.btnCreate.TabIndex = 105;
-            this.btnCreate.Text = "추가";
+            this.btnCreate.Text = "작업지시 생성";
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
@@ -186,10 +184,10 @@ namespace Team5_XN
             this.btnCancle.BackColor = System.Drawing.Color.White;
             this.btnCancle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancle.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCancle.Location = new System.Drawing.Point(961, 26);
+            this.btnCancle.Location = new System.Drawing.Point(1291, 10);
             this.btnCancle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(76, 38);
+            this.btnCancle.Size = new System.Drawing.Size(121, 55);
             this.btnCancle.TabIndex = 104;
             this.btnCancle.Text = "취소";
             this.btnCancle.UseVisualStyleBackColor = false;
@@ -201,12 +199,12 @@ namespace Team5_XN
             this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDelete.Location = new System.Drawing.Point(797, 26);
+            this.btnDelete.Location = new System.Drawing.Point(1291, 70);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(76, 38);
+            this.btnDelete.Size = new System.Drawing.Size(121, 55);
             this.btnDelete.TabIndex = 103;
-            this.btnDelete.Text = "삭제";
+            this.btnDelete.Text = "작업지시 삭제";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -216,10 +214,10 @@ namespace Team5_XN
             this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(879, 26);
+            this.btnSave.Location = new System.Drawing.Point(1164, 10);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(76, 38);
+            this.btnSave.Size = new System.Drawing.Size(121, 55);
             this.btnSave.TabIndex = 102;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -231,12 +229,12 @@ namespace Team5_XN
             this.btnUpdate.BackColor = System.Drawing.Color.White;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUpdate.Location = new System.Drawing.Point(716, 26);
+            this.btnUpdate.Location = new System.Drawing.Point(1164, 70);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(76, 38);
+            this.btnUpdate.Size = new System.Drawing.Size(121, 55);
             this.btnUpdate.TabIndex = 101;
-            this.btnUpdate.Text = "편집";
+            this.btnUpdate.Text = "작업지시 수정";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -246,10 +244,10 @@ namespace Team5_XN
             this.btnSelect.BackColor = System.Drawing.Color.White;
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSelect.Location = new System.Drawing.Point(634, 25);
+            this.btnSelect.Location = new System.Drawing.Point(1037, 10);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(76, 38);
+            this.btnSelect.Size = new System.Drawing.Size(121, 55);
             this.btnSelect.TabIndex = 100;
             this.btnSelect.Text = "조회";
             this.btnSelect.UseVisualStyleBackColor = false;
@@ -280,6 +278,28 @@ namespace Team5_XN
             this.label13.TabIndex = 98;
             this.label13.Text = "*";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // s_txtWcName
+            // 
+            this.s_txtWcName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.s_txtWcName.Location = new System.Drawing.Point(361, 94);
+            this.s_txtWcName.Name = "s_txtWcName";
+            this.s_txtWcName.PlaceholderText = "작업장 명";
+            this.s_txtWcName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.s_txtWcName.ReadOnly = true;
+            this.s_txtWcName.Size = new System.Drawing.Size(202, 25);
+            this.s_txtWcName.TabIndex = 97;
+            // 
+            // s_txtWcCode
+            // 
+            this.s_txtWcCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.s_txtWcCode.Location = new System.Drawing.Point(186, 95);
+            this.s_txtWcCode.Name = "s_txtWcCode";
+            this.s_txtWcCode.PlaceholderText = "작업장 코드";
+            this.s_txtWcCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.s_txtWcCode.ReadOnly = true;
+            this.s_txtWcCode.Size = new System.Drawing.Size(139, 25);
+            this.s_txtWcCode.TabIndex = 96;
             // 
             // s_lblWc
             // 
@@ -317,6 +337,28 @@ namespace Team5_XN
             this.label10.Text = "*";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // s_txtPrName
+            // 
+            this.s_txtPrName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.s_txtPrName.Location = new System.Drawing.Point(361, 55);
+            this.s_txtPrName.Name = "s_txtPrName";
+            this.s_txtPrName.PlaceholderText = "공정 명";
+            this.s_txtPrName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.s_txtPrName.ReadOnly = true;
+            this.s_txtPrName.Size = new System.Drawing.Size(202, 25);
+            this.s_txtPrName.TabIndex = 92;
+            // 
+            // s_txtPrCode
+            // 
+            this.s_txtPrCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.s_txtPrCode.Location = new System.Drawing.Point(186, 56);
+            this.s_txtPrCode.Name = "s_txtPrCode";
+            this.s_txtPrCode.PlaceholderText = "공정 코드";
+            this.s_txtPrCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.s_txtPrCode.ReadOnly = true;
+            this.s_txtPrCode.Size = new System.Drawing.Size(139, 25);
+            this.s_txtPrCode.TabIndex = 91;
+            // 
             // s_lblProcess
             // 
             this.s_lblProcess.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -333,10 +375,10 @@ namespace Team5_XN
             this.btnEndCancle.BackColor = System.Drawing.Color.White;
             this.btnEndCancle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEndCancle.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEndCancle.Location = new System.Drawing.Point(1270, 14);
+            this.btnEndCancle.Location = new System.Drawing.Point(1054, 5);
             this.btnEndCancle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEndCancle.Name = "btnEndCancle";
-            this.btnEndCancle.Size = new System.Drawing.Size(168, 106);
+            this.btnEndCancle.Size = new System.Drawing.Size(168, 29);
             this.btnEndCancle.TabIndex = 39;
             this.btnEndCancle.Text = "작업지시 마감 취소";
             this.btnEndCancle.UseVisualStyleBackColor = false;
@@ -397,10 +439,10 @@ namespace Team5_XN
             this.btnEnd.BackColor = System.Drawing.Color.White;
             this.btnEnd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEnd.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEnd.Location = new System.Drawing.Point(1096, 14);
+            this.btnEnd.Location = new System.Drawing.Point(880, 5);
             this.btnEnd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(168, 106);
+            this.btnEnd.Size = new System.Drawing.Size(168, 29);
             this.btnEnd.TabIndex = 7;
             this.btnEnd.Text = "작업지시 마감";
             this.btnEnd.UseVisualStyleBackColor = false;
@@ -432,12 +474,13 @@ namespace Team5_XN
             // dgvWo
             // 
             this.dgvWo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWo.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvWo.Location = new System.Drawing.Point(0, 44);
             this.dgvWo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvWo.Name = "dgvWo";
             this.dgvWo.RowHeadersWidth = 51;
             this.dgvWo.RowTemplate.Height = 23;
-            this.dgvWo.Size = new System.Drawing.Size(1455, 591);
+            this.dgvWo.Size = new System.Drawing.Size(1455, 407);
             this.dgvWo.TabIndex = 1;
             this.dgvWo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWo_CellClick);
             // 
@@ -455,6 +498,8 @@ namespace Team5_XN
             this.pnlSubject1.Controls.Add(this.label25);
             this.pnlSubject1.Controls.Add(this.panel3);
             this.pnlSubject1.Controls.Add(this.label9);
+            this.pnlSubject1.Controls.Add(this.btnEnd);
+            this.pnlSubject1.Controls.Add(this.btnEndCancle);
             this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubject1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pnlSubject1.Location = new System.Drawing.Point(0, 6);
@@ -632,6 +677,18 @@ namespace Team5_XN
             this.pnlDetail.Size = new System.Drawing.Size(1455, 148);
             this.pnlDetail.TabIndex = 12;
             // 
+            // i_txtRemark
+            // 
+            this.i_txtRemark.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.i_txtRemark.Location = new System.Drawing.Point(804, 76);
+            this.i_txtRemark.Multiline = true;
+            this.i_txtRemark.Name = "i_txtRemark";
+            this.i_txtRemark.PlaceholderText = "";
+            this.i_txtRemark.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.i_txtRemark.ReadOnly = true;
+            this.i_txtRemark.Size = new System.Drawing.Size(327, 58);
+            this.i_txtRemark.TabIndex = 123;
+            // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -704,6 +761,18 @@ namespace Team5_XN
             this.i_lblPlanDate.Text = "계획일시";
             this.i_lblPlanDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // i_txtPlanQty
+            // 
+            this.i_txtPlanQty.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.i_txtPlanQty.Location = new System.Drawing.Point(804, 45);
+            this.i_txtPlanQty.Name = "i_txtPlanQty";
+            this.i_txtPlanQty.PlaceholderText = "작업지시수량";
+            this.i_txtPlanQty.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.i_txtPlanQty.ReadOnly = true;
+            this.i_txtPlanQty.Size = new System.Drawing.Size(327, 25);
+            this.i_txtPlanQty.TabIndex = 115;
+            this.i_txtPlanQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // label21
             // 
             this.label21.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -722,7 +791,7 @@ namespace Team5_XN
             this.i_lblPlanQty.Name = "i_lblPlanQty";
             this.i_lblPlanQty.Size = new System.Drawing.Size(96, 29);
             this.i_lblPlanQty.TabIndex = 113;
-            this.i_lblPlanQty.Text = "작업계획수량";
+            this.i_lblPlanQty.Text = "작업지시수량";
             this.i_lblPlanQty.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // i_btnWc
@@ -751,6 +820,28 @@ namespace Team5_XN
             this.label16.TabIndex = 111;
             this.label16.Text = "*";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // i_txtWcName
+            // 
+            this.i_txtWcName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.i_txtWcName.Location = new System.Drawing.Point(361, 107);
+            this.i_txtWcName.Name = "i_txtWcName";
+            this.i_txtWcName.PlaceholderText = "작업장 명";
+            this.i_txtWcName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.i_txtWcName.ReadOnly = true;
+            this.i_txtWcName.Size = new System.Drawing.Size(202, 25);
+            this.i_txtWcName.TabIndex = 110;
+            // 
+            // i_txtWcCode
+            // 
+            this.i_txtWcCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.i_txtWcCode.Location = new System.Drawing.Point(186, 108);
+            this.i_txtWcCode.Name = "i_txtWcCode";
+            this.i_txtWcCode.PlaceholderText = "작업장 코드";
+            this.i_txtWcCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.i_txtWcCode.ReadOnly = true;
+            this.i_txtWcCode.Size = new System.Drawing.Size(139, 25);
+            this.i_txtWcCode.TabIndex = 109;
             // 
             // i_lblWc
             // 
@@ -789,6 +880,28 @@ namespace Team5_XN
             this.label7.Text = "*";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // i_txtPrName
+            // 
+            this.i_txtPrName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.i_txtPrName.Location = new System.Drawing.Point(361, 76);
+            this.i_txtPrName.Name = "i_txtPrName";
+            this.i_txtPrName.PlaceholderText = "공정 명";
+            this.i_txtPrName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.i_txtPrName.ReadOnly = true;
+            this.i_txtPrName.Size = new System.Drawing.Size(202, 25);
+            this.i_txtPrName.TabIndex = 105;
+            // 
+            // i_txtPrCode
+            // 
+            this.i_txtPrCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.i_txtPrCode.Location = new System.Drawing.Point(186, 77);
+            this.i_txtPrCode.Name = "i_txtPrCode";
+            this.i_txtPrCode.PlaceholderText = "공정 코드";
+            this.i_txtPrCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.i_txtPrCode.ReadOnly = true;
+            this.i_txtPrCode.Size = new System.Drawing.Size(139, 25);
+            this.i_txtPrCode.TabIndex = 104;
+            // 
             // i_lblProcess
             // 
             this.i_lblProcess.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -826,6 +939,28 @@ namespace Team5_XN
             this.label4.Text = "*";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // i_txtItemName
+            // 
+            this.i_txtItemName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.i_txtItemName.Location = new System.Drawing.Point(361, 45);
+            this.i_txtItemName.Name = "i_txtItemName";
+            this.i_txtItemName.PlaceholderText = "품목 명";
+            this.i_txtItemName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.i_txtItemName.ReadOnly = true;
+            this.i_txtItemName.Size = new System.Drawing.Size(202, 25);
+            this.i_txtItemName.TabIndex = 100;
+            // 
+            // i_txtItemCode
+            // 
+            this.i_txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.i_txtItemCode.Location = new System.Drawing.Point(186, 46);
+            this.i_txtItemCode.Name = "i_txtItemCode";
+            this.i_txtItemCode.PlaceholderText = "품목 코드";
+            this.i_txtItemCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.i_txtItemCode.ReadOnly = true;
+            this.i_txtItemCode.Size = new System.Drawing.Size(139, 25);
+            this.i_txtItemCode.TabIndex = 99;
+            // 
             // i_lblItem
             // 
             this.i_lblItem.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -835,6 +970,17 @@ namespace Team5_XN
             this.i_lblItem.TabIndex = 98;
             this.i_lblItem.Text = "품목";
             this.i_lblItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // i_txtOrNo
+            // 
+            this.i_txtOrNo.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.i_txtOrNo.Location = new System.Drawing.Point(186, 15);
+            this.i_txtOrNo.Name = "i_txtOrNo";
+            this.i_txtOrNo.PlaceholderText = "사용자입력불가";
+            this.i_txtOrNo.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.i_txtOrNo.ReadOnly = true;
+            this.i_txtOrNo.Size = new System.Drawing.Size(377, 25);
+            this.i_txtOrNo.TabIndex = 97;
             // 
             // label6
             // 
@@ -892,154 +1038,10 @@ namespace Team5_XN
             this.label3.Text = "작업지시상세정보";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // i_txtRemark
-            // 
-            this.i_txtRemark.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.i_txtRemark.Location = new System.Drawing.Point(804, 76);
-            this.i_txtRemark.Multiline = true;
-            this.i_txtRemark.Name = "i_txtRemark";
-            this.i_txtRemark.PlaceholderText = "";
-            this.i_txtRemark.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.i_txtRemark.ReadOnly = true;
-            this.i_txtRemark.Size = new System.Drawing.Size(327, 58);
-            this.i_txtRemark.TabIndex = 123;
-            // 
-            // i_txtPlanQty
-            // 
-            this.i_txtPlanQty.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.i_txtPlanQty.Location = new System.Drawing.Point(804, 45);
-            this.i_txtPlanQty.Name = "i_txtPlanQty";
-            this.i_txtPlanQty.PlaceholderText = "작업계획수량";
-            this.i_txtPlanQty.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.i_txtPlanQty.ReadOnly = true;
-            this.i_txtPlanQty.Size = new System.Drawing.Size(327, 25);
-            this.i_txtPlanQty.TabIndex = 115;
-            this.i_txtPlanQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // i_txtWcName
-            // 
-            this.i_txtWcName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.i_txtWcName.Location = new System.Drawing.Point(361, 107);
-            this.i_txtWcName.Name = "i_txtWcName";
-            this.i_txtWcName.PlaceholderText = "작업장 명";
-            this.i_txtWcName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.i_txtWcName.ReadOnly = true;
-            this.i_txtWcName.Size = new System.Drawing.Size(202, 25);
-            this.i_txtWcName.TabIndex = 110;
-            // 
-            // i_txtWcCode
-            // 
-            this.i_txtWcCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.i_txtWcCode.Location = new System.Drawing.Point(186, 108);
-            this.i_txtWcCode.Name = "i_txtWcCode";
-            this.i_txtWcCode.PlaceholderText = "작업장 코드";
-            this.i_txtWcCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.i_txtWcCode.ReadOnly = true;
-            this.i_txtWcCode.Size = new System.Drawing.Size(139, 25);
-            this.i_txtWcCode.TabIndex = 109;
-            // 
-            // i_txtPrName
-            // 
-            this.i_txtPrName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.i_txtPrName.Location = new System.Drawing.Point(361, 76);
-            this.i_txtPrName.Name = "i_txtPrName";
-            this.i_txtPrName.PlaceholderText = "공정 명";
-            this.i_txtPrName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.i_txtPrName.ReadOnly = true;
-            this.i_txtPrName.Size = new System.Drawing.Size(202, 25);
-            this.i_txtPrName.TabIndex = 105;
-            // 
-            // i_txtPrCode
-            // 
-            this.i_txtPrCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.i_txtPrCode.Location = new System.Drawing.Point(186, 77);
-            this.i_txtPrCode.Name = "i_txtPrCode";
-            this.i_txtPrCode.PlaceholderText = "공정 코드";
-            this.i_txtPrCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.i_txtPrCode.ReadOnly = true;
-            this.i_txtPrCode.Size = new System.Drawing.Size(139, 25);
-            this.i_txtPrCode.TabIndex = 104;
-            // 
-            // i_txtItemName
-            // 
-            this.i_txtItemName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.i_txtItemName.Location = new System.Drawing.Point(361, 45);
-            this.i_txtItemName.Name = "i_txtItemName";
-            this.i_txtItemName.PlaceholderText = "품목 명";
-            this.i_txtItemName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.i_txtItemName.ReadOnly = true;
-            this.i_txtItemName.Size = new System.Drawing.Size(202, 25);
-            this.i_txtItemName.TabIndex = 100;
-            // 
-            // i_txtItemCode
-            // 
-            this.i_txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.i_txtItemCode.Location = new System.Drawing.Point(186, 46);
-            this.i_txtItemCode.Name = "i_txtItemCode";
-            this.i_txtItemCode.PlaceholderText = "품목 코드";
-            this.i_txtItemCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.i_txtItemCode.ReadOnly = true;
-            this.i_txtItemCode.Size = new System.Drawing.Size(139, 25);
-            this.i_txtItemCode.TabIndex = 99;
-            // 
-            // i_txtOrNo
-            // 
-            this.i_txtOrNo.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.i_txtOrNo.Location = new System.Drawing.Point(186, 15);
-            this.i_txtOrNo.Name = "i_txtOrNo";
-            this.i_txtOrNo.PlaceholderText = "사용자입력불가";
-            this.i_txtOrNo.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.i_txtOrNo.ReadOnly = true;
-            this.i_txtOrNo.Size = new System.Drawing.Size(377, 25);
-            this.i_txtOrNo.TabIndex = 97;
-            // 
-            // s_txtWcName
-            // 
-            this.s_txtWcName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.s_txtWcName.Location = new System.Drawing.Point(361, 94);
-            this.s_txtWcName.Name = "s_txtWcName";
-            this.s_txtWcName.PlaceholderText = "작업장 명";
-            this.s_txtWcName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.s_txtWcName.ReadOnly = true;
-            this.s_txtWcName.Size = new System.Drawing.Size(202, 25);
-            this.s_txtWcName.TabIndex = 97;
-            // 
-            // s_txtWcCode
-            // 
-            this.s_txtWcCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.s_txtWcCode.Location = new System.Drawing.Point(186, 95);
-            this.s_txtWcCode.Name = "s_txtWcCode";
-            this.s_txtWcCode.PlaceholderText = "작업장 코드";
-            this.s_txtWcCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.s_txtWcCode.ReadOnly = true;
-            this.s_txtWcCode.Size = new System.Drawing.Size(139, 25);
-            this.s_txtWcCode.TabIndex = 96;
-            // 
-            // s_txtPrName
-            // 
-            this.s_txtPrName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.s_txtPrName.Location = new System.Drawing.Point(361, 55);
-            this.s_txtPrName.Name = "s_txtPrName";
-            this.s_txtPrName.PlaceholderText = "공정 명";
-            this.s_txtPrName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.s_txtPrName.ReadOnly = true;
-            this.s_txtPrName.Size = new System.Drawing.Size(202, 25);
-            this.s_txtPrName.TabIndex = 92;
-            // 
-            // s_txtPrCode
-            // 
-            this.s_txtPrCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.s_txtPrCode.Location = new System.Drawing.Point(186, 56);
-            this.s_txtPrCode.Name = "s_txtPrCode";
-            this.s_txtPrCode.PlaceholderText = "공정 코드";
-            this.s_txtPrCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.s_txtPrCode.ReadOnly = true;
-            this.s_txtPrCode.Size = new System.Drawing.Size(139, 25);
-            this.s_txtPrCode.TabIndex = 91;
-            // 
             // frmWorkOrder
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1467, 791);
             this.Controls.Add(this.pnlBorder);
             this.Name = "frmWorkOrder";

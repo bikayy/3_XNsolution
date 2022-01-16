@@ -35,6 +35,7 @@ namespace POP_Team5_XN
             lblWcName.Text = woInfo.Wc_Name;
             lblPlanDate.Text = woInfo.Plan_Date;
             lblPlanQty.Text = woInfo.Plan_Qty_Box.ToString();
+            lblTitle.Text = $"실적등록 : {woInfo.Wc_Name}";
             SiyuPerList();
         }
 
