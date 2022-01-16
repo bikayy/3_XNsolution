@@ -110,6 +110,13 @@ namespace Team5_XN
 
             return result;
         }
-        
+        public List<UGSearchVO> GetUGList()
+        {
+            UserDAC db = new UserDAC();
+            List<UGSearchVO> list = db.GetUGList();
+            db.Dispose();
+
+            return list;
+        }
     }
 }

@@ -253,6 +253,12 @@
     <Compile Include="frmSearchPopup.Designer.cs">
       <DependentUpon>frmSearchPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSiyuOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSiyuOrder.Designer.cs">
+      <DependentUpon>frmSiyuOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSystemCode.cs">
       <SubType>Form</SubType>
     </Compile>

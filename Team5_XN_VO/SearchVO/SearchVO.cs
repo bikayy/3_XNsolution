@@ -20,10 +20,4 @@ namespace Team5_XN_VO
         public string Process_Name { get; set; }
 
     }
-    public class UGSearchVO
-    {
-        //UserGroup_Code, UserGroup_Name
-        public string UserGroup_Code { get; set; }
-        public string UserGroup_Name { get; set; }
-    }
 }

@@ -225,6 +225,24 @@ UserGroup_Master";
                 return false;
             }
         }
+        public List<UGSearchVO> GetUGList()
+        {
+            string sql = @"select UserGroup_Code, UserGroup_Name from UserGroup_Master";
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    return Helper.DataReaderMapToList<UGSearchVO>(cmd.ExecuteReader());
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return null;
+            }
+        }
+
         public void Dispose()
         {
             conn.Close();

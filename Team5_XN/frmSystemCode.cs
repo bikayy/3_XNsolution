@@ -94,131 +94,124 @@ namespace Team5_XN
 
         private void OnSave(object sender, EventArgs e)
         {
-            //if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
-            //int result = 0;
-
-
-            //DataTable dt2 = new DataTable();
-            //dt2.Columns.Add(new DataColumn("User_ID", typeof(string)));
-            //dt2.Columns.Add(new DataColumn("User_Name", typeof(string)));
-            //dt2.Columns.Add(new DataColumn("User_PW", typeof(string)));
-            //dt2.Columns.Add(new DataColumn("UserGroup_Code", typeof(string)));
-            //dt2.Columns.Add(new DataColumn("IP_Security_YN", typeof(char)));
-            //dt2.Columns.Add(new DataColumn("Default_Major_Process_Code", typeof(string)));
-            //dt2.Columns.Add(new DataColumn("Use_YN", typeof(char)));
-            //dt2.Columns.Add(new DataColumn("Ins_Date", typeof(DateTime)));
-            //dt2.Columns.Add(new DataColumn("Ins_Emp", typeof(string)));
-            //dt2.Columns.Add(new DataColumn("Up_Date", typeof(DateTime)));
-            //dt2.Columns.Add(new DataColumn("Up_Emp", typeof(string)));
-
-            //userServ = new UserService();
-
-            ////저장-추가
-            //if (check == 1)
-            //{
-
-            //    foreach (DataRow dr in dt.Rows)
-            //    {
-            //        if (dt.Rows.IndexOf(dr) >= rowCount)
-            //        {
-            //            int r = dt.Rows.IndexOf(dr);
-
-            //            DataView dv_duple = new DataView(dt_DB);
-            //            dv_duple.RowFilter = $"User_ID = '{dgvUserInfo[0, r].Value.ToString()}'";
-            //            if (dv_duple.Count > 0)
-            //            {
-            //                MessageBox.Show($"아이디는 중복 될 수 없습니다. ({dgvUserInfo[0, r].Value.ToString()}) \n → {r + 1}행, 1열");
-            //                dgvUserInfo.CurrentCell = dgvUserInfo[0, r];
-            //                dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, r));
-            //                return;
-            //            }
+            int result = 0;
 
 
-            //            for (int c = 0; c < 5; c++)
-            //            {
-            //                if (dgvUserInfo[c, r].Value.ToString().Length < 1)
-            //                {
-            //                    if (c == 3) continue;
-            //                    MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dgvUserInfo.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
-            //                    dgvUserInfo.CurrentCell = dgvUserInfo[c, r];
-            //                    dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(c, r));
-            //                    return;
-            //                }
-            //            }
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add(new DataColumn("Code", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Name", typeof(string)));
+            dt2.Columns.Add(new DataColumn("DetailCode", typeof(string)));
+            dt2.Columns.Add(new DataColumn("DetailName", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Sort_Index", typeof(int)));
+            dt2.Columns.Add(new DataColumn("Remark", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Use_YN", typeof(char)));
 
-            //            DataRow drNew = dt2.NewRow();
-            //            drNew["User_ID"] = dr["User_ID"];
-            //            drNew["User_Name"] = dr["User_Name"];
-            //            drNew["User_PW"] = dr["User_ID"];
-            //            drNew["UserGroup_Code"] = dr["UserGroup_Code"];
-            //            drNew["IP_Security_YN"] = (dr["IP_Security_YN"].ToString() == "허용") ? "A" : "D";
-            //            drNew["Default_Major_Process_Code"] = dr["Default_Major_Process_Code"];
-            //            drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
-            //            drNew["Ins_Date"] = dr["Ins_Date"];
-            //            drNew["Ins_Emp"] = dr["Ins_Emp"];
-            //            drNew["Up_Date"] = dr["Up_Date"];
-            //            drNew["Up_Emp"] = dr["Up_Emp"];
+            commServ = new CommonService();
 
-            //            dt2.Rows.Add(drNew);
-            //            // dt2.ImportRow(dr);
-            //        }
-            //    }
-            //    dt2.AcceptChanges();
+            //저장-추가
+            if (check == 1)
+            {
 
-            //    result = userServ.SaveUser(dt2, check);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (dt.Rows.IndexOf(dr) >= rowCount)
+                    {
+                        int r = dt.Rows.IndexOf(dr);
 
-            //}
-            ////저장-편집
-            //else if (check == 2)
-            //{
-            //    foreach (DataRow dr in dt.Rows)
-            //    {
-            //        foreach (DataColumn dc in dt.Columns)
-            //        {
+                        DataView dv_duple = new DataView(dt_DB);
+                        dv_duple.RowFilter = $"Code = '{dgvSysMaster[0, r].Value.ToString()}'";
+                        if (dv_duple.Count > 0)
+                        {
+                            MessageBox.Show($"코드는 중복 될 수 없습니다. ({dgvSysMaster[0, r].Value.ToString()}) \n → {r + 1}행, 1열");
+                            dgvSysMaster.CurrentCell = dgvSysMaster[0, r];
+                            dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, r));
+                            return;
+                        }
+                        if (dv_duple.Count > 0)
+                        {
+                            MessageBox.Show($"코드는 중복 될 수 없습니다. ({dgvSysDetail[0, r].Value.ToString()}) \n → {r + 1}행, 1열");
+                            dgvSysDetail.CurrentCell = dgvSysDetail[0, r];
+                            dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, r));
+                            return;
+                        }
 
-            //            string a = dt_DB.Rows[dt.Rows.IndexOf(dr)][dt.Columns.IndexOf(dc)].ToString();
-            //            string b = dr[dc].ToString();
-            //            if (b != a)
-            //            {
-            //                DataRow drNew = dt2.NewRow();
-            //                drNew["User_ID"] = dr["User_ID"];
-            //                drNew["User_Name"] = dr["User_Name"];
-            //                drNew["UserGroup_Code"] = dr["UserGroup_Code"];
-            //                drNew["IP_Security_YN"] = (dr["IP_Security_YN"].ToString() == "허용") ? "A" : "D";
-            //                drNew["Default_Major_Process_Code"] = dr["Default_Major_Process_Code"];
-            //                drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
-            //                drNew["Ins_Date"] = dr["Ins_Date"];
-            //                drNew["Ins_Emp"] = dr["Ins_Emp"];
-            //                drNew["Up_Date"] = dr["Up_Date"];
-            //                drNew["Up_Emp"] = dr["Up_Emp"];
+                        for (int c = 0; c < 5; c++)
+                        {
+                            if (dgvSysDetail[c, r].Value.ToString().Length < 1)
+                            {
+                                if (c == 3) continue;
+                                MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dgvSysDetail.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
+                                dgvSysDetail.CurrentCell = dgvSysDetail[c, r];
+                                dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(c, r));
+                                return;
+                            }
+                        }
 
-            //                dt2.Rows.Add(drNew);
-            //                break;
-            //                // dt2.ImportRow(dr);
-            //            }
-            //        }
-            //    }
-            //    dt2.AcceptChanges();
-            //    result = userServ.SaveUser(dt2, check);
+                        DataRow drNew = dt2.NewRow();
+                        drNew["Code"] = dr["Code"];
+                        drNew["Name"] = dr["Name"];
+                        drNew["DetailCode"] = dr["DetailCode"];
+                        drNew["DetailName"] = dr["DetailName"];
+                        drNew["Sort_Index"] = dr["Sort_Index"];
+                        drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
 
-            //}
+                        dt2.Rows.Add(drNew);
+                        // dt2.ImportRow(dr);
+                    }
+                }
+                dt2.AcceptChanges();
 
-            //if (result > 0)
-            //{
-            //    MessageBox.Show("저장 완료");
-            //    ChangeValue_Check(0);
-            //    OnSelect(this, e);
+                //result = userServ.SaveUser(dt2, check);
 
-            //}
-            //else if (result < 0)
-            //{
-            //    MessageBox.Show("저장 실패");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("저장할 데이터가 없습니다.");
-            //}
+            }
+            //저장-편집
+            else if (check == 2)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    foreach (DataColumn dc in dt.Columns)
+                    {
+
+                        string a = dt_DB.Rows[dt.Rows.IndexOf(dr)][dt.Columns.IndexOf(dc)].ToString();
+                        string b = dr[dc].ToString();
+                        if (b != a)
+                        {
+                            DataRow drNew = dt2.NewRow();
+                            drNew["Code"] = dr["Code"];
+                            drNew["Name"] = dr["Name"];
+                            drNew["DetailCode"] = dr["DetailCode"];
+                            drNew["DetailName"] = dr["DetailName"];
+                            drNew["Sort_Index"] = dr["Sort_Index"];
+                            drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
+
+                            dt2.Rows.Add(drNew);
+                            break;
+                            // dt2.ImportRow(dr);
+                        }
+                    }
+                }
+                dt2.AcceptChanges();
+                //result = userServ.SaveUser(dt2, check);
+
+            }
+
+            if (result > 0)
+            {
+                MessageBox.Show("저장 완료");
+                ChangeValue_Check(0);
+                OnSelect(this, e);
+
+            }
+            else if (result < 0)
+            {
+                MessageBox.Show("저장 실패");
+            }
+            else
+            {
+                MessageBox.Show("저장할 데이터가 없습니다.");
+            }
 
 
         }

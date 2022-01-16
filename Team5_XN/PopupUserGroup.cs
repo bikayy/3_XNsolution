@@ -14,7 +14,7 @@ namespace Team5_XN
 {
     public partial class PopupUserGroup : Form
     {
-        SearchService searchServ = null;
+        UserService userServ = null;
         List<UGSearchVO> list = null;
 
         UGSearchVO sendInfo = new UGSearchVO();
@@ -30,7 +30,7 @@ namespace Team5_XN
 
         private void PopupUserGroup_Load(object sender, EventArgs e)
         {
-            searchServ = new SearchService();
+            userServ = new UserService();
 
             LoadData();
         }
@@ -43,7 +43,7 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvList, "사용자그룹코드", "UserGroup_Code", DataGridViewContentAlignment.MiddleLeft, colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvList, "사용자그룹명", "UserGroup_Name", DataGridViewContentAlignment.MiddleLeft, colWidth: 120);
 
-            list = searchServ.GetUGList();
+            list = userServ.GetUGList();
             dgvList.DataSource = list;
         }
 

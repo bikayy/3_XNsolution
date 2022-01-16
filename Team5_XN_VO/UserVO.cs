@@ -17,4 +17,10 @@ namespace Team5_XN_VO
         public DateTime Ins_Date { get; set; }
         public string Ins_Emp { get; set; }
     }
+    public class UGSearchVO
+    {
+        //UserGroup_Code, UserGroup_Name
+        public string UserGroup_Code { get; set; }
+        public string UserGroup_Name { get; set; }
+    }
 }
