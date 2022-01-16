@@ -358,8 +358,8 @@ namespace Team5_XN
                     }
                 }
 
-                sb.AppendLine($"{o_lblOPDate.Text} : {o_dtpOPDate.Value.ToString("yyyy-MM-dd")}");
-                sb.AppendLine($"{o_lblOPTime.Text} : {o_dtpFromTime.Value.ToString("tt HH:mm")} ~ {o_dtpToTime.Value.ToString("tt HH:mm")}");
+                //sb.AppendLine($"{o_lblOPDate.Text} : {o_dtpOPDate.Value.ToString("yyyy-MM-dd")}");
+                sb.AppendLine($"{o_lblOPTime.Text} : {o_dtpFromTime.Value.ToString("yyyy-MM-dd HH:mm")} ~ \n{o_dtpToTime.Value.ToString("yyyy-MM-dd HH:mm")}");
                 sb.AppendLine($"{o_lblRemark.Text} : {o_txtRemark.Text}");
                 sb.AppendLine("위의 정보로 작업지시를 등록하시겠습니까?");
 
@@ -369,12 +369,12 @@ namespace Team5_XN
                     OrderVO io = new OrderVO()
                     {  //Plan_Date, Plan_Qty_Box, Item_Code, Wc_Code, Plan_StartTime,
                        //Plan_EndTime, Remark, Prd_Plan_No, Ins_Date, Ins_Emp
-                        Plan_Date = o_dtpOPDate.Value.ToString("yyyy-MM-dd"),
+                        Plan_Date = o_dtpFromTime.Value.ToString("yyyy-MM-dd"),
                         Plan_Qty_Box = Convert.ToInt32(o_txtOrderQty.Text),
                         Item_Code = o_txtItemCode.Text,
                         Wc_Code = o_txtWCCode.Text,
-                        Plan_StartTime = o_dtpFromTime.Value.ToString("HH:mm"),
-                        Plan_EndTime = o_dtpToTime.Value.ToString("HH:mm"),
+                        Plan_StartTime = o_dtpFromTime.Value.ToString("yyyy-MM-dd HH:mm"),
+                        Plan_EndTime = o_dtpToTime.Value.ToString("yyyy-MM-dd HH:mm"),
                         Remark = o_txtRemark.Text,
                         Prd_Plan_No = p_txtPlanNo.Text,
                         Ins_Emp = "수정수정!"
@@ -433,8 +433,9 @@ namespace Team5_XN
                     }
                 }
 
-                sb.AppendLine($"{o_lblOPDate.Text} : {o_dtpOPDate.Value.ToString("yyyy-MM-dd")}");
-                sb.AppendLine($"{o_lblOPTime.Text} : {o_dtpFromTime.Value.ToString("tt HH:mm")} ~ {o_dtpToTime.Value.ToString("tt HH:mm")}");
+                //sb.AppendLine($"{o_lblOPDate.Text} : {o_dtpOPDate.Value.ToString("yyyy-MM-dd")}");
+                sb.AppendLine($"{o_lblOPTime.Text} : {o_dtpFromTime.Value.ToString("yyyy-MM-dd HH:mm")} ~ \n{o_dtpToTime.Value.ToString("yyyy-MM-dd HH:mm")}");
+                sb.AppendLine($"{o_lblRemark.Text} : {o_txtRemark.Text}");
                 sb.AppendLine($"{o_lblRemark.Text} : {o_txtRemark.Text}");
                 sb.AppendLine("위의 정보로 작업지시를 수정하시겠습니까?");
 
@@ -445,11 +446,11 @@ namespace Team5_XN
                     {  //Plan_Date, Plan_Qty_Box, Item_Code, Wc_Code, Plan_StartTime,
                        //Plan_EndTime, Remark, Prd_Plan_No, Ins_Date, Ins_Emp
                         WorkOrderNo = o_txtOrderNo.Text,
-                        Plan_Date = o_dtpOPDate.Value.ToString("yyyy-MM-dd"),
+                        Plan_Date = o_dtpFromTime.Value.ToString("yyyy-MM-dd"),
                         Plan_Qty_Box = Convert.ToInt32(o_txtOrderQty.Text),
                         Wc_Code = o_txtWCCode.Text,
-                        Plan_StartTime = o_dtpFromTime.Value.ToString("HH:mm"),
-                        Plan_EndTime = o_dtpToTime.Value.ToString("HH:mm"),
+                        Plan_StartTime = o_dtpFromTime.Value.ToString("yyyy-MM-dd HH:mm"),
+                        Plan_EndTime = o_dtpToTime.Value.ToString("yyyy-MM-dd HH:mm"),
                         Remark = o_txtRemark.Text,
                         Up_Emp = "업뎃수정!"
                     };

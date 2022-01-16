@@ -82,14 +82,9 @@ namespace Team5_XN
             this.o_lblWC = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.o_txtItemCode = new WinReflectionSettings.PlaceholderTextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.o_dtpToTime = new System.Windows.Forms.DateTimePicker();
-            this.o_lblOPTime = new System.Windows.Forms.Label();
             this.o_lblItem = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.o_dtpFromTime = new System.Windows.Forms.DateTimePicker();
             this.o_btnSearch = new System.Windows.Forms.Button();
             this.o_lblOPDate = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -123,6 +118,11 @@ namespace Team5_XN
             this.p_txtWCName = new WinReflectionSettings.PlaceholderTextBox();
             this.p_lblWC = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.o_lblOPTime = new System.Windows.Forms.Label();
+            this.o_dtpFromTime = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.o_dtpToTime = new System.Windows.Forms.DateTimePicker();
             this.pnlSelect.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlDgv.SuspendLayout();
@@ -665,10 +665,8 @@ namespace Team5_XN
             this.pnlPlan.Controls.Add(this.grbOrder);
             this.pnlPlan.Controls.Add(this.grbPlan);
             this.pnlPlan.Controls.Add(this.o_lblOPTime);
-            this.pnlPlan.Controls.Add(this.o_dtpFromTime);
             this.pnlPlan.Controls.Add(this.label17);
-            this.pnlPlan.Controls.Add(this.o_dtpToTime);
-            this.pnlPlan.Controls.Add(this.label19);
+            this.pnlPlan.Controls.Add(this.o_dtpOPDate);
             this.pnlPlan.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlPlan.Location = new System.Drawing.Point(914, 0);
             this.pnlPlan.Name = "pnlPlan";
@@ -677,9 +675,12 @@ namespace Team5_XN
             // 
             // grbOrder
             // 
+            this.grbOrder.Controls.Add(this.o_dtpToTime);
             this.grbOrder.Controls.Add(this.o_txtOrderNo);
             this.grbOrder.Controls.Add(this.o_txtWCName);
             this.grbOrder.Controls.Add(this.o_txtRemark);
+            this.grbOrder.Controls.Add(this.o_dtpFromTime);
+            this.grbOrder.Controls.Add(this.label19);
             this.grbOrder.Controls.Add(this.o_lblPlanNo);
             this.grbOrder.Controls.Add(this.o_txtWCCode);
             this.grbOrder.Controls.Add(this.o_lblRemark);
@@ -693,7 +694,6 @@ namespace Team5_XN
             this.grbOrder.Controls.Add(this.o_lblOPDate);
             this.grbOrder.Controls.Add(this.label25);
             this.grbOrder.Controls.Add(this.o_txtItemName);
-            this.grbOrder.Controls.Add(this.o_dtpOPDate);
             this.grbOrder.Controls.Add(this.o_btnWCSearch);
             this.grbOrder.Controls.Add(this.label35);
             this.grbOrder.Controls.Add(this.o_txtOrderQty);
@@ -802,16 +802,6 @@ namespace Team5_XN
             this.label10.Text = "*";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label19
-            // 
-            this.label19.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label19.Location = new System.Drawing.Point(303, 621);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(17, 29);
-            this.label19.TabIndex = 140;
-            this.label19.Text = "~";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // o_txtItemCode
             // 
             this.o_txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -834,28 +824,6 @@ namespace Team5_XN
             this.label32.Text = "*";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // o_dtpToTime
-            // 
-            this.o_dtpToTime.CustomFormat = "tt HH:mm";
-            this.o_dtpToTime.Enabled = false;
-            this.o_dtpToTime.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.o_dtpToTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.o_dtpToTime.Location = new System.Drawing.Point(326, 621);
-            this.o_dtpToTime.Name = "o_dtpToTime";
-            this.o_dtpToTime.Size = new System.Drawing.Size(136, 25);
-            this.o_dtpToTime.TabIndex = 139;
-            this.o_dtpToTime.Validating += new System.ComponentModel.CancelEventHandler(this.o_dtpToTime_Validating);
-            // 
-            // o_lblOPTime
-            // 
-            this.o_lblOPTime.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.o_lblOPTime.Location = new System.Drawing.Point(40, 621);
-            this.o_lblOPTime.Name = "o_lblOPTime";
-            this.o_lblOPTime.Size = new System.Drawing.Size(115, 29);
-            this.o_lblOPTime.TabIndex = 137;
-            this.o_lblOPTime.Text = "작업계획시간";
-            this.o_lblOPTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // o_lblItem
             // 
             this.o_lblItem.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -865,29 +833,6 @@ namespace Team5_XN
             this.o_lblItem.TabIndex = 120;
             this.o_lblItem.Text = "품목";
             this.o_lblItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label17
-            // 
-            this.label17.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(21, 621);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(23, 29);
-            this.label17.TabIndex = 138;
-            this.label17.Text = "*";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // o_dtpFromTime
-            // 
-            this.o_dtpFromTime.CustomFormat = "tt HH:mm";
-            this.o_dtpFromTime.Enabled = false;
-            this.o_dtpFromTime.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.o_dtpFromTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.o_dtpFromTime.Location = new System.Drawing.Point(161, 621);
-            this.o_dtpFromTime.Name = "o_dtpFromTime";
-            this.o_dtpFromTime.Size = new System.Drawing.Size(136, 25);
-            this.o_dtpFromTime.TabIndex = 136;
-            this.o_dtpFromTime.Validating += new System.ComponentModel.CancelEventHandler(this.o_dtpFromTime_Validating);
             // 
             // o_btnSearch
             // 
@@ -911,7 +856,7 @@ namespace Team5_XN
             this.o_lblOPDate.Name = "o_lblOPDate";
             this.o_lblOPDate.Size = new System.Drawing.Size(115, 29);
             this.o_lblOPDate.TabIndex = 134;
-            this.o_lblOPDate.Text = "계획일시";
+            this.o_lblOPDate.Text = "작업지시일시";
             this.o_lblOPDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label25
@@ -941,7 +886,7 @@ namespace Team5_XN
             this.o_dtpOPDate.Enabled = false;
             this.o_dtpOPDate.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.o_dtpOPDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.o_dtpOPDate.Location = new System.Drawing.Point(144, 161);
+            this.o_dtpOPDate.Location = new System.Drawing.Point(196, 272);
             this.o_dtpOPDate.Name = "o_dtpOPDate";
             this.o_dtpOPDate.Size = new System.Drawing.Size(136, 25);
             this.o_dtpOPDate.TabIndex = 128;
@@ -1277,6 +1222,60 @@ namespace Team5_XN
             this.label18.Text = "*";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // o_lblOPTime
+            // 
+            this.o_lblOPTime.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.o_lblOPTime.Location = new System.Drawing.Point(40, 621);
+            this.o_lblOPTime.Name = "o_lblOPTime";
+            this.o_lblOPTime.Size = new System.Drawing.Size(115, 29);
+            this.o_lblOPTime.TabIndex = 137;
+            this.o_lblOPTime.Text = "작업계획시간";
+            this.o_lblOPTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // o_dtpFromTime
+            // 
+            this.o_dtpFromTime.CustomFormat = "yyyy-MM-dd HH:mm";
+            this.o_dtpFromTime.Enabled = false;
+            this.o_dtpFromTime.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.o_dtpFromTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.o_dtpFromTime.Location = new System.Drawing.Point(144, 161);
+            this.o_dtpFromTime.Name = "o_dtpFromTime";
+            this.o_dtpFromTime.Size = new System.Drawing.Size(170, 25);
+            this.o_dtpFromTime.TabIndex = 136;
+            this.o_dtpFromTime.Validating += new System.ComponentModel.CancelEventHandler(this.o_dtpFromTime_Validating);
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label17.ForeColor = System.Drawing.Color.Red;
+            this.label17.Location = new System.Drawing.Point(21, 621);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(23, 29);
+            this.label17.TabIndex = 138;
+            this.label17.Text = "*";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label19.Location = new System.Drawing.Point(325, 161);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(17, 29);
+            this.label19.TabIndex = 140;
+            this.label19.Text = "~";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // o_dtpToTime
+            // 
+            this.o_dtpToTime.CustomFormat = "yyyy-MM-dd HH:mm";
+            this.o_dtpToTime.Enabled = false;
+            this.o_dtpToTime.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.o_dtpToTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.o_dtpToTime.Location = new System.Drawing.Point(352, 161);
+            this.o_dtpToTime.Name = "o_dtpToTime";
+            this.o_dtpToTime.Size = new System.Drawing.Size(170, 25);
+            this.o_dtpToTime.TabIndex = 145;
+            // 
             // frmSiyuOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -1346,7 +1345,6 @@ namespace Team5_XN
         private System.Windows.Forms.Label label19;
         private WinReflectionSettings.PlaceholderTextBox o_txtItemCode;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.DateTimePicker o_dtpToTime;
         private System.Windows.Forms.Label o_lblOPTime;
         private System.Windows.Forms.Label o_lblItem;
         private System.Windows.Forms.Label label17;
@@ -1404,5 +1402,6 @@ namespace Team5_XN
         private System.Windows.Forms.DataGridView dgvPlan;
         private System.Windows.Forms.Panel pnlSubject1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker o_dtpToTime;
     }
 }
