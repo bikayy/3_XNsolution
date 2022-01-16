@@ -75,12 +75,12 @@ namespace POP_Team5_XN
         {
             ucWorkCenterList ctrl = (ucWorkCenterList)sender;
 
-            if (ctrl.SendWcList.Wo_Status.Equals("비가동"))
-            {
-                MessageBox.Show("비가동 중인 작업장은 선택할 수 없습니다.");
-                txtWCName.Text = "";
-                return;
-            }
+            //if (ctrl.SendWcList.Wo_Status.Equals("비가동"))
+            //{
+            //    MessageBox.Show("비가동 중인 작업장은 선택할 수 없습니다.");
+            //    txtWCName.Text = "";
+            //    return;
+            //}
 
             txtWCName.Text = ctrl.SendWcList.Wc_Name;
             wcCode = ctrl.SendWcList.Wc_Code;
