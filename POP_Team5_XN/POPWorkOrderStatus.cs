@@ -120,8 +120,10 @@ namespace POP_Team5_XN
                 WorkOrderNo = ctrl.SendOrderList.WorkOrderNo,
                 Item_Name = ctrl.SendOrderList.Item_Name,
                 Plan_Date = ctrl.SendOrderList.Plan_Date,
+                Plan_Qty_Box = ctrl.SendOrderList.Plan_Qty_Box,
                 Prd_Qty = ctrl.SendOrderList.Prd_Qty,
-                Wc_Name = woInfo.Wc_Name
+                Wc_Name = woInfo.Wc_Name,
+                Wc_Code = woInfo.Wc_Code
             };
 
             //MessageBox.Show(ctrl.SendOrderList.WorkOrderNo);
@@ -130,13 +132,13 @@ namespace POP_Team5_XN
 
         private void btnPalette_Click(object sender, EventArgs e)
         {  //Item_Name, Plan_Date, Prd_Qty, WorkOrderNo, Wc_Name
-            //POPPalette pop = new POPPalette();
-            //pop.WoInfo_p.WorkOrderNo = woInfo.WorkOrderNo;
-            //pop.WoInfo_p.Item_Name = woInfo.Item_Name;
-            //pop.WoInfo_p.Plan_Date = woInfo.Plan_Date;
-            //pop.WoInfo_p.Prd_Qty = woInfo.Prd_Qty;
-            //pop.WoInfo_p.Wc_Name = woInfo.Wc_Name;
-            //pop.ShowDialog();
+            POPPalette pop = new POPPalette();
+            pop.WoInfo_p.WorkOrderNo = woInfo.WorkOrderNo;
+            pop.WoInfo_p.Item_Name = woInfo.Item_Name;
+            pop.WoInfo_p.Plan_Date = woInfo.Plan_Date;
+            pop.WoInfo_p.Prd_Qty = woInfo.Prd_Qty;
+            pop.WoInfo_p.Wc_Name = woInfo.Wc_Name;
+            pop.ShowDialog();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -173,6 +175,20 @@ namespace POP_Team5_XN
             POPNopRegister frm = new POPNopRegister();
             frm.ShowDialog();
             //작업장코드 woInfo에 있습니다~
+        }
+
+        private void btnPfm_Click(object sender, EventArgs e)
+        {
+            PopupRegPer frm = new PopupRegPer();
+            frm.GetWoInfo.WorkOrderNo = woInfo.WorkOrderNo;
+            frm.GetWoInfo.Item_Name = woInfo.Item_Name;
+            frm.GetWoInfo.Wc_Name = woInfo.Wc_Name;
+            frm.GetWoInfo.Plan_Date = woInfo.Plan_Date;
+            frm.GetWoInfo.Plan_Qty_Box = woInfo.Plan_Qty_Box;
+            frm.GetWoInfo.Prd_Qty = woInfo.Prd_Qty;
+            frm.GetWoInfo.Wc_Code = woInfo.Wc_Code;
+
+            frm.ShowDialog();
         }
     }
 }

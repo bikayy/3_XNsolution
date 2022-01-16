@@ -78,6 +78,44 @@ namespace Team5_XN_DAC
             return cmd.ExecuteNonQuery() > 0;
         }
 
+        public bool CreatePalette(CreatePaletteVO createPalette)
+        {  //WorkOrderNo, Start_Hour, Prd_Qty, Pallet_No, Unit, Grade_Code
+            //Grade_Detail_Code, Grade_Detail_Name, Ins_Emp
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SP_Palette_Create";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@WorkOrderNo", createPalette.WorkOrderNo);
+            cmd.Parameters.AddWithValue("@Start_Hour", createPalette.Start_Hour);
+            cmd.Parameters.AddWithValue("@Prd_Qty", createPalette.Prd_Qty);
+            cmd.Parameters.AddWithValue("@Pallet_No", createPalette.Pallet_No);
+            cmd.Parameters.AddWithValue("@Unit", createPalette.Unit);
+            cmd.Parameters.AddWithValue("@Grade_Code", createPalette.Grade_Code);
+            cmd.Parameters.AddWithValue("@Grade_Detail_Code", createPalette.Grade_Detail_Code);
+            cmd.Parameters.AddWithValue("@Grade_Detail_Name", createPalette.Grade_Detail_Name);
+            cmd.Parameters.AddWithValue("@Ins_Emp", createPalette.Ins_Emp);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        public bool RegPerSiyu(RegSiyuVO regPerSiyu)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SP_Per_Siyu_Create";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@WorkOrderNo", regPerSiyu.WorkOrderNo);
+            cmd.Parameters.AddWithValue("@Start_Hour", regPerSiyu.Start_Hour);
+            cmd.Parameters.AddWithValue("@Prd_Qty", regPerSiyu.Prd_Qty);
+            cmd.Parameters.AddWithValue("@Unit", regPerSiyu.Unit);
+            cmd.Parameters.AddWithValue("@Ins_Emp", regPerSiyu.Ins_Emp);
+            cmd.Parameters.AddWithValue("@Wc_Code", regPerSiyu.Wc_Code);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
         public DataTable SelectPaleeteList(string pNo)
         {
             SqlCommand cmd = new SqlCommand();
@@ -136,6 +174,21 @@ where Boxing_Grade_Code = @Boxing_Grade_Code";
                 Debug.WriteLine(err.Message);
                 return null;
             }
+        }
+
+        public DataTable SelectPerSiyu(string woNo, string wcCode)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("SP_Per_Of_Siyu_Select", conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@WorkOrderNo", woNo);
+            da.SelectCommand.Parameters.AddWithValue("@Wc_Code", wcCode);
+            da.Fill(dt);
+
+            return dt;
         }
 
     }

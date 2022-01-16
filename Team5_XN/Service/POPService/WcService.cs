@@ -38,6 +38,25 @@ namespace Team5_XN
             return result;
         }
 
+        public bool CreatePalette(CreatePaletteVO createPalette)
+        {
+            WcDAC dac = new WcDAC();
+            bool result = dac.CreatePalette(createPalette);
+            dac.Dispose();
+
+            return result;
+        }
+
+        public bool RegPerSiyu(RegSiyuVO regPerSiyu)
+        {
+            WcDAC dac = new WcDAC();
+            bool result = dac.RegPerSiyu(regPerSiyu);
+            dac.Dispose();
+
+            return result;
+        }
+
+
         public bool End(string woNo)
         {
             WcDAC dac = new WcDAC();
@@ -73,5 +92,15 @@ namespace Team5_XN
 
             return dt;
         }
+
+        public DataTable SelectPerSiyu(string woNo, string wcCode)
+        {
+            WcDAC dac = new WcDAC();
+            DataTable dt = dac.SelectPerSiyu(woNo, wcCode);
+            dac.Dispose();
+
+            return dt;
+        }
+
     }
 }

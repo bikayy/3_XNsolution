@@ -117,65 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="keyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backColor12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backColor12.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backColor.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon-find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_xn_refresh-green1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_xn_refresh-green1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_close_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_close_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="free-icon-refresh-page-option-25429" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-refresh-page-option-25429.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buttonBackColor3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonBackColor3.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backColor61" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backColor61.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_xn_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_xn_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_xn_refresh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_xn_refresh1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_close_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_close_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backColor6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backColor6.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backColor11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backColor11.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_xn_refresh-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_xn_refresh-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_xn_refresh-green2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_xn_refresh-green2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buttonBackColor_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonBackColor_red.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="refresh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA4
+        CgAAAk1TRnQBSQFMAwEBAAFAAQABQAEAARcBAQE/AQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMA
+        AVwBBAIAAT8DAAEBAQABCAUAAaQBEgEBFwABgAIAAYADAAKAAQABgAMAAYABAAGAAQACgAIAA8ABAAHA
+        AdwBwAEAAfABygGmAQABMwUAATMBAAEzAQABMwEAAjMCAAMWAQADHAEAAyIBAAMpAQADVQEAA00BAANC
+        AQADOQEAAYABfAH/AQACUAH/AQABkwEAAdYBAAH/AewBzAEAAcYB1gHvAQAB1gLnAQABkAGpAa0CAAH/
+        ATMDAAFmAwABmQMAAcwCAAEzAwACMwIAATMBZgIAATMBmQIAATMBzAIAATMB/wIAAWYDAAFmATMCAAJm
+        AgABZgGZAgABZgHMAgABZgH/AgABmQMAAZkBMwIAAZkBZgIAApkCAAGZAcwCAAGZAf8CAAHMAwABzAEz
+        AgABzAFmAgABzAGZAgACzAIAAcwB/wIAAf8BZgIAAf8BmQIAAf8BzAEAATMB/wIAAf8BAAEzAQABMwEA
+        AWYBAAEzAQABmQEAATMBAAHMAQABMwEAAf8BAAH/ATMCAAMzAQACMwFmAQACMwGZAQACMwHMAQACMwH/
+        AQABMwFmAgABMwFmATMBAAEzAmYBAAEzAWYBmQEAATMBZgHMAQABMwFmAf8BAAEzAZkCAAEzAZkBMwEA
+        ATMBmQFmAQABMwKZAQABMwGZAcwBAAEzAZkB/wEAATMBzAIAATMBzAEzAQABMwHMAWYBAAEzAcwBmQEA
+        ATMCzAEAATMBzAH/AQABMwH/ATMBAAEzAf8BZgEAATMB/wGZAQABMwH/AcwBAAEzAv8BAAFmAwABZgEA
+        ATMBAAFmAQABZgEAAWYBAAGZAQABZgEAAcwBAAFmAQAB/wEAAWYBMwIAAWYCMwEAAWYBMwFmAQABZgEz
+        AZkBAAFmATMBzAEAAWYBMwH/AQACZgIAAmYBMwEAA2YBAAJmAZkBAAJmAcwBAAFmAZkCAAFmAZkBMwEA
+        AWYBmQFmAQABZgKZAQABZgGZAcwBAAFmAZkB/wEAAWYBzAIAAWYBzAEzAQABZgHMAZkBAAFmAswBAAFm
+        AcwB/wEAAWYB/wIAAWYB/wEzAQABZgH/AZkBAAFmAf8BzAEAAcwBAAH/AQAB/wEAAcwBAAKZAgABmQEz
+        AZkBAAGZAQABmQEAAZkBAAHMAQABmQMAAZkCMwEAAZkBAAFmAQABmQEzAcwBAAGZAQAB/wEAAZkBZgIA
+        AZkBZgEzAQABmQEzAWYBAAGZAWYBmQEAAZkBZgHMAQABmQEzAf8BAAKZATMBAAKZAWYBAAOZAQACmQHM
+        AQACmQH/AQABmQHMAgABmQHMATMBAAFmAcwBZgEAAZkBzAGZAQABmQLMAQABmQHMAf8BAAGZAf8CAAGZ
+        Af8BMwEAAZkBzAFmAQABmQH/AZkBAAGZAf8BzAEAAZkC/wEAAcwDAAGZAQABMwEAAcwBAAFmAQABzAEA
+        AZkBAAHMAQABzAEAAZkBMwIAAcwCMwEAAcwBMwFmAQABzAEzAZkBAAHMATMBzAEAAcwBMwH/AQABzAFm
+        AgABzAFmATMBAAGZAmYBAAHMAWYBmQEAAcwBZgHMAQABmQFmAf8BAAHMAZkCAAHMAZkBMwEAAcwBmQFm
+        AQABzAKZAQABzAGZAcwBAAHMAZkB/wEAAswCAALMATMBAALMAWYBAALMAZkBAAPMAQACzAH/AQABzAH/
+        AgABzAH/ATMBAAGZAf8BZgEAAcwB/wGZAQABzAH/AcwBAAHMAv8BAAHMAQABMwEAAf8BAAFmAQAB/wEA
+        AZkBAAHMATMCAAH/AjMBAAH/ATMBZgEAAf8BMwGZAQAB/wEzAcwBAAH/ATMB/wEAAf8BZgIAAf8BZgEz
+        AQABzAJmAQAB/wFmAZkBAAH/AWYBzAEAAcwBZgH/AQAB/wGZAgAB/wGZATMBAAH/AZkBZgEAAf8CmQEA
+        Af8BmQHMAQAB/wGZAf8BAAH/AcwCAAH/AcwBMwEAAf8BzAFmAQAB/wHMAZkBAAH/AswBAAH/AcwB/wEA
+        Av8BMwEAAcwB/wFmAQAC/wGZAQAC/wHMAQACZgH/AQABZgH/AWYBAAFmAv8BAAH/AmYBAAH/AWYB/wEA
+        Av8BZgEAASEBAAGlAQADXwEAA3cBAAOGAQADlgEAA8sBAAOyAQAD1wEAA90BAAPjAQAD6gEAA/EBAAP4
+        AQAB8AH7Af8BAAGkAqABAAOAAwAB/wIAAf8DAAL/AQAB/wMAAf8BAAH/AQAC/wIAA/8BAP/xGPH/AP8A
+        /wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A
+        /wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A
+        /wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A
+        /wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAP/xGPH/AP8A/wBIAAHx//IX8v8A
+        /wD/AEgAAfH/8hfy/wD/AP8ASAAB8f/yF/L/AP8A/wBIAP/yGPL/AP8A/wBIAP/yGPL/AP8A/wBIAP/y
+        GPL/AP8A/wBIAP/yGPL/AP8A/wBIAAHy//MX8/8A/wD/AEgAAfL/8xfz/wD/AP8ASAAB8v/zF/P/AP8A
+        /wBIAAHy//MX8/8A/wD/AEgAAfL/8xfz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz
+        /wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz
+        /wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz
+        /wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz
+        /wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz/wD/AP8ASAD/8xjz
+        /wD/AP8ASAAB8//0F/T/AP8A/wBIAAHz//QX9P8A/wD/AEgA//QY9P8A/wD/AEgA//QY9P8A/wD/AEgA
+        //QY9P8A/wD/AEgA//QY9P8A/wD/AEgA//MY8/8A/wD/AEgA//MY8/8A/wD/AEgAAUIBTQE+BwABPgMA
+        ASgDAAFcAQQCAAE/AwABAQEAAQEFAAF0ASIWAAP//wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
+        /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wCXAAs=
+</value>
   </data>
 </root>
