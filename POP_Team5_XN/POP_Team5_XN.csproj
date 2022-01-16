@@ -61,7 +61,7 @@
     <Compile Include="Controls\ucRegPerList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ucRegPerList.Designer.cs">
+    <Compile Include="Controls\ucRegPerList.designer.cs">
       <DependentUpon>ucRegPerList.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">

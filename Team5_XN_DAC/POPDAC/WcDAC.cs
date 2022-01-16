@@ -191,5 +191,20 @@ where Boxing_Grade_Code = @Boxing_Grade_Code";
             return dt;
         }
 
+        public bool DeletePerSiyu(DeletePerSiyuVO deletePerSiyu)
+        {  //WorkOrderNo, Prd_Qty, Reg_DateTime, Del_Emp
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SP_Per_Siyu_Delete";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@WorkOrderNo", deletePerSiyu.WorkOrderNo);
+            cmd.Parameters.AddWithValue("@Prd_Qty", deletePerSiyu.Prd_Qty);
+            cmd.Parameters.AddWithValue("@Reg_DateTime", deletePerSiyu.Reg_DateTime);
+            cmd.Parameters.AddWithValue("@Del_Emp", deletePerSiyu.Del_Emp);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
     }
 }

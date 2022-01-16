@@ -56,6 +56,7 @@ namespace POP_Team5_XN
             this.panel18 = new System.Windows.Forms.Panel();
             this.lblWoNo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -70,7 +71,6 @@ namespace POP_Team5_XN
             this.txtPrdQty = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblIPrdQty = new System.Windows.Forms.Label();
-            this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
             this.pnlList = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -412,6 +412,14 @@ namespace POP_Team5_XN
             this.panel1.Size = new System.Drawing.Size(1047, 111);
             this.panel1.TabIndex = 9;
             // 
+            // ucDateTime1
+            // 
+            this.ucDateTime1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDateTime1.Location = new System.Drawing.Point(12, 12);
+            this.ucDateTime1.Name = "ucDateTime1";
+            this.ucDateTime1.Size = new System.Drawing.Size(254, 82);
+            this.ucDateTime1.TabIndex = 4;
+            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -429,7 +437,7 @@ namespace POP_Team5_XN
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.33987F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.66013F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 282F));
             this.tableLayoutPanel3.Controls.Add(this.panel7, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel5, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
@@ -582,14 +590,6 @@ namespace POP_Team5_XN
             this.lblIPrdQty.Size = new System.Drawing.Size(111, 32);
             this.lblIPrdQty.TabIndex = 3;
             this.lblIPrdQty.Text = "실적수량";
-            // 
-            // ucDateTime1
-            // 
-            this.ucDateTime1.BackColor = System.Drawing.Color.Transparent;
-            this.ucDateTime1.Location = new System.Drawing.Point(12, 12);
-            this.ucDateTime1.Name = "ucDateTime1";
-            this.ucDateTime1.Size = new System.Drawing.Size(254, 82);
-            this.ucDateTime1.TabIndex = 4;
             // 
             // pnlList
             // 

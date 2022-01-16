@@ -44,6 +44,7 @@ namespace POP_Team5_XN
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnlWcList.SuspendLayout();
@@ -211,6 +212,7 @@ namespace POP_Team5_XN
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BackgroundImage = global::POP_Team5_XN.Properties.Resources.backColor;
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.ucDateTime1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -225,6 +227,18 @@ namespace POP_Team5_XN
             this.ucDateTime1.Name = "ucDateTime1";
             this.ucDateTime1.Size = new System.Drawing.Size(277, 82);
             this.ucDateTime1.TabIndex = 1;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(442, 45);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(185, 45);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "작업장선택";
             // 
             // POPWorkCenter
             // 
@@ -250,6 +264,7 @@ namespace POP_Team5_XN
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -271,5 +286,6 @@ namespace POP_Team5_XN
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
         private Controls.ucDateTime ucDateTime1;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

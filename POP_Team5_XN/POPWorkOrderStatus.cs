@@ -21,8 +21,8 @@ namespace POP_Team5_XN
         private WoInfoVO woInfo = new WoInfoVO();
         public WoInfoVO WoInfo { get { return woInfo; } set { woInfo = value; } }
 
-        //private string wcCode = string.Empty;
-        //public string WcCode { get { return wcCode; } set { wcCode = value; } }
+        private string wcStatus = string.Empty;
+        public string WcStatus { get { return wcStatus; } set { wcStatus = value; } }
 
         string woNo = string.Empty;
 
@@ -35,6 +35,12 @@ namespace POP_Team5_XN
 
         private void POPWorkOrderStatus_Load(object sender, EventArgs e)
         {
+            if (wcStatus.Equals("비가동"))
+            {
+                btnStart.Enabled = btnEnd.Enabled = btnPalette.Enabled = btnClosing.Enabled = btnPfm.Enabled = false;
+                btnStart.BackColor = btnEnd.BackColor = btnPalette.BackColor = btnClosing.BackColor = btnPfm.BackColor = Color.Gray;
+            }
+
             DataTable dt = new DataTable();
             dt = wcServ.SelectOr(woInfo.Wc_Code);
             int idx = 0;
@@ -62,9 +68,10 @@ namespace POP_Team5_XN
                     Prd_EndTime = dt.Rows[idx]["Prd_EndTime"].ToString(),
                     Remark_YN = dt.Rows[idx]["Remark_YN"].ToString()
                 };
-                ctrlOrList.Tag = idx;
+                ctrlOrList.Tag = idx.ToString();
                 ctrlOrList.eventBtnCheck += OnBtn;
                 ctrlOrList.eventOrderList += OnClick;
+                ctrlOrList.eventWoStatus += btnStart_Click;
                 pnlOrList.Controls.Add(ctrlOrList);
                 idx++;
             }
@@ -143,18 +150,44 @@ namespace POP_Team5_XN
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            DialogResult sResult = MessageBox.Show($"{woNo}의 작업을 시작하시겠습니까?", "작업시작", MessageBoxButtons.YesNo);
-            if (sResult == DialogResult.Yes)
-            {
-                bool result = wcServ.Start(woNo);
+            //string idx = "2";
+            //if (ctrlOrList.Tag.ToString() == idx)
+            //{
+            //    ctrlOrList.SendOrderList.Wo_Status = "dd";
+            //}
 
-                if (result) MessageBox.Show("작업이 시작되었습니다.");
-                else MessageBox.Show("작업 시작에 실패하였습니다.");
-            }
+            //DialogResult sResult = MessageBox.Show($"{woNo}의 작업을 시작하시겠습니까?", "작업시작", MessageBoxButtons.YesNo);
+            //if (sResult == DialogResult.Yes)
+            //{
+            //    bool result = wcServ.Start(woNo);
+
+            //    if (result) MessageBox.Show("작업이 시작되었습니다.");
+            //    else MessageBox.Show("작업 시작에 실패하였습니다.");
+            //}
         }
+
+        //private void Test(object sender, EventArgs e)
+        //{
+        //    ucWorkOrderStatusList ctrl = (ucWorkOrderStatusList)sender;
+        //    ctrl.SendOrderList = new SelectOrderVO
+        //    {
+        //        Wo_Status = "ddd"
+        //    };
+        //}
+
+        //private void Test(Panel pnl)
+        //{
+        //    foreach (ucWorkOrderStatusList ctrl in pnl.Controls)
+        //    {
+        //        int idx = 2;
+        //        ctrl.Tag = idx;
+        //        ctrl.SendOrderList.Wo_Status = "gg";
+        //    }
+        //}
 
         private void btnClosing_Click(object sender, EventArgs e)
         {
+
         }
 
 

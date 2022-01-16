@@ -94,4 +94,12 @@ namespace Team5_XN_VO
         public DateTime Reg_Datetime { get; set; }
         public int Prd_Qty { get; set; }
     }
+
+    public class DeletePerSiyuVO
+    {  //WorkOrderNo, Prd_Qty, Reg_DateTime, Del_Emp
+        public string WorkOrderNo { get; set; }
+        public int Prd_Qty { get; set; }
+        public DateTime Reg_DateTime { get; set; }
+        public string Del_Emp { get; set; }
+    }
 }

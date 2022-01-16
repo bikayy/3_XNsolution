@@ -10,10 +10,19 @@ namespace Team5_XN
 {
     class PlanService
     {
-        public List<GetPlanListVO> GetPlanList()
+        public List<GetPlanListVO> GetPlanList(PlanSearchVO ps)
         {
             PlanDAC db = new PlanDAC();
-            List<GetPlanListVO> list = db.GetPlanList();
+            List<GetPlanListVO> list = db.GetPlanList(ps);
+            db.Dispose();
+
+            return list;
+        }
+
+        public List<GetPlanListVO> GetPlanList2()
+        {
+            PlanDAC db = new PlanDAC();
+            List<GetPlanListVO> list = db.GetPlanList2();
             db.Dispose();
 
             return list;
@@ -50,6 +59,24 @@ namespace Team5_XN
         {
             PlanDAC db = new PlanDAC();
             bool result = db.DeletePlan(id);
+            db.Dispose();
+
+            return result;
+        }
+
+        public bool EndPlan(string no)
+        {
+            PlanDAC db = new PlanDAC();
+            bool result = db.EndPlan(no);
+            db.Dispose();
+
+            return result;
+        }
+
+        public bool EndCanclePlan(string no)
+        {
+            PlanDAC db = new PlanDAC();
+            bool result = db.EndCanclePlan(no);
             db.Dispose();
 
             return result;

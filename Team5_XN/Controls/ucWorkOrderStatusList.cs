@@ -15,6 +15,7 @@ namespace Team5_XN
     {
         public event EventHandler eventOrderList;
         public event EventHandler eventBtnCheck;
+        public event EventHandler eventWoStatus;
 
         SelectOrderVO orderList = null;
         public SelectOrderVO SendOrderList
@@ -70,6 +71,11 @@ namespace Team5_XN
             if (eventBtnCheck != null)
             {
                 eventBtnCheck(this, null);
+            }
+
+            if (eventWoStatus != null)
+            {
+                eventWoStatus(this, null);
             }
 
         }

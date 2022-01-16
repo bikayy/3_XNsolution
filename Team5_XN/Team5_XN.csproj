@@ -405,8 +405,10 @@
     <Compile Include="Service\ItemService.cs" />
     <Compile Include="Service\POPService\WcService.cs" />
     <Compile Include="Service\ProcessService.cs" />
+    <Compile Include="Service\ProductionService\OrderService.cs" />
     <Compile Include="Service\ProductionService\PlanService.cs" />
     <Compile Include="Service\ProductionService\RequestService.cs" />
+    <Compile Include="Service\ProductionService\WorkOrderService.cs" />
     <Compile Include="Service\SearchService\SearchService.cs" />
     <Compile Include="Service\TimeProductionService.cs" />
     <Compile Include="Service\UserService.cs" />
@@ -523,6 +525,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchPopup.resx">
       <DependentUpon>frmSearchPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSiyuOrder.resx">
+      <DependentUpon>frmSiyuOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemCode.resx">
       <DependentUpon>frmSystemCode.cs</DependentUpon>
