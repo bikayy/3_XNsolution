@@ -405,6 +405,7 @@
     <Compile Include="Service\ItemService.cs" />
     <Compile Include="Service\POPService\WcService.cs" />
     <Compile Include="Service\ProcessService.cs" />
+    <Compile Include="Service\ProductionService\InputListService.cs" />
     <Compile Include="Service\ProductionService\OrderService.cs" />
     <Compile Include="Service\ProductionService\PlanService.cs" />
     <Compile Include="Service\ProductionService\RequestService.cs" />

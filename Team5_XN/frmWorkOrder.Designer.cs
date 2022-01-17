@@ -30,7 +30,6 @@ namespace Team5_XN
         private void InitializeComponent()
         {
             this.pnlSelect = new System.Windows.Forms.Panel();
-            this.btnUSave = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -47,14 +46,14 @@ namespace Team5_XN
             this.s_txtPrName = new WinReflectionSettings.PlaceholderTextBox();
             this.s_txtPrCode = new WinReflectionSettings.PlaceholderTextBox();
             this.s_lblProcess = new System.Windows.Forms.Label();
-            this.btnEndCancle = new System.Windows.Forms.Button();
             this.s_dtpTo = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.s_dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.s_lblPlanDate = new System.Windows.Forms.Label();
-            this.btnEnd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEndCancle = new System.Windows.Forms.Button();
+            this.btnEnd = new System.Windows.Forms.Button();
             this.pnlDgv = new System.Windows.Forms.Panel();
             this.dgvWo = new System.Windows.Forms.DataGridView();
             this.pnlSubject1 = new System.Windows.Forms.Panel();
@@ -118,7 +117,6 @@ namespace Team5_XN
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSelect.Controls.Add(this.btnUSave);
             this.pnlSelect.Controls.Add(this.btnCreate);
             this.pnlSelect.Controls.Add(this.btnCancle);
             this.pnlSelect.Controls.Add(this.btnDelete);
@@ -147,21 +145,6 @@ namespace Team5_XN
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1455, 138);
             this.pnlSelect.TabIndex = 1;
-            // 
-            // btnUSave
-            // 
-            this.btnUSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUSave.BackColor = System.Drawing.Color.White;
-            this.btnUSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUSave.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUSave.Location = new System.Drawing.Point(821, 66);
-            this.btnUSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnUSave.Name = "btnUSave";
-            this.btnUSave.Size = new System.Drawing.Size(76, 38);
-            this.btnUSave.TabIndex = 106;
-            this.btnUSave.Text = "수정저장";
-            this.btnUSave.UseVisualStyleBackColor = false;
-            this.btnUSave.Click += new System.EventHandler(this.btnUSave_Click);
             // 
             // btnCreate
             // 
@@ -369,21 +352,6 @@ namespace Team5_XN
             this.s_lblProcess.Text = "공정";
             this.s_lblProcess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnEndCancle
-            // 
-            this.btnEndCancle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEndCancle.BackColor = System.Drawing.Color.White;
-            this.btnEndCancle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEndCancle.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnEndCancle.Location = new System.Drawing.Point(1054, 5);
-            this.btnEndCancle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEndCancle.Name = "btnEndCancle";
-            this.btnEndCancle.Size = new System.Drawing.Size(168, 29);
-            this.btnEndCancle.TabIndex = 39;
-            this.btnEndCancle.Text = "작업지시 마감 취소";
-            this.btnEndCancle.UseVisualStyleBackColor = false;
-            this.btnEndCancle.Click += new System.EventHandler(this.btnEndCancle_Click);
-            // 
             // s_dtpTo
             // 
             this.s_dtpTo.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -433,6 +401,31 @@ namespace Team5_XN
             this.s_lblPlanDate.Text = "작업지시일자";
             this.s_lblPlanDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(22, 136);
+            this.panel2.TabIndex = 0;
+            // 
+            // btnEndCancle
+            // 
+            this.btnEndCancle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEndCancle.BackColor = System.Drawing.Color.White;
+            this.btnEndCancle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEndCancle.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEndCancle.Location = new System.Drawing.Point(1054, 5);
+            this.btnEndCancle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEndCancle.Name = "btnEndCancle";
+            this.btnEndCancle.Size = new System.Drawing.Size(168, 29);
+            this.btnEndCancle.TabIndex = 39;
+            this.btnEndCancle.Text = "작업지시 마감 취소";
+            this.btnEndCancle.UseVisualStyleBackColor = false;
+            this.btnEndCancle.Click += new System.EventHandler(this.btnEndCancle_Click);
+            // 
             // btnEnd
             // 
             this.btnEnd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -447,16 +440,6 @@ namespace Team5_XN
             this.btnEnd.Text = "작업지시 마감";
             this.btnEnd.UseVisualStyleBackColor = false;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(22, 136);
-            this.panel2.TabIndex = 0;
             // 
             // pnlDgv
             // 
@@ -1140,6 +1123,5 @@ namespace Team5_XN
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label i_lblRemark;
         private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.Button btnUSave;
     }
 }

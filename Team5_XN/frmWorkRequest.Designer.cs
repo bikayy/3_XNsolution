@@ -74,6 +74,8 @@ namespace Team5_XN
             this.txtItemCode = new WinReflectionSettings.PlaceholderTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnlBorder.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             this.pnlDetail.SuspendLayout();
@@ -81,6 +83,7 @@ namespace Team5_XN
             this.pnlSubject1.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBorder
@@ -99,6 +102,7 @@ namespace Team5_XN
             // pnlDgv
             // 
             this.pnlDgv.BackColor = System.Drawing.Color.White;
+            this.pnlDgv.Controls.Add(this.panel1);
             this.pnlDgv.Controls.Add(this.pnlDetail);
             this.pnlDgv.Controls.Add(this.dgvRequest);
             this.pnlDgv.Controls.Add(this.pnlSubject1);
@@ -427,13 +431,13 @@ namespace Team5_XN
             // dgvRequest
             // 
             this.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRequest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRequest.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvRequest.Location = new System.Drawing.Point(0, 44);
             this.dgvRequest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvRequest.Name = "dgvRequest";
             this.dgvRequest.RowHeadersWidth = 51;
             this.dgvRequest.RowTemplate.Height = 23;
-            this.dgvRequest.Size = new System.Drawing.Size(1455, 598);
+            this.dgvRequest.Size = new System.Drawing.Size(1455, 399);
             this.dgvRequest.TabIndex = 1;
             this.dgvRequest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRequest_CellClick);
             // 
@@ -619,9 +623,35 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(22, 129);
             this.panel2.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 444);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1455, 38);
+            this.panel1.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Gainsboro;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 38);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "생산요청";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmWorkRequest
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1467, 791);
             this.Controls.Add(this.pnlBorder);
             this.Name = "frmWorkRequest";
@@ -638,6 +668,7 @@ namespace Team5_XN
             this.pnlSelect.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -689,5 +720,7 @@ namespace Team5_XN
         private WinReflectionSettings.PlaceholderTextBox r_txtItemName;
         private WinReflectionSettings.PlaceholderTextBox r_txtItemCode;
         private System.Windows.Forms.Label lblItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -36,68 +36,15 @@ namespace Team5_XN
             InitializeComponent();
         }
 
-        private void btnRead_Click(object sender, EventArgs e)
+        private void frmSiyuOrder_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtItemCode.Text) && string.IsNullOrWhiteSpace(txtWCCode.Text))
-            {
-                ps = new PlanSearchVO()
-                {
-                    PlanMonth = dtpPlanMonth.Value.ToString("yyyy-MM"),
-                    ItemCode = "",
-                    WCCode = ""
-                };
-
-                LoadPlan(ps);
-                //LoadOrder(ps);
-
-                if (dgvPlan.Rows.Count > 0)
-                {
-                    DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
-                    dgvPlan_CellClick(this, args);
-                }
-
-            }
-            else if (!string.IsNullOrWhiteSpace(txtItemCode.Text) && string.IsNullOrWhiteSpace(txtWCCode.Text))
-            {
-                ps = new PlanSearchVO()
-                {
-                    PlanMonth = dtpPlanMonth.Value.ToString("yyyy-MM"),
-                    ItemCode = txtItemCode.Text,
-                    WCCode = ""
-                };
-
-                LoadPlan(ps);
-                //LoadOrder(ps);
-            }
-            else if (string.IsNullOrWhiteSpace(txtItemCode.Text) && !string.IsNullOrWhiteSpace(txtWCCode.Text))
-            {
-                ps = new PlanSearchVO()
-                {
-                    PlanMonth = dtpPlanMonth.Value.ToString("yyyy-MM"),
-                    ItemCode = "",
-                    WCCode = txtWCCode.Text
-                };
-
-                LoadPlan(ps);
-                //LoadOrder(ps);
-            }
-            else
-            {
-                ps = new PlanSearchVO()
-                {
-                    PlanMonth = dtpPlanMonth.Value.ToString("yyyy-MM"),
-                    ItemCode = txtItemCode.Text,
-                    WCCode = txtWCCode.Text
-                };
-
-                LoadPlan(ps);
-                //LoadOrder(ps);
-            }
-        }
-
-        private void LoadPlan(PlanSearchVO ps)
-        {
-            dgvPlan.Columns.Clear();
+            main = (Main)this.MdiParent;
+            //main.Select += OnSelect;
+            //main.Create += OnCreate;
+            //main.Update += OnUpdate;
+            //main.Save += OnSave;
+            //main.Delete += OnDelete;
+            //main.Cancle += OnCancle;
 
             DataGridViewUtil.SetInitGridView(dgvPlan);
             DataGridViewUtil.AddGridTextColumn(dgvPlan, "생산계획번호", "Prd_Plan_No", colWidth: 120);
@@ -112,29 +59,15 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvPlan, "생산계획상태", "Prd_Plan_Status", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvPlan, "비고", "Remark", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvPlan, "담당자", "Ins_Emp", colWidth: 120);
-
-
             dgvPlan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            listPlan = planServ.GetPlanList(ps);
-            dgvPlan.DataSource = listPlan;
-
-        }
-
-        private void LoadOrder(string planNo)//PlanSearchVO ps)
-        {  //Wo_Status, WorkOrderNo, Plan_Date, Plan_Qty_Box, Item_Code, Wc_Code,
-            //Prd_Date, Prd_Qty, Plan_StartTime, Plan_EndTime, Prd_StartTime, Prd_EndTime,
-            //Worker_CloseTime, Manager_CloseTime, Close_CancelTime, Remark, 
-            //Prd_Plan_No, Ins_Date, Ins_Emp, Up_Date, Up_Emp
-            dgvOrder.Columns.Clear();
 
             DataGridViewUtil.SetInitGridView(dgvOrder);
             DataGridViewUtil.AddGridTextColumn(dgvOrder, "작업지시상태", "Wo_Status", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvOrder, "작업지시번호", "WorkOrderNo", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvOrder, "작업계획일자", "Plan_Date", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvOrder, "작업계획수량", "Plan_Qty_Box",  colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvOrder, "품목코드", "Item_Code",  colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvOrder, "품목명", "Item_Name",  colWidth: 120);
+            DataGridViewUtil.AddGridTextColumn(dgvOrder, "작업계획수량", "Plan_Qty_Box", colWidth: 120);
+            DataGridViewUtil.AddGridTextColumn(dgvOrder, "품목코드", "Item_Code", colWidth: 120);
+            DataGridViewUtil.AddGridTextColumn(dgvOrder, "품목명", "Item_Name", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvOrder, "작업장코드", "Wc_Code", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvOrder, "작업장명", "Wc_Name", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvOrder, "계획시작시간", "Plan_StartTime", colWidth: 120);
@@ -152,10 +85,90 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvOrder, "최초입력자", "Ins_Emp", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvOrder, "최종수정일자", "Up_Date", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvOrder, "최종수정자", "Up_Emp", colWidth: 120);
-
-
             dgvOrder.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
 
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtItemCode.Text) && string.IsNullOrWhiteSpace(txtWCCode.Text))
+            {
+                ps = new PlanSearchVO()
+                {
+                    PlanMonth = dtpPlanMonth.Value.ToString("yyyy-MM"),
+                    ItemCode = "",
+                    WCCode = ""
+                };
+
+                LoadPlan(ps);
+                if (dgvPlan.Rows.Count > 0)
+                {
+                    DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
+                    dgvPlan_CellClick(this, args);
+                }
+
+            }
+            else if (!string.IsNullOrWhiteSpace(txtItemCode.Text) && string.IsNullOrWhiteSpace(txtWCCode.Text))
+            {
+                ps = new PlanSearchVO()
+                {
+                    PlanMonth = dtpPlanMonth.Value.ToString("yyyy-MM"),
+                    ItemCode = txtItemCode.Text,
+                    WCCode = ""
+                };
+
+                LoadPlan(ps);
+                if (dgvPlan.Rows.Count > 0)
+                {
+                    DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
+                    dgvPlan_CellClick(this, args);
+                }
+            }
+            else if (string.IsNullOrWhiteSpace(txtItemCode.Text) && !string.IsNullOrWhiteSpace(txtWCCode.Text))
+            {
+                ps = new PlanSearchVO()
+                {
+                    PlanMonth = dtpPlanMonth.Value.ToString("yyyy-MM"),
+                    ItemCode = "",
+                    WCCode = txtWCCode.Text
+                };
+
+                LoadPlan(ps);
+                if (dgvPlan.Rows.Count > 0)
+                {
+                    DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
+                    dgvPlan_CellClick(this, args);
+                }
+            }
+            else
+            {
+                ps = new PlanSearchVO()
+                {
+                    PlanMonth = dtpPlanMonth.Value.ToString("yyyy-MM"),
+                    ItemCode = txtItemCode.Text,
+                    WCCode = txtWCCode.Text
+                };
+
+                LoadPlan(ps);
+                if (dgvPlan.Rows.Count > 0)
+                {
+                    DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
+                    dgvPlan_CellClick(this, args);
+                }
+            }
+        }
+
+        private void LoadPlan(PlanSearchVO ps)
+        {
+            listPlan = planServ.GetPlanList(ps);
+            dgvPlan.DataSource = listPlan;
+        }
+
+        private void LoadOrder(string planNo)//PlanSearchVO ps)
+        {  //Wo_Status, WorkOrderNo, Plan_Date, Plan_Qty_Box, Item_Code, Wc_Code,
+            //Prd_Date, Prd_Qty, Plan_StartTime, Plan_EndTime, Prd_StartTime, Prd_EndTime,
+            //Worker_CloseTime, Manager_CloseTime, Close_CancelTime, Remark, 
+            //Prd_Plan_No, Ins_Date, Ins_Emp, Up_Date, Up_Emp
+            
             listOrder = orderServ.SelectOrder(planNo);
             dgvOrder.DataSource = listOrder;
 
@@ -231,9 +244,9 @@ namespace Team5_XN
                 p_dtpPlanDate.Text = plan.Plan_Month;
             }
 
-            LoadOrder(planNo);
-            if (dgvOrder.Rows.Count > 0)
+            if (dgvPlan.Rows.Count > 0)
             {
+                LoadOrder(planNo);
                 DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
                 dgvOrder_CellClick(this, args);
             }
@@ -523,21 +536,7 @@ namespace Team5_XN
 
         private void o_dtpOPDate_Validating(object sender, CancelEventArgs e)
         {
-            if (aaa.Value < DateTime.Now.AddDays(-1))
-            {
-                MessageBox.Show("생산일자가 현재일보다  이전일 수 없습니다.");
-                aaa.Value = DateTime.Now;
-                aaa.Focus();
-                return;
-            }
-
-            if (Convert.ToInt32(p_dtpPlanDate.Value.ToString("yyyyMM")) < Convert.ToInt32(aaa.Value.ToString("yyyyMM")))
-            {
-                MessageBox.Show("생산일자는 생산계획월을 넘어갈 수 없습니다.");
-                aaa.Value = DateTime.Now;
-                aaa.Focus();
-                return;
-            }
+            
         }
 
         private void o_btnWCSearch_Click(object sender, EventArgs e)
@@ -604,7 +603,7 @@ namespace Team5_XN
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-
+            if (dgvOrder.Rows.Count < 1) return;
             ClearItems(grbPlan);
 
             string orderNo = dgvOrder[1, e.RowIndex].Value.ToString();
@@ -678,7 +677,23 @@ namespace Team5_XN
 
         private void o_dtpFromTime_Validating(object sender, CancelEventArgs e)
         {
-            if (aaa.Value.ToString("yyymmdd") == DateTime.Now.ToString("yyyymmdd") &&
+            if (o_dtpFromTime.Value < DateTime.Now.AddDays(-1))
+            {
+                MessageBox.Show("생산일자가 현재일보다  이전일 수 없습니다.");
+                o_dtpFromTime.Value = DateTime.Now;
+                o_dtpFromTime.Focus();
+                return;
+            }
+
+            if (Convert.ToInt32(p_dtpPlanDate.Value.ToString("yyyyMM")) < Convert.ToInt32(o_dtpFromTime.Value.ToString("yyyyMM")))
+            {
+                MessageBox.Show("생산일자는 생산계획월을 넘어갈 수 없습니다.");
+                o_dtpFromTime.Value = DateTime.Now;
+                o_dtpFromTime.Focus();
+                return;
+            }
+
+            if (o_dtpFromTime.Value.ToString("yyymmdd") == DateTime.Now.ToString("yyyymmdd") &&
                 Convert.ToInt32(o_dtpFromTime.Value.ToString("HHmm")) < Convert.ToInt32(DateTime.Now.ToString("HHmm")))
             {
                 MessageBox.Show("계획시작시간은 현재시각 이전일 수 없습니다.");
@@ -755,16 +770,7 @@ namespace Team5_XN
             //}
         }
 
-        private void frmSiyuOrder_Load(object sender, EventArgs e)
-        {
-            main = (Main)this.MdiParent;
-            //main.Select += OnSelect;
-            //main.Create += OnCreate;
-            //main.Update += OnUpdate;
-            //main.Save += OnSave;
-            //main.Delete += OnDelete;
-            //main.Cancle += OnCancle;
-        }
+        
 
 
         private void OnSelect(object sender, EventArgs e)
@@ -859,54 +865,6 @@ namespace Team5_XN
                 dgvOrder_CellClick(this, args);
             }
         }
-
-
-
-
-        //private void ControlState()
-        //{
-        //    if (check <= 1) //0:기본, 1:추가
-        //        if (check == 1 && dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index >= rowCount) //추가한 행
-        //        {
-
-        //            foreach (Control ctrl in pnlDetail.Controls)
-        //            {
-        //                if (ctrl is Label) continue;
-
-        //                else if (ctrl is TextBox txt)
-        //                    txt.ReadOnly = false;
-        //                else if (ctrl is ComboBox cbo)
-        //                    cbo.Enabled = true;
-        //            }
-        //        }
-        //        else //기존 행
-        //        {
-        //            foreach (Control ctrl in pnlDetail.Controls)
-        //            {
-        //                if (ctrl is Label) continue;
-        //                else if (ctrl is TextBox txt)
-        //                    txt.ReadOnly = true;
-        //                else if (ctrl is ComboBox cbo)
-        //                    cbo.Enabled = false;
-        //            }
-        //        }
-        //    else if (check == 2) //2:편집
-        //    {
-
-        //        foreach (Control ctrl in pnlDetail.Controls)
-        //        {
-        //            if (ctrl is Label) continue;
-        //            else if (ctrl is TextBox txt)
-        //            {
-        //                if (ctrl.Name.Equals("txtProcessCode")) continue;
-        //                txt.ReadOnly = false;
-        //            }
-        //            else if (ctrl is ComboBox cbo)
-        //                cbo.Enabled = true;
-        //        }
-        //    }
-        //}
-
 
 
     }

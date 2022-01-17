@@ -51,6 +51,9 @@ namespace Team5_XN
                 return;
             }
 
+            btnCreate.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancle.Enabled = true;
             rp_dtpPlanMonth.Enabled = true;
             rp_txtPlanQty.ReadOnly = false;
             rp_btnWCSearch.Enabled = true;
@@ -108,10 +111,17 @@ namespace Team5_XN
                 };
 
                 bool resultPlan = planServ.CreatePlan(pr);
-                if (resultPlan) MessageBox.Show("생산계획이 등록되었습니다.");
+                if (resultPlan)
+                {
+                    MessageBox.Show("생산계획이 등록되었습니다.");
+                    btnCreate.Enabled = true;
+                    btnSave.Enabled = false;
+                    btnCancle.Enabled = false;
+                }
                 else MessageBox.Show("생산계획 등록에 실패하였습니다.\n다시 확인하여주십시오.");
 
                 ClearItems(pnlReqInfo);
+
                 
             }
         }
@@ -119,26 +129,6 @@ namespace Team5_XN
 
         private void LoadReq(ReqSearchVO rs)
         {
-            dgvRequest.Columns.Clear();
-
-            DataGridViewUtil.SetInitGridView(dgvRequest);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "생산요청번호", "Prd_Req_No", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "요청일자", "Req_Date", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "요청순번", "Req_Seq", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "품목코드", "Item_Code", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "품목명", "Item_Name", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "요청수량", "Req_Qty", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "거래처", "Customer_Name", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "비고", "Remark", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "프로젝트명", "Project_Nm", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "영업담당자명", "Sale_Prsn_Nm", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "납기일자", "Delivery_Date", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "생산반영수량", "Plan_Qty", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "진행상태", "Prd_Progress_Status", colWidth: 120);
-
-
-            dgvRequest.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             reqList = reqServ.GetRequestSearch(rs);
             dgvRequest.DataSource = reqList;
         }
@@ -148,16 +138,11 @@ namespace Team5_XN
             if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
-            //if (check > 0)
-            //{
-            //    if (this.DialogResult == DialogResult.No)
-            //        return;
-            //}
-
             ChangeValue_Check(0);
 
             if (tabControl1.SelectedTab.Name.Equals("req"))
             {
+                ClearItems(pnlReqInfo);
                 if (rdoReqDate.Checked)
                 {
                     rs = new ReqSearchVO()
@@ -189,6 +174,7 @@ namespace Team5_XN
             }
             else
             {
+                ClearItems(panel3);
                 ps = new PlanSearchVO()
                 {
                     PlanMonth = p_dtpPlanDate.Value.ToString("yyyy-MM"),
@@ -198,7 +184,7 @@ namespace Team5_XN
 
                 LoadPlan(ps);
 
-                if (dgvRequest.Rows.Count > 0)
+                if (dgvPlan.Rows.Count > 0)
                 {
                     DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
                     dgvPlan_CellClick(this, args);
@@ -266,34 +252,34 @@ namespace Team5_XN
 
 
 
-        private void RpClearItem()
-        {
-            rp_txtReqNo.Text = "";
-            rp_txtReqDate.Text = "";
-            rp_txtReqSeq.Text = "";
-            rp_txtItemCode.Text = "";
-            rp_txtItemName.Text = "";
-            rp_txtWCCode.Text = "";
-            rp_txtWCName.Text = "";
-            rp_txtReqQty.Text = "";
-            rp_txtPlanQty.Text = "";
-            rp_txtCustomerName.Text = "";
-            rp_txtDeliDate.Text = "";
-            rp_txtRemark.ReadOnly = true;
+        //private void RpClearItem()
+        //{
+        //    rp_txtReqNo.Text = "";
+        //    rp_txtReqDate.Text = "";
+        //    rp_txtReqSeq.Text = "";
+        //    rp_txtItemCode.Text = "";
+        //    rp_txtItemName.Text = "";
+        //    rp_txtWCCode.Text = "";
+        //    rp_txtWCName.Text = "";
+        //    rp_txtReqQty.Text = "";
+        //    rp_txtPlanQty.Text = "";
+        //    rp_txtCustomerName.Text = "";
+        //    rp_txtDeliDate.Text = "";
+        //    rp_txtRemark.ReadOnly = true;
 
-            rp_dtpPlanMonth.Value = DateTime.Now;
-            rp_dtpPlanMonth.Enabled = false;
+        //    rp_dtpPlanMonth.Value = DateTime.Now;
+        //    rp_dtpPlanMonth.Enabled = false;
 
-            rp_btnWCSearch.BackColor = Color.Gray;
-            rp_btnWCSearch.Enabled = false;
+        //    rp_btnWCSearch.BackColor = Color.Gray;
+        //    rp_btnWCSearch.Enabled = false;
 
-            rp_dtpPlanMonth.Enabled = false;
-            rp_txtPlanQty.ReadOnly = true;
-            rp_btnWCSearch.Enabled = false;
-            rp_btnWCSearch.BackColor = Color.Gray;
-            rp_txtRemark.ReadOnly = true;
+        //    rp_dtpPlanMonth.Enabled = false;
+        //    rp_txtPlanQty.ReadOnly = true;
+        //    rp_btnWCSearch.Enabled = false;
+        //    rp_btnWCSearch.BackColor = Color.Gray;
+        //    rp_txtRemark.ReadOnly = true;
 
-        }
+        //}
 
         private void frmWorkPlan_Load(object sender, EventArgs e)
         {
@@ -305,22 +291,12 @@ namespace Team5_XN
 
             ChangeValue_Check(0);
 
+            btnCreate.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancle.Enabled = false;
+
             p_btnSave.Enabled = false;
             p_btnCancle.Enabled = false;
-
-            //LoadDataRequest();
-            //LoadDataPlan();
-        }
-
-        /// <summary>
-        /// 생산요청 페이지 로드데이터
-        /// </summary>
-        private void LoadDataRequest()
-        {  //Prd_Req_No, Req_Date, Req_Seq, Item_Code,
-            //Req_Qty, Customer_Name, Project_Nm, Sale_Prsn_Nm, 
-            //Delivery_Date, Plan_Qty, Prd_Progress_Status
-
-            dgvRequest.Columns.Clear();
 
             DataGridViewUtil.SetInitGridView(dgvRequest);
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "생산요청번호", "Prd_Req_No", colWidth: 120);
@@ -330,29 +306,13 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "품목명", "Item_Name", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "요청수량", "Req_Qty", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "거래처", "Customer_Name", colWidth: 120);
+            DataGridViewUtil.AddGridTextColumn(dgvRequest, "비고", "Remark", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "프로젝트명", "Project_Nm", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "영업담당자명", "Sale_Prsn_Nm", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "납기일자", "Delivery_Date", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "생산반영수량", "Plan_Qty", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvRequest, "생산진행상태", "Prd_Progress_Status", colWidth: 120);
-
-
+            DataGridViewUtil.AddGridTextColumn(dgvRequest, "진행상태", "Prd_Progress_Status", colWidth: 120);
             dgvRequest.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            listReq = reqServ.GetRequestList();
-            dgvRequest.DataSource = listReq;
-
-        }
-
-        /// <summary>
-        /// 생산계획 페이지 로드데이터
-        /// </summary>
-        private void LoadPlan(PlanSearchVO ps)
-        {  //pp.Prd_Plan_No,  pp.Wc_Code, Wc_Name, pp.Item_Code, Item_Name, 
-            //pp.Plan_Qty, Customer_Name, Delivery_Date,
-            //Prd_Plan_Status, pp.Remark
-
-            dgvPlan.Columns.Clear();
 
             DataGridViewUtil.SetInitGridView(dgvPlan);
             DataGridViewUtil.AddGridTextColumn(dgvPlan, "생산계획번호", "Prd_Plan_No", colWidth: 120);
@@ -367,9 +327,49 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvPlan, "생산계획상태", "Prd_Plan_Status", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvPlan, "비고", "Remark", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvPlan, "담당자", "Ins_Emp", colWidth: 120);
-
-
             dgvPlan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+        }
+
+        /// <summary>
+        /// 생산요청 페이지 로드데이터
+        /// </summary>
+        //private void LoadDataRequest()
+        //{  //Prd_Req_No, Req_Date, Req_Seq, Item_Code,
+        //    //Req_Qty, Customer_Name, Project_Nm, Sale_Prsn_Nm, 
+        //    //Delivery_Date, Plan_Qty, Prd_Progress_Status
+
+        //    dgvRequest.Columns.Clear();
+
+        //    DataGridViewUtil.SetInitGridView(dgvRequest);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "생산요청번호", "Prd_Req_No", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "요청일자", "Req_Date", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "요청순번", "Req_Seq", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "품목코드", "Item_Code", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "품목명", "Item_Name", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "요청수량", "Req_Qty", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "거래처", "Customer_Name", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "프로젝트명", "Project_Nm", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "영업담당자명", "Sale_Prsn_Nm", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "납기일자", "Delivery_Date", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "생산반영수량", "Plan_Qty", colWidth: 120);
+        //    DataGridViewUtil.AddGridTextColumn(dgvRequest, "생산진행상태", "Prd_Progress_Status", colWidth: 120);
+
+
+        //    dgvRequest.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+        //    listReq = reqServ.GetRequestList();
+        //    dgvRequest.DataSource = listReq;
+
+        //}
+
+        /// <summary>
+        /// 생산계획 페이지 로드데이터
+        /// </summary>
+        private void LoadPlan(PlanSearchVO ps)
+        {  //pp.Prd_Plan_No,  pp.Wc_Code, Wc_Name, pp.Item_Code, Item_Name, 
+            //pp.Plan_Qty, Customer_Name, Delivery_Date,
+            //Prd_Plan_Status, pp.Remark
 
             listPlan = planServ.GetPlanList(ps);
             dgvPlan.Columns["Plan_Qty"].ReadOnly = false;
@@ -405,6 +405,8 @@ namespace Team5_XN
         {
             if (e.RowIndex < 0) return;
 
+            if (dgvRequest.Rows.Count < 1) return;
+
             string reqNo = dgvRequest[0, e.RowIndex].Value.ToString();
             List<RequestVO> reqList = (List<RequestVO>)dgvRequest.DataSource;
 
@@ -431,6 +433,7 @@ namespace Team5_XN
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //PpClearItem();
+            dgvPlan.Enabled = false;
 
             p_btnCancle.Enabled = true;
             p_btnSave.Enabled = true;
@@ -506,6 +509,7 @@ namespace Team5_XN
         {
             if (e.RowIndex < 0) return;
 
+            if (dgvPlan.Rows.Count < 1) return;
             string planNo = dgvPlan[0, e.RowIndex].Value.ToString();
             List<GetPlanListVO> planList = (List<GetPlanListVO>)dgvPlan.DataSource;
 
@@ -590,21 +594,11 @@ namespace Team5_XN
                 if (result)
                 {
                     MessageBox.Show("삭제가 완료되었습니다.");
-                    //LoadDataPlan();
+                    OnSelect(this, e);
                 }
                 else MessageBox.Show("삭제에 실패하였습니다.\n생산계획 상태를 확인하여주십시오.");
             }
             p_dtpPlanDate.Text = pp_dtpPlanMonth.Value.ToString("yyyy-MM");
-
-            ps = new PlanSearchVO()
-            {
-                PlanMonth = pp_dtpPlanMonth.Value.ToString("yyyy-MM"),
-                ItemCode = p_txtItemCode.Text,
-                WCCode = txtWCCode.Text
-            };
-
-            LoadPlan(ps);
-            ClearItems(panel3);
         }
 
         /// <summary>
@@ -628,16 +622,8 @@ namespace Team5_XN
                 if (eResult)
                 {
                     MessageBox.Show("생산계획 마감이 완료되었습니다.");
-
-                    ps = new PlanSearchVO()
-                    {
-                        PlanMonth = pp_dtpPlanMonth.Value.ToString("yyyy-MM"),
-                        ItemCode = "",
-                        WCCode = ""
-                    };
-
                     p_dtpPlanDate.Text = pp_dtpPlanMonth.Value.ToString("yyyy-MM");
-                    LoadPlan(ps);
+                    OnSelect(this, e);
                 }
                 else MessageBox.Show("생산계획 마감에 실패하였습니다.\n생산계획 상태가 '작업지시생성'인 경우에만 마감할 수 있습니다.");
 
@@ -666,15 +652,8 @@ namespace Team5_XN
                 {
                     MessageBox.Show("생산계획 마감 취소가 완료되었습니다.");
 
-                    ps = new PlanSearchVO()
-                    {
-                        PlanMonth = pp_dtpPlanMonth.Value.ToString("yyyy-MM"),
-                        ItemCode = "",
-                        WCCode = ""
-                    };
-
                     p_dtpPlanDate.Text = pp_dtpPlanMonth.Value.ToString("yyyy-MM");
-                    LoadPlan(ps);
+                    OnSelect(this, e);
                 }
                 else MessageBox.Show("생산계획 마감 취소에 실패하였습니다.\n생산계획 상태가 '생산계획마감'인 경우에만 마감 취소할 수 있습니다.");
 
@@ -901,6 +880,9 @@ namespace Team5_XN
             ClearItems(pnlReqInfo);
 
             OnSelect(this, e);
+            btnCreate.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancle.Enabled = false;
         }
 
         private void p_btnItemSearch_Click(object sender, EventArgs e)
@@ -966,22 +948,10 @@ namespace Team5_XN
                         p_btnSave.Enabled = false;
                         p_btnCancle.Enabled = false;
 
-                        ps = new PlanSearchVO()
-                        {
-                            PlanMonth = pp_dtpPlanMonth.Value.ToString("yyyy-MM"),
-                            ItemCode = "",
-                            WCCode = ""
-                        };
-
-                        p_dtpPlanDate.Text = pp_dtpPlanMonth.Value.ToString("yyyy-MM");
-                        LoadPlan(ps);
-                        ClearItems(panel3);
+                        OnSelect(this, e);
                     }
                     else MessageBox.Show("생산계획 등록에 실패하였습니다.\n다시 확인하여 주십시오.");
                 }
-
-                
-                
             }
             else
             {
@@ -1051,18 +1021,9 @@ namespace Team5_XN
 
                         p_dtpPlanDate.Text = pp_dtpPlanMonth.Value.ToString("yyyy-MM");
 
-                        ps = new PlanSearchVO()
-                        {
-                            PlanMonth = pp_dtpPlanMonth.Value.ToString("yyyy-MM"),
-                            ItemCode = p_txtItemCode.Text,
-                            WCCode = txtWCCode.Text
-                        };
-                        LoadPlan(ps);
-                        ClearItems(panel3);
+                        OnSelect(this, e);
                     }
                     else MessageBox.Show("생산계획 수정에 실패하였습니다.\n다시 확인하여주십시오.");
-
-                    
                     #endregion
                 }
             }
@@ -1102,6 +1063,8 @@ namespace Team5_XN
             btnDelete.Enabled = true;
             p_btnSave.Enabled = false;
             p_btnCancle.Enabled = false;
+            dgvPlan.Enabled = true;
+            OnSelect(this, e);
         }
 
         private void pp_dtpPlanMonth_Leave(object sender, EventArgs e)

@@ -30,30 +30,30 @@ namespace Team5_XN
         private void InitializeComponent()
         {
             this.pnlDgv = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvInput = new System.Windows.Forms.DataGridView();
             this.pnlSubject1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtWoNo = new System.Windows.Forms.TextBox();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.cboGrade = new System.Windows.Forms.ComboBox();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnItemSearch = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.placeholderTextBox2 = new WinReflectionSettings.PlaceholderTextBox();
-            this.placeholderTextBox7 = new WinReflectionSettings.PlaceholderTextBox();
-            this.placeholderTextBox8 = new WinReflectionSettings.PlaceholderTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtItemName = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtItemCode = new WinReflectionSettings.PlaceholderTextBox();
             this.pnlDgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInput)).BeginInit();
             this.pnlSubject1.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@ namespace Team5_XN
             // pnlDgv
             // 
             this.pnlDgv.BackColor = System.Drawing.Color.White;
-            this.pnlDgv.Controls.Add(this.dataGridView1);
+            this.pnlDgv.Controls.Add(this.dgvInput);
             this.pnlDgv.Controls.Add(this.pnlSubject1);
             this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDgv.Location = new System.Drawing.Point(0, 161);
@@ -71,17 +71,17 @@ namespace Team5_XN
             this.pnlDgv.Size = new System.Drawing.Size(1467, 630);
             this.pnlDgv.TabIndex = 12;
             // 
-            // dataGridView1
+            // dgvInput
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 44);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1467, 580);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvInput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInput.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvInput.Location = new System.Drawing.Point(0, 44);
+            this.dgvInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvInput.Name = "dgvInput";
+            this.dgvInput.RowHeadersWidth = 51;
+            this.dgvInput.RowTemplate.Height = 23;
+            this.dgvInput.Size = new System.Drawing.Size(1467, 580);
+            this.dgvInput.TabIndex = 1;
             // 
             // pnlSubject1
             // 
@@ -112,21 +112,21 @@ namespace Team5_XN
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSelect.Controls.Add(this.button1);
-            this.pnlSelect.Controls.Add(this.comboBox1);
-            this.pnlSelect.Controls.Add(this.dateTimePicker2);
+            this.pnlSelect.Controls.Add(this.txtWoNo);
+            this.pnlSelect.Controls.Add(this.btnSelect);
+            this.pnlSelect.Controls.Add(this.cboGrade);
+            this.pnlSelect.Controls.Add(this.dtpToDate);
             this.pnlSelect.Controls.Add(this.label5);
             this.pnlSelect.Controls.Add(this.label6);
             this.pnlSelect.Controls.Add(this.label3);
-            this.pnlSelect.Controls.Add(this.placeholderTextBox2);
             this.pnlSelect.Controls.Add(this.label4);
             this.pnlSelect.Controls.Add(this.label8);
-            this.pnlSelect.Controls.Add(this.placeholderTextBox7);
-            this.pnlSelect.Controls.Add(this.placeholderTextBox8);
-            this.pnlSelect.Controls.Add(this.button6);
+            this.pnlSelect.Controls.Add(this.txtItemName);
+            this.pnlSelect.Controls.Add(this.txtItemCode);
+            this.pnlSelect.Controls.Add(this.btnItemSearch);
             this.pnlSelect.Controls.Add(this.label10);
             this.pnlSelect.Controls.Add(this.label17);
-            this.pnlSelect.Controls.Add(this.dateTimePicker1);
+            this.pnlSelect.Controls.Add(this.dtpFromDate);
             this.pnlSelect.Controls.Add(this.label2);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Controls.Add(this.panel2);
@@ -137,25 +137,43 @@ namespace Team5_XN
             this.pnlSelect.Size = new System.Drawing.Size(1467, 161);
             this.pnlSelect.TabIndex = 11;
             // 
-            // comboBox1
+            // txtWoNo
             // 
-            this.comboBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(163, 123);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 25);
-            this.comboBox1.TabIndex = 70;
+            this.txtWoNo.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWoNo.Location = new System.Drawing.Point(163, 86);
+            this.txtWoNo.Name = "txtWoNo";
+            this.txtWoNo.Size = new System.Drawing.Size(378, 25);
+            this.txtWoNo.TabIndex = 72;
             // 
-            // dateTimePicker2
+            // btnSelect
             // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker2.CustomFormat = "yyyy-MM";
-            this.dateTimePicker2.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(339, 10);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(139, 25);
-            this.dateTimePicker2.TabIndex = 69;
+            this.btnSelect.Location = new System.Drawing.Point(810, 29);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(177, 84);
+            this.btnSelect.TabIndex = 71;
+            this.btnSelect.Text = "조회";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // cboGrade
+            // 
+            this.cboGrade.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboGrade.FormattingEnabled = true;
+            this.cboGrade.Location = new System.Drawing.Point(163, 123);
+            this.cboGrade.Name = "cboGrade";
+            this.cboGrade.Size = new System.Drawing.Size(121, 25);
+            this.cboGrade.TabIndex = 70;
+            // 
+            // dtpToDate
+            // 
+            this.dtpToDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpToDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpToDate.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpToDate.Location = new System.Drawing.Point(339, 10);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(139, 25);
+            this.dtpToDate.TabIndex = 69;
             // 
             // label5
             // 
@@ -210,19 +228,20 @@ namespace Team5_XN
             this.label8.Text = "*";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button6
+            // btnItemSearch
             // 
-            this.button6.BackColor = System.Drawing.Color.Black;
-            this.button6.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Location = new System.Drawing.Point(308, 48);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(25, 24);
-            this.button6.TabIndex = 50;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnItemSearch.BackColor = System.Drawing.Color.Black;
+            this.btnItemSearch.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnItemSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnItemSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnItemSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnItemSearch.Location = new System.Drawing.Point(308, 48);
+            this.btnItemSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnItemSearch.Name = "btnItemSearch";
+            this.btnItemSearch.Size = new System.Drawing.Size(25, 24);
+            this.btnItemSearch.TabIndex = 50;
+            this.btnItemSearch.UseVisualStyleBackColor = false;
+            this.btnItemSearch.Click += new System.EventHandler(this.btnItemSearch_Click);
             // 
             // label10
             // 
@@ -244,16 +263,16 @@ namespace Team5_XN
             this.label17.Text = "~";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker1
+            // dtpFromDate
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.CustomFormat = "yyyy-MM";
-            this.dateTimePicker1.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(163, 11);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(139, 25);
-            this.dateTimePicker1.TabIndex = 32;
+            this.dtpFromDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpFromDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpFromDate.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFromDate.Location = new System.Drawing.Point(163, 11);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(139, 25);
+            this.dtpFromDate.TabIndex = 32;
             // 
             // label2
             // 
@@ -286,56 +305,41 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(22, 159);
             this.panel2.TabIndex = 0;
             // 
-            // placeholderTextBox2
+            // txtItemName
             // 
-            this.placeholderTextBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox2.Location = new System.Drawing.Point(163, 84);
-            this.placeholderTextBox2.Name = "placeholderTextBox2";
-            this.placeholderTextBox2.PlaceholderText = "작업지시번호";
-            this.placeholderTextBox2.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox2.Size = new System.Drawing.Size(378, 25);
-            this.placeholderTextBox2.TabIndex = 59;
+            this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemName.Location = new System.Drawing.Point(339, 47);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.PlaceholderText = "품목 명";
+            this.txtItemName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtItemName.ReadOnly = true;
+            this.txtItemName.Size = new System.Drawing.Size(202, 25);
+            this.txtItemName.TabIndex = 52;
             // 
-            // placeholderTextBox7
+            // txtItemCode
             // 
-            this.placeholderTextBox7.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox7.Location = new System.Drawing.Point(339, 47);
-            this.placeholderTextBox7.Name = "placeholderTextBox7";
-            this.placeholderTextBox7.PlaceholderText = "품목 명";
-            this.placeholderTextBox7.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox7.Size = new System.Drawing.Size(202, 25);
-            this.placeholderTextBox7.TabIndex = 52;
-            // 
-            // placeholderTextBox8
-            // 
-            this.placeholderTextBox8.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox8.Location = new System.Drawing.Point(163, 48);
-            this.placeholderTextBox8.Name = "placeholderTextBox8";
-            this.placeholderTextBox8.PlaceholderText = "품목 코드";
-            this.placeholderTextBox8.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox8.Size = new System.Drawing.Size(139, 25);
-            this.placeholderTextBox8.TabIndex = 51;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(789, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 71;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemCode.Location = new System.Drawing.Point(163, 48);
+            this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.PlaceholderText = "품목 코드";
+            this.txtItemCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtItemCode.ReadOnly = true;
+            this.txtItemCode.Size = new System.Drawing.Size(139, 25);
+            this.txtItemCode.TabIndex = 51;
             // 
             // frmInputList
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1467, 791);
             this.Controls.Add(this.pnlDgv);
             this.Controls.Add(this.pnlSelect);
             this.Name = "frmInputList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "완제품 입고리스트";
+            this.Load += new System.EventHandler(this.frmInputList_Load);
             this.pnlDgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInput)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
@@ -346,27 +350,27 @@ namespace Team5_XN
         #endregion
 
         private System.Windows.Forms.Panel pnlDgv;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel pnlSubject1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnlSelect;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox7;
-        private WinReflectionSettings.PlaceholderTextBox placeholderTextBox8;
-        private System.Windows.Forms.Button button6;
+        private WinReflectionSettings.PlaceholderTextBox txtItemName;
+        private WinReflectionSettings.PlaceholderTextBox txtItemCode;
+        private System.Windows.Forms.Button btnItemSearch;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cboGrade;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.DataGridView dgvInput;
+        private System.Windows.Forms.Panel pnlSubject1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtWoNo;
     }
 }

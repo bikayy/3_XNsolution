@@ -169,8 +169,11 @@ namespace Team5_XN
 
             LoadData(s_dtpFrom.Value.ToString("yyyy-MM-dd"), s_dtpTo.Value.ToString("yyyy-MM-dd"),
                 s_txtPrCode.Text, s_txtWcCode.Text);
-            DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
-            dgvWo_CellClick(this, args);
+            if (dgvWo.Rows.Count > 0)
+            {
+                DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
+                dgvWo_CellClick(this, args);
+            }
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
@@ -179,9 +182,26 @@ namespace Team5_XN
 
             LoadData(s_dtpFrom.Value.ToString("yyyy-MM-dd"), s_dtpTo.Value.ToString("yyyy-MM-dd"),
                 s_txtPrCode.Text, s_txtWcCode.Text);
+            if (dgvWo.Rows.Count > 0)
+            {
+                DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
+                dgvWo_CellClick(this, args);
+            }
+            else
+            {
+                i_txtOrNo.Text = "";
+                i_txtItemCode.Text = "";
+                i_txtItemName.Text = "";
+                i_txtPrCode.Text = "";
+                i_txtPrName.Text = "";
+                i_txtWcCode.Text = "";
+                i_txtWcName.Text = "";
 
-            DataGridViewCellEventArgs args = new DataGridViewCellEventArgs(0, 0);
-            dgvWo_CellClick(this, args);
+                i_txtPlanQty.Text = "";
+                i_txtPlanQty.ReadOnly = true;
+                i_txtRemark.Text = "";
+                i_txtRemark.ReadOnly = true;
+            }
         }
 
         private void LoadData(string planFrom, string planTo, string prCode, string wcCode)
@@ -371,6 +391,7 @@ namespace Team5_XN
                     if (inResult)
                     {
                         MessageBox.Show("작업지시가 수정되었습니다.");
+                        //btnSelect.PerformClick();
                         LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
                         s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
                         s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
@@ -444,7 +465,10 @@ namespace Team5_XN
             if (e.RowIndex < 0) return;
 
             //ClearItems(grbOrder);
-            if (dgvWo.Rows.Count < 1) return;
+            if (dgvWo.Rows.Count < 1)
+            {
+                return;
+            }
 
             string woNo = dgvWo[1, e.RowIndex].Value.ToString();
             List<WOSelectVO> woInfo = (List<WOSelectVO>)dgvWo.DataSource;
@@ -490,9 +514,10 @@ namespace Team5_XN
                 if (dResult)
                 {
                     MessageBox.Show("작업지시가 삭제되었습니다.");
-                    LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
-                    s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
-                    s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                    btnSelect.PerformClick();
+                    //LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
+                    //s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                    //s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
                 }
                 else MessageBox.Show("작업지시 삭제에 실패하였습니다.\n작업지시상태가 '생산대기'인 경우에만 삭제할 수 있습니다.");
 
@@ -523,9 +548,10 @@ namespace Team5_XN
                 if (dResult)
                 {
                     MessageBox.Show("작업지시가 마감되었습니다.");
-                    LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
-                    s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
-                    s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                    btnSelect.PerformClick();
+                    //LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
+                    //s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                    //s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
                 }
                 else MessageBox.Show("작업지시 마감에 실패하였습니다.\n작업지시상태가 '현장마감'인 경우에만 마감할 수 있습니다.");
 
@@ -556,9 +582,10 @@ namespace Team5_XN
                 if (dResult)
                 {
                     MessageBox.Show("작업지시가 마감 취소되었습니다.");
-                    LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
-                    s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
-                    s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                    btnSelect.PerformClick();
+                    //LoadData(i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), i_dtpPlanStart.Value.ToString("yyyy-MM-dd"), "", "");
+                    //s_dtpTo.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
+                    //s_dtpFrom.Text = i_dtpPlanStart.Value.ToString("yyyy-MM-dd");
                 }
                 else MessageBox.Show("작업지시 마감 취소에 실패하였습니다.\n작업지시상태가 '작업지시마감'인 경우에만 마감할 수 있습니다.");
 

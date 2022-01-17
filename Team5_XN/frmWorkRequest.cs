@@ -32,6 +32,8 @@ namespace Team5_XN
 
         private void frmWorkRequest_Load(object sender, EventArgs e)
         {
+            dgvRequest.Focus();
+
             DataGridViewUtil.SetInitGridView(dgvRequest);
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "생산요청번호", "Prd_Req_No", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvRequest, "요청일자", "Req_Date", colWidth: 120);
@@ -228,6 +230,7 @@ namespace Team5_XN
         /// <param name="e"></param>
         private void OnUpdate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (string.IsNullOrWhiteSpace(txtReqNo.Text))
@@ -240,10 +243,10 @@ namespace Team5_XN
 
             r_btnItemSearch.Enabled = true;
             r_btnItemSearch.BackColor = Color.Black;
-            txtReqQty.ReadOnly = false;
+            //txtReqQty.ReadOnly = false;
             txtCusName.ReadOnly = false;
-            txtProjName.ReadOnly = false;
-            dtpReqDate.Enabled = true;
+            //txtProjName.ReadOnly = false;
+            //dtpReqDate.Enabled = true;
             dtpDeliDate.Enabled = true;
             txtRemark.ReadOnly = false;
 
@@ -258,6 +261,7 @@ namespace Team5_XN
         /// <param name="e"></param>
         private void OnCancle(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             dgvRequest.Enabled = true;
@@ -293,6 +297,7 @@ namespace Team5_XN
         /// <param name="e"></param>
         private void OnCreate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(1); //추가
@@ -330,6 +335,7 @@ namespace Team5_XN
         /// <param name="e"></param>
         private void OnSave(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (check == 1)

@@ -51,6 +51,7 @@
     <Compile Include="MenuDAC.cs" />
     <Compile Include="POPDAC\WcDAC.cs" />
     <Compile Include="ProcessDAC.cs" />
+    <Compile Include="ProductionDAC\InputListDAC.cs" />
     <Compile Include="ProductionDAC\OrderDAC.cs" />
     <Compile Include="ProductionDAC\PlanDAC.cs" />
     <Compile Include="ProductionDAC\RequestDAC.cs" />

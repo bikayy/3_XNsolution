@@ -217,6 +217,5 @@ where Boxing_Grade_Code = @Boxing_Grade_Code";
 
             return cmd.ExecuteNonQuery() > 0;
         }
-
     }
 }

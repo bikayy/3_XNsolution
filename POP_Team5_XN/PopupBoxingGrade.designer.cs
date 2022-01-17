@@ -42,10 +42,10 @@ namespace POP_Team5_XN
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlList = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.pnlList = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -79,7 +79,7 @@ namespace POP_Team5_XN
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 329F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 331F));
             this.tableLayoutPanel1.Controls.Add(this.panel9, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel8, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 0);
@@ -96,9 +96,9 @@ namespace POP_Team5_XN
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.panel9.Controls.Add(this.label4);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(254, 3);
+            this.panel9.Location = new System.Drawing.Point(253, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(324, 44);
+            this.panel9.Size = new System.Drawing.Size(325, 44);
             this.panel9.TabIndex = 3;
             // 
             // label4
@@ -120,7 +120,7 @@ namespace POP_Team5_XN
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(38, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(210, 44);
+            this.panel8.Size = new System.Drawing.Size(209, 44);
             this.panel8.TabIndex = 2;
             // 
             // label3
@@ -173,15 +173,6 @@ namespace POP_Team5_XN
             this.label2.TabIndex = 1;
             this.label2.Text = "등급 선택";
             // 
-            // pnlList
-            // 
-            this.pnlList.AutoScroll = true;
-            this.pnlList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlList.Location = new System.Drawing.Point(0, 150);
-            this.pnlList.Name = "pnlList";
-            this.pnlList.Size = new System.Drawing.Size(581, 416);
-            this.pnlList.TabIndex = 3;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnCancle);
@@ -206,7 +197,6 @@ namespace POP_Team5_XN
             // 
             // btnOK
             // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOK.Location = new System.Drawing.Point(38, 10);
@@ -217,14 +207,23 @@ namespace POP_Team5_XN
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // pnlList
+            // 
+            this.pnlList.AutoScroll = true;
+            this.pnlList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlList.Location = new System.Drawing.Point(0, 150);
+            this.pnlList.Name = "pnlList";
+            this.pnlList.Size = new System.Drawing.Size(581, 325);
+            this.pnlList.TabIndex = 5;
+            // 
             // PopupBoxingGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(581, 566);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlList);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -261,9 +260,9 @@ namespace POP_Team5_XN
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboName;
-        private System.Windows.Forms.Panel pnlList;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnCancle;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Panel pnlList;
     }
 }

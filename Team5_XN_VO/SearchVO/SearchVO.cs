@@ -41,4 +41,14 @@ namespace Team5_XN_VO
         public string DetailCode { get; set; }
         public string DetailName { get; set; }
     }
+
+    public class InputVO
+    {  //WorkOrderNo, FromDate, ToDate, DetailCode, ItemCode
+
+        public string WorkOrderNo { get; set; }
+        public string FromDate { get; set; }
+        public string ToDate { get; set; }
+        public string DetailCode { get; set; }
+        public string ItemCode { get; set; }
+    }
 }

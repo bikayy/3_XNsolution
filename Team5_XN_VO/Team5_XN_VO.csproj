@@ -45,6 +45,7 @@
     <Compile Include="CommonVO.cs" />
     <Compile Include="POPVO\WcVO.cs" />
     <Compile Include="ProcessVO.cs" />
+    <Compile Include="ProductionVO\InputListVO.cs" />
     <Compile Include="ProductionVO\OrderVO.cs" />
     <Compile Include="ProductionVO\PlanVO.cs" />
     <Compile Include="ProductionVO\RequestVO.cs" />
