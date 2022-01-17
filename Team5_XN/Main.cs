@@ -46,6 +46,10 @@ namespace Team5_XN
             //DrawMenuStrip();
             DrawMenuPanel();
             btnInit.PerformClick();
+            
+            frmDashBoard frm = new frmDashBoard();
+            OpenCreateForm("frmDashBoard", "DashBoard");
+            //frm.Activate();
         }
 
         private void DrawMenuPanel()
@@ -196,7 +200,7 @@ namespace Team5_XN
             if (Select != null)
             {
                 Select(this, null);
-            }
+           }
         }
         //추가
         private void toolStripButton4_Click(object sender, EventArgs e)
@@ -270,10 +274,12 @@ namespace Team5_XN
 
                 if (closeRect.Contains(e.Location))
                 {
+                    if(this.ActiveMdiChild.Name != "frmDashBoard")
                     this.ActiveMdiChild.Close();
                     if (btnSelect != null) btnSelect.Focus();
                     break;
                 }
+
             }
         }
 

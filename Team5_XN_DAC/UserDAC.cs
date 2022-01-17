@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Team5_XN_DAC
 {
-    public class UserDAC
+    public class UserDAC : IDisposable
     {
         SqlConnection conn;
         public UserDAC()
@@ -242,7 +242,30 @@ UserGroup_Master";
                 return null;
             }
         }
-
+        public DataTable GetUserAuthority()
+        {
+            string sql = @"  SELECT s.Screen_Code, m.WordKey, s.Pre_Type
+  FROM ScreenItem_Authority s INNER JOIN Screenitem_Master m ON s.Screen_Code = m.Screen_Code";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+            }
+            return dt;
+        }
+        public DataTable GetScreenList()
+        {
+            string sql = @"SELECT Screen_Code, WordKey, Screen_Path,
+  (select DetailName from CommonCodeSystem where Code ='Monitoring_YN' and DetailCode=Monitoring_YN) Monitoring_YN,
+  (select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = Use_YN) Use_YN
+  FROM Screenitem_Master";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+            }
+            return dt;
+        }
         public void Dispose()
         {
             conn.Close();

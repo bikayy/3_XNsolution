@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using Team5_XN_VO;
+using System.Windows.Forms;
 
 namespace Team5_XN
 {
@@ -17,11 +18,13 @@ namespace Team5_XN
         public CommonDAC()
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["local"].ConnectionString);
+            conn.Open();
         }
 
         public void Dispose()
         {
-            //throw new NotImplementedException();
+            if (conn != null && conn.State == ConnectionState.Open)
+                conn.Close();
         }
 
         public DataTable GetCommonCodeSys(string[] codes)
@@ -70,7 +73,7 @@ where Code in ('{code}');";
         public DataTable GetSystemCodeDetail(string name)
         {
             string sql = @"SELECT DetailCode, DetailName, Sort_Index, Remark, 
-(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = UseYN) UseYN
+(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = UseYN) UseYN, CodeNum
 FROM CommonCodeSystem WHERE Name = @Name";
 
             DataTable dt = new DataTable();
@@ -81,6 +84,70 @@ FROM CommonCodeSystem WHERE Name = @Name";
                 da.Fill(dt);
             }
             return dt;
+        }
+        public int SaveCode(DataTable dt, int check)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_CommonCode_Save", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@CommonCode_Data", System.Data.SqlDbType.Structured)
+                {
+                    TypeName = "dbo.CommonCode_Master_Type",
+                    Value = dt
+                });
+                cmd.Parameters.AddWithValue("@Check", check);
+                                
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return -1;
+            }
+        }
+
+        public int SaveMasterCode(DataTable dt, int check)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_CommonCodeMaster_Save", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@CommonCode_Data", System.Data.SqlDbType.Structured)
+                {
+                    TypeName = "dbo.CommonCode_Master_Type",
+                    Value = dt
+                });
+                cmd.Parameters.AddWithValue("@Check", check);
+
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return -1;
+            }
+        }
+        public bool DeleteDetailCode(string code)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_SysCommonCodeDetail_Delete", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DetailCode", code);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return false;
+            }
         }
     }
 }

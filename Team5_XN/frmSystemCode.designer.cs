@@ -35,6 +35,12 @@ namespace Team5_XN
             this.label2 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSysMaCode = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtSysMaName = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtRemark = new WinReflectionSettings.PlaceholderTextBox();
             this.txtSort = new System.Windows.Forms.TextBox();
@@ -65,12 +71,6 @@ namespace Team5_XN
             this.label13 = new System.Windows.Forms.Label();
             this.txtSysCode = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtSysMaCode = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtSysMaName = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.pnlDgv2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSysDetail)).BeginInit();
             this.panel3.SuspendLayout();
@@ -175,11 +175,73 @@ namespace Team5_XN
             this.panel4.Size = new System.Drawing.Size(749, 132);
             this.panel4.TabIndex = 12;
             // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(12, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(20, 23);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "*";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtSysMaCode
+            // 
+            this.txtSysMaCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtSysMaCode.Location = new System.Drawing.Point(196, 8);
+            this.txtSysMaCode.Name = "txtSysMaCode";
+            this.txtSysMaCode.Size = new System.Drawing.Size(211, 21);
+            this.txtSysMaCode.TabIndex = 31;
+            this.txtSysMaCode.Tag = "Code";
+            this.txtSysMaCode.TextChanged += new System.EventHandler(this.txtMaBox_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label19.Location = new System.Drawing.Point(29, 10);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(161, 23);
+            this.label19.TabIndex = 30;
+            this.label19.Text = "시스템정의 대분류코드";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label20
+            // 
+            this.label20.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(12, 39);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(20, 23);
+            this.label20.TabIndex = 29;
+            this.label20.Text = "*";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtSysMaName
+            // 
+            this.txtSysMaName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtSysMaName.Location = new System.Drawing.Point(196, 37);
+            this.txtSysMaName.Name = "txtSysMaName";
+            this.txtSysMaName.Size = new System.Drawing.Size(211, 21);
+            this.txtSysMaName.TabIndex = 28;
+            this.txtSysMaName.Tag = "Name";
+            this.txtSysMaName.TextChanged += new System.EventHandler(this.txtMaBox_TextChanged);
+            // 
+            // label21
+            // 
+            this.label21.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label21.Location = new System.Drawing.Point(29, 39);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(141, 23);
+            this.label21.TabIndex = 27;
+            this.label21.Text = "시스템정의 대분류명";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label18
             // 
             this.label18.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(330, 10);
+            this.label18.Location = new System.Drawing.Point(425, 6);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(20, 23);
             this.label18.TabIndex = 26;
@@ -188,37 +250,43 @@ namespace Team5_XN
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(412, 34);
+            this.txtRemark.Location = new System.Drawing.Point(507, 30);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.PlaceholderText = "비고";
             this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtRemark.Size = new System.Drawing.Size(231, 52);
             this.txtRemark.TabIndex = 8;
+            this.txtRemark.Tag = "Remark";
+            this.txtRemark.TextChanged += new System.EventHandler(this.txtMiBox_TextChanged);
             // 
             // txtSort
             // 
             this.txtSort.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtSort.Location = new System.Drawing.Point(412, 7);
+            this.txtSort.Location = new System.Drawing.Point(507, 3);
             this.txtSort.Name = "txtSort";
             this.txtSort.Size = new System.Drawing.Size(101, 21);
             this.txtSort.TabIndex = 14;
+            this.txtSort.Tag = "Sort_Index";
+            this.txtSort.TextChanged += new System.EventHandler(this.txtMiBox_TextChanged);
             // 
             // cboUseYN
             // 
             this.cboUseYN.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboUseYN.FormattingEnabled = true;
-            this.cboUseYN.Location = new System.Drawing.Point(412, 102);
+            this.cboUseYN.Location = new System.Drawing.Point(507, 98);
             this.cboUseYN.Name = "cboUseYN";
             this.cboUseYN.Size = new System.Drawing.Size(101, 20);
             this.cboUseYN.TabIndex = 25;
+            this.cboUseYN.Tag = "UseYN";
             this.cboUseYN.Text = "예";
+            this.cboUseYN.TextChanged += new System.EventHandler(this.txtMiBox_TextChanged);
             // 
             // label16
             // 
             this.label16.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(330, 99);
+            this.label16.Location = new System.Drawing.Point(425, 95);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(20, 23);
             this.label16.TabIndex = 24;
@@ -228,18 +296,18 @@ namespace Team5_XN
             // label17
             // 
             this.label17.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label17.Location = new System.Drawing.Point(347, 99);
+            this.label17.Location = new System.Drawing.Point(442, 95);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(69, 23);
             this.label17.TabIndex = 23;
-            this.label17.Text = "사용여부";
+            this.label17.Text = "사용유무";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(333, 37);
+            this.label10.Location = new System.Drawing.Point(428, 33);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 23);
@@ -250,7 +318,7 @@ namespace Team5_XN
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label11.Location = new System.Drawing.Point(347, 37);
+            this.label11.Location = new System.Drawing.Point(442, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 23);
             this.label11.TabIndex = 20;
@@ -273,8 +341,10 @@ namespace Team5_XN
             this.txtSysMiCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.txtSysMiCode.Location = new System.Drawing.Point(196, 65);
             this.txtSysMiCode.Name = "txtSysMiCode";
-            this.txtSysMiCode.Size = new System.Drawing.Size(122, 21);
+            this.txtSysMiCode.Size = new System.Drawing.Size(178, 21);
             this.txtSysMiCode.TabIndex = 18;
+            this.txtSysMiCode.Tag = "DetailCode";
+            this.txtSysMiCode.TextChanged += new System.EventHandler(this.txtMiBox_TextChanged);
             // 
             // label3
             // 
@@ -302,8 +372,10 @@ namespace Team5_XN
             this.txtSysMiName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.txtSysMiName.Location = new System.Drawing.Point(196, 94);
             this.txtSysMiName.Name = "txtSysMiName";
-            this.txtSysMiName.Size = new System.Drawing.Size(122, 21);
+            this.txtSysMiName.Size = new System.Drawing.Size(178, 21);
             this.txtSysMiName.TabIndex = 12;
+            this.txtSysMiName.Tag = "DetailName";
+            this.txtSysMiName.TextChanged += new System.EventHandler(this.txtMiBox_TextChanged);
             // 
             // label4
             // 
@@ -318,7 +390,7 @@ namespace Team5_XN
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label5.Location = new System.Drawing.Point(347, 9);
+            this.label5.Location = new System.Drawing.Point(442, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 23);
             this.label5.TabIndex = 13;
@@ -498,64 +570,6 @@ namespace Team5_XN
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(19, 52);
             this.panel2.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(12, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(20, 23);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "*";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtSysMaCode
-            // 
-            this.txtSysMaCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtSysMaCode.Location = new System.Drawing.Point(196, 8);
-            this.txtSysMaCode.Name = "txtSysMaCode";
-            this.txtSysMaCode.Size = new System.Drawing.Size(122, 21);
-            this.txtSysMaCode.TabIndex = 31;
-            // 
-            // label19
-            // 
-            this.label19.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label19.Location = new System.Drawing.Point(29, 10);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(161, 23);
-            this.label19.TabIndex = 30;
-            this.label19.Text = "시스템정의 대분류코드";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label20
-            // 
-            this.label20.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(12, 39);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(20, 23);
-            this.label20.TabIndex = 29;
-            this.label20.Text = "*";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtSysMaName
-            // 
-            this.txtSysMaName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtSysMaName.Location = new System.Drawing.Point(196, 37);
-            this.txtSysMaName.Name = "txtSysMaName";
-            this.txtSysMaName.Size = new System.Drawing.Size(122, 21);
-            this.txtSysMaName.TabIndex = 28;
-            // 
-            // label21
-            // 
-            this.label21.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label21.Location = new System.Drawing.Point(29, 39);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(141, 23);
-            this.label21.TabIndex = 27;
-            this.label21.Text = "시스템정의 대분류명";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmSystemCode
             // 

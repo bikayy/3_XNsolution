@@ -27,5 +27,21 @@ namespace Team5_XN
 
             return result;
         }
+        public int SaveBoxing(DataTable dt, int check)
+        {
+            BoxingGradeDAC db = new BoxingGradeDAC();
+            int result = db.SaveBoxing(dt, check);
+            db.Dispose();
+
+            return result;
+        }
+        public bool DeleteBoxDetail(String code)
+        {
+            BoxingGradeDAC db = new BoxingGradeDAC();
+            bool result = db.DeleteBoxDetail(code);
+            db.Dispose();
+
+            return result;
+        }
     }
 }

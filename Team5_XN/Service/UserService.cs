@@ -118,5 +118,21 @@ namespace Team5_XN
 
             return list;
         }
+        public DataTable GetUserAuthority()
+        {
+            UserDAC db = new UserDAC();
+            DataTable dt = db.GetUserAuthority();
+            db.Dispose();
+
+            return dt;
+        }
+        public DataTable GetScreenList()
+        {
+            UserDAC db = new UserDAC();
+            DataTable dt = db.GetScreenList();
+            db.Dispose();
+
+            return dt;
+        }
     }
 }

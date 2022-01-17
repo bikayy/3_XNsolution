@@ -31,19 +31,19 @@ namespace Team5_XN
         {
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnlDgv = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUserAuthority = new System.Windows.Forms.DataGridView();
             this.pnlSubject1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUserCode = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
             this.pnlDgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserAuthority)).BeginInit();
             this.pnlSubject1.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +64,7 @@ namespace Team5_XN
             // pnlDgv
             // 
             this.pnlDgv.BackColor = System.Drawing.Color.White;
-            this.pnlDgv.Controls.Add(this.dataGridView1);
+            this.pnlDgv.Controls.Add(this.dgvUserAuthority);
             this.pnlDgv.Controls.Add(this.pnlSubject1);
             this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDgv.Location = new System.Drawing.Point(5, 59);
@@ -74,15 +74,15 @@ namespace Team5_XN
             this.pnlDgv.Size = new System.Drawing.Size(1274, 597);
             this.pnlDgv.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvUserAuthority
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1274, 562);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvUserAuthority.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserAuthority.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserAuthority.Location = new System.Drawing.Point(0, 35);
+            this.dgvUserAuthority.Name = "dgvUserAuthority";
+            this.dgvUserAuthority.RowTemplate.Height = 23;
+            this.dgvUserAuthority.Size = new System.Drawing.Size(1274, 562);
+            this.dgvUserAuthority.TabIndex = 1;
             // 
             // pnlSubject1
             // 
@@ -113,10 +113,10 @@ namespace Team5_XN
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSelect.Controls.Add(this.label7);
-            this.pnlSelect.Controls.Add(this.textBox1);
+            this.pnlSelect.Controls.Add(this.txtUserCode);
             this.pnlSelect.Controls.Add(this.button1);
             this.pnlSelect.Controls.Add(this.label1);
-            this.pnlSelect.Controls.Add(this.textBox6);
+            this.pnlSelect.Controls.Add(this.txtUserName);
             this.pnlSelect.Controls.Add(this.panel2);
             this.pnlSelect.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSelect.Location = new System.Drawing.Point(5, 5);
@@ -124,6 +124,7 @@ namespace Team5_XN
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1274, 54);
             this.pnlSelect.TabIndex = 1;
+            this.pnlSelect.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSelect_Paint);
             // 
             // label7
             // 
@@ -136,13 +137,13 @@ namespace Team5_XN
             this.label7.Text = "*";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox1
+            // txtUserCode
             // 
-            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox1.Location = new System.Drawing.Point(112, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 21);
-            this.textBox1.TabIndex = 27;
+            this.txtUserCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtUserCode.Location = new System.Drawing.Point(112, 15);
+            this.txtUserCode.Name = "txtUserCode";
+            this.txtUserCode.Size = new System.Drawing.Size(96, 21);
+            this.txtUserCode.TabIndex = 27;
             // 
             // button1
             // 
@@ -167,13 +168,13 @@ namespace Team5_XN
             this.label1.Text = "사용자그룹";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox6
+            // txtUserName
             // 
-            this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox6.Location = new System.Drawing.Point(243, 15);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(140, 21);
-            this.textBox6.TabIndex = 28;
+            this.txtUserName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtUserName.Location = new System.Drawing.Point(243, 15);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(140, 21);
+            this.txtUserName.TabIndex = 28;
             // 
             // panel2
             // 
@@ -192,9 +193,10 @@ namespace Team5_XN
             this.Controls.Add(this.panel5);
             this.Name = "frmUserGroupAuthority";
             this.Text = "사용자그룹별 권한 설정";
+            this.Load += new System.EventHandler(this.frmUserGroupAuthority_Load);
             this.panel5.ResumeLayout(false);
             this.pnlDgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserAuthority)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
@@ -206,15 +208,15 @@ namespace Team5_XN
 
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel pnlDgv;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUserAuthority;
         private System.Windows.Forms.Panel pnlSubject1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnlSelect;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUserCode;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label7;
     }
 }

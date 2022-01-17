@@ -361,6 +361,12 @@
     <Compile Include="PopupIndPlan.Designer.cs">
       <DependentUpon>PopupIndPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupNopSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupNopSearch.Designer.cs">
+      <DependentUpon>PopupNopSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopupRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,6 +409,7 @@
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\DayProductionService.cs" />
     <Compile Include="Service\ItemService.cs" />
+    <Compile Include="Service\NopService.cs" />
     <Compile Include="Service\POPService\WcService.cs" />
     <Compile Include="Service\ProcessService.cs" />
     <Compile Include="Service\ProductionService\PlanService.cs" />
@@ -574,6 +581,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupIndPlan.resx">
       <DependentUpon>PopupIndPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupNopSearch.resx">
+      <DependentUpon>PopupNopSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupRequest.resx">
       <DependentUpon>PopupRequest.cs</DependentUpon>
