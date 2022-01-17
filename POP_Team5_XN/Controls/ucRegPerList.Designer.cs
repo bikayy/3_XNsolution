@@ -34,7 +34,7 @@ namespace POP_Team5_XN
             this.lblPrdQty = new System.Windows.Forms.Label();
             this.pnl1 = new System.Windows.Forms.Panel();
             this.lblRegDate = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel3.SuspendLayout();
             this.pnl2.SuspendLayout();
             this.pnl1.SuspendLayout();
@@ -48,7 +48,7 @@ namespace POP_Team5_XN
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 278F));
             this.tableLayoutPanel3.Controls.Add(this.pnl2, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.pnl1, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnDelete, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -102,18 +102,19 @@ namespace POP_Team5_XN
             this.lblRegDate.Text = "등록일시";
             this.lblRegDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.BackgroundImage = global::POP_Team5_XN.Properties.Resources.backColor12;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 64);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "삭제";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDelete.BackgroundImage = global::POP_Team5_XN.Properties.Resources.backColor12;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(3, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(120, 64);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // ucRegPerList
             // 
@@ -139,6 +140,6 @@ namespace POP_Team5_XN
         private System.Windows.Forms.Label lblPrdQty;
         private System.Windows.Forms.Panel pnl1;
         private System.Windows.Forms.Label lblRegDate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

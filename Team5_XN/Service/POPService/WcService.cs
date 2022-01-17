@@ -102,5 +102,23 @@ namespace Team5_XN
             return dt;
         }
 
+        public bool DeletePerSiyu(DeletePerSiyuVO deletePerSiyu)
+        {
+            WcDAC dac = new WcDAC();
+            bool result = dac.DeletePerSiyu(deletePerSiyu);
+            dac.Dispose();
+
+            return result;
+        }
+
+        public bool POPClosing(string woNo)
+        {
+            WcDAC dac = new WcDAC();
+            bool result = dac.POPClosing(woNo);
+            dac.Dispose();
+
+            return result;
+        }
+
     }
 }

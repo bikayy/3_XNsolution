@@ -35,6 +35,7 @@ namespace POP_Team5_XN
             lblWcName.Text = woInfo.Wc_Name;
             lblPlanDate.Text = woInfo.Plan_Date;
             lblPlanQty.Text = woInfo.Plan_Qty_Box.ToString();
+            lblTitle.Text = $"실적등록 : {woInfo.Wc_Name}";
             SiyuPerList();
         }
 
@@ -57,11 +58,51 @@ namespace POP_Team5_XN
                     Reg_Datetime = (DateTime)dt.Rows[idx]["Reg_Datetime"],
                     Prd_Qty = Convert.ToInt32(dt.Rows[idx]["Prd_Qty"])
                 };
+                ctrlRegPer.eventDelete += OnDeleteClick;
                 lblPrdQty.Text = dt.Rows[idx]["Prd_Qty_Sum"].ToString();
                 ctrlRegPer.Tag = idx;
                 pnlList.Controls.Add(ctrlRegPer);
                 idx++;
             }
+        }
+
+        private void OnDeleteClick(object sender, EventArgs e)
+        {  //WorkOrderNo, Prd_Qty, Reg_DateTime, Del_Emp
+            ucRegPerList ctrl = (ucRegPerList)sender;
+
+            Label[] labels = { lblWoNo, lblItemName };
+            Label[] labelsTitle = { lblTWoNo, lblTItemName};
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < labels.Length; i++)
+            {
+                sb.AppendLine($"{labelsTitle[i].Text} : {labels[i].Text}");
+            }
+
+            sb.AppendLine($"실적수량 : {ctrl.SendPerSiyu.Prd_Qty}");
+            sb.AppendLine("해당 실적정보를 삭제하시겠습니까?");
+
+            DialogResult result = MessageBox.Show(sb.ToString(), "실적정보삭제", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                DeletePerSiyuVO deletePerSiyu = new DeletePerSiyuVO
+                {
+                    WorkOrderNo = lblWoNo.Text,
+                    Prd_Qty = ctrl.SendPerSiyu.Prd_Qty,
+                    Reg_DateTime = ctrl.SendPerSiyu.Reg_Datetime,
+                    Del_Emp = "홍길동"
+                };
+
+                bool deResult = wcServ.DeletePerSiyu(deletePerSiyu);
+
+                if (deResult)
+                {
+                    MessageBox.Show("실적정보가 삭제되었습니다.");
+                    SiyuPerList();
+                }
+                else MessageBox.Show("실적정보 삭제에 실패하였습니다.\n다시 확인하여주십시오.");
+            }
+
         }
 
         private void btnKeyBoard_Click(object sender, EventArgs e)

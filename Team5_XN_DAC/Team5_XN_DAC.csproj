@@ -52,8 +52,11 @@
     <Compile Include="NopDAC.cs" />
     <Compile Include="POPDAC\WcDAC.cs" />
     <Compile Include="ProcessDAC.cs" />
+    <Compile Include="ProductionDAC\InputListDAC.cs" />
+    <Compile Include="ProductionDAC\OrderDAC.cs" />
     <Compile Include="ProductionDAC\PlanDAC.cs" />
     <Compile Include="ProductionDAC\RequestDAC.cs" />
+    <Compile Include="ProductionDAC\WorkOrderDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchDAC\SearchDAC.cs" />
     <Compile Include="TimeProductionDAC.cs" />

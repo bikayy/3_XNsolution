@@ -19,6 +19,9 @@ namespace POP_Team5_XN
 
         private string wcCode;
         private string wcName;
+        private string wcStatus = string.Empty;
+
+        bool backCheck = false;
 
         public POPWorkCenter()
         {
@@ -31,7 +34,7 @@ namespace POP_Team5_XN
             dt = wcServ.SelectWc();
             int idx = 0;
 
-
+            //작업장 리스트 동적 생성
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (idx > dt.Rows.Count) break;
@@ -46,15 +49,20 @@ namespace POP_Team5_XN
                     Wo_Status = dt.Rows[idx]["Wo_Status"].ToString(),
                     Wc_Code = dt.Rows[idx]["Wc_Code"].ToString()
                 };
+                ctrlWcList.TabIndex = idx;
                 ctrlWcList.eventWcList += OnCtrlClick;
                 pnlWcList.Controls.Add(ctrlWcList);
 
-                //MessageBox.Show(ctrlWcList.SendWcList.Wc_Code);
                 idx++;
             }
         }
 
 
+        /// <summary>
+        /// 작업장 이동
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMove_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtWCName.Text))
@@ -67,26 +75,46 @@ namespace POP_Team5_XN
             //pop.WcCode = wcCode;
             pop.WoInfo.Wc_Code = wcCode;
             pop.WoInfo.Wc_Name = wcName;
+            pop.WcStatus = wcStatus;
             pop.ShowDialog();
             //this.Hide();
         }
 
+
+        /// <summary>
+        /// 작업장 리스트 클릭 시 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnCtrlClick(object sender, EventArgs e)
         {
             ucWorkCenterList ctrl = (ucWorkCenterList)sender;
 
-            //if (ctrl.SendWcList.Wo_Status.Equals("비가동"))
-            //{
-            //    MessageBox.Show("비가동 중인 작업장은 선택할 수 없습니다.");
-            //    txtWCName.Text = "";
-            //    return;
-            //}
-
             txtWCName.Text = ctrl.SendWcList.Wc_Name;
             wcCode = ctrl.SendWcList.Wc_Code;
             wcName = ctrl.SendWcList.Wc_Name;
+            wcStatus = ctrl.SendWcList.Wo_Status;
+
             ctrl.BackColor = Color.Red;
-            //MessageBox.Show(wcCode);
+            CtrlSelection(pnlWcList, ctrl.TabIndex);
+        }
+
+
+        /// <summary>
+        /// 선택된 목록 외 배경색 리셋
+        /// </summary>
+        /// <param name="pnl"></param>
+        /// <param name="tabIdx"></param>
+        private void CtrlSelection(Panel pnl, int tabIdx)
+        {
+            foreach (Control ctrl in pnl.Controls)
+            {
+                if (ctrl.TabIndex.Equals(tabIdx)) continue;
+                if (ctrl is UserControl)
+                {
+                    ctrl.BackColor = Color.White;
+                }
+            }
         }
 
     }

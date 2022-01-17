@@ -21,12 +21,12 @@ namespace POP_Team5_XN
         private WoInfoVO woInfo = new WoInfoVO();
         public WoInfoVO WoInfo { get { return woInfo; } set { woInfo = value; } }
 
-        //private string wcCode = string.Empty;
-        //public string WcCode { get { return wcCode; } set { wcCode = value; } }
+        private string wcStatus = string.Empty;
+        public string WcStatus { get { return wcStatus; } set { wcStatus = value; } }
 
         string woNo = string.Empty;
 
-        int btnCheck = 0;
+        int ctrlIdx = 0;
 
         public POPWorkOrderStatus()
         {
@@ -35,6 +35,20 @@ namespace POP_Team5_XN
 
         private void POPWorkOrderStatus_Load(object sender, EventArgs e)
         {
+            if (wcStatus.Equals("비가동"))
+            {
+                btnStart.Enabled = btnEnd.Enabled = btnPalette.Enabled = btnClosing.Enabled = btnPfm.Enabled = false;
+                btnStart.BackColor = btnEnd.BackColor = btnPalette.BackColor = btnClosing.BackColor = btnPfm.BackColor = Color.Gray;
+            }
+
+            lblTitle.Text = woInfo.Wc_Name;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            pnlOrList.Controls.Clear();
+
             DataTable dt = new DataTable();
             dt = wcServ.SelectOr(woInfo.Wc_Code);
             int idx = 0;
@@ -42,13 +56,13 @@ namespace POP_Team5_XN
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (idx > dt.Rows.Count) break;
-                //MessageBox.Show("ss");
+
                 ctrlOrList = new ucWorkOrderStatusList();
-                ctrlOrList.Location = new Point(0, 112 + (i * 99)); 
+                ctrlOrList.Location = new Point(0, 0 + (i * 99));
                 ctrlOrList.Size = new Size(1081, 99);
                 ctrlOrList.SendOrderList = new SelectOrderVO
                 { //Wo_Status, Plan_Date, Prd_Date, WorkOrderNo, Project_Nm, Item_Name, Item_Name_Eng,
-                   //Plan_Qty_Box, Prd_Qty, Prd_StartTime, Prd_EndTime, w.Remark
+                  //Plan_Qty_Box, Prd_Qty, Prd_StartTime, Prd_EndTime, w.Remark
                     Wo_Status = dt.Rows[idx]["Wo_Status"].ToString(),
                     Plan_Date = dt.Rows[idx]["Plan_Date"].ToString(),
                     Prd_Date = dt.Rows[idx]["Prd_Date"].ToString(),
@@ -62,7 +76,7 @@ namespace POP_Team5_XN
                     Prd_EndTime = dt.Rows[idx]["Prd_EndTime"].ToString(),
                     Remark_YN = dt.Rows[idx]["Remark_YN"].ToString()
                 };
-                ctrlOrList.Tag = idx;
+                ctrlOrList.TabIndex = idx;
                 ctrlOrList.eventBtnCheck += OnBtn;
                 ctrlOrList.eventOrderList += OnClick;
                 pnlOrList.Controls.Add(ctrlOrList);
@@ -70,6 +84,12 @@ namespace POP_Team5_XN
             }
         }
 
+
+        /// <summary>
+        /// 버튼 활성화 체크
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnBtn(object sender, EventArgs e)
         {
             ucWorkOrderStatusList ctrl = (ucWorkOrderStatusList)sender;
@@ -109,12 +129,20 @@ namespace POP_Team5_XN
             //btnEnableTF(btnCheck);
         }
 
+
+        /// <summary>
+        /// 작업지시목록 클릭 시 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClick(object sender, EventArgs e)
         {
             ucWorkOrderStatusList ctrl = (ucWorkOrderStatusList)sender;
             woNo = ctrl.SendOrderList.WorkOrderNo;
+            ctrlIdx = ctrl.TabIndex;
             ctrl.BackColor = Color.Blue;
-
+            CtrlSelection(pnlOrList, ctrl.TabIndex);
+            
             woInfo = new WoInfoVO
             {  //Item_Name, Plan_Date, Prd_Qty, WorkOrderNo, Wc_Name
                 WorkOrderNo = ctrl.SendOrderList.WorkOrderNo,
@@ -125,11 +153,39 @@ namespace POP_Team5_XN
                 Wc_Name = woInfo.Wc_Name,
                 Wc_Code = woInfo.Wc_Code
             };
-
-            //MessageBox.Show(ctrl.SendOrderList.WorkOrderNo);
-            //MessageBox.Show(ctrl.Tag.ToString());
         }
 
+
+        /// <summary>
+        /// 선택된 목록 외 배경색 리셋
+        /// </summary>
+        /// <param name="pnl"></param>
+        /// <param name="tabIdx"></param>
+        private void CtrlSelection(Panel pnl, int tabIdx)
+        {
+            foreach(Control ctrl in pnl.Controls)
+            {
+                if (ctrl.TabIndex.Equals(tabIdx)) continue;
+                if (ctrl is UserControl)
+                {
+                    ctrl.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void CtrlRemove(Panel pnl, int tabIdx)
+        {
+            foreach (Control ctrl in pnl.Controls)
+            {
+                if (ctrl is UserControl && ctrl.TabIndex.Equals(tabIdx))
+                {
+                    pnl.Controls.Remove(ctrl);
+                }
+            }
+        }
+
+
+        //팔레트 생성 버튼
         private void btnPalette_Click(object sender, EventArgs e)
         {  //Item_Name, Plan_Date, Prd_Qty, WorkOrderNo, Wc_Name
             POPPalette pop = new POPPalette();
@@ -143,33 +199,103 @@ namespace POP_Team5_XN
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            DialogResult sResult = MessageBox.Show($"{woNo}의 작업을 시작하시겠습니까?", "작업시작", MessageBoxButtons.YesNo);
+            Label[] labels = { lblWoNo, lblItemName };
+            string[] infos = { woInfo.WorkOrderNo, woInfo.Item_Name };
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < labels.Length; i++)
+            {
+                sb.AppendLine($"{labels[i].Text} : {infos[i]}");
+            }
+
+            sb.AppendLine("해당 작업을 시작하시겠습니까?");
+
+            DialogResult sResult = MessageBox.Show(sb.ToString(), "작업시작", MessageBoxButtons.YesNo);
             if (sResult == DialogResult.Yes)
             {
                 bool result = wcServ.Start(woNo);
 
-                if (result) MessageBox.Show("작업이 시작되었습니다.");
-                else MessageBox.Show("작업 시작에 실패하였습니다.");
+                if (result)
+                {
+                    MessageBox.Show("작업이 시작되었습니다.");
+                    LoadData();
+                }
+                else MessageBox.Show("작업 시작에 실패하였습니다.\n다시 확인하여주십시오.");
             }
         }
 
+        //private void Test(object sender, EventArgs e)
+        //{
+        //    ucWorkOrderStatusList ctrl = (ucWorkOrderStatusList)sender;
+        //    ctrl.SendOrderList = new SelectOrderVO
+        //    {
+        //        Wo_Status = "ddd"
+        //    };
+        //}
+
+        //private void Test(Panel pnl)
+        //{
+        //    foreach (ucWorkOrderStatusList ctrl in pnl.Controls)
+        //    {
+        //        int idx = 2;
+        //        ctrl.Tag = idx;
+        //        ctrl.SendOrderList.Wo_Status = "gg";
+        //    }
+        //}
+
         private void btnClosing_Click(object sender, EventArgs e)
         {
+            Label[] labels = { lblWoNo, lblItemName };
+            string[] infos = { woInfo.WorkOrderNo, woInfo.Item_Name };
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < labels.Length; i++)
+            {
+                sb.AppendLine($"{labels[i].Text} : {infos[i]}");
+            }
+
+            sb.AppendLine("해당 작업을 현장마감하시겠습니까?");
+
+            DialogResult result = MessageBox.Show(sb.ToString(), "현장마감", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                bool clResult = wcServ.POPClosing(woNo);
+                if (clResult)
+                {
+                    MessageBox.Show("현장마감되었습니다.");
+                    CtrlRemove(pnlOrList, ctrlIdx);
+                    foreach (UserControl ctrl in pnlOrList.Controls)
+                    {
+                        for (int i = 0; i < ctrl.TabIndex; i++)
+                        {
+                            ctrl.Location = new Point(0, 0 + (i * 99));
+                        }
+                    }
+                        //ctrlOrList.Location
+                }
+                else MessageBox.Show("현장마감에 실패하였습니다.\n다시 확인하여주십시오.");
+            }
+
         }
 
-
+        //end 버튼
         private void btnEnd_Click(object sender, EventArgs e)
         {
             DialogResult sResult = MessageBox.Show($"{woNo}의 작업을 중지하시겠습니까?", "작업중지", MessageBoxButtons.YesNo);
             if (sResult == DialogResult.Yes)
             {
                 bool result = wcServ.End(woNo);
-                if (result) MessageBox.Show("작업이 중지되었습니다.");
+                if (result)
+                {
+                    MessageBox.Show("작업이 중지되었습니다.");
+                    LoadData();
+                }
                 else MessageBox.Show("작업 중지에 실패하였습니다.");
             }
                 
         }
 
+        //비가동 등록 버튼
         private void btnNopReg_Click(object sender, EventArgs e)
         {
             POPNopRegister frm = new POPNopRegister();
@@ -177,6 +303,7 @@ namespace POP_Team5_XN
             //작업장코드 woInfo에 있습니다~
         }
 
+        //실적 등록 버튼
         private void btnPfm_Click(object sender, EventArgs e)
         {
             PopupRegPer frm = new PopupRegPer();

@@ -55,13 +55,14 @@ namespace POP_Team5_XN
             {
                 if (idx > dt.Rows.Count) break;
                 ctrlGrade = new ucGradeList();
-                ctrlGrade.Location = new Point(0, 0 + (i * 86));
-                ctrlGrade.Size = new Size(577, 90);
+                ctrlGrade.Location = new Point(0, 0 + (i * 85));
+                ctrlGrade.Size = new Size(577, 80);
                 ctrlGrade.SendGrade = new GradeVO
                 {  
                     DetailCode = dt.Rows[idx]["DetailCode"].ToString(),
                     DetailName = dt.Rows[idx]["DetailName"].ToString()
                 };
+                ctrlGrade.TabIndex = idx;
                 ctrlGrade.eventgradeList += OnCtrlClick;
                 pnlList.Controls.Add(ctrlGrade);
                 idx++;
@@ -73,6 +74,21 @@ namespace POP_Team5_XN
             ucGradeList ctrl = (ucGradeList)sender;
             name = ctrl.SendGrade.DetailName;
             code = ctrl.SendGrade.DetailCode;
+
+            ctrl.BackColor = Color.Blue;
+            CtrlSelection(pnlList, ctrl.TabIndex);
+        }
+
+        private void CtrlSelection(Panel pnl, int tabIdx)
+        {
+            foreach (Control ctrl in pnl.Controls)
+            {
+                if (ctrl.TabIndex.Equals(tabIdx)) continue;
+                if (ctrl is UserControl)
+                {
+                    ctrl.BackColor = Color.White;
+                }
+            }
         }
 
         private void Combo(ComboBox cbo, DataTable dt, bool blankItem = true, string blankText = "")
@@ -88,6 +104,7 @@ namespace POP_Team5_XN
 
             cbo.DisplayMember = "DetailName";
             cbo.ValueMember = "DetailCode";
+            cbo.Text = "DetailName";
             cbo.DataSource = dt;
         }
 
@@ -104,6 +121,10 @@ namespace POP_Team5_XN
             {
                 MessageBox.Show("항목을 선택하여주십시오.");
                 return;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
             }
             
         }
