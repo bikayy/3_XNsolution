@@ -206,5 +206,17 @@ where Boxing_Grade_Code = @Boxing_Grade_Code";
             return cmd.ExecuteNonQuery() > 0;
         }
 
+        public bool POPClosing(string woNo)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SP_POP_Closing";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@WorkOrderNo", woNo);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
     }
 }

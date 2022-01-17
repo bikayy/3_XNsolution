@@ -49,10 +49,10 @@ namespace POP_Team5_XN
                     Wo_Status = dt.Rows[idx]["Wo_Status"].ToString(),
                     Wc_Code = dt.Rows[idx]["Wc_Code"].ToString()
                 };
+                ctrlWcList.TabIndex = idx;
                 ctrlWcList.eventWcList += OnCtrlClick;
                 pnlWcList.Controls.Add(ctrlWcList);
 
-                //MessageBox.Show(ctrlWcList.SendWcList.Wc_Code);
                 idx++;
             }
         }
@@ -96,8 +96,26 @@ namespace POP_Team5_XN
             wcStatus = ctrl.SendWcList.Wo_Status;
 
             ctrl.BackColor = Color.Red;
+            CtrlSelection(pnlWcList, ctrl.TabIndex);
         }
 
+
+        /// <summary>
+        /// 선택된 목록 외 배경색 리셋
+        /// </summary>
+        /// <param name="pnl"></param>
+        /// <param name="tabIdx"></param>
+        private void CtrlSelection(Panel pnl, int tabIdx)
+        {
+            foreach (Control ctrl in pnl.Controls)
+            {
+                if (ctrl.TabIndex.Equals(tabIdx)) continue;
+                if (ctrl is UserControl)
+                {
+                    ctrl.BackColor = Color.White;
+                }
+            }
+        }
 
     }
 }

@@ -271,7 +271,7 @@ namespace Team5_XN
             o_btnWCSearch.Enabled = true;
             o_btnWCSearch.BackColor = Color.Black;
             o_txtOrderQty.ReadOnly = false;
-            o_dtpOPDate.Enabled = true;
+            ///aaa.Enabled = true;
             o_dtpFromTime.Enabled = true;
             o_dtpToTime.Enabled = true;
             o_txtRemark.ReadOnly = false;
@@ -497,7 +497,7 @@ namespace Team5_XN
             o_btnWCSearch.Enabled = true;
             o_btnWCSearch.BackColor = Color.Black;
             o_txtOrderQty.ReadOnly = false;
-            o_dtpOPDate.Enabled = true;
+            ///aaa.Enabled = true;
             o_dtpFromTime.Enabled = true;
             o_dtpToTime.Enabled = true;
             o_txtRemark.ReadOnly = false;
@@ -523,19 +523,19 @@ namespace Team5_XN
 
         private void o_dtpOPDate_Validating(object sender, CancelEventArgs e)
         {
-            if (o_dtpOPDate.Value < DateTime.Now.AddDays(-1))
+            if (aaa.Value < DateTime.Now.AddDays(-1))
             {
                 MessageBox.Show("생산일자가 현재일보다  이전일 수 없습니다.");
-                o_dtpOPDate.Value = DateTime.Now;
-                o_dtpOPDate.Focus();
+                aaa.Value = DateTime.Now;
+                aaa.Focus();
                 return;
             }
 
-            if (Convert.ToInt32(p_dtpPlanDate.Value.ToString("yyyyMM")) < Convert.ToInt32(o_dtpOPDate.Value.ToString("yyyyMM")))
+            if (Convert.ToInt32(p_dtpPlanDate.Value.ToString("yyyyMM")) < Convert.ToInt32(aaa.Value.ToString("yyyyMM")))
             {
                 MessageBox.Show("생산일자는 생산계획월을 넘어갈 수 없습니다.");
-                o_dtpOPDate.Value = DateTime.Now;
-                o_dtpOPDate.Focus();
+                aaa.Value = DateTime.Now;
+                aaa.Focus();
                 return;
             }
         }
@@ -619,7 +619,7 @@ namespace Team5_XN
                 o_txtWCCode.Text = order.Wc_Code;
                 o_txtWCName.Text = order.Wc_Name;
                 o_txtOrderQty.Text = order.Plan_Qty_Box.ToString();
-                o_dtpOPDate.Text = order.Plan_Date;
+                //aaa.Text = order.Plan_Date;
                 o_dtpFromTime.Text = order.Plan_StartTime;
                 o_dtpToTime.Text = order.Plan_EndTime;
                 o_txtRemark.Text = order.Remark;
@@ -678,7 +678,7 @@ namespace Team5_XN
 
         private void o_dtpFromTime_Validating(object sender, CancelEventArgs e)
         {
-            if (o_dtpOPDate.Value.ToString("yyymmdd") == DateTime.Now.ToString("yyyymmdd") &&
+            if (aaa.Value.ToString("yyymmdd") == DateTime.Now.ToString("yyyymmdd") &&
                 Convert.ToInt32(o_dtpFromTime.Value.ToString("HHmm")) < Convert.ToInt32(DateTime.Now.ToString("HHmm")))
             {
                 MessageBox.Show("계획시작시간은 현재시각 이전일 수 없습니다.");

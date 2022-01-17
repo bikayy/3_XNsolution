@@ -111,5 +111,14 @@ namespace Team5_XN
             return result;
         }
 
+        public bool POPClosing(string woNo)
+        {
+            WcDAC dac = new WcDAC();
+            bool result = dac.POPClosing(woNo);
+            dac.Dispose();
+
+            return result;
+        }
+
     }
 }

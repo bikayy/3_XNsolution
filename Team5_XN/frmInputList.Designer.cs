@@ -39,11 +39,8 @@ namespace Team5_XN
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.placeholderTextBox2 = new WinReflectionSettings.PlaceholderTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.placeholderTextBox7 = new WinReflectionSettings.PlaceholderTextBox();
-            this.placeholderTextBox8 = new WinReflectionSettings.PlaceholderTextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -51,6 +48,10 @@ namespace Team5_XN
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.placeholderTextBox2 = new WinReflectionSettings.PlaceholderTextBox();
+            this.placeholderTextBox7 = new WinReflectionSettings.PlaceholderTextBox();
+            this.placeholderTextBox8 = new WinReflectionSettings.PlaceholderTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSubject1.SuspendLayout();
@@ -111,6 +112,7 @@ namespace Team5_XN
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSelect.Controls.Add(this.button1);
             this.pnlSelect.Controls.Add(this.comboBox1);
             this.pnlSelect.Controls.Add(this.dateTimePicker2);
             this.pnlSelect.Controls.Add(this.label5);
@@ -187,16 +189,6 @@ namespace Team5_XN
             this.label3.Text = "*";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // placeholderTextBox2
-            // 
-            this.placeholderTextBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox2.Location = new System.Drawing.Point(163, 84);
-            this.placeholderTextBox2.Name = "placeholderTextBox2";
-            this.placeholderTextBox2.PlaceholderText = "작업지시번호";
-            this.placeholderTextBox2.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox2.Size = new System.Drawing.Size(378, 25);
-            this.placeholderTextBox2.TabIndex = 59;
-            // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -217,26 +209,6 @@ namespace Team5_XN
             this.label8.TabIndex = 53;
             this.label8.Text = "*";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // placeholderTextBox7
-            // 
-            this.placeholderTextBox7.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox7.Location = new System.Drawing.Point(339, 47);
-            this.placeholderTextBox7.Name = "placeholderTextBox7";
-            this.placeholderTextBox7.PlaceholderText = "품목 명";
-            this.placeholderTextBox7.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox7.Size = new System.Drawing.Size(202, 25);
-            this.placeholderTextBox7.TabIndex = 52;
-            // 
-            // placeholderTextBox8
-            // 
-            this.placeholderTextBox8.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.placeholderTextBox8.Location = new System.Drawing.Point(163, 48);
-            this.placeholderTextBox8.Name = "placeholderTextBox8";
-            this.placeholderTextBox8.PlaceholderText = "품목 코드";
-            this.placeholderTextBox8.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.placeholderTextBox8.Size = new System.Drawing.Size(139, 25);
-            this.placeholderTextBox8.TabIndex = 51;
             // 
             // button6
             // 
@@ -314,6 +286,45 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(22, 159);
             this.panel2.TabIndex = 0;
             // 
+            // placeholderTextBox2
+            // 
+            this.placeholderTextBox2.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.placeholderTextBox2.Location = new System.Drawing.Point(163, 84);
+            this.placeholderTextBox2.Name = "placeholderTextBox2";
+            this.placeholderTextBox2.PlaceholderText = "작업지시번호";
+            this.placeholderTextBox2.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.placeholderTextBox2.Size = new System.Drawing.Size(378, 25);
+            this.placeholderTextBox2.TabIndex = 59;
+            // 
+            // placeholderTextBox7
+            // 
+            this.placeholderTextBox7.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.placeholderTextBox7.Location = new System.Drawing.Point(339, 47);
+            this.placeholderTextBox7.Name = "placeholderTextBox7";
+            this.placeholderTextBox7.PlaceholderText = "품목 명";
+            this.placeholderTextBox7.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.placeholderTextBox7.Size = new System.Drawing.Size(202, 25);
+            this.placeholderTextBox7.TabIndex = 52;
+            // 
+            // placeholderTextBox8
+            // 
+            this.placeholderTextBox8.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.placeholderTextBox8.Location = new System.Drawing.Point(163, 48);
+            this.placeholderTextBox8.Name = "placeholderTextBox8";
+            this.placeholderTextBox8.PlaceholderText = "품목 코드";
+            this.placeholderTextBox8.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.placeholderTextBox8.Size = new System.Drawing.Size(139, 25);
+            this.placeholderTextBox8.TabIndex = 51;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(789, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 71;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmInputList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -356,5 +367,6 @@ namespace Team5_XN
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
