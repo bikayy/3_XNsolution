@@ -74,6 +74,10 @@ namespace Team5_XN
             DataTable dtSysCode = commServ.GetCommonCodeSys(code);
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
             //LoadData();
+
+            commServ = new CommonService();
+            dt = boxServ.GetBoxingGradeMaster();
+            dt_DB = dt.Copy();
         }
 
         private void OnSelect(object sender, EventArgs e)
@@ -90,13 +94,7 @@ namespace Team5_XN
             }
 
             ChangeValue_Check(0);
-
-            commServ = new CommonService();
-            dt = boxServ.GetBoxingGradeMaster();
-            dt_DB = dt.Copy();
-            dgvBoxMaster.DataSource = dt;
-            dgvBoxMaster_CellClick(dgvBoxMaster, new DataGridViewCellEventArgs(0, 0));
-            dgvBoxDetail_CellClick(dgvBoxDetail, new DataGridViewCellEventArgs(0, 0));
+            
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -104,19 +102,19 @@ namespace Team5_XN
 
             if (!string.IsNullOrWhiteSpace(txtBoxingCode.Text))
             {
-                sb.Append(" AND Code LIKE '%" + txtBoxingCode.Text + "%'");
+                sb.Append(" AND boxing_grade_code LIKE '%" + txtBoxingCode.Text + "%'");
             }
             searchList.RowFilter = sb.ToString();
             dgvBoxMaster.DataSource = searchList;
             rowCount = searchList.Count;
-            dgvBoxMaster.CurrentCell = null;
-            
-            ControlTextReset();
 
+            ControlTextReset();
+            dgvBoxMaster_CellClick(dgvBoxMaster, new DataGridViewCellEventArgs(0, 0));
         }
 
         private void OnCreate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             //dataGridView1.AllowUserToAddRows = true;
@@ -134,6 +132,7 @@ namespace Team5_XN
 
         private void OnUpdate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(2); //편집
@@ -310,6 +309,7 @@ namespace Team5_XN
         }
         private void OnCancle(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             string menu;

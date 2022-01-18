@@ -55,7 +55,7 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvNopDetail, "사용유무", "Use_YN", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvNopDetail, "공정그룹", "Process_Group", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvNopDetail, "비고", "Remark", colWidth: 170);
-            DataGridViewUtil.AddGridTextColumn(dgvNopDetail, "비가동유형", "Nop_Type", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvNopDetail, "비가동유형", "Nop_type", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvNopDetail, "비가동구분", "Regular_Type", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvNopDetail, "작성일자", "Ins_Date", colWidth: 100, visibility: false);
             DataGridViewUtil.AddGridTextColumn(dgvNopDetail, "작성자", "Ins_Emp", colWidth: 100, visibility: false);
@@ -65,18 +65,23 @@ namespace Team5_XN
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
 
             //GetCommonCodeList
-            string[] code = { "USE_YN" };
+            string[] code = { "USE_YN", "PROC_GROUP", "REGULAR_TYPE" };
 
             //cdac = new CommonDAC();
             commServ = new CommonService();
 
             DataTable dtSysCode = commServ.GetCommonCodeSys(code);
+            DataTable dtSysUser = commServ.GetCommonCodeUser(code);
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy(), false);
+            CommonUtil.ComboBinding(cboProcess, "PROC_GROUP", dtSysUser.Copy(), false);
+            CommonUtil.ComboBinding(cboNopType, "REGULAR_TYPE", dtSysCode.Copy(), false);
+            CommonUtil.ComboBinding(cboRegularType, "REGULAR_TYPE", dtSysCode.Copy(), false);
         }
 
         private void OnDelete(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (dgvNopDetail.CurrentCell == null)
@@ -165,6 +170,7 @@ namespace Team5_XN
 
         private void OnCreate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             //dataGridView1.AllowUserToAddRows = true;
@@ -182,6 +188,7 @@ namespace Team5_XN
 
         private void OnUpdate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(2); //편집
@@ -191,6 +198,7 @@ namespace Team5_XN
 
         private void OnSave(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             int result = 0;
@@ -200,7 +208,7 @@ namespace Team5_XN
             dt2.Columns.Add(new DataColumn("Nop_Mi_Code", typeof(string)));
             dt2.Columns.Add(new DataColumn("Nop_Mi_Name", typeof(string)));
             dt2.Columns.Add(new DataColumn("Nop_Ma_Code", typeof(string)));
-            dt2.Columns.Add(new DataColumn("Nop_Type", typeof(string)));
+            dt2.Columns.Add(new DataColumn("Nop_type", typeof(string)));
             dt2.Columns.Add(new DataColumn("Regular_Type", typeof(string)));
             dt2.Columns.Add(new DataColumn("Process_Group", typeof(string)));
             dt2.Columns.Add(new DataColumn("Remark", typeof(string)));
@@ -251,7 +259,7 @@ namespace Team5_XN
                         drNew["Nop_Mi_Name"] = dr["Nop_Mi_Name"];
                         drNew["Nop_Ma_Code"] = dMaster[2].Row["Nop_Ma_Code"].ToString();
                         drNew["Regular_Type"] = dr["Regular_Type"];
-                        drNew["Nop_Type"] = dr["Nop_Type"];
+                        drNew["Nop_type"] = dr["Nop_type"];
                         drNew["Process_Group"] = dr["Process_Group"];
                         drNew["Remark"] = dr["Remark"];
                         drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
@@ -288,7 +296,7 @@ namespace Team5_XN
                             drNew["Nop_Mi_Name"] = dr["Nop_Mi_Name"];
                             drNew["Nop_Ma_Code"] = dMaster[2].Row["Nop_Ma_Code"].ToString();
                             drNew["Regular_Type"] = dr["Regular_Type"];
-                            drNew["Nop_Type"] = dr["Nop_Type"];
+                            drNew["Nop_type"] = dr["Nop_type"];
                             drNew["Process_Group"] = dr["Process_Group"];
                             drNew["Remark"] = dr["Remark"];
                             drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
@@ -327,6 +335,7 @@ namespace Team5_XN
 
         private void OnCancle(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             string menu;
@@ -515,7 +524,7 @@ namespace Team5_XN
             cboUseYN.Text = dgvNopDetail["Use_YN", dgvNopDetail.CurrentRow.Index].Value.ToString();
             cboProcess.Text = dgvNopDetail["Process_Group", dgvNopDetail.CurrentRow.Index].Value.ToString();
             txtRemark.Text = dgvNopDetail["Remark", dgvNopDetail.CurrentRow.Index].Value.ToString();
-            cboNopType.Text = dgvNopDetail["Nop_Type", dgvNopDetail.CurrentRow.Index].Value.ToString();
+            cboNopType.Text = dgvNopDetail["Nop_type", dgvNopDetail.CurrentRow.Index].Value.ToString();
             cboRegularType.Text = dgvNopDetail["Regular_Type", dgvNopDetail.CurrentRow.Index].Value.ToString();
 
         }

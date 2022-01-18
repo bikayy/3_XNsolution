@@ -98,19 +98,20 @@ namespace Team5_XN
             this.pnlDgv2.Controls.Add(this.pnlDetail);
             this.pnlDgv2.Controls.Add(this.dgvNopDetail);
             this.pnlDgv2.Controls.Add(this.panel3);
-            this.pnlDgv2.Location = new System.Drawing.Point(460, 54);
+            this.pnlDgv2.Location = new System.Drawing.Point(496, 54);
             this.pnlDgv2.Margin = new System.Windows.Forms.Padding(10);
             this.pnlDgv2.Name = "pnlDgv2";
             this.pnlDgv2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlDgv2.Size = new System.Drawing.Size(892, 606);
+            this.pnlDgv2.Size = new System.Drawing.Size(856, 606);
             this.pnlDgv2.TabIndex = 20;
             // 
             // pnlDetail
             // 
+            this.pnlDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDetail.BackColor = System.Drawing.Color.White;
             this.pnlDetail.Controls.Add(this.panel4);
             this.pnlDetail.Controls.Add(this.pnlSubject2);
-            this.pnlDetail.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlDetail.Location = new System.Drawing.Point(0, 439);
             this.pnlDetail.Name = "pnlDetail";
             this.pnlDetail.Size = new System.Drawing.Size(892, 162);
@@ -118,6 +119,9 @@ namespace Team5_XN
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.cboRegularType);
@@ -456,13 +460,14 @@ namespace Team5_XN
             // 
             // dgvNopDetail
             // 
-            this.dgvNopDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvNopDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNopDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNopDetail.Location = new System.Drawing.Point(0, 36);
             this.dgvNopDetail.Name = "dgvNopDetail";
             this.dgvNopDetail.RowTemplate.Height = 23;
-            this.dgvNopDetail.Size = new System.Drawing.Size(890, 400);
+            this.dgvNopDetail.Size = new System.Drawing.Size(854, 400);
             this.dgvNopDetail.TabIndex = 1;
             this.dgvNopDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNopDetail_CellClick);
             // 
@@ -473,7 +478,7 @@ namespace Team5_XN
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(892, 30);
+            this.panel3.Size = new System.Drawing.Size(856, 30);
             this.panel3.TabIndex = 7;
             // 
             // label2
@@ -501,7 +506,7 @@ namespace Team5_XN
             this.pnlDgv1.Margin = new System.Windows.Forms.Padding(10);
             this.pnlDgv1.Name = "pnlDgv1";
             this.pnlDgv1.Padding = new System.Windows.Forms.Padding(0, 5, 5, 0);
-            this.pnlDgv1.Size = new System.Drawing.Size(459, 608);
+            this.pnlDgv1.Size = new System.Drawing.Size(496, 608);
             this.pnlDgv1.TabIndex = 19;
             // 
             // pnlSubject1
@@ -510,7 +515,7 @@ namespace Team5_XN
             this.pnlSubject1.Controls.Add(this.label9);
             this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
             this.pnlSubject1.Name = "pnlSubject1";
-            this.pnlSubject1.Size = new System.Drawing.Size(454, 30);
+            this.pnlSubject1.Size = new System.Drawing.Size(489, 30);
             this.pnlSubject1.TabIndex = 7;
             // 
             // label9
@@ -535,7 +540,7 @@ namespace Team5_XN
             this.dgvNopMaster.Location = new System.Drawing.Point(0, 35);
             this.dgvNopMaster.Name = "dgvNopMaster";
             this.dgvNopMaster.RowTemplate.Height = 23;
-            this.dgvNopMaster.Size = new System.Drawing.Size(454, 570);
+            this.dgvNopMaster.Size = new System.Drawing.Size(489, 570);
             this.dgvNopMaster.TabIndex = 1;
             this.dgvNopMaster.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNopMaster_CellClick);
             // 

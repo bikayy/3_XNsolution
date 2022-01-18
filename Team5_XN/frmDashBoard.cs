@@ -115,5 +115,10 @@ namespace Team5_XN
             dgvDayDefect.DataSource = dt4;
             
         }
+
+        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
     }
 }

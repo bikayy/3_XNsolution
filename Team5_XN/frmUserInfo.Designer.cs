@@ -30,10 +30,6 @@ namespace Team5_XN
         private void InitializeComponent()
         {
             this.pnlBorder = new System.Windows.Forms.Panel();
-            this.pnlDgv = new System.Windows.Forms.Panel();
-            this.dgvUserInfo = new System.Windows.Forms.DataGridView();
-            this.pnlSubject1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboUseYN = new System.Windows.Forms.ComboBox();
@@ -44,6 +40,8 @@ namespace Team5_XN
             this.label18 = new System.Windows.Forms.Label();
             this.txtProcessName = new System.Windows.Forms.TextBox();
             this.txtUserGroupName = new System.Windows.Forms.TextBox();
+            this.btnProcess = new System.Windows.Forms.Button();
+            this.btnUserGroup = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtProcessCode = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -64,6 +62,7 @@ namespace Team5_XN
             this.label23 = new System.Windows.Forms.Label();
             this.txtGroupName = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.cboUse = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -75,18 +74,19 @@ namespace Team5_XN
             this.btnPwChange = new System.Windows.Forms.Button();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnProcess = new System.Windows.Forms.Button();
-            this.btnUserGroup = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.pnlSubject1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvUserInfo = new System.Windows.Forms.DataGridView();
+            this.pnlDgv = new System.Windows.Forms.Panel();
             this.pnlBorder.SuspendLayout();
-            this.pnlDgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).BeginInit();
-            this.pnlSubject1.SuspendLayout();
             this.pnlDetail.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlSubject2.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.pnlSubject1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).BeginInit();
+            this.pnlDgv.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBorder
@@ -102,54 +102,6 @@ namespace Team5_XN
             this.pnlBorder.Padding = new System.Windows.Forms.Padding(5);
             this.pnlBorder.Size = new System.Drawing.Size(1284, 661);
             this.pnlBorder.TabIndex = 5;
-            // 
-            // pnlDgv
-            // 
-            this.pnlDgv.BackColor = System.Drawing.Color.White;
-            this.pnlDgv.Controls.Add(this.dgvUserInfo);
-            this.pnlDgv.Controls.Add(this.pnlSubject1);
-            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDgv.Location = new System.Drawing.Point(5, 59);
-            this.pnlDgv.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlDgv.Size = new System.Drawing.Size(1274, 435);
-            this.pnlDgv.TabIndex = 6;
-            // 
-            // dgvUserInfo
-            // 
-            this.dgvUserInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUserInfo.Location = new System.Drawing.Point(0, 35);
-            this.dgvUserInfo.Name = "dgvUserInfo";
-            this.dgvUserInfo.RowTemplate.Height = 23;
-            this.dgvUserInfo.Size = new System.Drawing.Size(1274, 395);
-            this.dgvUserInfo.TabIndex = 1;
-            this.dgvUserInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserInfo_CellClick);
-            // 
-            // pnlSubject1
-            // 
-            this.pnlSubject1.BackColor = System.Drawing.Color.White;
-            this.pnlSubject1.Controls.Add(this.label9);
-            this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
-            this.pnlSubject1.Name = "pnlSubject1";
-            this.pnlSubject1.Size = new System.Drawing.Size(1274, 30);
-            this.pnlSubject1.TabIndex = 7;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Gainsboro;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 30);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "조회내역";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlDetail
             // 
@@ -278,6 +230,34 @@ namespace Team5_XN
             this.txtUserGroupName.TabIndex = 24;
             this.txtUserGroupName.Tag = "UserGroup_Name";
             this.txtUserGroupName.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            // 
+            // btnProcess
+            // 
+            this.btnProcess.BackColor = System.Drawing.Color.Black;
+            this.btnProcess.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcess.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.btnProcess.Location = new System.Drawing.Point(284, 98);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(23, 23);
+            this.btnProcess.TabIndex = 23;
+            this.btnProcess.UseVisualStyleBackColor = false;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
+            // 
+            // btnUserGroup
+            // 
+            this.btnUserGroup.BackColor = System.Drawing.Color.Black;
+            this.btnUserGroup.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnUserGroup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUserGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserGroup.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.btnUserGroup.Location = new System.Drawing.Point(284, 69);
+            this.btnUserGroup.Name = "btnUserGroup";
+            this.btnUserGroup.Size = new System.Drawing.Size(23, 23);
+            this.btnUserGroup.TabIndex = 8;
+            this.btnUserGroup.UseVisualStyleBackColor = false;
+            this.btnUserGroup.Click += new System.EventHandler(this.btnUserGroup_Click);
             // 
             // label10
             // 
@@ -506,6 +486,20 @@ namespace Team5_XN
             this.label24.Text = "권한그룹";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Black;
+            this.btnSearch.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(198, 14);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(23, 23);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // cboUse
             // 
             this.cboUse.FormattingEnabled = true;
@@ -619,47 +613,53 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(19, 52);
             this.panel2.TabIndex = 0;
             // 
-            // btnProcess
+            // pnlSubject1
             // 
-            this.btnProcess.BackColor = System.Drawing.Color.Black;
-            this.btnProcess.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.btnProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcess.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.btnProcess.Location = new System.Drawing.Point(284, 98);
-            this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(23, 23);
-            this.btnProcess.TabIndex = 23;
-            this.btnProcess.UseVisualStyleBackColor = false;
-            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
+            this.pnlSubject1.BackColor = System.Drawing.Color.White;
+            this.pnlSubject1.Controls.Add(this.label9);
+            this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
+            this.pnlSubject1.Name = "pnlSubject1";
+            this.pnlSubject1.Size = new System.Drawing.Size(1274, 30);
+            this.pnlSubject1.TabIndex = 7;
             // 
-            // btnUserGroup
+            // label9
             // 
-            this.btnUserGroup.BackColor = System.Drawing.Color.Black;
-            this.btnUserGroup.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.btnUserGroup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUserGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserGroup.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.btnUserGroup.Location = new System.Drawing.Point(284, 69);
-            this.btnUserGroup.Name = "btnUserGroup";
-            this.btnUserGroup.Size = new System.Drawing.Size(23, 23);
-            this.btnUserGroup.TabIndex = 8;
-            this.btnUserGroup.UseVisualStyleBackColor = false;
-            this.btnUserGroup.Click += new System.EventHandler(this.btnUserGroup_Click);
+            this.label9.BackColor = System.Drawing.Color.Gainsboro;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(133, 30);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "조회내역";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnSearch
+            // dgvUserInfo
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.Black;
-            this.btnSearch.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearch.Location = new System.Drawing.Point(198, 14);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(23, 23);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.dgvUserInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserInfo.Location = new System.Drawing.Point(0, 35);
+            this.dgvUserInfo.Name = "dgvUserInfo";
+            this.dgvUserInfo.RowTemplate.Height = 23;
+            this.dgvUserInfo.Size = new System.Drawing.Size(1274, 395);
+            this.dgvUserInfo.TabIndex = 1;
+            this.dgvUserInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserInfo_CellClick);
+            // 
+            // pnlDgv
+            // 
+            this.pnlDgv.BackColor = System.Drawing.Color.White;
+            this.pnlDgv.Controls.Add(this.dgvUserInfo);
+            this.pnlDgv.Controls.Add(this.pnlSubject1);
+            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDgv.Location = new System.Drawing.Point(5, 59);
+            this.pnlDgv.Margin = new System.Windows.Forms.Padding(10);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnlDgv.Size = new System.Drawing.Size(1274, 435);
+            this.pnlDgv.TabIndex = 6;
             // 
             // frmUserInfo
             // 
@@ -671,9 +671,6 @@ namespace Team5_XN
             this.Text = "사용자관리";
             this.Load += new System.EventHandler(this.frmUserInfo_Load);
             this.pnlBorder.ResumeLayout(false);
-            this.pnlDgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).EndInit();
-            this.pnlSubject1.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -682,6 +679,9 @@ namespace Team5_XN
             this.pnlSelect.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnlSubject1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).EndInit();
+            this.pnlDgv.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -689,10 +689,6 @@ namespace Team5_XN
         #endregion
 
         private System.Windows.Forms.Panel pnlBorder;
-        private System.Windows.Forms.Panel pnlDgv;
-        private System.Windows.Forms.DataGridView dgvUserInfo;
-        private System.Windows.Forms.Panel pnlSubject1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnlDetail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
@@ -737,5 +733,9 @@ namespace Team5_XN
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel pnlDgv;
+        private System.Windows.Forms.DataGridView dgvUserInfo;
+        private System.Windows.Forms.Panel pnlSubject1;
+        private System.Windows.Forms.Label label9;
     }
 }

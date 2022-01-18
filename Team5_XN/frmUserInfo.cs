@@ -76,6 +76,7 @@ namespace Team5_XN
 
         private void OnDelete(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (dgvUserInfo.CurrentCell == null)
@@ -122,6 +123,7 @@ namespace Team5_XN
 
         private void OnCreate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(1); //추가
@@ -138,6 +140,7 @@ namespace Team5_XN
 
         private void OnSave(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             int result = 0;
@@ -269,6 +272,7 @@ namespace Team5_XN
 
         private void OnUpdate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(2); //편집
@@ -278,6 +282,7 @@ namespace Team5_XN
 
         private void OnCancle(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             string menu;

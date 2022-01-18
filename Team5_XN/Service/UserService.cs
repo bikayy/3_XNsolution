@@ -19,7 +19,14 @@ namespace Team5_XN
 
             return result;
         }
+        public bool LoginCheck(UserVO user)
+        {
+            UserDAC db = new UserDAC();
+            var result = db.LoginCheck(user);
+            db.Dispose();
 
+            return result;
+        }
         public bool AddID(UserVO user)
         {
             UserDAC db = new UserDAC();
@@ -133,6 +140,14 @@ namespace Team5_XN
             db.Dispose();
 
             return dt;
+        }
+        public int SaveAuthority(DataTable dt, int check)
+        {
+            UserDAC db = new UserDAC();
+            int result = db.SaveAuthority(dt, check);
+            db.Dispose();
+
+            return result;
         }
     }
 }

@@ -71,10 +71,14 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
             button4.Visible = false;
             //LoadData();
+            commServ = new CommonService();
+            dt = commServ.GetSystemCodeMaster();
+            dt_DB = dt.Copy();
         }
 
         private void OnDelete(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (dgvSysDetail.CurrentCell == null)
@@ -121,6 +125,7 @@ namespace Team5_XN
 
         private void OnCancle(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             string menu;
@@ -144,6 +149,7 @@ namespace Team5_XN
 
         private void OnSave(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             int result = 0;
@@ -316,6 +322,7 @@ namespace Team5_XN
 
         private void OnUpdate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(2); //편집
@@ -336,9 +343,10 @@ namespace Team5_XN
 
             ChangeValue_Check(9); //추가
             //dataGridView1.AllowUserToAddRows = true;
-            
-            
+
+            ControlTextReset();
             dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, dgvSysMaster.RowCount - 1));
+
             
         }
 
@@ -355,13 +363,7 @@ namespace Team5_XN
                     return;
             }
 
-            ChangeValue_Check(0);
-
-            commServ = new CommonService();
-            dt = commServ.GetSystemCodeMaster(); 
-            dt_DB = dt.Copy();
-            dgvSysMaster.DataSource = dt;
-            dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, 0));
+            ChangeValue_Check(0);       
             
             searchList = new DataView(dt);
 
@@ -380,11 +382,25 @@ namespace Team5_XN
             searchList.RowFilter = sb.ToString();
             dgvSysMaster.DataSource = searchList;
             rowCount = searchList.Count;
-            dgvSysMaster.CurrentCell = null;
+
             button4.Visible = true;
-            //ControlTextReset();
+            ControlTextReset();
+            dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, 0));
+            dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, 0));
 
         }
+
+        private void ControlTextReset()
+        {
+            txtSysMiCode.Text =
+            txtSysMiName.Text =
+
+            txtSort.Text =
+            txtRemark.Text =
+
+            cboUseYN.Text = "";
+        }
+
         private void ChangeValue_Check(int check)
         {
             this.check = check;
@@ -441,6 +457,8 @@ namespace Team5_XN
                             cbo.Enabled = true;
                         else if (ctrl is Button btn)
                             btn.Enabled = true;
+                        txtSysMaCode.ReadOnly = true;
+                        txtSysMaName.ReadOnly = true;
                     }
                 }
                 else if (check == 9 && dgvSysMaster.CurrentRow != null && dgvSysMaster.CurrentRow.Index >= rowCount) //추가한 행
@@ -543,7 +561,6 @@ namespace Team5_XN
 
             txtSysMaCode.Text = dgvSysMaster["Code", dgvSysMaster.CurrentRow.Index].Value.ToString();
             txtSysMaName.Text = dgvSysMaster["Name", dgvSysMaster.CurrentRow.Index].Value.ToString();
-            //dgvSysDetail_CellClick(sender, e);
         }
 
 
@@ -577,7 +594,8 @@ namespace Team5_XN
             dgvSysDetail.CurrentCell = dgvSysDetail[0, dgvSysDetail.RowCount - 1];
             ChangeValue_Check(1); //추가
             dgvSysDetail.Enabled = false;
-            //dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, dgvSysDetail.RowCount - 1));
+            //ControlTextReset();
+            dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, dgvSysDetail.RowCount - 1));
             //dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, dgvSysDetail.RowCount - 1));
         }
 

@@ -30,6 +30,21 @@ namespace Team5_XN_DAC
 
             return (result > 0);
         }
+        public bool LoginCheck(UserVO user) // 로그인
+        {
+            string sql = @"SELECT count(*) FROM User_Master WHERE User_ID=@User_ID AND User_PW=@User_PW";
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+
+                cmd.Parameters.AddWithValue("@User_ID", user.User_ID);
+                cmd.Parameters.AddWithValue("@User_PW", user.User_PW);
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
         public bool AddID(UserVO user) // 계정추가
         {
             SqlCommand cmd = new SqlCommand();
@@ -244,7 +259,9 @@ UserGroup_Master";
         }
         public DataTable GetUserAuthority()
         {
-            string sql = @"  SELECT s.Screen_Code, m.WordKey, s.Pre_Type
+            string sql = @"  SELECT s.UserGroup_Code, s.Screen_Code, m.WordKey, 
+(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = s.Use_YN) Use_YN,
+s.Ins_Date, s.Ins_Emp, s.Up_Date, s.Up_Emp
   FROM ScreenItem_Authority s INNER JOIN Screenitem_Master m ON s.Screen_Code = m.Screen_Code";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
@@ -265,6 +282,29 @@ UserGroup_Master";
                 da.Fill(dt);
             }
             return dt;
+        }
+        public int SaveAuthority(DataTable dt, int check)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_User_Group_Authority_Save", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@Authority_Data", System.Data.SqlDbType.Structured)
+                {
+                    TypeName = "dbo.User_Group_Authority_Type",
+                    Value = dt
+                });
+                cmd.Parameters.AddWithValue("@Check", check);
+
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return -1;
+            }
         }
         public void Dispose()
         {

@@ -59,13 +59,13 @@ namespace Team5_XN
             this.cboUse = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtName = new WinReflectionSettings.PlaceholderTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtCode = new WinReflectionSettings.PlaceholderTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.pnlBorder.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScreen)).BeginInit();
@@ -371,13 +371,13 @@ namespace Team5_XN
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSelect.Controls.Add(this.txtCode);
+            this.pnlSelect.Controls.Add(this.txtName);
             this.pnlSelect.Controls.Add(this.cboUse);
             this.pnlSelect.Controls.Add(this.label15);
             this.pnlSelect.Controls.Add(this.label16);
-            this.pnlSelect.Controls.Add(this.txtName);
             this.pnlSelect.Controls.Add(this.label13);
             this.pnlSelect.Controls.Add(this.label14);
-            this.pnlSelect.Controls.Add(this.txtCode);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Controls.Add(this.panel2);
             this.pnlSelect.Controls.Add(this.label12);
@@ -418,15 +418,6 @@ namespace Team5_XN
             this.label16.Text = "사용유무";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("맑은 고딕", 8.25F);
-            this.txtName.Location = new System.Drawing.Point(418, 15);
-            this.txtName.Name = "txtName";
-            this.txtName.PlaceholderText = "화면명";
-            this.txtName.Size = new System.Drawing.Size(133, 22);
-            this.txtName.TabIndex = 28;
-            // 
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("맑은 고딕", 8.25F);
@@ -448,15 +439,6 @@ namespace Team5_XN
             this.label14.TabIndex = 26;
             this.label14.Text = "화면명";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtCode
-            // 
-            this.txtCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F);
-            this.txtCode.Location = new System.Drawing.Point(112, 14);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.PlaceholderText = "화면코드";
-            this.txtCode.Size = new System.Drawing.Size(133, 22);
-            this.txtCode.TabIndex = 25;
             // 
             // label1
             // 
@@ -488,6 +470,22 @@ namespace Team5_XN
             this.label12.TabIndex = 23;
             this.label12.Text = "화면코드";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtCode
+            // 
+            this.txtCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F);
+            this.txtCode.Location = new System.Drawing.Point(112, 14);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(133, 22);
+            this.txtCode.TabIndex = 82;
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("맑은 고딕", 8.25F);
+            this.txtName.Location = new System.Drawing.Point(418, 15);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(133, 22);
+            this.txtName.TabIndex = 83;
             // 
             // frmScreenManagement
             // 
@@ -531,7 +529,6 @@ namespace Team5_XN
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnlSelect;
         private System.Windows.Forms.Panel panel2;
-        private WinReflectionSettings.PlaceholderTextBox txtCode;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label5;
@@ -540,7 +537,6 @@ namespace Team5_XN
         private System.Windows.Forms.ComboBox cboUse;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private WinReflectionSettings.PlaceholderTextBox txtName;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cboUseYN;
@@ -551,5 +547,7 @@ namespace Team5_XN
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtWordKey;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.TextBox txtName;
     }
 }
