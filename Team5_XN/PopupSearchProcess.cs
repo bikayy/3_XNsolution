@@ -30,11 +30,11 @@ namespace Team5_XN
         private void PopupSearchProcess_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dataGridView1);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정코드", "Process_Code", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정명", "Process_Name", DataGridViewContentAlignment.MiddleLeft, colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정그룹", "Process_Group", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고", "Remark", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "사용유무", "Use_YN", colWidth: 70);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정코드", "Process_Code", colWidth: 120);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정명", "Process_Name",  colWidth: 120);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정그룹", "Process_Group", colWidth: 120);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고", "Remark", colWidth: 140);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "사용유무", "Use_YN", colWidth: 70, visibility:false);
 
             pserv = new ProcessService();
             LoadData();

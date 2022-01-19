@@ -25,7 +25,7 @@ namespace Team5_XN
         DateTime date;
         //private event Myevent;
         CancelEventArgs args = new CancelEventArgs();
-        private event CancelEventHandler MyEvent;
+        static public event CancelEventHandler MyEvent;
         //_myEvent.DynamicInvoke(new object[] { this, args });
 
 
@@ -51,12 +51,12 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업지시일자", "Plan_Date", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업지시수량", "Plan_Qty_Box", colWidth: 80);
 
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장", "Wc_Name", colWidth: 150);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정", "Process_Name", colWidth: 130);
+
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목코드", "Item_Code", colWidth: 180);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목명", "Item_Name", colWidth: 180);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "퓸목명(영문)", "Item_Name_Eng", colWidth: 180);
-
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장", "Wc_Name", colWidth: 150);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정", "Process_Name", colWidth: 130);
 
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "생산일자", "Prd_Date", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "생산시작", "Prd_StartTime", colWidth: 130);
@@ -121,6 +121,10 @@ namespace Team5_XN
             {
                 //if (sb.Length > 0) sb.Append(" AND ");
                 sb.Append(" AND Wo_Status = '" + cboWoStatus.Text + "'");
+            }
+            if (!string.IsNullOrWhiteSpace(txtSelectWoNo.Text))
+            {
+                sb.Append(" AND WorkOrderNo LIKE '%" + txtSelectWoNo.Text + "%'");
             }
 
             dv_SerchList.RowFilter = sb.ToString();

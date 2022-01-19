@@ -63,6 +63,11 @@ namespace Team5_XN
             //dataGridView1.Columns["Prd_StartTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
             //dataGridView1.Columns["Prd_EndTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm";
 
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
             dataGridView1.AutoGenerateColumns = false;
         }

@@ -84,6 +84,7 @@ namespace Team5_XN
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
             txtSelectProcessCode.Text = txtSelectProcessName.Text = "";
             cboSelectUse_YN.SelectedIndex = 0;
+            dataGridView1.CurrentCell = null;
             ControlTextReset();
         }
 
@@ -532,7 +533,9 @@ namespace Team5_XN
             txtProcessName.Text =
             txtRemark.Text = "";
             cboProcessGroup.SelectedIndex =
-            cboUse_YN.SelectedIndex = 0; 
+            cboUse_YN.SelectedIndex = 0;
+
+            //dataGridView1.CurrentCell = null;
         }
 
        

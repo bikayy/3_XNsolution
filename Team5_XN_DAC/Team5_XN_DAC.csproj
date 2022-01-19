@@ -49,6 +49,7 @@
     <Compile Include="Helper.cs" />
     <Compile Include="ItemDAC.cs" />
     <Compile Include="MenuDAC.cs" />
+    <Compile Include="POPDAC\NopRegistDAC.cs" />
     <Compile Include="POPDAC\WcDAC.cs" />
     <Compile Include="ProcessDAC.cs" />
     <Compile Include="ProductionDAC\PlanDAC.cs" />

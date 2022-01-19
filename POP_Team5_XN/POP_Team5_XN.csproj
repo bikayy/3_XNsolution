@@ -52,17 +52,41 @@
     <Compile Include="Controls\ucDateTime.Designer.cs">
       <DependentUpon>ucDateTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucNopHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucNopHistory.Designer.cs">
+      <DependentUpon>ucNopHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucNopHistory_Top.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucNopHistory_Top.Designer.cs">
+      <DependentUpon>ucNopHistory_Top.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucNopRegist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucNopRegist.Designer.cs">
+      <DependentUpon>ucNopRegist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="POPNopRegister.cs.cs">
+    <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POPNopRegister.cs.Designer.cs">
-      <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPNopRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPNopRegister.Designer.cs">
+      <DependentUpon>POPNopRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="POPWorkCenter.cs">
       <SubType>Form</SubType>
@@ -81,11 +105,20 @@
     <EmbeddedResource Include="Controls\ucDateTime.resx">
       <DependentUpon>ucDateTime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucNopHistory.resx">
+      <DependentUpon>ucNopHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucNopHistory_Top.resx">
+      <DependentUpon>ucNopHistory_Top.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucNopRegist.resx">
+      <DependentUpon>ucNopRegist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POPNopRegister.cs.resx">
-      <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
+    <EmbeddedResource Include="POPNopRegister.resx">
+      <DependentUpon>POPNopRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POPWorkCenter.resx">
       <DependentUpon>POPWorkCenter.cs</DependentUpon>

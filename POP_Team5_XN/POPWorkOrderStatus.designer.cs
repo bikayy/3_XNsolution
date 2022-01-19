@@ -57,6 +57,7 @@ namespace POP_Team5_XN
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnNopReg = new System.Windows.Forms.Button();
             this.btnPfm = new System.Windows.Forms.Button();
             this.btnPalette = new System.Windows.Forms.Button();
             this.btnClosing = new System.Windows.Forms.Button();
@@ -64,7 +65,6 @@ namespace POP_Team5_XN
             this.btnStart = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
-            this.btnNopReg = new System.Windows.Forms.Button();
             this.pnlOrList.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -432,6 +432,21 @@ namespace POP_Team5_XN
             this.panel3.Size = new System.Drawing.Size(1084, 125);
             this.panel3.TabIndex = 7;
             // 
+            // btnNopReg
+            // 
+            this.btnNopReg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNopReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            this.btnNopReg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNopReg.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnNopReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(96)))), ((int)(((byte)(149)))));
+            this.btnNopReg.Location = new System.Drawing.Point(945, 12);
+            this.btnNopReg.Name = "btnNopReg";
+            this.btnNopReg.Size = new System.Drawing.Size(123, 101);
+            this.btnNopReg.TabIndex = 7;
+            this.btnNopReg.Text = "비가동등록";
+            this.btnNopReg.UseVisualStyleBackColor = false;
+            this.btnNopReg.Click += new System.EventHandler(this.btnNopReg_Click);
+            // 
             // btnPfm
             // 
             this.btnPfm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -521,24 +536,10 @@ namespace POP_Team5_XN
             // 
             this.ucDateTime1.BackColor = System.Drawing.Color.Transparent;
             this.ucDateTime1.Location = new System.Drawing.Point(12, 22);
+            this.ucDateTime1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ucDateTime1.Name = "ucDateTime1";
             this.ucDateTime1.Size = new System.Drawing.Size(277, 82);
             this.ucDateTime1.TabIndex = 0;
-            // 
-            // btnNopReg
-            // 
-            this.btnNopReg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNopReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.btnNopReg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNopReg.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnNopReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(96)))), ((int)(((byte)(149)))));
-            this.btnNopReg.Location = new System.Drawing.Point(945, 12);
-            this.btnNopReg.Name = "btnNopReg";
-            this.btnNopReg.Size = new System.Drawing.Size(123, 101);
-            this.btnNopReg.TabIndex = 7;
-            this.btnNopReg.Text = "비가동등록";
-            this.btnNopReg.UseVisualStyleBackColor = false;
-            this.btnNopReg.Click += new System.EventHandler(this.btnNopReg_Click);
             // 
             // POPWorkOrderStatus
             // 

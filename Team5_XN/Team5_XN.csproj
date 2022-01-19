@@ -211,17 +211,17 @@
     <Compile Include="frmModule.Designer.cs">
       <DependentUpon>frmModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNopHistory3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNopHistory3.Designer.cs">
+      <DependentUpon>frmNopHistory3.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNopHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmNopHistory.Designer.cs">
       <DependentUpon>frmNopHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmNopHistory2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNopHistory2.Designer.cs">
-      <DependentUpon>frmNopHistory2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPOPMain.cs">
       <SubType>Form</SubType>
@@ -319,12 +319,6 @@
     <Compile Include="POPCreateWork.Designer.cs">
       <DependentUpon>POPCreateWork.cs</DependentUpon>
     </Compile>
-    <Compile Include="POPNopRegister.cs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="POPNopRegister.cs.Designer.cs">
-      <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
-    </Compile>
     <Compile Include="PopupAddPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +391,7 @@
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\DayProductionService.cs" />
     <Compile Include="Service\ItemService.cs" />
+    <Compile Include="Service\POPService\NopService.cs" />
     <Compile Include="Service\POPService\WcService.cs" />
     <Compile Include="Service\ProcessService.cs" />
     <Compile Include="Service\ProductionService\PlanService.cs" />
@@ -405,6 +400,12 @@
     <Compile Include="Service\TimeProductionService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WorkCenterService.cs" />
+    <Compile Include="Controls\ucNopRegist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucNopRegist.Designer.cs">
+      <DependentUpon>ucNopRegist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utill\CommonUtil.cs" />
     <Compile Include="Utill\DataGridViewUtil.cs" />
     <Compile Include="frmWorkCenter.cs">
@@ -424,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucDateTime.resx">
       <DependentUpon>ucDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucNopRegist.resx">
+      <DependentUpon>ucNopRegist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucPaletteList.resx">
       <DependentUpon>ucPaletteList.cs</DependentUpon>
@@ -497,11 +501,11 @@
     <EmbeddedResource Include="frmModule.resx">
       <DependentUpon>frmModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNopHistory3.resx">
+      <DependentUpon>frmNopHistory3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNopHistory.resx">
       <DependentUpon>frmNopHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNopHistory2.resx">
-      <DependentUpon>frmNopHistory2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPOPMain.resx">
       <DependentUpon>frmPOPMain.cs</DependentUpon>
@@ -550,9 +554,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POPCreateWork.resx">
       <DependentUpon>POPCreateWork.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="POPNopRegister.cs.resx">
-      <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupAddPlan.resx">
       <DependentUpon>PopupAddPlan.cs</DependentUpon>
