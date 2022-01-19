@@ -44,7 +44,6 @@
     <Compile Include="BoxingGradeVO.cs" />
     <Compile Include="CommonVO.cs" />
     <Compile Include="NopCodeVO.cs" />
-    <Compile Include="NopVO.cs" />
     <Compile Include="POPVO\WcVO.cs" />
     <Compile Include="ProcessVO.cs" />
     <Compile Include="ProductionVO\InputListVO.cs" />
