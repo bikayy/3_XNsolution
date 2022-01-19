@@ -30,6 +30,13 @@ namespace Team5_XN
         private void InitializeComponent()
         {
             this.pnlBorder = new System.Windows.Forms.Panel();
+            this.pnlSubject2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pnlDgv = new System.Windows.Forms.Panel();
+            this.dgvUserGroup = new System.Windows.Forms.DataGridView();
+            this.pnlSubject1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pnlDetail = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboAdmin = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -43,13 +50,6 @@ namespace Team5_XN
             this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.pnlSubject2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlDgv = new System.Windows.Forms.Panel();
-            this.dgvUserGroup = new System.Windows.Forms.DataGridView();
-            this.pnlSubject1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pnlDetail = new System.Windows.Forms.Panel();
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.txtUserGroupName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,12 +62,12 @@ namespace Team5_XN
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlBorder.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.pnlSubject2.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroup)).BeginInit();
             this.pnlSubject1.SuspendLayout();
             this.pnlDetail.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,96 @@ namespace Team5_XN
             this.pnlBorder.Padding = new System.Windows.Forms.Padding(5);
             this.pnlBorder.Size = new System.Drawing.Size(1284, 661);
             this.pnlBorder.TabIndex = 5;
+            // 
+            // pnlSubject2
+            // 
+            this.pnlSubject2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSubject2.BackColor = System.Drawing.Color.White;
+            this.pnlSubject2.Controls.Add(this.label3);
+            this.pnlSubject2.Location = new System.Drawing.Point(5, 546);
+            this.pnlSubject2.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSubject2.Name = "pnlSubject2";
+            this.pnlSubject2.Size = new System.Drawing.Size(1274, 30);
+            this.pnlSubject2.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Gainsboro;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 30);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "입력정보";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlDgv
+            // 
+            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDgv.BackColor = System.Drawing.Color.White;
+            this.pnlDgv.Controls.Add(this.dgvUserGroup);
+            this.pnlDgv.Controls.Add(this.pnlSubject1);
+            this.pnlDgv.Location = new System.Drawing.Point(5, 59);
+            this.pnlDgv.Margin = new System.Windows.Forms.Padding(10);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnlDgv.Size = new System.Drawing.Size(1274, 488);
+            this.pnlDgv.TabIndex = 6;
+            // 
+            // dgvUserGroup
+            // 
+            this.dgvUserGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUserGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserGroup.Location = new System.Drawing.Point(0, 35);
+            this.dgvUserGroup.Name = "dgvUserGroup";
+            this.dgvUserGroup.RowTemplate.Height = 23;
+            this.dgvUserGroup.Size = new System.Drawing.Size(1274, 448);
+            this.dgvUserGroup.TabIndex = 1;
+            this.dgvUserGroup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserGroup_CellClick);
+            this.dgvUserGroup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserGroup_CellContentClick);
+            // 
+            // pnlSubject1
+            // 
+            this.pnlSubject1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSubject1.BackColor = System.Drawing.Color.White;
+            this.pnlSubject1.Controls.Add(this.label9);
+            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
+            this.pnlSubject1.Name = "pnlSubject1";
+            this.pnlSubject1.Size = new System.Drawing.Size(1274, 30);
+            this.pnlSubject1.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Gainsboro;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(133, 30);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "조회내역";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlDetail
+            // 
+            this.pnlDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDetail.BackColor = System.Drawing.Color.White;
+            this.pnlDetail.Controls.Add(this.panel1);
+            this.pnlDetail.Location = new System.Drawing.Point(5, 575);
+            this.pnlDetail.Name = "pnlDetail";
+            this.pnlDetail.Size = new System.Drawing.Size(1274, 81);
+            this.pnlDetail.TabIndex = 4;
             // 
             // panel1
             // 
@@ -112,6 +202,7 @@ namespace Team5_XN
             // 
             // cboAdmin
             // 
+            this.cboAdmin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAdmin.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboAdmin.FormattingEnabled = true;
             this.cboAdmin.Location = new System.Drawing.Point(463, 44);
@@ -206,6 +297,7 @@ namespace Team5_XN
             // 
             // cboUseYN
             // 
+            this.cboUseYN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUseYN.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboUseYN.FormattingEnabled = true;
             this.cboUseYN.Location = new System.Drawing.Point(168, 44);
@@ -235,96 +327,6 @@ namespace Team5_XN
             this.label17.TabIndex = 26;
             this.label17.Text = "사용여부";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlSubject2
-            // 
-            this.pnlSubject2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSubject2.BackColor = System.Drawing.Color.White;
-            this.pnlSubject2.Controls.Add(this.label3);
-            this.pnlSubject2.Location = new System.Drawing.Point(5, 546);
-            this.pnlSubject2.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlSubject2.Name = "pnlSubject2";
-            this.pnlSubject2.Size = new System.Drawing.Size(1274, 30);
-            this.pnlSubject2.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Gainsboro;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 30);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "입력정보";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlDgv
-            // 
-            this.pnlDgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlDgv.BackColor = System.Drawing.Color.White;
-            this.pnlDgv.Controls.Add(this.dgvUserGroup);
-            this.pnlDgv.Controls.Add(this.pnlSubject1);
-            this.pnlDgv.Location = new System.Drawing.Point(5, 59);
-            this.pnlDgv.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlDgv.Size = new System.Drawing.Size(1274, 488);
-            this.pnlDgv.TabIndex = 6;
-            // 
-            // dgvUserGroup
-            // 
-            this.dgvUserGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvUserGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserGroup.Location = new System.Drawing.Point(0, 35);
-            this.dgvUserGroup.Name = "dgvUserGroup";
-            this.dgvUserGroup.RowTemplate.Height = 23;
-            this.dgvUserGroup.Size = new System.Drawing.Size(1274, 448);
-            this.dgvUserGroup.TabIndex = 1;
-            this.dgvUserGroup.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserGroup_CellClick);
-            this.dgvUserGroup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserGroup_CellContentClick);
-            // 
-            // pnlSubject1
-            // 
-            this.pnlSubject1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSubject1.BackColor = System.Drawing.Color.White;
-            this.pnlSubject1.Controls.Add(this.label9);
-            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
-            this.pnlSubject1.Name = "pnlSubject1";
-            this.pnlSubject1.Size = new System.Drawing.Size(1274, 30);
-            this.pnlSubject1.TabIndex = 7;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Gainsboro;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 30);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "조회내역";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlDetail
-            // 
-            this.pnlDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlDetail.BackColor = System.Drawing.Color.White;
-            this.pnlDetail.Controls.Add(this.panel1);
-            this.pnlDetail.Location = new System.Drawing.Point(5, 575);
-            this.pnlDetail.Name = "pnlDetail";
-            this.pnlDetail.Size = new System.Drawing.Size(1274, 81);
-            this.pnlDetail.TabIndex = 4;
             // 
             // pnlSelect
             // 
@@ -380,6 +382,7 @@ namespace Team5_XN
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(570, 16);
@@ -459,13 +462,13 @@ namespace Team5_XN
             this.Text = "사용자그룹관리";
             this.Load += new System.EventHandler(this.frmUserGroup_Load);
             this.pnlBorder.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.pnlSubject2.ResumeLayout(false);
             this.pnlDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserGroup)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.ResumeLayout(false);
