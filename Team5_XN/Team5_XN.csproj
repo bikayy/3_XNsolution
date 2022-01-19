@@ -304,7 +304,7 @@
     <Compile Include="frmWorkPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmWorkPlan.Designer.cs">
+    <Compile Include="frmWorkPlan.designer.cs">
       <DependentUpon>frmWorkPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWorkRequest.cs">

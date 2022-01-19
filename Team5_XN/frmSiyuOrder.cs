@@ -20,8 +20,8 @@ namespace Team5_XN
         OrderService orderServ = new OrderService();
         PlanService planServ = new PlanService();
 
-        //PlanSearchVO ps = null;
-
+        string pStatus = string.Empty;
+        string oStatus = string.Empty;
 
         Main main = null;
 
@@ -39,6 +39,9 @@ namespace Team5_XN
         private void frmSiyuOrder_Load(object sender, EventArgs e)
         {
             main = (Main)this.MdiParent;
+
+            main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
+            main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
             //main.Select += OnSelect;
             //main.Create += OnCreate;
             //main.Update += OnUpdate;
@@ -227,7 +230,7 @@ namespace Team5_XN
             if (e.RowIndex < 0) return;
 
             ClearItems(grbOrder);
-
+            pStatus = dgvPlan[9, e.RowIndex].Value.ToString();
             string planNo = dgvPlan[0, e.RowIndex].Value.ToString();
             List<GetPlanListVO> planInfo = (List<GetPlanListVO>)dgvPlan.DataSource;
             GetPlanListVO plan = planInfo.Find((item) => item.Prd_Plan_No == planNo);
@@ -272,6 +275,12 @@ namespace Team5_XN
             if (string.IsNullOrWhiteSpace(p_txtPlanNo.Text))
             {
                 MessageBox.Show("생산계획을 먼저 선택하여주십시오.");
+                return;
+            }
+
+            if (pStatus.Equals("생산계획마감"))
+            {
+                MessageBox.Show("생산계획상태가 '생산계획마감'인 경우는 작업지시를 추가할 수 없습니다.");
                 return;
             }
 
@@ -372,7 +381,7 @@ namespace Team5_XN
                 }
 
                 //sb.AppendLine($"{o_lblOPDate.Text} : {o_dtpOPDate.Value.ToString("yyyy-MM-dd")}");
-                sb.AppendLine($"{o_lblOPTime.Text} : {o_dtpFromTime.Value.ToString("yyyy-MM-dd HH:mm")} ~ \n{o_dtpToTime.Value.ToString("yyyy-MM-dd HH:mm")}");
+                sb.AppendLine($"{o_lblOPDate.Text} : {o_dtpFromTime.Value.ToString("yyyy-MM-dd HH:mm")} ~ \n{o_dtpToTime.Value.ToString("yyyy-MM-dd HH:mm")}");
                 sb.AppendLine($"{o_lblRemark.Text} : {o_txtRemark.Text}");
                 sb.AppendLine("위의 정보로 작업지시를 등록하시겠습니까?");
 
@@ -447,7 +456,7 @@ namespace Team5_XN
                 }
 
                 //sb.AppendLine($"{o_lblOPDate.Text} : {o_dtpOPDate.Value.ToString("yyyy-MM-dd")}");
-                sb.AppendLine($"{o_lblOPTime.Text} : {o_dtpFromTime.Value.ToString("yyyy-MM-dd HH:mm")} ~ \n{o_dtpToTime.Value.ToString("yyyy-MM-dd HH:mm")}");
+                sb.AppendLine($"{o_lblOPDate.Text} : {o_dtpFromTime.Value.ToString("yyyy-MM-dd HH:mm")} ~ \n{o_dtpToTime.Value.ToString("yyyy-MM-dd HH:mm")}");
                 sb.AppendLine($"{o_lblRemark.Text} : {o_txtRemark.Text}");
                 sb.AppendLine($"{o_lblRemark.Text} : {o_txtRemark.Text}");
                 sb.AppendLine("위의 정보로 작업지시를 수정하시겠습니까?");
@@ -504,6 +513,11 @@ namespace Team5_XN
             if (string.IsNullOrWhiteSpace(o_txtOrderNo.Text))
             {
                 MessageBox.Show("수정할 작업지시를 선택하여주십시오.");
+                return;
+            }
+            if (oStatus != "생산대기")
+            {
+                MessageBox.Show("작업지시상태가 '생산대기'인 경우에만 작업지시를 수정할 수 있습니다.");
                 return;
             }
 
@@ -573,9 +587,15 @@ namespace Team5_XN
 
         private void btnEnd_Click(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrWhiteSpace(o_txtOrderNo.Text))
             {
                 MessageBox.Show("마감할 작업지시를 선택하여주십시오.");
+                return;
+            }
+            if (oStatus != "현장마감")
+            {
+                MessageBox.Show("작업지시 상태가 '현장마감'인 경우에만 작업지시마감이 가능합니다.");
                 return;
             }
 
@@ -593,8 +613,9 @@ namespace Team5_XN
                         ItemCode = txtItemCode.Text,
                         WCCode = txtWCCode.Text
                     };
+                    dgvPlan_CellClick(dgvPlan, new DataGridViewCellEventArgs(0, dgvPlan.CurrentRow.Index));
                     //LoadOrder(ps);
-                    ClearItems(grbOrder);
+                    //ClearItems(grbOrder);
                 }
                 else MessageBox.Show("작업지시 마감에 실패하였습니다.\n작업지시 상태를 확인하여주십시오.");
             }
@@ -604,6 +625,7 @@ namespace Team5_XN
         {
             if (e.RowIndex < 0) return;
             if (dgvOrder.Rows.Count < 1) return;
+            oStatus = dgvOrder[0, e.RowIndex].Value.ToString();
             ClearItems(grbPlan);
 
             string orderNo = dgvOrder[1, e.RowIndex].Value.ToString();
@@ -649,6 +671,12 @@ namespace Team5_XN
                 return;
             }
 
+            if (oStatus != "작업지시마감")
+            {
+                MessageBox.Show("작업지시 상태가 '작업지시마감'인 경우에만 작업지시 마감 취소가 가능합니다.");
+                return;
+            }
+
             DialogResult result = MessageBox.Show($"{ o_txtOrderNo.Text}의 작업지시를 마감 취소하시겠습니까?", "작업지시마감취소", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -663,8 +691,9 @@ namespace Team5_XN
                         ItemCode = txtItemCode.Text,
                         WCCode = txtWCCode.Text
                     };
+                    dgvPlan_CellClick(dgvPlan, new DataGridViewCellEventArgs(0, dgvPlan.CurrentRow.Index));
                     //LoadOrder(ps);
-                    ClearItems(grbOrder);
+                    //ClearItems(grbOrder);
                 }
                 else MessageBox.Show("작업지시 마감 취소에 실패하였습니다.\n작업지시 상태를 확인하여주십시오.");
             }
