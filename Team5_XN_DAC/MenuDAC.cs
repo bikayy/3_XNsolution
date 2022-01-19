@@ -168,42 +168,21 @@ where C.Seq in (select C.Seq
             }
             return dt;
         }
-		public DataTable GetNopHistory(string userid)
+		public DataTable GetNopHistory()
 		{
-			string sql = @"SELECT A.Nop_Seq
-          , A.Nop_HappenTime
-          , A.Nop_CancelTime
-          , A.Nop_Mi_Code
-          , (select Nop_Mi_Name from Nop_Mi_Master where Nop_Mi_Code = A.Nop_Mi_Code)as Nop_Mi_Name
-		  ,A.Nop_Ma_Code
-		  ,(select Nop_Ma_Name from Nop_Ma_Master where Nop_Ma_Code = A.Nop_Ma_Code)as Nop_Ma_Name
-		  ,A.Wc_Code
-		  ,(select Wc_Name From WorkCenter_Master where Wc_Code = A.Wc_Code)as Wc_Name
-		  ,A.Nop_Time
-		  ,Ins_Date
-		  ,Ins_Emp
-		  ,Up_Date
-		  ,Up_Emp
-
-    FROM(SELECT
-                 Nop_Seq
-                , Nop_HappenTime
-                , Nop_CancelTime
-                , Nop_Time
-                , Nop_Mi_Code
-                , Nop_Ma_Code
-                , Wc_Code
-                , Ins_Date
-                , Ins_Emp
-                , Up_Date
-                , Up_Emp
-          FROM Nop_History";
+			string sql = @"SELECT Nop_seq, Wc_Code,
+(select Wc_Name From WorkCenter_Master where Wc_Code = N.Wc_Code)as Wc_Name,
+Nop_HappenTime, Nop_CancelTime,
+Nop_Time, Nop_Ma_Code, 
+(select Nop_Ma_Name from Nop_Ma_Master where Nop_Ma_Code = N.Nop_Ma_Code) as Nop_Ma_Name,
+Nop_Mi_Code, 
+(select Nop_Mi_Name from Nop_Mi_Master where Nop_Mi_Code = N.Nop_Mi_Code) as Nop_Mi_Name
+FROM Nop_History N
+";
 
 			DataTable dt = new DataTable();
 			using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
 			{
-				da.SelectCommand.Parameters.AddWithValue("@userid", userid);
-
 				da.Fill(dt);
 			}
 			return dt;

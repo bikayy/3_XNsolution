@@ -142,6 +142,7 @@ namespace Team5_XN
 
         private void OnSave(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             int result = 0;
@@ -264,6 +265,7 @@ namespace Team5_XN
         }
         private void OnDelete(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (dgvBoxDetail.CurrentCell == null)

@@ -63,8 +63,8 @@ namespace Team5_XN_DAC
         }
         public bool UpdateID(UserVO user) // 업데이트
         {
-            string sql = @"Update User_Master SET User_PW=@User_PW , Up_Date = GETDATE()
-                            WHERE User_ID=@User_ID";
+            string sql = @"Update User_Master SET User_PW=@User_PW , PW_Reset_Count = PW_Reset_Count + 1, Up_Date = GETDATE()
+WHERE User_ID=@User_ID";
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
@@ -242,7 +242,7 @@ UserGroup_Master";
         }
         public List<UGSearchVO> GetUGList()
         {
-            string sql = @"select UserGroup_Code, UserGroup_Name from UserGroup_Master";
+            string sql = @"select UserGroup_Code, UserGroup_Name from UserGroup_Master where Use_YN = 'Y'";
 
             try
             {

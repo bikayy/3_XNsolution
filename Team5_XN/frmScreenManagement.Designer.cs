@@ -56,6 +56,8 @@ namespace Team5_XN
             this.pnlSubject2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.cboUse = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -64,8 +66,6 @@ namespace Team5_XN
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.pnlBorder.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScreen)).BeginInit();
@@ -187,6 +187,7 @@ namespace Team5_XN
             // 
             // cboUseYN
             // 
+            this.cboUseYN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUseYN.FormattingEnabled = true;
             this.cboUseYN.Location = new System.Drawing.Point(710, 26);
             this.cboUseYN.Name = "cboUseYN";
@@ -195,6 +196,7 @@ namespace Team5_XN
             // 
             // cboMonitor
             // 
+            this.cboMonitor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMonitor.FormattingEnabled = true;
             this.cboMonitor.Location = new System.Drawing.Point(710, 53);
             this.cboMonitor.Name = "cboMonitor";
@@ -388,8 +390,25 @@ namespace Team5_XN
             this.pnlSelect.Size = new System.Drawing.Size(1274, 54);
             this.pnlSelect.TabIndex = 1;
             // 
+            // txtCode
+            // 
+            this.txtCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F);
+            this.txtCode.Location = new System.Drawing.Point(112, 14);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(133, 22);
+            this.txtCode.TabIndex = 82;
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("맑은 고딕", 8.25F);
+            this.txtName.Location = new System.Drawing.Point(418, 15);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(133, 22);
+            this.txtName.TabIndex = 83;
+            // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(710, 16);
             this.cboUse.Name = "cboUse";
@@ -470,22 +489,6 @@ namespace Team5_XN
             this.label12.TabIndex = 23;
             this.label12.Text = "화면코드";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtCode
-            // 
-            this.txtCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F);
-            this.txtCode.Location = new System.Drawing.Point(112, 14);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(133, 22);
-            this.txtCode.TabIndex = 82;
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("맑은 고딕", 8.25F);
-            this.txtName.Location = new System.Drawing.Point(418, 15);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(133, 22);
-            this.txtName.TabIndex = 83;
             // 
             // frmScreenManagement
             // 

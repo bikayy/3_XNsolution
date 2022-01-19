@@ -30,16 +30,22 @@ namespace Team5_XN
         private void InitializeComponent()
         {
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pnlSubject2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
+            this.pnlSubject2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtScreenCode = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtWordKey = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtGroupCode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtUserCode = new System.Windows.Forms.TextBox();
@@ -48,18 +54,12 @@ namespace Team5_XN
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlDgv = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.pnlSubject1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.dgvUserAuthority = new System.Windows.Forms.DataGridView();
-            this.txtWordKey = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtScreenCode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
-            this.pnlSubject2.SuspendLayout();
             this.pnlDetail.SuspendLayout();
+            this.pnlSubject2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.pnlDgv.SuspendLayout();
@@ -81,6 +81,17 @@ namespace Team5_XN
             this.panel5.Size = new System.Drawing.Size(1284, 661);
             this.panel5.TabIndex = 6;
             // 
+            // pnlDetail
+            // 
+            this.pnlDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDetail.BackColor = System.Drawing.Color.White;
+            this.pnlDetail.Controls.Add(this.pnlSubject2);
+            this.pnlDetail.Location = new System.Drawing.Point(5, 546);
+            this.pnlDetail.Name = "pnlDetail";
+            this.pnlDetail.Size = new System.Drawing.Size(1274, 108);
+            this.pnlDetail.TabIndex = 12;
+            // 
             // pnlSubject2
             // 
             this.pnlSubject2.BackColor = System.Drawing.Color.White;
@@ -92,29 +103,6 @@ namespace Team5_XN
             this.pnlSubject2.Name = "pnlSubject2";
             this.pnlSubject2.Size = new System.Drawing.Size(1274, 108);
             this.pnlSubject2.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Gainsboro;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 30);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "입력정보";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlDetail
-            // 
-            this.pnlDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlDetail.BackColor = System.Drawing.Color.White;
-            this.pnlDetail.Controls.Add(this.pnlSubject2);
-            this.pnlDetail.Location = new System.Drawing.Point(5, 546);
-            this.pnlDetail.Name = "pnlDetail";
-            this.pnlDetail.Size = new System.Drawing.Size(1274, 108);
-            this.pnlDetail.TabIndex = 12;
             // 
             // panel1
             // 
@@ -138,6 +126,68 @@ namespace Team5_XN
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1274, 81);
             this.panel1.TabIndex = 15;
+            // 
+            // txtScreenCode
+            // 
+            this.txtScreenCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtScreenCode.Location = new System.Drawing.Point(168, 45);
+            this.txtScreenCode.Name = "txtScreenCode";
+            this.txtScreenCode.Size = new System.Drawing.Size(146, 21);
+            this.txtScreenCode.TabIndex = 43;
+            this.txtScreenCode.Tag = "Screen_Code";
+            this.txtScreenCode.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(43, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 23);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "*";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label8.Location = new System.Drawing.Point(61, 44);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 23);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "메뉴코드";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtWordKey
+            // 
+            this.txtWordKey.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtWordKey.Location = new System.Drawing.Point(428, 14);
+            this.txtWordKey.Name = "txtWordKey";
+            this.txtWordKey.Size = new System.Drawing.Size(131, 21);
+            this.txtWordKey.TabIndex = 37;
+            this.txtWordKey.Tag = "WordKey";
+            this.txtWordKey.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(347, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 23);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "*";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label10.Location = new System.Drawing.Point(365, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(71, 23);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "메뉴명";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtGroupCode
             // 
@@ -172,6 +222,7 @@ namespace Team5_XN
             // 
             // cboUseYN
             // 
+            this.cboUseYN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUseYN.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboUseYN.FormattingEnabled = true;
             this.cboUseYN.Location = new System.Drawing.Point(428, 44);
@@ -201,6 +252,18 @@ namespace Team5_XN
             this.label17.TabIndex = 26;
             this.label17.Text = "사용유무";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Gainsboro;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 30);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "입력정보";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlSelect
             // 
@@ -293,6 +356,17 @@ namespace Team5_XN
             this.pnlDgv.Size = new System.Drawing.Size(1274, 651);
             this.pnlDgv.TabIndex = 13;
             // 
+            // pnlSubject1
+            // 
+            this.pnlSubject1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSubject1.BackColor = System.Drawing.Color.White;
+            this.pnlSubject1.Controls.Add(this.label9);
+            this.pnlSubject1.Location = new System.Drawing.Point(0, 57);
+            this.pnlSubject1.Name = "pnlSubject1";
+            this.pnlSubject1.Size = new System.Drawing.Size(1274, 30);
+            this.pnlSubject1.TabIndex = 8;
+            // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.Gainsboro;
@@ -307,17 +381,6 @@ namespace Team5_XN
             this.label9.Text = "조회내역";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlSubject1
-            // 
-            this.pnlSubject1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSubject1.BackColor = System.Drawing.Color.White;
-            this.pnlSubject1.Controls.Add(this.label9);
-            this.pnlSubject1.Location = new System.Drawing.Point(0, 57);
-            this.pnlSubject1.Name = "pnlSubject1";
-            this.pnlSubject1.Size = new System.Drawing.Size(1274, 30);
-            this.pnlSubject1.TabIndex = 8;
-            // 
             // dgvUserAuthority
             // 
             this.dgvUserAuthority.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -331,68 +394,6 @@ namespace Team5_XN
             this.dgvUserAuthority.TabIndex = 1;
             this.dgvUserAuthority.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserAuthority_CellClick);
             // 
-            // txtWordKey
-            // 
-            this.txtWordKey.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtWordKey.Location = new System.Drawing.Point(428, 14);
-            this.txtWordKey.Name = "txtWordKey";
-            this.txtWordKey.Size = new System.Drawing.Size(131, 21);
-            this.txtWordKey.TabIndex = 37;
-            this.txtWordKey.Tag = "WordKey";
-            this.txtWordKey.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(347, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 23);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "*";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label10.Location = new System.Drawing.Point(365, 14);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 23);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "메뉴명";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtScreenCode
-            // 
-            this.txtScreenCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtScreenCode.Location = new System.Drawing.Point(168, 45);
-            this.txtScreenCode.Name = "txtScreenCode";
-            this.txtScreenCode.Size = new System.Drawing.Size(146, 21);
-            this.txtScreenCode.TabIndex = 43;
-            this.txtScreenCode.Tag = "Screen_Code";
-            this.txtScreenCode.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(43, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 23);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "*";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label8.Location = new System.Drawing.Point(61, 44);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 23);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "메뉴코드";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // frmUserGroupAuthority
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -403,8 +404,8 @@ namespace Team5_XN
             this.Text = "사용자그룹별 권한 설정";
             this.Load += new System.EventHandler(this.frmUserGroupAuthority_Load);
             this.panel5.ResumeLayout(false);
-            this.pnlSubject2.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
+            this.pnlSubject2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlSelect.ResumeLayout(false);
