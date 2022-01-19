@@ -14,7 +14,7 @@ namespace Team5_XN
 {
     public partial class PopupNopSearch : Form
     {
-        NopService nopServ = null;
+        NopCodeService nopServ = null;
         List<NopCodeVO> list = null;
 
         NopCodeVO sendInfo = new NopCodeVO();
@@ -30,7 +30,7 @@ namespace Team5_XN
 
         private void PopupNopSearch_Load(object sender, EventArgs e)
         {
-            nopServ = new NopService();
+            nopServ = new NopCodeService();
 
             LoadData();
         }
