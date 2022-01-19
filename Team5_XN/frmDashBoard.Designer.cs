@@ -166,7 +166,6 @@ namespace Team5_XN
             this.splitContainer2.Size = new System.Drawing.Size(665, 661);
             this.splitContainer2.SplitterDistance = 329;
             this.splitContainer2.TabIndex = 0;
-            this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
             // dgvDayProduct
             // 
