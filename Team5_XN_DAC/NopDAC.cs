@@ -40,12 +40,12 @@ FROM Nop_Ma_Master";
         {
             //sql 수정 필요
             string sql = @"SELECT Nop_Mi_Code, Nop_Mi_Name, Nop_Ma_Code,
-(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = Use_YN) Use_YN, 
-(select DetailName from CommonCodeUser where Code='PROC_GROUP' and DetailCode = Process_Group) Process_Group, Remark,
-Nop_type,
-(select DetailName from CommonCodeSystem where Code='REGULAR_TYPE' and DetailCode = Regular_Type) Regular_Type,
+(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = M.Use_YN) Use_YN, 
+(select DetailName from CommonCodeUser where Code='PROC_GROUP' and DetailCode = M.Process_Group) Process_Group, Process_Group Process_Group_Code, Remark,
+(select DetailName from CommonCodeSystem where Code='NOP_CODE_TYPE' and DetailCode = M.Regular_Type) Nop_type, Nop_type Nop_type_Code,
+(select DetailName from CommonCodeSystem where Code='REGULAR_TYPE' and DetailCode = M.Regular_Type) Regular_Type, Regular_Type Regular_Type_Code,
 Ins_Date, Ins_Emp, Up_Date, Up_Emp
-FROM Nop_Mi_Master
+FROM Nop_Mi_Master M
 WHERE Nop_Ma_Code = @Nop_Ma_Code";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
@@ -56,7 +56,7 @@ WHERE Nop_Ma_Code = @Nop_Ma_Code";
             }
             return dt;
         }
-        public List<NopVO> GetNopList()
+        public List<NopCodeVO> GetNopList()
         {
             string sql = @"SELECT Nop_Ma_Code, Nop_Ma_Name from Nop_Ma_Master";
 
@@ -64,7 +64,7 @@ WHERE Nop_Ma_Code = @Nop_Ma_Code";
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    return Helper.DataReaderMapToList<NopVO>(cmd.ExecuteReader());
+                    return Helper.DataReaderMapToList<NopCodeVO>(cmd.ExecuteReader());
                 }
             }
             catch (Exception err)

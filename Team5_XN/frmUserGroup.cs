@@ -65,6 +65,9 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
             CommonUtil.ComboBinding(cboAdmin, "Admin_YN", dtSysCode.Copy());
+            userServ = new UserService();
+            dt = userServ.GetUserGroupMaster();
+            dt_DB = dt.Copy();
             //dt = userServ.GetUserGroupMaster();
             //dgvUserGroup.DataSource = dt;
             //LoadData();
@@ -282,9 +285,7 @@ namespace Team5_XN
             ChangeValue_Check(0);
 
             
-            userServ = new UserService();
-            dt = userServ.GetUserGroupMaster();
-            dt_DB = dt.Copy();
+
             dgvUserGroup.DataSource = dt;
 
             searchList = new DataView(dt);
@@ -309,10 +310,9 @@ namespace Team5_XN
             searchList.RowFilter = sb.ToString();
             dgvUserGroup.DataSource = searchList;
             rowCount = searchList.Count;
-            dgvUserGroup.CurrentCell = null;
+            //dgvUserGroup.CurrentCell = null;
             ControlTextReset();
-
-
+            dgvUserGroup_CellClick(dgvUserGroup, new DataGridViewCellEventArgs(0, 0));
         }
         private void OnCancle(object sender, EventArgs e)
         {

@@ -15,10 +15,10 @@ namespace Team5_XN
     public partial class PopupNopSearch : Form
     {
         NopService nopServ = null;
-        List<NopVO> list = null;
+        List<NopCodeVO> list = null;
 
-        NopVO sendInfo = new NopVO();
-        public NopVO Send
+        NopCodeVO sendInfo = new NopCodeVO();
+        public NopCodeVO Send
         {
             get { return sendInfo; }
             set { sendInfo = value; }
@@ -53,8 +53,8 @@ namespace Team5_XN
 
             string groupCode = dgvList[0, e.RowIndex].Value.ToString();
 
-            List<NopVO> groupList = (List<NopVO>)dgvList.DataSource;
-            NopVO searchGroup = groupList.Find((nop) => nop.Nop_Ma_Code == groupCode);
+            List<NopCodeVO> groupList = (List<NopCodeVO>)dgvList.DataSource;
+            NopCodeVO searchGroup = groupList.Find((nop) => nop.Nop_Ma_Code == groupCode);
 
             if (searchGroup != null)
             {
@@ -73,7 +73,7 @@ namespace Team5_XN
 
             string search = txtSearch.Text.ToUpper().Trim();
 
-            List<NopVO> listFilter = null;
+            List<NopCodeVO> listFilter = null;
 
             listFilter = (from nop in list
                           where nop.Nop_Ma_Code.Contains(search)

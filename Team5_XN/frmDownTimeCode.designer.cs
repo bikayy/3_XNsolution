@@ -226,7 +226,7 @@ namespace Team5_XN
             // 
             this.cboProcess.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboProcess.FormattingEnabled = true;
-            this.cboProcess.Location = new System.Drawing.Point(449, 10);
+            this.cboProcess.Location = new System.Drawing.Point(477, 10);
             this.cboProcess.Name = "cboProcess";
             this.cboProcess.Size = new System.Drawing.Size(101, 20);
             this.cboProcess.TabIndex = 35;
@@ -236,7 +236,7 @@ namespace Team5_XN
             // txtNopMaName
             // 
             this.txtNopMaName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtNopMaName.Location = new System.Drawing.Point(281, 12);
+            this.txtNopMaName.Location = new System.Drawing.Point(309, 12);
             this.txtNopMaName.Name = "txtNopMaName";
             this.txtNopMaName.Size = new System.Drawing.Size(91, 21);
             this.txtNopMaName.TabIndex = 31;
@@ -248,7 +248,7 @@ namespace Team5_XN
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.button2.Location = new System.Drawing.Point(253, 12);
+            this.button2.Location = new System.Drawing.Point(279, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(23, 23);
             this.button2.TabIndex = 27;
@@ -322,7 +322,7 @@ namespace Team5_XN
             // 
             this.label10.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(375, 38);
+            this.label10.Location = new System.Drawing.Point(403, 38);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 23);
@@ -333,7 +333,7 @@ namespace Team5_XN
             // txtRemark
             // 
             this.txtRemark.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtRemark.Location = new System.Drawing.Point(449, 36);
+            this.txtRemark.Location = new System.Drawing.Point(477, 36);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -345,7 +345,7 @@ namespace Team5_XN
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label11.Location = new System.Drawing.Point(389, 36);
+            this.label11.Location = new System.Drawing.Point(417, 36);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 23);
             this.label11.TabIndex = 20;
@@ -368,7 +368,7 @@ namespace Team5_XN
             this.txtNopMaCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.txtNopMaCode.Location = new System.Drawing.Point(156, 12);
             this.txtNopMaCode.Name = "txtNopMaCode";
-            this.txtNopMaCode.Size = new System.Drawing.Size(91, 21);
+            this.txtNopMaCode.Size = new System.Drawing.Size(117, 21);
             this.txtNopMaCode.TabIndex = 18;
             // 
             // label3
@@ -385,7 +385,7 @@ namespace Team5_XN
             // 
             this.label8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(375, 10);
+            this.label8.Location = new System.Drawing.Point(403, 10);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(17, 23);
@@ -427,7 +427,7 @@ namespace Team5_XN
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label5.Location = new System.Drawing.Point(389, 8);
+            this.label5.Location = new System.Drawing.Point(417, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 23);
             this.label5.TabIndex = 13;

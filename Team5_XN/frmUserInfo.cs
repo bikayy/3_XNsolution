@@ -72,6 +72,10 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboIPSecurity, "IP_Security_YN", dtSysCode.Copy());
 
+            userServ = new UserService();
+            dt = userServ.GetUserInfo();
+            dt_DB = dt.Copy();
+
         }
 
         private void OnDelete(object sender, EventArgs e)
@@ -186,7 +190,8 @@ namespace Team5_XN
                         {
                             if (dgvUserInfo[c, r].Value.ToString().Length < 1)
                             {
-                                if (c == 4) continue;
+                                string propertyName = dgvUserInfo.Columns[c].DataPropertyName;
+                                if (propertyName == "UserGroup_Code" || propertyName == "Default_Major_Process_Code") continue;
                                 MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dgvUserInfo.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
                                 dgvUserInfo.CurrentCell = dgvUserInfo[c, r];
                                 dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(c, r));
@@ -319,11 +324,9 @@ namespace Team5_XN
 
             ChangeValue_Check(0);
 
-            userServ = new UserService();
-            dt = userServ.GetUserInfo();
-            dt_DB = dt.Copy();
+            
             dgvUserInfo.DataSource = dt;
-            //dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, 0));
+            
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -351,8 +354,9 @@ namespace Team5_XN
             searchList.RowFilter = sb.ToString();
             dgvUserInfo.DataSource = searchList;
             rowCount = searchList.Count;
-            dgvUserInfo.CurrentCell = null;
+            
             ControlTextReset();
+            dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, 0));
         }
 
         private void ControlTextReset()

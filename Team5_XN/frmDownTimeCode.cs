@@ -23,6 +23,8 @@ namespace Team5_XN
         DataView searchList;
         int check = 0;
         int detailCount;
+        DataTable dtSysUser;
+        DataTable dtSysCode;
 
         public frmDownTimeCode()
         {
@@ -65,18 +67,21 @@ namespace Team5_XN
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
 
             //GetCommonCodeList
-            string[] code = { "USE_YN", "PROC_GROUP", "REGULAR_TYPE" };
+            string[] code = { "USE_YN", "PROC_GROUP", "NOP_CODE_TYPE", "REGULAR_TYPE" };
 
             //cdac = new CommonDAC();
             commServ = new CommonService();
 
-            DataTable dtSysCode = commServ.GetCommonCodeSys(code);
-            DataTable dtSysUser = commServ.GetCommonCodeUser(code);
+            dtSysCode = commServ.GetCommonCodeSys(code);
+            dtSysUser = commServ.GetCommonCodeUser(code);
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy(), false);
-            CommonUtil.ComboBinding(cboProcess, "PROC_GROUP", dtSysUser.Copy(), false);
-            CommonUtil.ComboBinding(cboNopType, "REGULAR_TYPE", dtSysCode.Copy(), false);
-            CommonUtil.ComboBinding(cboRegularType, "REGULAR_TYPE", dtSysCode.Copy(), false);
+            CommonUtil.ComboBinding(cboProcess, "PROC_GROUP", dtSysUser.Copy());
+            CommonUtil.ComboBinding(cboNopType, "NOP_CODE_TYPE", dtSysCode.Copy());
+            CommonUtil.ComboBinding(cboRegularType, "REGULAR_TYPE", dtSysCode.Copy());
+            nopServ = new NopService();
+            dt = nopServ.GetNopMaster();
+            dt_DB = dt.Copy();
         }
 
         private void OnDelete(object sender, EventArgs e)
@@ -141,11 +146,9 @@ namespace Team5_XN
 
             ChangeValue_Check(0);
 
-            nopServ = new NopService();
-            dt = nopServ.GetNopMaster();
-            dt_DB = dt.Copy();
+            
             dgvNopMaster.DataSource = dt;
-            //dgvNopMaster_CellClick(dgvNopMaster, new DataGridViewCellEventArgs(0, 0));
+            
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -163,9 +166,27 @@ namespace Team5_XN
             searchList.RowFilter = sb.ToString();
             dgvNopMaster.DataSource = searchList;
             rowCount = searchList.Count;
-            dgvNopMaster.CurrentCell = null;
+            //dgvNopMaster.CurrentCell = null;
 
-            //ControlTextReset();
+            ControlTextReset();
+            dgvNopMaster_CellClick(dgvNopMaster, new DataGridViewCellEventArgs(0, 0));
+            dgvNopDetail_CellClick(dgvNopDetail, new DataGridViewCellEventArgs(0, 0));
+        }
+
+        private void ControlTextReset()
+        {
+            txtNopMaCode.Text =
+            txtNopMaName.Text =
+
+            txtNopMiCode.Text =
+            txtNopMiName.Text =
+
+            cboProcess.Text =
+            txtRemark.Text =
+
+            cboNopType.Text =
+            cboRegularType.Text =
+            cboUseYN.Text = "";
         }
 
         private void OnCreate(object sender, EventArgs e)
@@ -180,7 +201,7 @@ namespace Team5_XN
             dtDetail.AcceptChanges();
             dgvNopDetail.DataSource = dtDetail;
             dgvNopDetail.CurrentCell = dgvNopDetail[0, dgvNopDetail.RowCount - 1];
-            //dgvBoxDetail_CellClick(dgvBoxMaster, new DataGridViewCellEventArgs(0, dgvBoxDetail.RowCount - 1));
+            dgvNopDetail_CellClick(dgvNopDetail, new DataGridViewCellEventArgs(0, dgvNopDetail.RowCount - 1));
 
             ChangeValue_Check(1); //추가
             //dgvNopDetail.Enabled = false;
@@ -254,13 +275,20 @@ namespace Team5_XN
                         DataView dMaster = new DataView(dtDetail);
                         dMaster.RowFilter = $"Nop_Ma_Code = '{dgvNopDetail[2, dgvNopDetail.CurrentRow.Index].Value.ToString()}'";
 
+                        DataView dvCode = new DataView(dtSysUser);
+                        dvCode.RowFilter = $"Code='PROC_GROUP' and DetailName='{dr["Process_Group"]}'";
+
+                        DataView dvSys = new DataView(dtSysCode);
+                        dvSys.RowFilter = $"Code='REGULAR_TYPE' and DetailName='{dr["Regular_Type"]}'";
+                        DataView dvSys2 = new DataView(dtSysCode);
+                        dvSys2.RowFilter = $"Code='NOP_CODE_TYPE' and DetailName='{dr["Nop_type"]}'";
                         DataRow drNew = dt2.NewRow();
                         drNew["Nop_Mi_Code"] = dr["Nop_Mi_Code"];
                         drNew["Nop_Mi_Name"] = dr["Nop_Mi_Name"];
                         drNew["Nop_Ma_Code"] = dMaster[2].Row["Nop_Ma_Code"].ToString();
-                        drNew["Regular_Type"] = dr["Regular_Type"];
-                        drNew["Nop_type"] = dr["Nop_type"];
-                        drNew["Process_Group"] = dr["Process_Group"];
+                        drNew["Regular_Type"] = dvSys[0]["DetailCode"];
+                        drNew["Nop_type"] = dvSys2[0]["DetailCode"];
+                        drNew["Process_Group"] = dvCode[0]["DetailCode"];
                         drNew["Remark"] = dr["Remark"];
                         drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
                         drNew["Ins_Date"] = dr["Ins_Date"];
@@ -286,7 +314,13 @@ namespace Team5_XN
                     {
                         DataView dMaster = new DataView(dtDetail);
                         dMaster.RowFilter = $"Nop_Ma_Code = '{dgvNopDetail[2, dgvNopDetail.CurrentRow.Index].Value.ToString()}'";
+                        DataView dvCode = new DataView(dtSysUser);
+                        dvCode.RowFilter = $"Code='PROC_GROUP' and DetailName='{dr["Process_Group"]}'";
 
+                        DataView dvSys = new DataView(dtSysCode);
+                        dvSys.RowFilter = $"Code='REGULAR_TYPE' and DetailName='{dr["Regular_Type"]}'";
+                        DataView dvSys2 = new DataView(dtSysCode);
+                        dvSys2.RowFilter = $"Code='NOP_CODE_TYPE' and DetailName='{dr["Nop_type"]}'";
                         string a = dtDetailOrigin.Rows[dtDetail.Rows.IndexOf(dr)][dtDetail.Columns.IndexOf(dc)].ToString();
                         string b = dtDetail.Rows[dtDetail.Rows.IndexOf(dr)][dtDetail.Columns.IndexOf(dc)].ToString();
                         if (b != a)
@@ -295,9 +329,9 @@ namespace Team5_XN
                             drNew["Nop_Mi_Code"] = dr["Nop_Mi_Code"];
                             drNew["Nop_Mi_Name"] = dr["Nop_Mi_Name"];
                             drNew["Nop_Ma_Code"] = dMaster[2].Row["Nop_Ma_Code"].ToString();
-                            drNew["Regular_Type"] = dr["Regular_Type"];
-                            drNew["Nop_type"] = dr["Nop_type"];
-                            drNew["Process_Group"] = dr["Process_Group"];
+                            drNew["Regular_Type"] = dvSys[0]["DetailCode"];
+                            drNew["Nop_type"] = dvSys2[0]["DetailCode"];
+                            drNew["Process_Group"] = dvCode[0]["DetailCode"];
                             drNew["Remark"] = dr["Remark"];
                             drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
                             drNew["Ins_Date"] = dr["Ins_Date"];

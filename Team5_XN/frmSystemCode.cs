@@ -240,6 +240,8 @@ namespace Team5_XN
                             if (dgvSysDetail[c, r].Value.ToString().Length < 1)
                             {
                                 //if (c == 5) continue;
+                                string propertyName = dgvSysDetail.Columns[c].DataPropertyName;
+                                if (propertyName == "Remark") continue;
                                 MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dgvSysDetail.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
                                 dgvSysDetail.CurrentCell = dgvSysDetail[c, r];
                                 dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(c, r));
@@ -332,6 +334,7 @@ namespace Team5_XN
 
         private void OnCreate(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             DataRow dr = dt.NewRow();
@@ -456,10 +459,10 @@ namespace Team5_XN
                         else if (ctrl is ComboBox cbo)
                             cbo.Enabled = true;
                         else if (ctrl is Button btn)
-                            btn.Enabled = true;
-                        txtSysMaCode.ReadOnly = true;
-                        txtSysMaName.ReadOnly = true;
+                            btn.Enabled = true;                        
                     }
+                    txtSysMaCode.ReadOnly = true;
+                    txtSysMaName.ReadOnly = true;
                 }
                 else if (check == 9 && dgvSysMaster.CurrentRow != null && dgvSysMaster.CurrentRow.Index >= rowCount) //추가한 행
                 {
@@ -510,6 +513,8 @@ namespace Team5_XN
                         else if (ctrl is Button btn)
                             btn.Enabled = true;
                     }
+                    txtSysMaCode.ReadOnly = true;
+                    txtSysMaName.ReadOnly = true;
                 }
                 else //기존 행
                 {
@@ -584,7 +589,9 @@ namespace Team5_XN
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            if (this.MdiParent == null) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+           
             //dataGridView1.AllowUserToAddRows = true;
             DataRow dr2 = dt3.NewRow();
             dt3.Rows.Add(dr2);
@@ -592,10 +599,11 @@ namespace Team5_XN
 
             dgvSysDetail.DataSource = dt3;
             dgvSysDetail.CurrentCell = dgvSysDetail[0, dgvSysDetail.RowCount - 1];
-            ChangeValue_Check(1); //추가
-            dgvSysDetail.Enabled = false;
+
+            //dgvSysDetail.Enabled = false;
             //ControlTextReset();
-            dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, dgvSysDetail.RowCount - 1));
+            ControlTextReset();
+            ChangeValue_Check(1); //추가
             //dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, dgvSysDetail.RowCount - 1));
         }
 

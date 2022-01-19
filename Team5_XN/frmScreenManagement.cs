@@ -34,9 +34,9 @@ namespace Team5_XN
 
             DataGridViewUtil.SetInitGridView(dgvScreen);
 
-            DataGridViewUtil.AddGridTextColumn(dgvScreen, "화면코드", "Screen_Code", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvScreen, "화면명", "WordKey", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvScreen, "화면경로", "Screen_Path", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvScreen, "화면코드", "Screen_Code", DataGridViewContentAlignment.MiddleCenter, colWidth: 120);
+            DataGridViewUtil.AddGridTextColumn(dgvScreen, "화면명", "WordKey", DataGridViewContentAlignment.MiddleCenter, colWidth: 130);
+            DataGridViewUtil.AddGridTextColumn(dgvScreen, "화면경로", "Screen_Path", DataGridViewContentAlignment.MiddleCenter, colWidth: 150);
             DataGridViewUtil.AddGridTextColumn(dgvScreen, "모니터링 유무", "Monitoring_YN", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvScreen, "사용유무", "Use_YN", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
 
@@ -52,6 +52,9 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboMonitor, "Monitoring_YN", dtSysCode.Copy());
+            userServ = new UserService();
+            dt = userServ.GetScreenList();
+            
         }
 
         private void OnSelect(object sender, EventArgs e)
@@ -60,10 +63,8 @@ namespace Team5_XN
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(0);
-            userServ = new UserService();
-            dt = userServ.GetScreenList();
+
             dgvScreen.DataSource = dt;
-            //dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, 0));
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -86,8 +87,10 @@ namespace Team5_XN
             searchList.RowFilter = sb.ToString();
             dgvScreen.DataSource = searchList;
             rowCount = searchList.Count;
-            dgvScreen.CurrentCell = null;
+            //dgvScreen.CurrentCell = null;
+            dgvScreen_CellClick(dgvScreen, new DataGridViewCellEventArgs(0, 0));
         }
+
         private void ChangeValue_Check(int check)
         {
             this.check = check;

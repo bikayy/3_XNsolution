@@ -106,7 +106,6 @@ namespace Team5_XN
             this.dgvSysDetail.Size = new System.Drawing.Size(749, 405);
             this.dgvSysDetail.TabIndex = 1;
             this.dgvSysDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSysDetail_CellClick);
-            this.dgvSysDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSysDetail_CellContentClick);
             // 
             // panel3
             // 

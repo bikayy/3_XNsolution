@@ -28,10 +28,10 @@ namespace Team5_XN
 
             return result;
         }
-        public List<NopVO> GetNopList()
+        public List<NopCodeVO> GetNopList()
         {
             NopDAC db = new NopDAC();
-            List<NopVO> list = db.GetNopList();
+            List<NopCodeVO> list = db.GetNopList();
             db.Dispose();
 
             return list;

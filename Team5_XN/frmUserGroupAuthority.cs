@@ -58,6 +58,10 @@ namespace Team5_XN
 
             DataTable dtSysCode = commonServ.GetCommonCodeSys(code);
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy());
+
+            userServ = new UserService();
+            dt = userServ.GetUserAuthority();
+            dt_DB = dt.Copy();
         }
 
         private void OnCancle(object sender, EventArgs e)
@@ -173,12 +177,11 @@ namespace Team5_XN
             }
 
             ChangeValue_Check(0);
-
             userServ = new UserService();
             dt = userServ.GetUserAuthority();
             dt_DB = dt.Copy();
             dgvUserAuthority.DataSource = dt;
-            //dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, 0));
+            
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -192,7 +195,8 @@ namespace Team5_XN
             searchList.RowFilter = sb.ToString();
             dgvUserAuthority.DataSource = searchList;
             rowCount = searchList.Count;
-            dgvUserAuthority.CurrentCell = null;
+
+            dgvUserAuthority_CellClick(dgvUserAuthority, new DataGridViewCellEventArgs(0, 0));
         }
         private void ChangeValue_Check(int check)
         {
