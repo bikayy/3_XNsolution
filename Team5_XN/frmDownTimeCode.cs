@@ -288,7 +288,7 @@ namespace Team5_XN
                         drNew["Nop_Ma_Code"] = dMaster[2].Row["Nop_Ma_Code"].ToString();
                         drNew["Regular_Type"] = dvSys[0]["DetailCode"];
                         drNew["Nop_type"] = dvSys2[0]["DetailCode"];
-                        drNew["Process_Group"] = dvCode[0]["DetailCode"];
+                        drNew["Process_Group"] = dvCode[0]["DetailName"];
                         drNew["Remark"] = dr["Remark"];
                         drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
                         drNew["Ins_Date"] = dr["Ins_Date"];
@@ -331,7 +331,7 @@ namespace Team5_XN
                             drNew["Nop_Ma_Code"] = dMaster[2].Row["Nop_Ma_Code"].ToString();
                             drNew["Regular_Type"] = dvSys[0]["DetailCode"];
                             drNew["Nop_type"] = dvSys2[0]["DetailCode"];
-                            drNew["Process_Group"] = dvCode[0]["DetailCode"];
+                            drNew["Process_Group"] = dvCode[0]["DetailName"];
                             drNew["Remark"] = dr["Remark"];
                             drNew["Use_YN"] = (dr["Use_YN"].ToString() == "예") ? "Y" : "N";
                             drNew["Ins_Date"] = dr["Ins_Date"];
