@@ -48,6 +48,7 @@ namespace Team5_XN
 
             DataGridViewUtil.SetInitGridView(dataGridView1);
 
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장상태", "Wo_Status", colWidth: 80);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장코드", "Wc_Code", colWidth: 200);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장명", "Wc_Name", colWidth: 250, align: DataGridViewContentAlignment.MiddleLeft);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "작업장그룹", "Wc_Group", colWidth: 150);
@@ -76,6 +77,8 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboWcGroup, "WC_GROUP", dtUserCode.Copy(), false);
 
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
+
+            
         }
 
         private void OnReset(object sender, EventArgs e)
@@ -158,7 +161,7 @@ namespace Team5_XN
             dataGridView1.DataSource = dt;
             dataGridView1.CurrentCell = dataGridView1[0, dataGridView1.RowCount - 1];
             dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(0, dataGridView1.RowCount - 1));
-
+            dataGridView1[0, dataGridView1.RowCount - 1].Value = "가동";
 
         }
 
@@ -225,7 +228,7 @@ namespace Team5_XN
                         {
                             if (dataGridView1[c, r].Value.ToString().Length < 1)
                             {
-                                if (dataGridView1.Columns[c].DataPropertyName == "Remark") continue;
+                                if (dataGridView1.Columns[c].DataPropertyName == "Wo_Status" || dataGridView1.Columns[c].DataPropertyName == "Remark" ) continue;
                                 MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dataGridView1.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
                                 dataGridView1.CurrentCell = dataGridView1[c, r];
                                 dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(c, r));
@@ -440,6 +443,8 @@ namespace Team5_XN
             }
 
             ControlState();
+
+            
             //삭제
             //else if (check == 3)
             //{
@@ -614,6 +619,24 @@ namespace Team5_XN
             cboUse_YN.Text = dataGridView1["Use_YN", dataGridView1.CurrentRow.Index].Value.ToString();
             cboMonitoring_YN.Text = dataGridView1["Monitoring_YN", dataGridView1.CurrentRow.Index].Value.ToString();
             cboPallet_YN.Text = dataGridView1["Pallet_YN", dataGridView1.CurrentRow.Index].Value.ToString();
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+
+                switch (dataGridView1.Rows[i].Cells["Wo_Status"].Value.ToString())
+                {
+                    case "가동":
+                        dataGridView1.Rows[i].Cells["Wo_Status"].Style.BackColor = Color.LightGreen;
+                        break;
+                    case "비가동":
+                        dataGridView1.Rows[i].Cells["Wo_Status"].Style.BackColor = Color.Tomato;
+                        break;
+                    default: break;
+                }
+            }
         }
     }
 }
