@@ -41,6 +41,7 @@ namespace Team5_XN
             main.Save += OnSave;
             main.Delete += OnDelete;
             main.Cancle += OnCancle;
+            main.Reset += OnReset;
 
             DataGridViewUtil.SetInitGridView(dataGridView1);
 
@@ -74,6 +75,17 @@ namespace Team5_XN
 
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
         }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            if (this.MdiParent == null) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            txtSelectItemCode.Text = txtSelectItemName.Text =  "";
+            cboSelectUse_YN.SelectedIndex = cboSelectItemType.SelectedIndex = 0;
+            dataGridView1.CurrentCell = null;
+            ControlTextReset();
+        }
+
         private void OnSelect(object sender, EventArgs e)
         {
             if (this.MdiParent == null) return;
@@ -572,6 +584,8 @@ namespace Team5_XN
 
             cboItemType.SelectedIndex =
             cboUse_YN.SelectedIndex = 0;
+
+            //dataGridView1.CurrentCell = null;
         }
 
         private void txtPrdQty_Hour_KeyPress(object sender, KeyPressEventArgs e)

@@ -56,6 +56,48 @@ namespace Team5_XN
             cbo.DataSource = dv;
 
         }
+        public static void ComboBinding_MaCode(ComboBox cbo, DataTable dt)
+        {
+
+            //if (blankItem)
+            //{
+            //    DataRow dr = dt.NewRow();
+            //    dr["Code"] = code;
+            //    dr["DetailCode"] = blankText;
+            //    dr["Name"] = "";
+            //    dr["DetailName"] = "";
+            //    dt.Rows.InsertAt(dr, 0);
+            //    //dt.AcceptChanges();
+            //}
+
+            DataView dv = new DataView(dt);
+            cbo.DisplayMember = "Nop_Ma_Name";
+            cbo.ValueMember = "Nop_Ma_Code";
+            cbo.Text = "";
+            cbo.DataSource = dv;
+
+        }
+        public static void ComboBinding_MiCode(ComboBox cbo,  DataTable dt)
+        {
+
+            //if (blankItem)
+            //{
+            //    DataRow dr = dt.NewRow();
+            //    dr["Code"] = code;
+            //    dr["DetailCode"] = blankText;
+            //    dr["Name"] = "";
+            //    dr["DetailName"] = "";
+            //    dt.Rows.InsertAt(dr, 0);
+            //    //dt.AcceptChanges();
+            //}
+
+            DataView dv = new DataView(dt);
+            cbo.DisplayMember = "Nop_Mi_Name";
+            cbo.ValueMember = "Nop_Mi_Code";
+            cbo.Text = "";
+            cbo.DataSource = dv;
+
+        }
     }
 
 

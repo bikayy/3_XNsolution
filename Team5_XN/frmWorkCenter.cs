@@ -44,6 +44,7 @@ namespace Team5_XN
             main.Save += OnSave;
             main.Delete += OnDelete;
             main.Cancle += OnCancle;
+            main.Reset += OnReset;
 
             DataGridViewUtil.SetInitGridView(dataGridView1);
 
@@ -75,6 +76,16 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboWcGroup, "WC_GROUP", dtUserCode.Copy(), false);
 
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
+        }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            if (this.MdiParent == null) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            txtSelectProcessCode1.Text = txtSelectProcessCode2.Text = txtSelectWcCode.Text = txtSelectWcName.Text = "";
+            cboSelectUse_YN.SelectedIndex = 0;
+            dataGridView1.CurrentCell = null;
+            ControlTextReset();
         }
 
         private void OnSelect(object sender, EventArgs e)
@@ -565,6 +576,8 @@ namespace Team5_XN
             cboUse_YN.SelectedIndex =
             cboMonitoring_YN.SelectedIndex =
             cboPallet_YN.SelectedIndex = 0;
+
+            //dataGridView1.CurrentCell = null;
         }
 
         private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)

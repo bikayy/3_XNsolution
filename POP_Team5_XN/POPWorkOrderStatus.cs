@@ -299,6 +299,7 @@ namespace POP_Team5_XN
         private void btnNopReg_Click(object sender, EventArgs e)
         {
             POPNopRegister frm = new POPNopRegister();
+            frm.WoInfo = this.WoInfo;
             frm.ShowDialog();
             //작업장코드 woInfo에 있습니다~
         }

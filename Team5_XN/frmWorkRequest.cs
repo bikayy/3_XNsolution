@@ -379,17 +379,21 @@ namespace Team5_XN
                     cr.Remark = txtRemark.Text;
 
                     bool reqResult = reqServ.ProductionRequest(cr);
-                    if (reqResult) MessageBox.Show("생산요청이 등록되었습니다.");
+                    if (reqResult)
+                    {
+                        MessageBox.Show("생산요청이 등록되었습니다.");
+                        OnSelect(this, e);
+                    }
                     else MessageBox.Show("생산요청에 실패하였습니다.\n다시 확인하여주십시오.");
 
-                    for (int i = 0; i < textboxes.Length; i++)
-                    {
-                        textboxes[i].Text = "";
-                    }
-                    dtpReqDate.Text = dtpReqDate.Value.ToString("yyyy-MM-dd");
-                    dtpDeliDate.Text = dtpDeliDate.Value.ToString("yyyy-MM-dd");
-                    r_txtItemCode.Text = "";
-                    txtRemark.Text = "";
+                    //for (int i = 0; i < textboxes.Length; i++)
+                    //{
+                    //    textboxes[i].Text = "";
+                    //}
+                    //dtpReqDate.Text = dtpReqDate.Value.ToString("yyyy-MM-dd");
+                    //dtpDeliDate.Text = dtpDeliDate.Value.ToString("yyyy-MM-dd");
+                    //r_txtItemCode.Text = "";
+                    //txtRemark.Text = "";
 
                     if (rdoReqDate.Checked)
                     {
@@ -414,16 +418,16 @@ namespace Team5_XN
                         LoadSearch(rs);
                     }
                 }
-                txtReqNo.Text = "";
-                r_txtItemCode.Text = "";
-                r_txtItemName.Text = "";
-                txtReqQty.Text = "";
-                txtCusName.Text = "";
-                txtProjName.Text = "";
-                dtpReqDate.Value = DateTime.Now;
-                dtpDeliDate.Value = DateTime.Now.AddDays(1);
-                txtRemark.Text = "";
-                r_txtItemCode.Focus();
+                //txtReqNo.Text = "";
+                //r_txtItemCode.Text = "";
+                //r_txtItemName.Text = "";
+                //txtReqQty.Text = "";
+                //txtCusName.Text = "";
+                //txtProjName.Text = "";
+                //dtpReqDate.Value = DateTime.Now;
+                //dtpDeliDate.Value = DateTime.Now.AddDays(1);
+                //txtRemark.Text = "";
+                //r_txtItemCode.Focus();
             }
             else if (check == 2)
             {
@@ -476,17 +480,21 @@ namespace Team5_XN
                     };
 
                     bool reqResult = reqServ.UpdateRequest(ur); ;
-                    if (reqResult) MessageBox.Show("생산요청이 수정되었습니다.");
+                    if (reqResult)
+                    {
+                        MessageBox.Show("생산요청이 수정되었습니다.");
+                        OnSelect(this, e);
+                    }
                     else MessageBox.Show("생산요청 수정에 실패하였습니다.\n생산 요청 상태를 확인하여주십시오.");
 
-                    for (int i = 0; i < textboxes.Length; i++)
-                    {
-                        textboxes[i].Text = "";
-                    }
+                    //for (int i = 0; i < textboxes.Length; i++)
+                    //{
+                    //    textboxes[i].Text = "";
+                    //}
                     dtpReqDate.Value = DateTime.Now;
                     dtpDeliDate.Value = DateTime.Now.AddDays(1);
-                    r_txtItemCode.Text = "";
-                    txtRemark.Text = "";
+                    //r_txtItemCode.Text = "";
+                    //txtRemark.Text = "";
 
                     if (rdoReqDate.Checked)
                     {
@@ -537,39 +545,43 @@ namespace Team5_XN
             if (result == DialogResult.Yes)
             {
                 bool dResult = reqServ.DeleteRequest(txtReqNo.Text);
-                if (dResult) MessageBox.Show("생산요청이 삭제되었습니다.");
+                if (dResult)
+                {
+                    MessageBox.Show("생산요청이 삭제되었습니다.");
+                    OnSelect(this, e);
+                }
                 else MessageBox.Show("생산요청 삭제에 실패하였습니다.\n생산 진행 상태를 확인하여주십시오.");
 
-                for (int i = 0; i < textboxes.Length; i++)
-                {
-                    textboxes[i].Text = "";
-                }
+                //for (int i = 0; i < textboxes.Length; i++)
+                //{
+                //    textboxes[i].Text = "";
+                //}
                 dtpReqDate.Value = DateTime.Now;
                 dtpDeliDate.Value = DateTime.Now.AddDays(1);
             }
 
-            if (rdoReqDate.Checked)
-            {
-                rs = new ReqSearchVO()
-                {
-                    Tag = rdoReqDate.Tag.ToString(),
-                    FromDate = dtpFromDate.Value.ToString("yyyy-MM-dd"),
-                    ToDate = dtpToDate.Value.ToString("yyyy-MM-dd"),
-                    ItemCode = txtItemCode.Text
-                };
-                LoadSearch(rs);
-            }
-            else
-            {
-                rs = new ReqSearchVO()
-                {
-                    Tag = rdoDeliDate.Tag.ToString(),
-                    FromDate = dtpFromDate.Value.ToString("yyyy-MM-dd"),
-                    ToDate = dtpToDate.Value.ToString("yyyy-MM-dd"),
-                    ItemCode = txtItemCode.Text
-                };
-                LoadSearch(rs);
-            }
+            //if (rdoReqDate.Checked)
+            //{
+            //    rs = new ReqSearchVO()
+            //    {
+            //        Tag = rdoReqDate.Tag.ToString(),
+            //        FromDate = dtpFromDate.Value.ToString("yyyy-MM-dd"),
+            //        ToDate = dtpToDate.Value.ToString("yyyy-MM-dd"),
+            //        ItemCode = txtItemCode.Text
+            //    };
+            //    LoadSearch(rs);
+            //}
+            //else
+            //{
+            //    rs = new ReqSearchVO()
+            //    {
+            //        Tag = rdoDeliDate.Tag.ToString(),
+            //        FromDate = dtpFromDate.Value.ToString("yyyy-MM-dd"),
+            //        ToDate = dtpToDate.Value.ToString("yyyy-MM-dd"),
+            //        ItemCode = txtItemCode.Text
+            //    };
+            //    LoadSearch(rs);
+            //}
           
         }
 

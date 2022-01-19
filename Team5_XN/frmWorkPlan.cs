@@ -24,6 +24,7 @@ namespace Team5_XN
 
         PlanSearchVO ps = null;
 
+        string status = string.Empty;
 
         Main main = null;
 
@@ -117,10 +118,11 @@ namespace Team5_XN
                     btnCreate.Enabled = true;
                     btnSave.Enabled = false;
                     btnCancle.Enabled = false;
+                    OnSelect(this, e);
                 }
                 else MessageBox.Show("생산계획 등록에 실패하였습니다.\n다시 확인하여주십시오.");
 
-                ClearItems(pnlReqInfo);
+                //ClearItems(pnlReqInfo);
 
                 
             }
@@ -509,6 +511,8 @@ namespace Team5_XN
         {
             if (e.RowIndex < 0) return;
 
+            status = dgvPlan[9, e.RowIndex].Value.ToString();
+
             if (dgvPlan.Rows.Count < 1) return;
             string planNo = dgvPlan[0, e.RowIndex].Value.ToString();
             List<GetPlanListVO> planList = (List<GetPlanListVO>)dgvPlan.DataSource;
@@ -544,6 +548,12 @@ namespace Team5_XN
                 return;
             }
 
+            if (status != "대기중")
+            {
+                MessageBox.Show("생산계획상태가 '대기중'인 경우에만 수정할 수 있습니다.");
+                return;
+            }
+
             btnAdd.Enabled = false;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
@@ -573,6 +583,12 @@ namespace Team5_XN
             if (string.IsNullOrWhiteSpace(pp_txtPlanNo.Text))
             {
                 MessageBox.Show("삭제할 생산계획을 먼저 선택하여주십시오.");
+                return;
+            }
+
+            if (status != "대기중")
+            {
+                MessageBox.Show("생산계획상태가 '대기중'인 경우에만 삭제할 수 있습니다.");
                 return;
             }
 
@@ -899,7 +915,7 @@ namespace Team5_XN
 
         private void p_btnSave_Click(object sender, EventArgs e)
         {
-
+            //MessageBox.Show(dgvPlan.SelectedRows["aa"].Value.ToString());
             if (pp_dtpPlanMonth.Enabled)
             {
                 PlanService planServ = new PlanService();
@@ -947,7 +963,7 @@ namespace Team5_XN
                         btnDelete.Enabled = true;
                         p_btnSave.Enabled = false;
                         p_btnCancle.Enabled = false;
-
+                        dgvPlan.Enabled = true;
                         OnSelect(this, e);
                     }
                     else MessageBox.Show("생산계획 등록에 실패하였습니다.\n다시 확인하여 주십시오.");

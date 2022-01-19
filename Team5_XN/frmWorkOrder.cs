@@ -15,6 +15,9 @@ namespace Team5_XN
     {
         WorkOrderService woServ = new WorkOrderService();
         List<WOSelectVO> listWo = new List<WOSelectVO>();
+        string status = string.Empty;
+        Main main = null;
+
 
         public frmWorkOrder()
         {
@@ -155,6 +158,12 @@ namespace Team5_XN
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (status != "생산대기")
+            {
+                MessageBox.Show("작업지시상태가 '생산대기'인 경우에만 수정할 수 있습니다.");
+                return;
+            }
+
             activeItems(pnlDetail);
             i_txtPlanQty.ReadOnly = false;
             i_txtRemark.ReadOnly = false;
@@ -235,17 +244,11 @@ namespace Team5_XN
         }
 
         private void frmWorkOrder_Load(object sender, EventArgs e)
-        { /*
-            w.Wo_Status, WorkOrderNo, convert(varchar(10), Plan_Date, 23) Plan_Date,
-		Plan_Qty_Box, w.Item_Code, i.Item_Name,
-		w.Wc_Code, wc.Wc_Name,
-		convert(varchar(10), Prd_Date, 23) Prd_Date, Prd_Qty, 
-		Plan_StartTime,	Plan_EndTime, Prd_StartTime, Prd_EndTime,
-		Worker_CloseTime, Manager_CloseTime, Close_CancelTime, 
-		w.Remark, Prd_Plan_No, 
-		w.Ins_Date, w.Ins_Emp,
-		w.Up_Date, w.Up_Emp
-            */
+        {
+            main = (Main)this.MdiParent;
+
+            main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
+            main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
 
             DataGridViewUtil.SetInitGridView(dgvWo);
             DataGridViewUtil.AddGridTextColumn(dgvWo, "작업지시상태", "Wo_Status", colWidth: 120);
@@ -469,7 +472,7 @@ namespace Team5_XN
             {
                 return;
             }
-
+            status = dgvWo[0, e.RowIndex].Value.ToString();
             string woNo = dgvWo[1, e.RowIndex].Value.ToString();
             List<WOSelectVO> woInfo = (List<WOSelectVO>)dgvWo.DataSource;
             WOSelectVO wo = woInfo.Find((item) => item.WorkOrderNo == woNo);
@@ -492,6 +495,12 @@ namespace Team5_XN
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (status != "생산대기")
+            {
+                MessageBox.Show("작업지시상태가 '생산대기'인 경우에만 삭제할 수 있습니다.");
+                return;
+            }
+
             TextBox[] textboxes = { i_txtOrNo, i_txtItemName, i_txtPrName, i_txtWcName, i_txtPlanQty };
             Label[] labels = { i_lblOrNo,  i_lblItem, i_lblProcess, i_lblWc, i_lblPlanQty };
             StringBuilder sb = new StringBuilder();
@@ -526,6 +535,12 @@ namespace Team5_XN
 
         private void btnEnd_Click(object sender, EventArgs e)
         {
+            if (status != "현장마감")
+            {
+                MessageBox.Show("작업지시상태가 '현장마감'인 경우에만 작업지시를 마감할 수 있습니다.");
+                return;
+            }
+
             TextBox[] textboxes = { i_txtOrNo, i_txtItemName, i_txtPrName, i_txtWcName, i_txtPlanQty };
             Label[] labels = { i_lblOrNo, i_lblItem, i_lblProcess, i_lblWc, i_lblPlanQty };
             StringBuilder sb = new StringBuilder();
@@ -560,6 +575,12 @@ namespace Team5_XN
 
         private void btnEndCancle_Click(object sender, EventArgs e)
         {
+            if (status != "작업지시마감")
+            {
+                MessageBox.Show("작업지시상태가 '작업지시마감'인 경우에만 작업마감을 취소할 수 있습니다.");
+                return;
+            }
+
             TextBox[] textboxes = { i_txtOrNo, i_txtItemName, i_txtPrName, i_txtWcName, i_txtPlanQty };
             Label[] labels = { i_lblOrNo, i_lblItem, i_lblProcess, i_lblWc, i_lblPlanQty };
             StringBuilder sb = new StringBuilder();

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Team5_XN
+namespace POP_Team5_XN
 {
-    public partial class POPNopRegister : Form
+    public partial class ucNopHistory_Top : UserControl
     {
-        public POPNopRegister()
+        public ucNopHistory_Top()
         {
             InitializeComponent();
         }

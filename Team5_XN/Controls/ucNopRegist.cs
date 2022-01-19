@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Team5_XN
 {
-    public partial class POPNopRegister : Form
+    public partial class ucNopRegist : UserControl
     {
-        public POPNopRegister()
+        public ucNopRegist()
         {
             InitializeComponent();
+        }
+
+        private void ucNopRegist_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
