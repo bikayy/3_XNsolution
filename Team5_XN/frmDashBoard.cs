@@ -82,17 +82,23 @@ namespace Team5_XN
             dt2 = mDac.GetDayProduction();
             dgvDayProduct.DataSource = dt2;
 
-            DataGridViewUtil.SetInitGridView(dataGridView3);
-            DataGridViewUtil.AddGridTextColumn(dataGridView3, "작업지시번호", "WorkOrderNo", colWidth: 70);
-            DataGridViewUtil.AddGridTextColumn(dataGridView3, "시작시간", "Start_Hour", colWidth: 80);
-            DataGridViewUtil.AddGridTextColumn(dataGridView3, "거래처명", "In_Qty_Sub", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dataGridView3, "사업자번호", "In_Qty_Main", colWidth: 130);
-            DataGridViewUtil.AddGridTextColumn(dataGridView3, "가격", "Out_Qty_Main", DataGridViewContentAlignment.MiddleRight, colWidth: 70);
-            DataGridViewUtil.AddGridTextColumn(dataGridView3, "단위", "Out_Qty_Sub", colWidth: 40);
-            DataGridViewUtil.AddGridTextColumn(dataGridView3, "거래처번호", "Prd_Qty", colWidth: 100);
+            DataGridViewUtil.SetInitGridView(dgvNopInfo);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "Seq", "Nop_Seq", colWidth: 100, visibility: false);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "작업장코드", "Wc_Code", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "작업장명", "Wc_Name", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "비가동시작시간", "Nop_HappenTime", colWidth: 130);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "비가동종료시간", "Nop_CancelTime", colWidth: 130);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "비가동시간(분)", "Nop_Time", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "비가동대분류코드", "Nop_Ma_Code", colWidth: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "비가동대분류명", "Nop_Ma_Name", colWidth: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "비가동상세분류코드", "Nop_Mi_Code", colWidth: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvNopInfo, "비가동상세분류명", "Nop_Mi_Name", colWidth: 150);
+
+            dgvNopInfo.Columns["Nop_HappenTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
+            dgvNopInfo.Columns["Nop_CancelTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
 
             dt3 = mDac.GetDayProduction();
-            dataGridView3.DataSource = dt3;
+            dgvNopInfo.DataSource = dt3;
 
             DataGridViewUtil.SetInitGridView(dgvDayDefect);
 

@@ -158,6 +158,7 @@ namespace Team5_XN
             // 
             // cboRegularType
             // 
+            this.cboRegularType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRegularType.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboRegularType.FormattingEnabled = true;
             this.cboRegularType.Location = new System.Drawing.Point(763, 36);
@@ -191,6 +192,7 @@ namespace Team5_XN
             // 
             // cboNopType
             // 
+            this.cboNopType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNopType.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboNopType.FormattingEnabled = true;
             this.cboNopType.Location = new System.Drawing.Point(763, 11);
@@ -224,6 +226,7 @@ namespace Team5_XN
             // 
             // cboProcess
             // 
+            this.cboProcess.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProcess.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboProcess.FormattingEnabled = true;
             this.cboProcess.Location = new System.Drawing.Point(477, 10);
@@ -288,6 +291,7 @@ namespace Team5_XN
             // 
             // cboUseYN
             // 
+            this.cboUseYN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUseYN.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboUseYN.FormattingEnabled = true;
             this.cboUseYN.Location = new System.Drawing.Point(156, 99);
