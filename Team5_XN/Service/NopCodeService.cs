@@ -10,7 +10,7 @@ using Team5_XN_VO;
 
 namespace Team5_XN
 {
-    class NopService
+    class NopCodeService
     {
         public DataTable GetNopMaster()
         {

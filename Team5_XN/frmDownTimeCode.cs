@@ -14,7 +14,7 @@ namespace Team5_XN
     {
         DataTable dtDetail;
         DataTable dtDetailOrigin;
-        NopService nopServ = new NopService();
+        NopCodeService nopServ = new NopCodeService();
         CommonService commServ = new CommonService();
         DataTable dt;
         DataTable dt_DB;
@@ -79,7 +79,7 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboProcess, "PROC_GROUP", dtSysUser.Copy());
             CommonUtil.ComboBinding(cboNopType, "NOP_CODE_TYPE", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboRegularType, "REGULAR_TYPE", dtSysCode.Copy());
-            nopServ = new NopService();
+            nopServ = new NopCodeService();
             dt = nopServ.GetNopMaster();
             dt_DB = dt.Copy();
         }
@@ -116,7 +116,7 @@ namespace Team5_XN
                 if (MessageBox.Show($"[{txtNopMiCode.Text}] 데이터를 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
 
-                    nopServ = new NopService();
+                    nopServ = new NopCodeService();
                     bool result = nopServ.DeleteNopDetail(txtNopMiCode.Text);
                     if (result)
                     {
@@ -239,7 +239,7 @@ namespace Team5_XN
             dt2.Columns.Add(new DataColumn("Up_Date", typeof(DateTime)));
             dt2.Columns.Add(new DataColumn("Up_Emp", typeof(string)));
 
-            nopServ = new NopService();
+            nopServ = new NopCodeService();
 
             //저장-추가
             if (check == 1)

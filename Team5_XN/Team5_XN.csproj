@@ -409,7 +409,7 @@
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\DayProductionService.cs" />
     <Compile Include="Service\ItemService.cs" />
-    <Compile Include="Service\NopService.cs" />
+    <Compile Include="Service\NopCodeService.cs" />
     <Compile Include="Service\POPService\WcService.cs" />
     <Compile Include="Service\ProcessService.cs" />
     <Compile Include="Service\ProductionService\InputListService.cs" />
