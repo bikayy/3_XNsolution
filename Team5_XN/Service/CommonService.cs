@@ -45,6 +45,30 @@ namespace Team5_XN
             return result;
         }
 
+        public int SaveCode(DataTable dt, int check)
+        {
+            CommonDAC db = new CommonDAC();
+            int result = db.SaveCode(dt, check);
+            db.Dispose();
 
+            return result;
+        }
+
+        public int SaveMasterCode(DataTable dt, int check)
+        {
+            CommonDAC db = new CommonDAC();
+            int result = db.SaveMasterCode(dt, check);
+            db.Dispose();
+
+            return result;
+        }
+        public bool DeleteDetailCode(String code)
+        {
+            CommonDAC db = new CommonDAC();
+            bool result = db.DeleteDetailCode(code);
+            db.Dispose();
+
+            return result;
+        }
     }
 }

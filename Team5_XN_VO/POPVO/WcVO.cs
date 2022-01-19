@@ -40,6 +40,7 @@ namespace Team5_XN_VO
     {
         public string Item_Name { get; set; }
         public string Plan_Date { get; set; }
+        public int Plan_Qty_Box { get; set; }
         public int Prd_Qty { get; set; }
         public string WorkOrderNo { get; set; }
         public string Wc_Code { get; set; }
@@ -58,5 +59,47 @@ namespace Team5_XN_VO
     {  //DetailCode, DetailName
         public string DetailCode { get; set; }
         public string DetailName { get; set; }
+    }
+
+    public class CreatePaletteVO
+    {  //WorkOrderNo, Start_Hour, Prd_Qty, Pallet_No, Unit, Grade_Code
+        //Grade_Detail_Code, Grade_Detail_Name, Ins_Emp
+
+        public string WorkOrderNo { get; set; }
+        public int Start_Hour { get; set; }
+        public int Prd_Qty { get; set; }
+        public string Pallet_No { get; set; }
+        public string Unit { get; set; }
+        public string Grade_Code { get; set; }
+        public string Grade_Detail_Code { get; set; }
+        public string Grade_Detail_Name { get; set; }
+        public string Ins_Emp { get; set; }
+    }
+
+    public class RegSiyuVO
+    {  //WorkOrderNo, Start_Hour, Prd_Qty, Pallet_No, Unit, Grade_Code
+        //Grade_Detail_Code, Grade_Detail_Name, Ins_Emp
+
+        public string WorkOrderNo { get; set; }
+        public int Start_Hour { get; set; }
+        public int Prd_Qty { get; set; }
+        public string Unit { get; set; }
+        public string Ins_Emp { get; set; }
+        public string Wc_Code { get; set; }
+    }
+
+    public class SelectPerSiyuVO
+    {  //WorkOrderNo, Reg_Datetime, Prd_Qty
+        public string WorkOrderNo { get; set; }
+        public DateTime Reg_Datetime { get; set; }
+        public int Prd_Qty { get; set; }
+    }
+
+    public class DeletePerSiyuVO
+    {  //WorkOrderNo, Prd_Qty, Reg_DateTime, Del_Emp
+        public string WorkOrderNo { get; set; }
+        public int Prd_Qty { get; set; }
+        public DateTime Reg_DateTime { get; set; }
+        public string Del_Emp { get; set; }
     }
 }

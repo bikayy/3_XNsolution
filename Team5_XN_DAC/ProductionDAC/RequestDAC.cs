@@ -60,106 +60,66 @@ on pr.Item_Code = im.Item_Code";
         {  //Item_Code / Req_Qty / Customer_Name / Project_Nm / Sale_Prsn_Nm / Delivery_Date
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "SP_Request_ChaeBeon_In";
+            cmd.CommandText = "SP_Request_Insert";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Item_Code", cr.Item_Code);
+            cmd.Parameters.AddWithValue("@Req_Date", cr.Req_Date);
             cmd.Parameters.AddWithValue("@Req_Qty", cr.Req_Qty);
             cmd.Parameters.AddWithValue("@Customer_Name", cr.Customer_Name);
             cmd.Parameters.AddWithValue("@Project_Nm", cr.Project_Nm);
             cmd.Parameters.AddWithValue("@Sale_Prsn_Nm", cr.Sale_Prsn_Nm);
             cmd.Parameters.AddWithValue("@Delivery_Date", cr.Delivery_Date);
+            cmd.Parameters.AddWithValue("@Remark", cr.Remark);
 
             return cmd.ExecuteNonQuery() > 0;
         }
 
         public bool UpdateRequest(RequestVO ur)
         {
-            SqlTransaction trans = conn.BeginTransaction();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SP_Request_Update";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            
+            cmd.Parameters.AddWithValue("@Item_Code", ur.Item_Code);
+            cmd.Parameters.AddWithValue("@Req_Date", ur.Req_Date);
+            cmd.Parameters.AddWithValue("@Req_Qty", ur.Req_Qty);
+            cmd.Parameters.AddWithValue("@Customer_Name", ur.Customer_Name);
+            cmd.Parameters.AddWithValue("@Project_Nm", ur.Project_Nm);
+            cmd.Parameters.AddWithValue("@Prd_Req_No", ur.Prd_Req_No);
+            cmd.Parameters.AddWithValue("@Sale_Prsn_Nm", ur.Sale_Prsn_Nm);
+            cmd.Parameters.AddWithValue("@Delivery_Date", ur.Delivery_Date);
+            cmd.Parameters.AddWithValue("@Remark", ur.Remark);
 
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.Transaction = trans;
-
-                    cmd.CommandText = @"update Production_Req
-set Item_Code = @Item_Code, Req_Qty = @Req_Qty, Customer_Name = @Customer_Name,
-Project_Nm = @Project_Nm, Delivery_Date = @Delivery_Date, 
-Up_Date = getdate(), Up_Emp = @Up_Emp
-where Prd_Req_No = @Prd_Req_No";
-
-                    cmd.Parameters.AddWithValue("@Item_Code", ur.Item_Code);
-                    cmd.Parameters.AddWithValue("@Req_Qty", ur.Req_Qty);
-                    cmd.Parameters.AddWithValue("@Customer_Name", ur.Customer_Name);
-                    cmd.Parameters.AddWithValue("@Project_Nm", ur.Project_Nm);
-                    cmd.Parameters.AddWithValue("@Delivery_Date", ur.Delivery_Date);
-                    cmd.Parameters.AddWithValue("@Up_Emp", ur.Sale_Prsn_Nm);
-                    cmd.Parameters.AddWithValue("@Prd_Req_No", ur.Prd_Req_No);
-
-
-                    cmd.ExecuteNonQuery();
-                }
-                trans.Commit();
-                return true;
-            }
-            catch (Exception err)
-            {
-                trans.Rollback();
-                Debug.WriteLine(err.Message);
-                return false;
-            }
+            return cmd.ExecuteNonQuery() > 0;
         }
 
-        public bool DeleteRequest(string id)
+        public bool DeleteRequest(string no)
         {
-            SqlTransaction trans = conn.BeginTransaction();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SP_Req_Delete";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.Transaction = trans;
+            cmd.Parameters.AddWithValue("@Prd_Req_No", no);
 
-                    cmd.CommandText = @"delete from Production_Req where Prd_Req_No = @Prd_Req_No";
-                    cmd.Parameters.AddWithValue("@Prd_Req_No", id);
-                    cmd.ExecuteNonQuery();
-                }
-                trans.Commit();
-                return true;
-            }
-            catch (Exception err)
-            {
-                trans.Rollback();
-                Debug.WriteLine(err.Message);
-                return false;
-            }
+            return cmd.ExecuteNonQuery() > 0;
         }
 
-        public List<RequestVO> GetRequestSearch(string tag, string fromDate, string toDate, string item)
+        public List<RequestVO> GetRequestSearch(ReqSearchVO rs)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = "SP_Req_Search";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Tag", tag);
-            cmd.Parameters.AddWithValue("@From_Date", fromDate);
-            cmd.Parameters.AddWithValue("@To_Date", toDate);
-            cmd.Parameters.AddWithValue("@Item_Code", item);
+            cmd.Parameters.AddWithValue("@Tag", rs.Tag);
+            cmd.Parameters.AddWithValue("@From_Date", rs.FromDate);
+            cmd.Parameters.AddWithValue("@To_Date", rs.ToDate);
+            cmd.Parameters.AddWithValue("@Item_Code", rs.ItemCode);
             return Helper.DataReaderMapToList<RequestVO>(cmd.ExecuteReader());
 
-            //try
-            //{
-
-            //}
-            //catch (Exception err)
-            //{
-            //    Debug.WriteLine(err.Message);
-            //    return null;
-            //}
         }
     }
 }

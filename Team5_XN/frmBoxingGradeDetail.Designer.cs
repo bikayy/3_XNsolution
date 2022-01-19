@@ -36,6 +36,12 @@ namespace Team5_XN
             this.label2 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtBoxGradeMaCode = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtBoxGradeMaName = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,8 +58,8 @@ namespace Team5_XN
             this.pnlSubject1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxingName = new System.Windows.Forms.TextBox();
+            this.txtBoxingCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -109,6 +115,7 @@ namespace Team5_XN
             this.dgvBoxDetail.Size = new System.Drawing.Size(746, 395);
             this.dgvBoxDetail.TabIndex = 1;
             this.dgvBoxDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoxDetail_CellClick);
+            this.dgvBoxDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoxDetail_CellContentClick);
             // 
             // panel3
             // 
@@ -149,6 +156,12 @@ namespace Team5_XN
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.txtBoxGradeMaCode);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.label16);
+            this.panel4.Controls.Add(this.txtBoxGradeMaName);
+            this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.cboUseYN);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label8);
@@ -165,19 +178,85 @@ namespace Team5_XN
             this.panel4.Size = new System.Drawing.Size(746, 132);
             this.panel4.TabIndex = 12;
             // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(15, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(20, 23);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "*";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtBoxGradeMaCode
+            // 
+            this.txtBoxGradeMaCode.Enabled = false;
+            this.txtBoxGradeMaCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtBoxGradeMaCode.Location = new System.Drawing.Point(157, 23);
+            this.txtBoxGradeMaCode.Name = "txtBoxGradeMaCode";
+            this.txtBoxGradeMaCode.ReadOnly = true;
+            this.txtBoxGradeMaCode.Size = new System.Drawing.Size(132, 21);
+            this.txtBoxGradeMaCode.TabIndex = 27;
+            this.txtBoxGradeMaCode.Tag = "Boxing_Grade_Code";
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label15.Location = new System.Drawing.Point(32, 22);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(119, 23);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "포장등급 코드";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(15, 51);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(20, 23);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "*";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtBoxGradeMaName
+            // 
+            this.txtBoxGradeMaName.Enabled = false;
+            this.txtBoxGradeMaName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtBoxGradeMaName.Location = new System.Drawing.Point(157, 50);
+            this.txtBoxGradeMaName.Name = "txtBoxGradeMaName";
+            this.txtBoxGradeMaName.ReadOnly = true;
+            this.txtBoxGradeMaName.Size = new System.Drawing.Size(132, 21);
+            this.txtBoxGradeMaName.TabIndex = 24;
+            this.txtBoxGradeMaName.Tag = "Boxing_Grade_Name";
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label17.Location = new System.Drawing.Point(32, 50);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(108, 23);
+            this.label17.TabIndex = 23;
+            this.label17.Text = "포장등급 명";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // cboUseYN
             // 
             this.cboUseYN.FormattingEnabled = true;
-            this.cboUseYN.Location = new System.Drawing.Point(126, 66);
+            this.cboUseYN.Location = new System.Drawing.Point(458, 79);
             this.cboUseYN.Name = "cboUseYN";
             this.cboUseYN.Size = new System.Drawing.Size(121, 20);
             this.cboUseYN.TabIndex = 22;
+            this.cboUseYN.Tag = "Use_YN";
+            this.cboUseYN.TextChanged += new System.EventHandler(this.txtBoxGrade_TextChanged);
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(7, 66);
+            this.label5.Location = new System.Drawing.Point(316, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(20, 23);
             this.label5.TabIndex = 21;
@@ -187,7 +266,7 @@ namespace Team5_XN
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label8.Location = new System.Drawing.Point(24, 65);
+            this.label8.Location = new System.Drawing.Point(333, 76);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 23);
             this.label8.TabIndex = 20;
@@ -198,7 +277,7 @@ namespace Team5_XN
             // 
             this.label6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(7, 13);
+            this.label6.Location = new System.Drawing.Point(316, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(20, 23);
             this.label6.TabIndex = 19;
@@ -208,17 +287,19 @@ namespace Team5_XN
             // txtBoxGradeCode
             // 
             this.txtBoxGradeCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtBoxGradeCode.Location = new System.Drawing.Point(126, 11);
+            this.txtBoxGradeCode.Location = new System.Drawing.Point(458, 24);
             this.txtBoxGradeCode.Name = "txtBoxGradeCode";
             this.txtBoxGradeCode.Size = new System.Drawing.Size(176, 21);
             this.txtBoxGradeCode.TabIndex = 18;
+            this.txtBoxGradeCode.Tag = "Grade_Detail_Code";
+            this.txtBoxGradeCode.TextChanged += new System.EventHandler(this.txtBoxGrade_TextChanged);
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label3.Location = new System.Drawing.Point(24, 12);
+            this.label3.Location = new System.Drawing.Point(333, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 23);
+            this.label3.Size = new System.Drawing.Size(119, 23);
             this.label3.TabIndex = 17;
             this.label3.Text = "포장등급 상세코드";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,7 +308,7 @@ namespace Team5_XN
             // 
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(7, 41);
+            this.label7.Location = new System.Drawing.Point(316, 52);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(20, 23);
             this.label7.TabIndex = 15;
@@ -237,17 +318,19 @@ namespace Team5_XN
             // txtBoxGradeName
             // 
             this.txtBoxGradeName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtBoxGradeName.Location = new System.Drawing.Point(126, 38);
+            this.txtBoxGradeName.Location = new System.Drawing.Point(458, 51);
             this.txtBoxGradeName.Name = "txtBoxGradeName";
             this.txtBoxGradeName.Size = new System.Drawing.Size(176, 21);
             this.txtBoxGradeName.TabIndex = 12;
+            this.txtBoxGradeName.Tag = "Grade_Detail_Name";
+            this.txtBoxGradeName.TextChanged += new System.EventHandler(this.txtBoxGrade_TextChanged);
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label4.Location = new System.Drawing.Point(24, 40);
+            this.label4.Location = new System.Drawing.Point(333, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 23);
+            this.label4.Size = new System.Drawing.Size(108, 23);
             this.label4.TabIndex = 11;
             this.label4.Text = "포장등급 상세명";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,8 +411,8 @@ namespace Team5_XN
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSelect.Controls.Add(this.textBox6);
-            this.pnlSelect.Controls.Add(this.textBox1);
+            this.pnlSelect.Controls.Add(this.txtBoxingName);
+            this.pnlSelect.Controls.Add(this.txtBoxingCode);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Controls.Add(this.label13);
             this.pnlSelect.Controls.Add(this.button1);
@@ -342,21 +425,21 @@ namespace Team5_XN
             this.pnlSelect.Size = new System.Drawing.Size(1274, 54);
             this.pnlSelect.TabIndex = 1;
             // 
-            // textBox6
+            // txtBoxingName
             // 
-            this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox6.Location = new System.Drawing.Point(234, 17);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(99, 21);
-            this.textBox6.TabIndex = 19;
+            this.txtBoxingName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtBoxingName.Location = new System.Drawing.Point(242, 18);
+            this.txtBoxingName.Name = "txtBoxingName";
+            this.txtBoxingName.Size = new System.Drawing.Size(99, 21);
+            this.txtBoxingName.TabIndex = 19;
             // 
-            // textBox1
+            // txtBoxingCode
             // 
-            this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.textBox1.Location = new System.Drawing.Point(101, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(99, 21);
-            this.textBox1.TabIndex = 3;
+            this.txtBoxingCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtBoxingCode.Location = new System.Drawing.Point(109, 17);
+            this.txtBoxingCode.Name = "txtBoxingCode";
+            this.txtBoxingCode.Size = new System.Drawing.Size(99, 21);
+            this.txtBoxingCode.TabIndex = 3;
             // 
             // label1
             // 
@@ -375,7 +458,7 @@ namespace Team5_XN
             this.label13.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.label13.Location = new System.Drawing.Point(46, 16);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 23);
+            this.label13.Size = new System.Drawing.Size(70, 23);
             this.label13.TabIndex = 17;
             this.label13.Text = "포장등급";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -387,7 +470,7 @@ namespace Team5_XN
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.button1.Location = new System.Drawing.Point(206, 15);
+            this.button1.Location = new System.Drawing.Point(214, 16);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 1;
@@ -450,7 +533,7 @@ namespace Team5_XN
         private System.Windows.Forms.Panel pnlSubject1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel pnlSelect;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxingCode;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -458,6 +541,12 @@ namespace Team5_XN
         private System.Windows.Forms.ComboBox cboUseYN;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtBoxingName;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtBoxGradeMaCode;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtBoxGradeMaName;
+        private System.Windows.Forms.Label label17;
     }
 }

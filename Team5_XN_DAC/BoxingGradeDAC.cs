@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using Team5_XN_VO;
+using System.Windows.Forms;
 
 namespace Team5_XN_DAC
 {
@@ -39,8 +40,9 @@ FROM BoxingGrade_Detail_Master";
         }
         public DataTable GetBoxingGradeDetail(string code)
         {
-            string sql = @"SELECT Grade_Detail_Code, Grade_Detail_Name,
-(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = USE_YN) USE_YN
+            string sql = @"SELECT Grade_Detail_Code, Grade_Detail_Name, Boxing_Grade_Code,
+(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = USE_YN) USE_YN,
+Ins_Date, Ins_Emp, Up_Date, Up_Emp
 FROM BoxingGrade_Detail_Master WHERE Boxing_Grade_Code = @Boxing_Grade_Code";
 
             DataTable dt = new DataTable();
@@ -51,6 +53,46 @@ FROM BoxingGrade_Detail_Master WHERE Boxing_Grade_Code = @Boxing_Grade_Code";
                 da.Fill(dt);
             }
             return dt;
+        }
+        public int SaveBoxing(DataTable dt, int check)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_Boxing_Grade_Save", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@Boxing_Grade_Data", System.Data.SqlDbType.Structured)
+                {
+                    TypeName = "Boxing_Grade_Master_Type",
+                    Value = dt
+                });
+                cmd.Parameters.AddWithValue("@Check", check);
+
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return -1;
+            }
+        }
+        public bool DeleteBoxDetail(string code)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_Boxing_Detail_Delete", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Grade_Detail_Code", code);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return false;
+            }
         }
     }
 }

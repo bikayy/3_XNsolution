@@ -43,11 +43,14 @@
   <ItemGroup>
     <Compile Include="BoxingGradeVO.cs" />
     <Compile Include="CommonVO.cs" />
-    <Compile Include="POPVO\NopVO.cs" />
+    <Compile Include="NopVO.cs" />
     <Compile Include="POPVO\WcVO.cs" />
     <Compile Include="ProcessVO.cs" />
+    <Compile Include="ProductionVO\InputListVO.cs" />
+    <Compile Include="ProductionVO\OrderVO.cs" />
     <Compile Include="ProductionVO\PlanVO.cs" />
     <Compile Include="ProductionVO\RequestVO.cs" />
+    <Compile Include="ProductionVO\WorkOrderVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchVO\SearchVO.cs" />
     <Compile Include="UserVO.cs" />

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Team5_XN_DAC
 {
-    public class UserDAC
+    public class UserDAC : IDisposable
     {
         SqlConnection conn;
         public UserDAC()
@@ -29,6 +29,21 @@ namespace Team5_XN_DAC
             int result = Convert.ToInt32(cmd.ExecuteScalar());
 
             return (result > 0);
+        }
+        public bool LoginCheck(UserVO user) // 로그인
+        {
+            string sql = @"SELECT count(*) FROM User_Master WHERE User_ID=@User_ID AND User_PW=@User_PW";
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+
+                cmd.Parameters.AddWithValue("@User_ID", user.User_ID);
+                cmd.Parameters.AddWithValue("@User_PW", user.User_PW);
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
         }
         public bool AddID(UserVO user) // 계정추가
         {
@@ -223,6 +238,72 @@ UserGroup_Master";
                 Debug.WriteLine(err.Message);
                 MessageBox.Show(err.Message);
                 return false;
+            }
+        }
+        public List<UGSearchVO> GetUGList()
+        {
+            string sql = @"select UserGroup_Code, UserGroup_Name from UserGroup_Master";
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    return Helper.DataReaderMapToList<UGSearchVO>(cmd.ExecuteReader());
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return null;
+            }
+        }
+        public DataTable GetUserAuthority()
+        {
+            string sql = @"  SELECT s.UserGroup_Code, s.Screen_Code, m.WordKey, 
+(select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = s.Use_YN) Use_YN,
+s.Ins_Date, s.Ins_Emp, s.Up_Date, s.Up_Emp
+  FROM ScreenItem_Authority s INNER JOIN Screenitem_Master m ON s.Screen_Code = m.Screen_Code";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+            }
+            return dt;
+        }
+        public DataTable GetScreenList()
+        {
+            string sql = @"SELECT Screen_Code, WordKey, Screen_Path,
+  (select DetailName from CommonCodeSystem where Code ='Monitoring_YN' and DetailCode=Monitoring_YN) Monitoring_YN,
+  (select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = Use_YN) Use_YN
+  FROM Screenitem_Master";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+            }
+            return dt;
+        }
+        public int SaveAuthority(DataTable dt, int check)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_User_Group_Authority_Save", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@Authority_Data", System.Data.SqlDbType.Structured)
+                {
+                    TypeName = "dbo.User_Group_Authority_Type",
+                    Value = dt
+                });
+                cmd.Parameters.AddWithValue("@Check", check);
+
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                MessageBox.Show(err.Message);
+                return -1;
             }
         }
         public void Dispose()

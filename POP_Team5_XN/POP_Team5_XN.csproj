@@ -52,23 +52,17 @@
     <Compile Include="Controls\ucDateTime.Designer.cs">
       <DependentUpon>ucDateTime.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ucNopHistory.cs">
+    <Compile Include="Controls\ucGradeList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ucNopHistory.Designer.cs">
-      <DependentUpon>ucNopHistory.cs</DependentUpon>
+    <Compile Include="Controls\ucGradeList.designer.cs">
+      <DependentUpon>ucGradeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ucNopHistory_Top.cs">
+    <Compile Include="Controls\ucRegPerList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ucNopHistory_Top.Designer.cs">
-      <DependentUpon>ucNopHistory_Top.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ucNopRegist.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\ucNopRegist.Designer.cs">
-      <DependentUpon>ucNopRegist.cs</DependentUpon>
+    <Compile Include="Controls\ucRegPerList.designer.cs">
+      <DependentUpon>ucRegPerList.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -76,17 +70,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="POPNopRegister.cs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="POPNopRegister.cs.Designer.cs">
+      <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
     </Compile>
-    <Compile Include="POPNopRegister.cs">
+    <Compile Include="POPPalette.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POPNopRegister.Designer.cs">
-      <DependentUpon>POPNopRegister.cs</DependentUpon>
+    <Compile Include="POPPalette.designer.cs">
+      <DependentUpon>POPPalette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupBoxingGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupBoxingGrade.designer.cs">
+      <DependentUpon>PopupBoxingGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupKeyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupKeyboard.designer.cs">
+      <DependentUpon>PopupKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupRegPer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupRegPer.designer.cs">
+      <DependentUpon>PopupRegPer.cs</DependentUpon>
     </Compile>
     <Compile Include="POPWorkCenter.cs">
       <SubType>Form</SubType>
@@ -105,20 +117,29 @@
     <EmbeddedResource Include="Controls\ucDateTime.resx">
       <DependentUpon>ucDateTime.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ucNopHistory.resx">
-      <DependentUpon>ucNopHistory.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ucGradeList.resx">
+      <DependentUpon>ucGradeList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ucNopHistory_Top.resx">
-      <DependentUpon>ucNopHistory_Top.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ucNopRegist.resx">
-      <DependentUpon>ucNopRegist.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ucRegPerList.resx">
+      <DependentUpon>ucRegPerList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POPNopRegister.resx">
-      <DependentUpon>POPNopRegister.cs</DependentUpon>
+    <EmbeddedResource Include="POPNopRegister.cs.resx">
+      <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPPalette.resx">
+      <DependentUpon>POPPalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupBoxingGrade.resx">
+      <DependentUpon>PopupBoxingGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupKeyboard.resx">
+      <DependentUpon>PopupKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupRegPer.resx">
+      <DependentUpon>PopupRegPer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POPWorkCenter.resx">
       <DependentUpon>POPWorkCenter.cs</DependentUpon>
@@ -216,6 +237,12 @@
       <Project>{242fb483-6cca-475c-95dc-387108ce084b}</Project>
       <Name>Team5_XN_VO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

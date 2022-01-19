@@ -211,17 +211,17 @@
     <Compile Include="frmModule.Designer.cs">
       <DependentUpon>frmModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNopHistory3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNopHistory3.Designer.cs">
-      <DependentUpon>frmNopHistory3.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmNopHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmNopHistory.Designer.cs">
       <DependentUpon>frmNopHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNopHistory2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNopHistory2.Designer.cs">
+      <DependentUpon>frmNopHistory2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPOPMain.cs">
       <SubType>Form</SubType>
@@ -252,6 +252,12 @@
     </Compile>
     <Compile Include="frmSearchPopup.Designer.cs">
       <DependentUpon>frmSearchPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSiyuOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSiyuOrder.Designer.cs">
+      <DependentUpon>frmSiyuOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSystemCode.cs">
       <SubType>Form</SubType>
@@ -298,7 +304,7 @@
     <Compile Include="frmWorkPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmWorkPlan.Designer.cs">
+    <Compile Include="frmWorkPlan.designer.cs">
       <DependentUpon>frmWorkPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWorkRequest.cs">
@@ -318,6 +324,12 @@
     </Compile>
     <Compile Include="POPCreateWork.Designer.cs">
       <DependentUpon>POPCreateWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPNopRegister.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPNopRegister.cs.Designer.cs">
+      <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
     </Compile>
     <Compile Include="PopupAddPlan.cs">
       <SubType>Form</SubType>
@@ -348,6 +360,12 @@
     </Compile>
     <Compile Include="PopupIndPlan.Designer.cs">
       <DependentUpon>PopupIndPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupNopSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupNopSearch.Designer.cs">
+      <DependentUpon>PopupNopSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="PopupRequest.cs">
       <SubType>Form</SubType>
@@ -391,21 +409,18 @@
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\DayProductionService.cs" />
     <Compile Include="Service\ItemService.cs" />
-    <Compile Include="Service\POPService\NopService.cs" />
+    <Compile Include="Service\NopService.cs" />
     <Compile Include="Service\POPService\WcService.cs" />
     <Compile Include="Service\ProcessService.cs" />
+    <Compile Include="Service\ProductionService\InputListService.cs" />
+    <Compile Include="Service\ProductionService\OrderService.cs" />
     <Compile Include="Service\ProductionService\PlanService.cs" />
     <Compile Include="Service\ProductionService\RequestService.cs" />
+    <Compile Include="Service\ProductionService\WorkOrderService.cs" />
     <Compile Include="Service\SearchService\SearchService.cs" />
     <Compile Include="Service\TimeProductionService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WorkCenterService.cs" />
-    <Compile Include="Controls\ucNopRegist.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\ucNopRegist.Designer.cs">
-      <DependentUpon>ucNopRegist.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utill\CommonUtil.cs" />
     <Compile Include="Utill\DataGridViewUtil.cs" />
     <Compile Include="frmWorkCenter.cs">
@@ -425,9 +440,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucDateTime.resx">
       <DependentUpon>ucDateTime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ucNopRegist.resx">
-      <DependentUpon>ucNopRegist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ucPaletteList.resx">
       <DependentUpon>ucPaletteList.cs</DependentUpon>
@@ -501,11 +513,11 @@
     <EmbeddedResource Include="frmModule.resx">
       <DependentUpon>frmModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNopHistory3.resx">
-      <DependentUpon>frmNopHistory3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmNopHistory.resx">
       <DependentUpon>frmNopHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNopHistory2.resx">
+      <DependentUpon>frmNopHistory2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPOPMain.resx">
       <DependentUpon>frmPOPMain.cs</DependentUpon>
@@ -521,6 +533,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchPopup.resx">
       <DependentUpon>frmSearchPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSiyuOrder.resx">
+      <DependentUpon>frmSiyuOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemCode.resx">
       <DependentUpon>frmSystemCode.cs</DependentUpon>
@@ -555,6 +570,9 @@
     <EmbeddedResource Include="POPCreateWork.resx">
       <DependentUpon>POPCreateWork.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="POPNopRegister.cs.resx">
+      <DependentUpon>POPNopRegister.cs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopupAddPlan.resx">
       <DependentUpon>PopupAddPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -569,6 +587,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupIndPlan.resx">
       <DependentUpon>PopupIndPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupNopSearch.resx">
+      <DependentUpon>PopupNopSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupRequest.resx">
       <DependentUpon>PopupRequest.cs</DependentUpon>

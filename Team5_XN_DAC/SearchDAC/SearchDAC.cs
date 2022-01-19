@@ -70,24 +70,16 @@ on wc.Process_Code = pm.Process_Code";
                 Debug.WriteLine(err.Message);
                 return null;
             }
-        }
-        public List<UGSearchVO> GetUGList()
-        {
-            string sql = @"select UserGroup_Code, UserGroup_Name from UserGroup_Master";
 
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    return Helper.DataReaderMapToList<UGSearchVO>(cmd.ExecuteReader());
-                }
-            }
-            catch (Exception err)
-            {
-                Debug.WriteLine(err.Message);
-                return null;
-            }
+
+//                    cmd.CommandText = @"select Wc_Code, Wc_Name, Wc_Group, Process_Group
+//from WorkCenter_Master wc join Process_Master pm
+//on wc.Process_Code = pm.Process_Code
+//where 1 = 1
+//and wc.Use_YN = 'Y'";
+              
         }
+
 
     }
 }
