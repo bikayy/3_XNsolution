@@ -47,7 +47,7 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvInput, "생산일자", "Prd_Date", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvInput, "품목코드", "Item_Code", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvInput, "품목명", "Item_Name", colWidth: 120);
-            DataGridViewUtil.AddGridTextColumn(dgvInput, "포장등급", "DetailName", colWidth: 120);
+            //DataGridViewUtil.AddGridTextColumn(dgvInput, "포장등급", "DetailName", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvInput, "포장등급상세코드", "Grade_Detail_Code", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvInput, "포장등급상세명", "Grade_Detail_Name", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dgvInput, "팔렛번호", "Pallet_No", colWidth: 120);
@@ -71,7 +71,7 @@ namespace Team5_XN
 
             cbo.DisplayMember = "DetailName";
             cbo.ValueMember = "DetailCode";
-            cbo.Text = "DetailName";
+            //cbo.Text = "DetailName";
             cbo.DataSource = dt;
         }
 
