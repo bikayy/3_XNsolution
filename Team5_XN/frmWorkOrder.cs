@@ -247,8 +247,8 @@ namespace Team5_XN
         {
             main = (Main)this.MdiParent;
 
-            main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
-            main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
+            //main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
+            //main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
 
             DataGridViewUtil.SetInitGridView(dgvWo);
             DataGridViewUtil.AddGridTextColumn(dgvWo, "작업지시상태", "Wo_Status", colWidth: 120);

@@ -43,6 +43,8 @@ namespace Team5_XN
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtItemName = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtItemCode = new WinReflectionSettings.PlaceholderTextBox();
             this.btnItemSearch = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@ namespace Team5_XN
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtItemName = new WinReflectionSettings.PlaceholderTextBox();
-            this.txtItemCode = new WinReflectionSettings.PlaceholderTextBox();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInput)).BeginInit();
             this.pnlSubject1.SuspendLayout();
@@ -147,7 +147,7 @@ namespace Team5_XN
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(810, 29);
+            this.btnSelect.Location = new System.Drawing.Point(1260, 38);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(177, 84);
             this.btnSelect.TabIndex = 71;
@@ -228,6 +228,28 @@ namespace Team5_XN
             this.label8.Text = "*";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // txtItemName
+            // 
+            this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemName.Location = new System.Drawing.Point(339, 47);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.PlaceholderText = "품목 명";
+            this.txtItemName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtItemName.ReadOnly = true;
+            this.txtItemName.Size = new System.Drawing.Size(202, 25);
+            this.txtItemName.TabIndex = 52;
+            // 
+            // txtItemCode
+            // 
+            this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItemCode.Location = new System.Drawing.Point(163, 48);
+            this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.PlaceholderText = "품목 코드";
+            this.txtItemCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtItemCode.ReadOnly = true;
+            this.txtItemCode.Size = new System.Drawing.Size(139, 25);
+            this.txtItemCode.TabIndex = 51;
+            // 
             // btnItemSearch
             // 
             this.btnItemSearch.BackColor = System.Drawing.Color.Black;
@@ -304,28 +326,6 @@ namespace Team5_XN
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(22, 159);
             this.panel2.TabIndex = 0;
-            // 
-            // txtItemName
-            // 
-            this.txtItemName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtItemName.Location = new System.Drawing.Point(339, 47);
-            this.txtItemName.Name = "txtItemName";
-            this.txtItemName.PlaceholderText = "품목 명";
-            this.txtItemName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.txtItemName.ReadOnly = true;
-            this.txtItemName.Size = new System.Drawing.Size(202, 25);
-            this.txtItemName.TabIndex = 52;
-            // 
-            // txtItemCode
-            // 
-            this.txtItemCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtItemCode.Location = new System.Drawing.Point(163, 48);
-            this.txtItemCode.Name = "txtItemCode";
-            this.txtItemCode.PlaceholderText = "품목 코드";
-            this.txtItemCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.txtItemCode.ReadOnly = true;
-            this.txtItemCode.Size = new System.Drawing.Size(139, 25);
-            this.txtItemCode.TabIndex = 51;
             // 
             // frmInputList
             // 

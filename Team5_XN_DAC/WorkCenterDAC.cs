@@ -35,7 +35,7 @@ SELECT
 	, (select DetailName from CommonCodeSystem where DetailCode = Use_YN)Use_YN
 	, (select DetailName from CommonCodeSystem where DetailCode = Pallet_YN)Pallet_YN
     , (select DetailName from CommonCodeSystem where DetailCode = Monitoring_YN) Monitoring_YN
-    , Remark, Ins_Date, Up_Date, Ins_Emp, Up_Emp
+    , Wo_Status, Remark, Ins_Date, Up_Date, Ins_Emp, Up_Emp
 FROM 
     WorkCenter_Master wm";
             //, Ins_Date, Ins_Emp, Up_Date, Up_Emp

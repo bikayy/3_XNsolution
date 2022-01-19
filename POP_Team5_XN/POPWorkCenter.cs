@@ -30,6 +30,11 @@ namespace POP_Team5_XN
 
         private void POPWorkCenter_Load(object sender, EventArgs e)
         {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             DataTable dt = new DataTable();
             dt = wcServ.SelectWc();
             int idx = 0;
@@ -117,5 +122,9 @@ namespace POP_Team5_XN
             }
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }
