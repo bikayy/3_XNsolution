@@ -244,6 +244,7 @@ namespace Team5_XN
             // 
             // cboUseYN
             // 
+            this.cboUseYN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUseYN.FormattingEnabled = true;
             this.cboUseYN.Location = new System.Drawing.Point(458, 79);
             this.cboUseYN.Name = "cboUseYN";

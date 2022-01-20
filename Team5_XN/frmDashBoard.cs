@@ -97,7 +97,7 @@ namespace Team5_XN
             dgvNopInfo.Columns["Nop_HappenTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
             dgvNopInfo.Columns["Nop_CancelTime"].DefaultCellStyle.Format = "yyyy-MM-dd HH:mm:ss";
 
-            dt3 = mDac.GetDayProduction();
+            dt3 = mDac.GetNopHistory();
             dgvNopInfo.DataSource = dt3;
 
             DataGridViewUtil.SetInitGridView(dgvDayDefect);
@@ -120,11 +120,6 @@ namespace Team5_XN
             dt4 = mDac.GetDayDefect();
             dgvDayDefect.DataSource = dt4;
             
-        }
-
-        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
         }
     }
 }

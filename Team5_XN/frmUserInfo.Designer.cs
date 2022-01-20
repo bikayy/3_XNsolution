@@ -30,6 +30,10 @@ namespace Team5_XN
         private void InitializeComponent()
         {
             this.pnlBorder = new System.Windows.Forms.Panel();
+            this.pnlDgv = new System.Windows.Forms.Panel();
+            this.dgvUserInfo = new System.Windows.Forms.DataGridView();
+            this.pnlSubject1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboUseYN = new System.Windows.Forms.ComboBox();
@@ -74,19 +78,15 @@ namespace Team5_XN
             this.btnPwChange = new System.Windows.Forms.Button();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlSubject1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dgvUserInfo = new System.Windows.Forms.DataGridView();
-            this.pnlDgv = new System.Windows.Forms.Panel();
             this.pnlBorder.SuspendLayout();
+            this.pnlDgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).BeginInit();
+            this.pnlSubject1.SuspendLayout();
             this.pnlDetail.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlSubject2.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.pnlSubject1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).BeginInit();
-            this.pnlDgv.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBorder
@@ -102,6 +102,54 @@ namespace Team5_XN
             this.pnlBorder.Padding = new System.Windows.Forms.Padding(5);
             this.pnlBorder.Size = new System.Drawing.Size(1284, 661);
             this.pnlBorder.TabIndex = 5;
+            // 
+            // pnlDgv
+            // 
+            this.pnlDgv.BackColor = System.Drawing.Color.White;
+            this.pnlDgv.Controls.Add(this.dgvUserInfo);
+            this.pnlDgv.Controls.Add(this.pnlSubject1);
+            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDgv.Location = new System.Drawing.Point(5, 59);
+            this.pnlDgv.Margin = new System.Windows.Forms.Padding(10);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnlDgv.Size = new System.Drawing.Size(1274, 435);
+            this.pnlDgv.TabIndex = 6;
+            // 
+            // dgvUserInfo
+            // 
+            this.dgvUserInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserInfo.Location = new System.Drawing.Point(0, 35);
+            this.dgvUserInfo.Name = "dgvUserInfo";
+            this.dgvUserInfo.RowTemplate.Height = 23;
+            this.dgvUserInfo.Size = new System.Drawing.Size(1274, 395);
+            this.dgvUserInfo.TabIndex = 1;
+            this.dgvUserInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserInfo_CellClick);
+            // 
+            // pnlSubject1
+            // 
+            this.pnlSubject1.BackColor = System.Drawing.Color.White;
+            this.pnlSubject1.Controls.Add(this.label9);
+            this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
+            this.pnlSubject1.Name = "pnlSubject1";
+            this.pnlSubject1.Size = new System.Drawing.Size(1274, 30);
+            this.pnlSubject1.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Gainsboro;
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(133, 30);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "조회내역";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlDetail
             // 
@@ -149,6 +197,7 @@ namespace Team5_XN
             // 
             // cboUseYN
             // 
+            this.cboUseYN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUseYN.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboUseYN.FormattingEnabled = true;
             this.cboUseYN.Location = new System.Drawing.Point(713, 41);
@@ -160,6 +209,7 @@ namespace Team5_XN
             // 
             // cboIPSecurity
             // 
+            this.cboIPSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboIPSecurity.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboIPSecurity.FormattingEnabled = true;
             this.cboIPSecurity.Location = new System.Drawing.Point(713, 13);
@@ -502,6 +552,7 @@ namespace Team5_XN
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(120, 29);
             this.cboUse.Name = "cboUse";
@@ -584,11 +635,11 @@ namespace Team5_XN
             // 
             // btnPwChange
             // 
-            this.btnPwChange.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPwChange.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnPwChange.BackColor = System.Drawing.Color.White;
             this.btnPwChange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPwChange.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.btnPwChange.Location = new System.Drawing.Point(924, 9);
+            this.btnPwChange.Location = new System.Drawing.Point(1154, 6);
             this.btnPwChange.Name = "btnPwChange";
             this.btnPwChange.Size = new System.Drawing.Size(112, 40);
             this.btnPwChange.TabIndex = 6;
@@ -613,54 +664,6 @@ namespace Team5_XN
             this.panel2.Size = new System.Drawing.Size(19, 52);
             this.panel2.TabIndex = 0;
             // 
-            // pnlSubject1
-            // 
-            this.pnlSubject1.BackColor = System.Drawing.Color.White;
-            this.pnlSubject1.Controls.Add(this.label9);
-            this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
-            this.pnlSubject1.Name = "pnlSubject1";
-            this.pnlSubject1.Size = new System.Drawing.Size(1274, 30);
-            this.pnlSubject1.TabIndex = 7;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Gainsboro;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 30);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "조회내역";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dgvUserInfo
-            // 
-            this.dgvUserInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUserInfo.Location = new System.Drawing.Point(0, 35);
-            this.dgvUserInfo.Name = "dgvUserInfo";
-            this.dgvUserInfo.RowTemplate.Height = 23;
-            this.dgvUserInfo.Size = new System.Drawing.Size(1274, 395);
-            this.dgvUserInfo.TabIndex = 1;
-            this.dgvUserInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserInfo_CellClick);
-            // 
-            // pnlDgv
-            // 
-            this.pnlDgv.BackColor = System.Drawing.Color.White;
-            this.pnlDgv.Controls.Add(this.dgvUserInfo);
-            this.pnlDgv.Controls.Add(this.pnlSubject1);
-            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDgv.Location = new System.Drawing.Point(5, 59);
-            this.pnlDgv.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnlDgv.Size = new System.Drawing.Size(1274, 435);
-            this.pnlDgv.TabIndex = 6;
-            // 
             // frmUserInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -671,6 +674,9 @@ namespace Team5_XN
             this.Text = "사용자관리";
             this.Load += new System.EventHandler(this.frmUserInfo_Load);
             this.pnlBorder.ResumeLayout(false);
+            this.pnlDgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).EndInit();
+            this.pnlSubject1.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -679,9 +685,6 @@ namespace Team5_XN
             this.pnlSelect.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.pnlSubject1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).EndInit();
-            this.pnlDgv.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

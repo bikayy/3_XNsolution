@@ -143,7 +143,7 @@ namespace Team5_XN
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(615, 25);
             this.label3.TabIndex = 11;
-            this.label3.Text = "조회내역";
+            this.label3.Text = "비가동이력";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // splitContainer2
@@ -166,7 +166,6 @@ namespace Team5_XN
             this.splitContainer2.Size = new System.Drawing.Size(665, 661);
             this.splitContainer2.SplitterDistance = 329;
             this.splitContainer2.TabIndex = 0;
-            this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
             // dgvDayProduct
             // 

@@ -154,6 +154,7 @@ namespace Team5_XN
 
             int result = 0;
             int result2 = 0;
+            int result3 = 0;
 
             DataTable dt2 = new DataTable();
             dt2.Columns.Add(new DataColumn("CodeNum", typeof(int)));
@@ -215,7 +216,7 @@ namespace Team5_XN
                     }
 
                     dt2.AcceptChanges(); ;
-                    result = commServ.SaveMasterCode(dt2, check);
+                    result3 = commServ.SaveMasterCode(dt2, check);
                 }
             }
             else if (check == 1) //디테일의 저장
@@ -305,14 +306,14 @@ namespace Team5_XN
 
             }
 
-            if (result > 0 || result2 > 0)
+            if (result > 0 || result2 > 0 || result3 > 0)
             {
                 MessageBox.Show("저장 완료");
                 ChangeValue_Check(0);
                 OnSelect(this, e);
 
             }
-            else if (result < 0 || result2 < 0)
+            else if (result < 0 || result2 < 0 || result3 > 0)
             {
                 MessageBox.Show("저장 실패");
             }
@@ -385,7 +386,7 @@ namespace Team5_XN
             searchList.RowFilter = sb.ToString();
             dgvSysMaster.DataSource = searchList;
             rowCount = searchList.Count;
-
+            dt_DB = dt.Copy();
             button4.Visible = true;
             ControlTextReset();
             dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, 0));
@@ -645,6 +646,12 @@ namespace Team5_XN
             {
                 //if (dt == null) return;
                 Control ctrl = ((Control)sender);
+
+                if (ctrl.Name == "txtSort" && ctrl.Text != "" && !int.TryParse(ctrl.Text, out int num1))
+                {
+                    MessageBox.Show("[정렬순서] 항목은 양수만 입력 가능합니다.");
+                    txtSort.Text = "";
+                }
 
                 if (ctrl.Text.Length > 0)
                 {

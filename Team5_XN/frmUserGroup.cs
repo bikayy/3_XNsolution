@@ -76,6 +76,7 @@ namespace Team5_XN
 
         private void OnDelete(object sender, EventArgs e)
         {
+            if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             if (dgvUserGroup.CurrentCell == null)
@@ -110,6 +111,7 @@ namespace Team5_XN
                     if (result)
                     {
                         MessageBox.Show("삭제 완료");
+                        LoadData();
                         OnSelect(this, e);
                     }
                     else
@@ -433,16 +435,8 @@ namespace Team5_XN
         }
         private void LoadData()
         {
-            dgvUserGroup.Columns.Clear();
-
-            DataGridViewUtil.SetInitGridView(dgvUserGroup);
-
-            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "사용자그룹코드", "UserGroup_Code", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "사용자그룹명", "UserGroup_Name", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "사용여부", "Use_YN", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "Admin 여부", "Admin", colWidth: 100);
-            //list = UserServ.GetUserGroupMaster();
-            //dgvUserGroup.DataSource = list;
+            dt = userServ.GetUserGroupMaster();
+            dgvUserGroup.DataSource = dt;
         }
         private void dgvUserGroup_CellClick(object sender, DataGridViewCellEventArgs e)
         {

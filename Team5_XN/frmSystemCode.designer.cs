@@ -271,6 +271,7 @@ namespace Team5_XN
             // 
             // cboUseYN
             // 
+            this.cboUseYN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUseYN.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
             this.cboUseYN.FormattingEnabled = true;
             this.cboUseYN.Location = new System.Drawing.Point(507, 98);
@@ -278,7 +279,6 @@ namespace Team5_XN
             this.cboUseYN.Size = new System.Drawing.Size(101, 20);
             this.cboUseYN.TabIndex = 25;
             this.cboUseYN.Tag = "UseYN";
-            this.cboUseYN.Text = "예";
             this.cboUseYN.TextChanged += new System.EventHandler(this.txtMiBox_TextChanged);
             // 
             // label16
@@ -493,7 +493,7 @@ namespace Team5_XN
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(534, 5);
+            this.button4.Location = new System.Drawing.Point(1087, 5);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(186, 40);
             this.button4.TabIndex = 25;

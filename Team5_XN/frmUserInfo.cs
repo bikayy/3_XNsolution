@@ -115,6 +115,7 @@ namespace Team5_XN
                     if (result)
                     {
                         MessageBox.Show("삭제 완료");
+                        LoadData();
                         OnSelect(this, e);
                     }
                     else
@@ -323,10 +324,7 @@ namespace Team5_XN
             }
 
             ChangeValue_Check(0);
-
-            
             dgvUserInfo.DataSource = dt;
-            
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -352,7 +350,7 @@ namespace Team5_XN
                 sb.Append(" AND Use_YN = '" + cboUse.Text + "'");
             }
             searchList.RowFilter = sb.ToString();
-            dgvUserInfo.DataSource = searchList;
+            dgvUserInfo.DataSource = searchList.ToTable();
             rowCount = searchList.Count;
             
             ControlTextReset();
@@ -458,21 +456,9 @@ namespace Team5_XN
 
         private void LoadData()
         {
-            dgvUserInfo.Columns.Clear();
-
-            DataGridViewUtil.SetInitGridView(dgvUserInfo);
-
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "사용자 ID", "User_ID", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "사용자 이름", "User_Name", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "권한그룹 코드", "UserGroup_Code", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "권한그룹 명", "UserGroup_Name", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "기본 공정 코드", "Default_Major_Process_Code", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "기본 공정 명", "Process_Name", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "IP 보안 적용여부", "IP_Security_YN", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "패스워드 초기화 횟수", "PW_Reset_Count", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "사용여부", "Use_YN", colWidth: 100);
             dt = userServ.GetUserInfo();
-            dgvUserInfo.DataSource = list;
+            dgvUserInfo.DataSource = dt;
+            //dgvUserInfo.DataSource = null;
         }
 
         private void btnPwChange_Click(object sender, EventArgs e)

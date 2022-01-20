@@ -40,8 +40,8 @@ namespace Team5_XN
         {
             main = (Main)this.MdiParent;
 
-            main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
-            main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
+            //main.toolSelect.Enabled = main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false;
+            //main.toolCreate.BackColor = main.toolUpdate.BackColor = Color.DarkGray;
             //main.Select += OnSelect;
             //main.Create += OnCreate;
             //main.Update += OnUpdate;
