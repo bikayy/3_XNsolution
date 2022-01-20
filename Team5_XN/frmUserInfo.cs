@@ -72,9 +72,9 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboIPSecurity, "IP_Security_YN", dtSysCode.Copy());
 
-            userServ = new UserService();
-            dt = userServ.GetUserInfo();
-            dt_DB = dt.Copy();
+            //userServ = new UserService();
+            //dt = userServ.GetUserInfo();
+            //dt_DB = dt.Copy();
 
         }
 
@@ -115,7 +115,7 @@ namespace Team5_XN
                     if (result)
                     {
                         MessageBox.Show("삭제 완료");
-                        LoadData();
+                        //LoadData(); 지워
                         OnSelect(this, e);
                     }
                     else
@@ -131,6 +131,7 @@ namespace Team5_XN
             if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
+            if (dt == null) return;
             ChangeValue_Check(1); //추가
             //dataGridView1.AllowUserToAddRows = true;
             DataRow dr = dt.NewRow();
@@ -225,6 +226,7 @@ namespace Team5_XN
             //저장-편집
             else if (check == 2)
             {
+                dt = (DataTable)dgvUserInfo.DataSource;
                 foreach (DataRow dr in dt.Rows)
                 {
                     foreach (DataColumn dc in dt.Columns)
@@ -253,6 +255,13 @@ namespace Team5_XN
                     }
                 }
                 dt2.AcceptChanges();
+
+                if (dt2.Rows.Count < 1)
+                {
+                    MessageBox.Show("저장할 데이터가 없습니다.");
+                    return;
+                }
+
                 result = userServ.SaveUser(dt2, check);
 
             }
@@ -268,10 +277,10 @@ namespace Team5_XN
             {
                 MessageBox.Show("저장 실패");
             }
-            else
-            {
-                MessageBox.Show("저장할 데이터가 없습니다.");
-            }
+            //else
+            //{
+            //    MessageBox.Show("저장할 데이터가 없습니다.");
+            //}
 
 
         }
@@ -301,7 +310,9 @@ namespace Team5_XN
             {
                 ChangeValue_Check(0);
 
-                OnSelect(this, e);
+                dt = dt_DB.Copy();
+                dgvUserInfo.DataSource = dt;
+                //OnSelect(this, e);
                 //this.DialogResult = DialogResult.Yes;
             }
             else
@@ -324,7 +335,12 @@ namespace Team5_XN
             }
 
             ChangeValue_Check(0);
-            dgvUserInfo.DataSource = dt;
+
+            userServ = new UserService();
+            dt = userServ.GetUserInfo();
+            dt_DB = dt.Copy();
+
+            //dgvUserInfo.DataSource = dt;
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -354,7 +370,8 @@ namespace Team5_XN
             rowCount = searchList.Count;
             
             ControlTextReset();
-            dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, 0));
+            if (dgvUserInfo.Rows.Count > 0)
+                dgvUserInfo_CellClick(dgvUserInfo, new DataGridViewCellEventArgs(0, 0));
         }
 
         private void ControlTextReset()
@@ -473,6 +490,7 @@ namespace Team5_XN
 
                 bool result = userServ.UpdateID(userPwd);
 
+                //수정하시겠습니까? if messageBox ~ 추가하기!@
                 if (result) MessageBox.Show("수정되었습니다.");
                 else MessageBox.Show("오류가 발생하였습니다.\n다시 시도하여주십시오.");
 

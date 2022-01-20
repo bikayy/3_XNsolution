@@ -331,6 +331,12 @@
     <Compile Include="PopupAddPlan.Designer.cs">
       <DependentUpon>PopupAddPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopupBoxingGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupBoxingGrade.Designer.cs">
+      <DependentUpon>PopupBoxingGrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopupCreatePalette.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -567,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopupAddPlan.resx">
       <DependentUpon>PopupAddPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupBoxingGrade.resx">
+      <DependentUpon>PopupBoxingGrade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopupCreatePalette.resx">
       <DependentUpon>PopupCreatePalette.cs</DependentUpon>
