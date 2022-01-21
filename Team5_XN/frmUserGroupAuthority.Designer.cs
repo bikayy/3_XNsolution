@@ -390,7 +390,7 @@ namespace Team5_XN
             this.dgvUserAuthority.Location = new System.Drawing.Point(0, 87);
             this.dgvUserAuthority.Name = "dgvUserAuthority";
             this.dgvUserAuthority.RowTemplate.Height = 23;
-            this.dgvUserAuthority.Size = new System.Drawing.Size(1274, 559);
+            this.dgvUserAuthority.Size = new System.Drawing.Size(1274, 449);
             this.dgvUserAuthority.TabIndex = 1;
             this.dgvUserAuthority.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserAuthority_CellClick);
             // 
