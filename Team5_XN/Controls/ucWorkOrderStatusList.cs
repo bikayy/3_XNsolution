@@ -15,7 +15,7 @@ namespace Team5_XN
     {
         public event EventHandler eventOrderList;
         public event EventHandler eventBtnCheck;
-        public event EventHandler eventWoStatus;
+        public event EventHandler eventRemark;
 
         SelectOrderVO orderList = null;
         public SelectOrderVO SendOrderList
@@ -73,13 +73,25 @@ namespace Team5_XN
                 eventBtnCheck(this, null);
             }
 
-            if (eventWoStatus != null)
-            {
-                eventWoStatus(this, null);
-            }
-
         }
 
+
+        private void ucRemarkClick(object sender, EventArgs e)
+        {
+            if (eventOrderList != null)
+            {
+                eventOrderList(this, null);
+            }
+
+            if (eventBtnCheck != null)
+            {
+                eventBtnCheck(this, null);
+            }
+            if (eventRemark != null)
+            {
+                eventRemark(this, null);
+            }
+        }
 
 
     }
