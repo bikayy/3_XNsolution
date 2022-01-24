@@ -15,6 +15,8 @@ namespace Team5_XN
         ProcessService pserv = null;
         DataTable dt = null;
 
+        string sqlWhere = "";
+        string Use_YN = "Use_YN = 'Y'";
         ProcessVO sendInfo = new ProcessVO();
         public ProcessVO Send
         {
@@ -22,28 +24,69 @@ namespace Team5_XN
             set { sendInfo = value; }
         }
 
+        /// <summary>
+        /// 공정 검색 팝업창... ▶ 기본조건 Use_YN = 'Y'
+        /// </summary>
         public PopupSearchProcess()
         {
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// 공정 검색 팝업창...
+        /// ▶ 가능조건: Process_Code, Process_Name, Process_Group, Remark   
+        /// ▶ Use_YN: null => 사용유무와 무관하게 모두 출력할 경우
+        /// </summary>
+        /// <param name="sqlWhere"> 걸고싶은 조건을 그대로 적으세요... Ex) Process_Group='포장' OR Process_Name='PACK'  </param>
+        /// <param name="Use_YN"> Use_YN: null => 사용유무와 무관하게 모두 출력할 경우</param>
+        public PopupSearchProcess(string sqlWhere, string Use_YN= "Use_YN = 'Y'")
+        {
+            if (sqlWhere != null) this.sqlWhere = sqlWhere;
+            if (Use_YN != null) this.Use_YN = Use_YN;
+            else this.Use_YN = "";
+            InitializeComponent();
+        }
+
+        
+
         private void PopupSearchProcess_Load(object sender, EventArgs e)
         {
+            
             DataGridViewUtil.SetInitGridView(dataGridView1);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정코드", "Process_Code", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정명", "Process_Name",  colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정그룹", "Process_Group", colWidth: 120);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고", "Remark", colWidth: 140);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "사용유무", "Use_YN", colWidth: 70, visibility:false);
+            if (this.Use_YN==null || this.Use_YN.Length < 1)
+                DataGridViewUtil.AddGridTextColumn(dataGridView1, "사용유무", "Use_YN", colWidth: 70);//, visibility: false);
 
             pserv = new ProcessService();
             LoadData();
             dataGridView1.CurrentCell = null;
         }
-
+        
         private void LoadData()
         {
             dt = pserv.SearchProcess();
+            DataView dv_SerchList = new DataView(dt);
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append(" 1 = 1 ");
+
+            
+            if (sqlWhere.Trim().Length > 0)
+            {
+                sb.Append(" AND ");
+                sb.Append(sqlWhere);
+            }
+            if (Use_YN.Trim().Length > 0)
+            {
+                sb.Append(" AND ");
+                sb.Append(Use_YN);
+            }
+            dv_SerchList.RowFilter = sb.ToString();
+            dt = dv_SerchList.ToTable();
             dataGridView1.DataSource = dt;
             dataGridView1.CurrentCell = null;
         }

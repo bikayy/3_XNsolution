@@ -49,10 +49,10 @@ namespace Team5_XN
 
             DataGridViewUtil.SetInitGridView(dataGridView1);
 
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정코드", "Process_Code", colWidth: 200);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정명", "Process_Name", colWidth: 250, align: DataGridViewContentAlignment.MiddleLeft);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정그룹", "Process_Group", colWidth: 200);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고", "Remark", colWidth: 150);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정코드", "Process_Code", colWidth: 130);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정명", "Process_Name", colWidth: 200, align: DataGridViewContentAlignment.MiddleLeft);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "공정그룹", "Process_Group", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고", "Remark", colWidth: 250);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "사용유무", "Use_YN", colWidth: 80);
             //dataGridView1.ReadOnly = false;
 
@@ -241,6 +241,11 @@ namespace Team5_XN
                 }
                 dt2.AcceptChanges();
 
+                if (dt2.Rows.Count < 1)
+                {
+                    MessageBox.Show("저장할 데이터가 없습니다.");
+                    return;
+                }
                 result = pserv.SaveProcess(dt2, check);
                 //dt.AcceptChanges();
 
@@ -251,9 +256,22 @@ namespace Team5_XN
                 dt = (DataTable)dataGridView1.DataSource;
                 foreach (DataRow dr in dt.Rows)
                 {
+                    int r = dt.Rows.IndexOf(dr);
+                    for (int c = 0; c < 5; c++)
+                    {
+                        if (string.IsNullOrWhiteSpace(dataGridView1[c, r].Value.ToString()))
+                        {
+                            if (c == 3) continue;
+                            MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dataGridView1.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
+                            dataGridView1.CurrentCell = dataGridView1[c, r];
+                            dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(c, r));
+                            return;
+                        }
+                    }
+
                     foreach (DataColumn dc in dt.Columns)
                     {
-
+                        
                         string a = dt_DB.Rows[dt.Rows.IndexOf(dr)][dt.Columns.IndexOf(dc)].ToString();
                         string b = dr[dc].ToString();
                         if (b != a)
@@ -276,6 +294,11 @@ namespace Team5_XN
                     }
                 }
                 dt2.AcceptChanges();
+                if (dt2.Rows.Count < 1)
+                {
+                    MessageBox.Show("저장할 데이터가 없습니다.");
+                    return;
+                }
                 result = pserv.SaveProcess(dt2, check);
                 //dt.AcceptChanges();
             }
@@ -300,7 +323,6 @@ namespace Team5_XN
             {
                 MessageBox.Show("저장할 데이터가 없습니다.");
             }
-
 
         }
 

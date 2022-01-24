@@ -553,21 +553,27 @@ namespace Team5_XN
         private void btnSelectProcess_Click(object sender, EventArgs e)
         {
             string btnName = ((Button)sender).Name;
-            PopupSearchProcess sp = new PopupSearchProcess();
-
-            if (sp.ShowDialog() == DialogResult.OK)
+            
+            
+            if (btnName.Contains("Select"))
             {
-                if (btnName.Contains("Select"))
+                PopupSearchProcess sp = new PopupSearchProcess(null, null);
+                if (sp.ShowDialog() == DialogResult.OK)
                 {
                     txtSelectProcessCode1.Text = sp.Send.Process_Code;
                     txtSelectProcessCode2.Text = sp.Send.Process_Name;
                 }
-                else
+            }
+            else
+            {
+                PopupSearchProcess sp = new PopupSearchProcess();
+                if (sp.ShowDialog() == DialogResult.OK)
                 {
                     txtProcessCode.Text = sp.Send.Process_Code;
                     txtProcessName.Text = sp.Send.Process_Name;
                 }
-            }
+            }  
+            
         }
 
         private void ControlTextReset()

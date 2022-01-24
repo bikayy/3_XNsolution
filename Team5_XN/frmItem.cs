@@ -45,17 +45,17 @@ namespace Team5_XN
 
             DataGridViewUtil.SetInitGridView(dataGridView1);
 
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목코드",   "Item_Code", colWidth: 200);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목명",     "Item_Name", colWidth: 250, align: DataGridViewContentAlignment.MiddleLeft);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목영문명", "Item_Name_Eng", colWidth: 150);
-            
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목유형",   "Item_Type", colWidth: 150);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "규격",       "Item_Unit", colWidth: 150);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목코드",   "Item_Code", colWidth: 180);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목명",     "Item_Name", colWidth: 200, align: DataGridViewContentAlignment.MiddleLeft);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목영문명", "Item_Name_Eng", colWidth: 150, align: DataGridViewContentAlignment.MiddleLeft);
+
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "품목유형",   "Item_Type", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "규격",       "Item_Unit", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dataGridView1, "사용유무",   "Use_YN", colWidth: 80);
 
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "시간당생산량","PrdQty_Per_Hour", colWidth: 80);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "캐비티",     "Cavity_qty", colWidth: 80);
-            DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고",       "Remark", colWidth: 150);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "시간당생산량", "PrdQty_Per_Hour", colWidth: 80);//, align: DataGridViewContentAlignment.MiddleRight);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "캐비티", "Cavity_qty", colWidth: 70);//, align: DataGridViewContentAlignment.MiddleRight);
+            DataGridViewUtil.AddGridTextColumn(dataGridView1, "비고",       "Remark", colWidth: 150, align: DataGridViewContentAlignment.MiddleLeft);
 
             //dataGridView1.Columns["PrdQty_Per_Hour"].ValueType = typeof(string);
             //dataGridView1.Columns["Cavity_qty"].ValueType = typeof(string);
@@ -262,17 +262,41 @@ namespace Team5_XN
                 }
                 dt2.AcceptChanges();
 
+                if (dt2.Rows.Count < 1)
+                {
+                    MessageBox.Show("저장할 데이터가 없습니다.");
+                    return;
+                }
+
                 result = iserv.SaveItem(dt2, check);
 
             }
             //저장-편집
             else if (check == 2)
             {
+                dt = (DataTable)dataGridView1.DataSource;
                 foreach (DataRow dr in dt.Rows)
                 {
+
+                    int r = dt.Rows.IndexOf(dr);
+                    int col = dataGridView1.Columns.Count;
+                    for (int c = 0; c < col; c++)
+                    {
+                        if ( string.IsNullOrWhiteSpace(dataGridView1[c, r].Value.ToString()))
+                        {
+
+                            string propertyName = dataGridView1.Columns[c].DataPropertyName;
+                            if (propertyName == "Remark" || propertyName == "Item_Name_Eng" || propertyName == "Item_Unit" || propertyName == "PrdQty_Per_Hour" || propertyName == "Cavity_qty") continue;
+                            MessageBox.Show($"입력하지 않은 항목이 있습니다. ({dataGridView1.Columns[c].HeaderText}) \n → {r + 1}행, {c + 1}열");
+                            dataGridView1.CurrentCell = dataGridView1[c, r];
+                            dataGridView1_CellClick(dataGridView1, new DataGridViewCellEventArgs(c, r));
+                            return;
+                        }
+                    }
+
                     foreach (DataColumn dc in dt.Columns)
                     {
-
+                        int a = dt.Columns.IndexOf(dc);
                         string dataDB = dt_DB.Rows[dt.Rows.IndexOf(dr)][dt.Columns.IndexOf(dc)].ToString();
                         string dataNow = dr[dc].ToString();
                         if (dataNow != dataDB)
@@ -302,6 +326,12 @@ namespace Team5_XN
                     }
                 }
                 dt2.AcceptChanges();
+
+                if (dt2.Rows.Count < 1)
+                {
+                    MessageBox.Show("저장할 데이터가 없습니다.");
+                    return;
+                }
 
                 result = iserv.SaveItem(dt2, check);
 

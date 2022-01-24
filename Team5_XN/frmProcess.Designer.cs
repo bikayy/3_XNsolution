@@ -50,8 +50,6 @@ namespace Team5_XN
             this.txtProcessName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnlSubject2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -69,7 +67,6 @@ namespace Team5_XN
             this.pnlSubject1.SuspendLayout();
             this.pnlDetail2.SuspendLayout();
             this.pnlDetail.SuspendLayout();
-            this.pnlSubject2.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -129,7 +126,6 @@ namespace Team5_XN
             // 
             this.pnlDetail2.BackColor = System.Drawing.Color.White;
             this.pnlDetail2.Controls.Add(this.pnlDetail);
-            this.pnlDetail2.Controls.Add(this.pnlSubject2);
             this.pnlDetail2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlDetail2.Location = new System.Drawing.Point(4, 523);
             this.pnlDetail2.Name = "pnlDetail2";
@@ -156,10 +152,10 @@ namespace Team5_XN
             this.pnlDetail.Controls.Add(this.label4);
             this.pnlDetail.Controls.Add(this.label5);
             this.pnlDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDetail.Location = new System.Drawing.Point(0, 33);
+            this.pnlDetail.Location = new System.Drawing.Point(0, 0);
             this.pnlDetail.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDetail.Name = "pnlDetail";
-            this.pnlDetail.Size = new System.Drawing.Size(1276, 100);
+            this.pnlDetail.Size = new System.Drawing.Size(1276, 133);
             this.pnlDetail.TabIndex = 12;
             // 
             // label8
@@ -335,30 +331,6 @@ namespace Team5_XN
             this.label5.Text = "공정그룹";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnlSubject2
-            // 
-            this.pnlSubject2.BackColor = System.Drawing.Color.White;
-            this.pnlSubject2.Controls.Add(this.label3);
-            this.pnlSubject2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubject2.Location = new System.Drawing.Point(0, 0);
-            this.pnlSubject2.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlSubject2.Name = "pnlSubject2";
-            this.pnlSubject2.Size = new System.Drawing.Size(1276, 33);
-            this.pnlSubject2.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Gainsboro;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 33);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "입력정보";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pnlSelect
             // 
             this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
@@ -513,7 +485,6 @@ namespace Team5_XN
             this.pnlDetail2.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
             this.pnlDetail.PerformLayout();
-            this.pnlSubject2.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -554,8 +525,6 @@ namespace Team5_XN
         private System.Windows.Forms.TextBox txtProcessName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel pnlSubject2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
