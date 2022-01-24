@@ -61,6 +61,11 @@ namespace Team5_XN
             this.pnlSubject2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlSelect = new System.Windows.Forms.Panel();
+            this.txtGroupCode = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtGroupName = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.cboUse = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -72,11 +77,6 @@ namespace Team5_XN
             this.btnPwChange = new System.Windows.Forms.Button();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtGroupCode = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtGroupName = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.pnlBorder.SuspendLayout();
             this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserInfo)).BeginInit();
@@ -373,7 +373,7 @@ namespace Team5_XN
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Location = new System.Drawing.Point(49, 70);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
@@ -485,6 +485,57 @@ namespace Team5_XN
             this.pnlSelect.TabIndex = 1;
             this.pnlSelect.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSelect_Paint);
             // 
+            // txtGroupCode
+            // 
+            this.txtGroupCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtGroupCode.Location = new System.Drawing.Point(371, 28);
+            this.txtGroupCode.Name = "txtGroupCode";
+            this.txtGroupCode.Size = new System.Drawing.Size(101, 21);
+            this.txtGroupCode.TabIndex = 30;
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(261, 27);
+            this.label23.Margin = new System.Windows.Forms.Padding(0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(17, 23);
+            this.label23.TabIndex = 33;
+            this.label23.Text = "*";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtGroupName
+            // 
+            this.txtGroupName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.txtGroupName.Location = new System.Drawing.Point(506, 28);
+            this.txtGroupName.Name = "txtGroupName";
+            this.txtGroupName.Size = new System.Drawing.Size(122, 21);
+            this.txtGroupName.TabIndex = 31;
+            // 
+            // label24
+            // 
+            this.label24.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
+            this.label24.Location = new System.Drawing.Point(279, 26);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(80, 23);
+            this.label24.TabIndex = 32;
+            this.label24.Text = "사용자그룹";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Black;
+            this.btnSearch.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(478, 27);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(23, 23);
+            this.btnSearch.TabIndex = 29;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
             // cboUse
             // 
             this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -519,7 +570,7 @@ namespace Team5_XN
             // txtUserName
             // 
             this.txtUserName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtUserName.Location = new System.Drawing.Point(361, 4);
+            this.txtUserName.Location = new System.Drawing.Point(371, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(122, 21);
             this.txtUserName.TabIndex = 22;
@@ -598,57 +649,6 @@ namespace Team5_XN
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(19, 52);
             this.panel2.TabIndex = 0;
-            // 
-            // txtGroupCode
-            // 
-            this.txtGroupCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtGroupCode.Location = new System.Drawing.Point(361, 28);
-            this.txtGroupCode.Name = "txtGroupCode";
-            this.txtGroupCode.Size = new System.Drawing.Size(101, 21);
-            this.txtGroupCode.TabIndex = 30;
-            // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(261, 27);
-            this.label23.Margin = new System.Windows.Forms.Padding(0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(17, 23);
-            this.label23.TabIndex = 33;
-            this.label23.Text = "*";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtGroupName
-            // 
-            this.txtGroupName.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.txtGroupName.Location = new System.Drawing.Point(496, 28);
-            this.txtGroupName.Name = "txtGroupName";
-            this.txtGroupName.Size = new System.Drawing.Size(122, 21);
-            this.txtGroupName.TabIndex = 31;
-            // 
-            // label24
-            // 
-            this.label24.Font = new System.Drawing.Font("맑은 고딕", 7.8F);
-            this.label24.Location = new System.Drawing.Point(279, 26);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(70, 23);
-            this.label24.TabIndex = 32;
-            this.label24.Text = "사용자그룹";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Black;
-            this.btnSearch.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearch.Location = new System.Drawing.Point(468, 27);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(23, 23);
-            this.btnSearch.TabIndex = 29;
-            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // frmUserInfo
             // 

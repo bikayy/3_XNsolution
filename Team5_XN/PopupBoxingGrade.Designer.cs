@@ -31,8 +31,8 @@ namespace Team5_XN
         {
             this.btnRefresh = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.txtNopName = new WinReflectionSettings.PlaceholderTextBox();
-            this.txtNopCode = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtBoxName = new WinReflectionSettings.PlaceholderTextBox();
+            this.txtBoxCode = new WinReflectionSettings.PlaceholderTextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@ namespace Team5_XN
             this.btnRefresh.Size = new System.Drawing.Size(26, 25);
             this.btnRefresh.TabIndex = 91;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // txtSearch
             // 
@@ -62,27 +63,27 @@ namespace Team5_XN
             this.txtSearch.Size = new System.Drawing.Size(339, 21);
             this.txtSearch.TabIndex = 90;
             // 
-            // txtNopName
+            // txtBoxName
             // 
-            this.txtNopName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtNopName.Location = new System.Drawing.Point(12, 250);
-            this.txtNopName.Name = "txtNopName";
-            this.txtNopName.PlaceholderText = "비가동대분류명";
-            this.txtNopName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.txtNopName.ReadOnly = true;
-            this.txtNopName.Size = new System.Drawing.Size(190, 21);
-            this.txtNopName.TabIndex = 89;
+            this.txtBoxName.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxName.Location = new System.Drawing.Point(12, 250);
+            this.txtBoxName.Name = "txtBoxName";
+            this.txtBoxName.PlaceholderText = "포장등급명";
+            this.txtBoxName.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtBoxName.ReadOnly = true;
+            this.txtBoxName.Size = new System.Drawing.Size(190, 21);
+            this.txtBoxName.TabIndex = 89;
             // 
-            // txtNopCode
+            // txtBoxCode
             // 
-            this.txtNopCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtNopCode.Location = new System.Drawing.Point(12, 219);
-            this.txtNopCode.Name = "txtNopCode";
-            this.txtNopCode.PlaceholderText = "비가동대분류코드";
-            this.txtNopCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
-            this.txtNopCode.ReadOnly = true;
-            this.txtNopCode.Size = new System.Drawing.Size(190, 21);
-            this.txtNopCode.TabIndex = 88;
+            this.txtBoxCode.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtBoxCode.Location = new System.Drawing.Point(12, 219);
+            this.txtBoxCode.Name = "txtBoxCode";
+            this.txtBoxCode.PlaceholderText = "포장등급코드";
+            this.txtBoxCode.PlaceholderTextColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtBoxCode.ReadOnly = true;
+            this.txtBoxCode.Size = new System.Drawing.Size(190, 21);
+            this.txtBoxCode.TabIndex = 88;
             // 
             // btnSearch
             // 
@@ -97,6 +98,7 @@ namespace Team5_XN
             this.btnSearch.Size = new System.Drawing.Size(26, 25);
             this.btnSearch.TabIndex = 87;
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnCancle
             // 
@@ -129,6 +131,7 @@ namespace Team5_XN
             this.btnOK.TabIndex = 85;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // dgvList
             // 
@@ -139,6 +142,7 @@ namespace Team5_XN
             this.dgvList.RowTemplate.Height = 27;
             this.dgvList.Size = new System.Drawing.Size(403, 170);
             this.dgvList.TabIndex = 84;
+            this.dgvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellClick);
             // 
             // PopupBoxingGrade
             // 
@@ -147,14 +151,15 @@ namespace Team5_XN
             this.ClientSize = new System.Drawing.Size(427, 283);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.txtNopName);
-            this.Controls.Add(this.txtNopCode);
+            this.Controls.Add(this.txtBoxName);
+            this.Controls.Add(this.txtBoxCode);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.dgvList);
             this.Name = "PopupBoxingGrade";
             this.Text = "포장등급 검색";
+            this.Load += new System.EventHandler(this.PopupBoxingGrade_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,8 +170,8 @@ namespace Team5_XN
 
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TextBox txtSearch;
-        private WinReflectionSettings.PlaceholderTextBox txtNopName;
-        private WinReflectionSettings.PlaceholderTextBox txtNopCode;
+        private WinReflectionSettings.PlaceholderTextBox txtBoxName;
+        private WinReflectionSettings.PlaceholderTextBox txtBoxCode;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnCancle;
         private System.Windows.Forms.Button btnOK;

@@ -39,6 +39,7 @@ namespace Team5_XN
             main.Update += OnUpdate;
             main.Save += OnSave;
             main.Cancle += OnCancle;
+            main.Reset += OnReset;
             dgvBoxMaster.Columns.Clear();
 
             DataGridViewUtil.SetInitGridView(dgvBoxMaster);
@@ -75,9 +76,18 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
             //LoadData();
 
-            commServ = new CommonService();
-            dt = boxServ.GetBoxingGradeMaster();
-            dt_DB = dt.Copy();
+            //commServ = new CommonService();
+            //dt = boxServ.GetBoxingGradeMaster();
+            //dt_DB = dt.Copy();
+        }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            if (this.MdiParent == null) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            txtBoxingCode.Text = txtBoxingName.Text = "";
+            dgvBoxMaster.CurrentCell = null;
+            ControlTextReset();
         }
 
         private void OnSelect(object sender, EventArgs e)
@@ -94,7 +104,9 @@ namespace Team5_XN
             }
 
             ChangeValue_Check(0);
-            
+            commServ = new CommonService();
+            dt = boxServ.GetBoxingGradeMaster();
+            dt_DB = dt.Copy();
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -109,25 +121,32 @@ namespace Team5_XN
             rowCount = searchList.Count;
 
             ControlTextReset();
-            dgvBoxMaster_CellClick(dgvBoxMaster, new DataGridViewCellEventArgs(0, 0));
+            if (dgvBoxMaster.Rows.Count > 0)
+                dgvBoxMaster_CellClick(dgvBoxMaster, new DataGridViewCellEventArgs(0, 0));
         }
 
         private void OnCreate(object sender, EventArgs e)
         {
             if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
-
+            
+            if (dt == null) return;
             //dataGridView1.AllowUserToAddRows = true;
             DataRow dr = list.NewRow();
+            
             dr["Boxing_Grade_Code"] = txtBoxGradeMaCode.Text;
+            
             list.Rows.Add(dr);
+            
             list.AcceptChanges();
             dgvBoxDetail.DataSource = list;
             dgvBoxDetail.CurrentCell = dgvBoxDetail[0, dgvBoxDetail.RowCount - 1];
             //dgvBoxDetail_CellClick(dgvBoxMaster, new DataGridViewCellEventArgs(0, dgvBoxDetail.RowCount - 1));
 
             ChangeValue_Check(1); //추가
-            dgvBoxDetail.Enabled = false;
+            txtBoxGradeCode.Text = "";
+            txtBoxGradeName.Text = "";
+            //dgvBoxDetail.Enabled = false;
         }
 
         private void OnUpdate(object sender, EventArgs e)
@@ -216,6 +235,7 @@ namespace Team5_XN
             //저장-편집
             else if (check == 2)
             {
+                dt = (DataTable)dgvBoxDetail.DataSource;
                 foreach (DataRow dr in list.Rows)
                 {
                     foreach (DataColumn dc in list.Columns)
@@ -242,6 +262,11 @@ namespace Team5_XN
                     }
                 }
                 dt2.AcceptChanges();
+                if (dt2.Rows.Count < 1)
+                {
+                    MessageBox.Show("저장할 데이터가 없습니다.");
+                    return;
+                }
                 result = boxServ.SaveBoxing(dt2, check);
 
             }
@@ -257,10 +282,10 @@ namespace Team5_XN
             {
                 MessageBox.Show("저장 실패");
             }
-            else
-            {
-                MessageBox.Show("저장할 데이터가 없습니다.");
-            }
+            //else
+            //{
+            //    MessageBox.Show("저장할 데이터가 없습니다.");
+            //}
 
         }
         private void OnDelete(object sender, EventArgs e)
@@ -323,8 +348,9 @@ namespace Team5_XN
             if (MessageBox.Show($"{menu}한 데이터를 저장하지 않고 기능을 취소하시겠습니까?.", "취소확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ChangeValue_Check(0);
-
-                OnSelect(this, e);
+                dt = dt_DB.Copy();
+                dgvBoxDetail.DataSource = dt;
+                //OnSelect(this, e);
                 //this.DialogResult = DialogResult.Yes;
             }
             else
@@ -501,6 +527,18 @@ namespace Team5_XN
             txtBoxGradeCode.Text = dgvBoxDetail["Grade_Detail_Code", dgvBoxDetail.CurrentRow.Index].Value.ToString();
             txtBoxGradeName.Text = dgvBoxDetail["Grade_Detail_Name", dgvBoxDetail.CurrentRow.Index].Value.ToString();
             cboUseYN.Text = dgvBoxDetail["Use_YN", dgvBoxDetail.CurrentRow.Index].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PopupBoxingGrade frm = new PopupBoxingGrade();
+            frm.ShowDialog();
+
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                txtBoxingCode.Text = frm.Send.Boxing_Grade_Code;
+                txtBoxingName.Text = frm.Send.Boxing_Grade_Name;
+            }
         }
     }
 }

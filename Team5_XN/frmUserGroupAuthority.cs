@@ -36,6 +36,7 @@ namespace Team5_XN
             main.Update += OnUpdate;
             main.Save += OnSave;
             main.Cancle += OnCancle;
+            main.Reset += OnReset;
             //LoadData();
             dgvUserAuthority.Columns.Clear();
 
@@ -62,6 +63,24 @@ namespace Team5_XN
             userServ = new UserService();
             dt = userServ.GetUserAuthority();
             dt_DB = dt.Copy();
+        }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            if (this.MdiParent == null) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            txtUserCode.Text = txtUserName.Text = "";
+            dgvUserAuthority.CurrentCell = null;
+            ControlTextReset();
+        }
+
+        private void ControlTextReset()
+        {
+            txtGroupCode.Text =
+            txtScreenCode.Text =
+
+            txtWordKey.Text =
+            cboUseYN.Text = "";
         }
 
         private void OnCancle(object sender, EventArgs e)
@@ -134,6 +153,11 @@ namespace Team5_XN
                     }
                 }
                 dt2.AcceptChanges();
+                if (dt2.Rows.Count < 1)
+                {
+                    MessageBox.Show("저장할 데이터가 없습니다.");
+                    return;
+                }
                 result = userServ.SaveAuthority(dt2, check);
                 if (result > 0)
                 {
@@ -146,10 +170,10 @@ namespace Team5_XN
                 {
                     MessageBox.Show("저장 실패");
                 }
-                else
-                {
-                    MessageBox.Show("저장할 데이터가 없습니다.");
-                }
+                //else
+                //{
+                //    MessageBox.Show("저장할 데이터가 없습니다.");
+                //}
             }
         }
 

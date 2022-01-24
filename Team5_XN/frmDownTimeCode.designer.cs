@@ -233,7 +233,7 @@ namespace Team5_XN
             this.cboProcess.Name = "cboProcess";
             this.cboProcess.Size = new System.Drawing.Size(101, 20);
             this.cboProcess.TabIndex = 35;
-            this.cboProcess.Tag = "Process_Group";
+            this.cboProcess.Tag = "Process_Group_Code";
             this.cboProcess.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // txtNopMaName

@@ -42,6 +42,7 @@ namespace Team5_XN
             main.Update += OnUpdate;
             main.Save += OnSave;
             main.Cancle += OnCancle;
+            main.Reset += OnReset;
             dgvSysMaster.Columns.Clear();
 
             DataGridViewUtil.SetInitGridView(dgvSysMaster);
@@ -71,9 +72,21 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
             button4.Visible = false;
             //LoadData();
-            commServ = new CommonService();
-            dt = commServ.GetSystemCodeMaster();
-            dt_DB = dt.Copy();
+            //commServ = new CommonService();
+            //dt = commServ.GetSystemCodeMaster();
+            //dt_DB = dt.Copy();
+            if (dgvSysMaster.Rows.Count > 0)
+                dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, 0));
+            //dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, 0));
+        }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            if (this.MdiParent == null) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            txtSysCode.Text = txtSysName.Text = "";
+            dgvSysMaster.CurrentCell = null;
+            ControlTextReset();
         }
 
         private void OnDelete(object sender, EventArgs e)
@@ -138,7 +151,11 @@ namespace Team5_XN
             {
                 ChangeValue_Check(0);
 
-                OnSelect(this, e);
+                dt = dt_DB.Copy();
+                dgvSysMaster.DataSource = dt;
+                if (dgvSysMaster.Rows.Count > 0)
+                    dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, 0));
+                dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, 0));
                 //this.DialogResult = DialogResult.Yes;
             }
             else
@@ -274,6 +291,7 @@ namespace Team5_XN
             //저장-편집
             else if (check == 2)
             {
+                dt3 = (DataTable)dgvSysDetail.DataSource;
                 foreach (DataRow dr in dt3.Rows)
                 {
                     foreach (DataColumn dc in dt3.Columns)
@@ -329,6 +347,7 @@ namespace Team5_XN
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
             ChangeValue_Check(2); //편집
+            button4.Enabled = true;
             if (dgvSysDetail.CurrentRow != null)
                 dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, dgvSysDetail.CurrentRow.Index));
         }
@@ -338,6 +357,7 @@ namespace Team5_XN
             if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
+            if (dt == null) return;
             DataRow dr = dt.NewRow();
             dt.Rows.Add(dr);
             dt.AcceptChanges();
@@ -351,7 +371,7 @@ namespace Team5_XN
             ControlTextReset();
             dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, dgvSysMaster.RowCount - 1));
 
-            
+            button4.Enabled = false;
         }
 
         private void OnSelect(object sender, EventArgs e)
@@ -367,8 +387,10 @@ namespace Team5_XN
                     return;
             }
 
-            ChangeValue_Check(0);       
-            
+            ChangeValue_Check(0);
+            commServ = new CommonService();
+            dt = commServ.GetSystemCodeMaster();
+            dt_DB = dt.Copy();
             searchList = new DataView(dt);
 
             StringBuilder sb = new StringBuilder();
@@ -389,7 +411,8 @@ namespace Team5_XN
             dt_DB = dt.Copy();
             button4.Visible = true;
             ControlTextReset();
-            dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, 0));
+            if (dgvSysMaster.Rows.Count > 0)
+                dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, 0));
             dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, 0));
 
         }
@@ -549,8 +572,8 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "시스템정의 상세분류코드", "DetailCode", colWidth: 180);
             DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "시스템정의 상세분류명", "DetailName", colWidth: 170);
             DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "비고", "Remark", colWidth: 150);
-            DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "사용여부", "UseYN", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "사용여부", "CodeNum", colWidth: 100, visibility:false);
+            DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "사용유무", "UseYN", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvSysDetail, "코드번호", "CodeNum", colWidth: 100, visibility:false);
         }
 
         private void dgvSysMaster_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -567,6 +590,11 @@ namespace Team5_XN
 
             txtSysMaCode.Text = dgvSysMaster["Code", dgvSysMaster.CurrentRow.Index].Value.ToString();
             txtSysMaName.Text = dgvSysMaster["Name", dgvSysMaster.CurrentRow.Index].Value.ToString();
+            if (check == 0)
+            {
+                dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, 0));
+            }
+            
         }
 
 
@@ -660,6 +688,11 @@ namespace Team5_XN
                 else
                     dgvSysDetail.Rows[dgvSysDetail.CurrentCell.RowIndex].Cells[ctrl.Tag.ToString()].Value = DBNull.Value;
             }
+        }
+
+        private void dgvSysMaster_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

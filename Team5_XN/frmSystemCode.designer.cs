@@ -443,6 +443,7 @@ namespace Team5_XN
             this.dgvSysMaster.Size = new System.Drawing.Size(530, 572);
             this.dgvSysMaster.TabIndex = 1;
             this.dgvSysMaster.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSysMaster_CellClick);
+            this.dgvSysMaster.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSysMaster_CellContentClick);
             // 
             // pnlSubject1
             // 
