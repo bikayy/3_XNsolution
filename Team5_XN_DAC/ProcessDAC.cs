@@ -120,8 +120,8 @@ SELECT
     Process_Code, Process_Name, Process_Group, Remark
 	,Use_YN
 FROM 
-    Process_Master
-	where Use_YN = 'Y';";
+    Process_Master";
+	//where Use_YN = 'Y';";
             //,(select DetailName from CommonCodeSystem where DetailCode = Use_YN)
             //, Ins_Date, Ins_Emp, Up_Date, Up_Emp
             DataTable dt = new DataTable();
