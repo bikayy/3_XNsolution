@@ -104,8 +104,8 @@ namespace Team5_XN
             {
                 if (dgvSysDetail.CurrentRow.Index >= detailCount)
                 {
-                    dt.Rows.Remove(dt.Rows[dgvSysDetail.CurrentCell.RowIndex]);
-                    dt.AcceptChanges();
+                    dt3.Rows.Remove(dt3.Rows[dgvSysDetail.CurrentCell.RowIndex]);
+                    dt3.AcceptChanges();
 
                     //if (dataGridView1.RowCount == rowCount)
                     //    dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.RowCount-1];
@@ -156,6 +156,7 @@ namespace Team5_XN
                 if (dgvSysMaster.Rows.Count > 0)
                     dgvSysMaster_CellClick(dgvSysMaster, new DataGridViewCellEventArgs(0, 0));
                 dgvSysDetail_CellClick(dgvSysDetail, new DataGridViewCellEventArgs(0, 0));
+                button4.Enabled = true;
                 //this.DialogResult = DialogResult.Yes;
             }
             else

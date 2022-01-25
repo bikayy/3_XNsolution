@@ -208,7 +208,7 @@ namespace Team5_XN
             //저장-편집
             else if (check == 2)
             {
-                dt = (DataTable)dgvUserGroup.DataSource;
+                //dt = (DataTable)dgvUserGroup.DataSource;
                 foreach (DataRow dr in dt.Rows)
                 {
                     foreach (DataColumn dc in dt.Columns)
