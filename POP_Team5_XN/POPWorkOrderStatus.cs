@@ -118,6 +118,16 @@ namespace POP_Team5_XN
 
             if (ctrl.SendOrderList.Wo_Status.Equals("생산중"))
             {
+                if (wcGroup != "포장")
+                {
+                    btnPfm.Enabled = true;
+                    btnPfm.BackColor = Color.FromArgb(241, 248, 255);
+                }
+                else
+                {
+                    btnPalette.Enabled = true;
+                    btnPalette.BackColor = Color.FromArgb(241, 248, 255);
+                }
                 btnStart.Enabled = false;
                 btnStart.BackColor = Color.Gray;
                 btnEnd.Enabled = true;
@@ -126,8 +136,6 @@ namespace POP_Team5_XN
                 btnEnd.Enabled = true;
                 btnEnd.BackColor = Color.FromArgb(241, 248, 255);
 
-                btnPfm.Enabled = true;
-                btnPfm.BackColor = Color.FromArgb(241, 248, 255);
             }
             else
             {

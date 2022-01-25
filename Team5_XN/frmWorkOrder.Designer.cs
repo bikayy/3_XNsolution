@@ -698,7 +698,7 @@ namespace Team5_XN
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(956, 10);
+            this.label2.Location = new System.Drawing.Point(976, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 29);
             this.label2.TabIndex = 120;
@@ -710,9 +710,9 @@ namespace Team5_XN
             this.i_dtpPlanEnd.CustomFormat = "yyyy-MM-dd HH:mm";
             this.i_dtpPlanEnd.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.i_dtpPlanEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.i_dtpPlanEnd.Location = new System.Drawing.Point(985, 14);
+            this.i_dtpPlanEnd.Location = new System.Drawing.Point(1005, 14);
             this.i_dtpPlanEnd.Name = "i_dtpPlanEnd";
-            this.i_dtpPlanEnd.Size = new System.Drawing.Size(146, 25);
+            this.i_dtpPlanEnd.Size = new System.Drawing.Size(164, 25);
             this.i_dtpPlanEnd.TabIndex = 119;
             // 
             // i_dtpPlanStart
@@ -722,7 +722,7 @@ namespace Team5_XN
             this.i_dtpPlanStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.i_dtpPlanStart.Location = new System.Drawing.Point(804, 14);
             this.i_dtpPlanStart.Name = "i_dtpPlanStart";
-            this.i_dtpPlanStart.Size = new System.Drawing.Size(146, 25);
+            this.i_dtpPlanStart.Size = new System.Drawing.Size(164, 25);
             this.i_dtpPlanStart.TabIndex = 118;
             // 
             // label23

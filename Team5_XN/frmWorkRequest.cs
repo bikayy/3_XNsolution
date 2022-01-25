@@ -373,7 +373,7 @@ namespace Team5_XN
                     cr.Req_Qty = Convert.ToInt32(txtReqQty.Text);
                     cr.Customer_Name = txtCusName.Text;
                     cr.Project_Nm = txtProjName.Text;
-                    cr.Sale_Prsn_Nm = "테스트홍길동";
+                    cr.Sale_Prsn_Nm = "홍길동";
                     cr.Delivery_Date = dtpDeliDate.Value.ToString("yyyy-MM-dd");
                     cr.Req_Date = dtpReqDate.Value.ToString("yyyy-MM-dd");
                     cr.Remark = txtRemark.Text;
