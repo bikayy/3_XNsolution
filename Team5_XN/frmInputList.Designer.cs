@@ -74,7 +74,7 @@ namespace Team5_XN
             // dgvInput
             // 
             this.dgvInput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInput.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInput.Location = new System.Drawing.Point(0, 44);
             this.dgvInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvInput.Name = "dgvInput";

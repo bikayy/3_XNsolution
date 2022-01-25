@@ -97,7 +97,7 @@ namespace Team5_XN
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 27);
             this.btnRegister.TabIndex = 4;
-            this.btnRegister.Text = "회원가입";
+            this.btnRegister.Text = "사원등록";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
