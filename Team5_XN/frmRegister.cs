@@ -25,6 +25,11 @@ namespace Team5_XN
         {
             txtID.Text = txtID.Text.Replace(" ", "");
             bool check = srv.IDCheck(txtID.Text);
+            if (string.IsNullOrWhiteSpace(txtID.Text.Trim()))
+            {
+                MessageBox.Show("아이디를 입력해주세요.");
+                return;
+            }
             if (!check)
             {
                 txtID.ReadOnly = true;
