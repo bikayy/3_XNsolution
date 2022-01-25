@@ -535,6 +535,7 @@ namespace Team5_XN
             this.btnSearch.Size = new System.Drawing.Size(23, 23);
             this.btnSearch.TabIndex = 29;
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cboUse
             // 
