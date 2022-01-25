@@ -51,41 +51,49 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvList, "공정 명", "Process_Name", DataGridViewContentAlignment.MiddleLeft, colWidth: 120);
 
             list = searchServ.GetWCList();
-            List<WCSearchVO> list1 = null;
-            List<WCSearchVO> list2 = null;
-            List<WCSearchVO> list3 = null;
-            if (!string.IsNullOrWhiteSpace(wcName)) 
+
+            
+
+            if (!string.IsNullOrWhiteSpace(wcName) || !string.IsNullOrWhiteSpace(wcGroup) || !string.IsNullOrWhiteSpace(processName))
             {
-                list1 = (from item in list
-                              where item.Wc_Name.Contains(wcName)
-                              select item).ToList();
+                List<WCSearchVO> list1 = null;
+                List<WCSearchVO> list2 = null;
+                List<WCSearchVO> list3 = null;
+                List<WCSearchVO> result = null;
+
+                if (!string.IsNullOrWhiteSpace(wcName))
+                {
+                    list1 = (from item in list
+                             where item.Wc_Name.Contains(wcName)
+                             select item).ToList();
+                }
+
+                if (!string.IsNullOrWhiteSpace(wcGroup))
+                {
+                    list2 = (from item in list
+                             where item.Wc_Group.Contains(wcGroup)
+                             select item).ToList();
+                }
+
+                if (!string.IsNullOrWhiteSpace(processName))
+                {
+                    list3 = (from item in list
+                             where item.Process_Name.Contains(processName)
+                             select item).ToList();
+                }
+
+                result = new List<WCSearchVO>();
+
+                //합치기
+                if (list1 != null) result.AddRange(list1);
+                if (list2 != null) result.AddRange(list2);
+                if (list3 != null) result.AddRange(list3);
+
+                //중복 제거
+                list = result.Distinct().ToList();
             }
 
-            if (!string.IsNullOrWhiteSpace(wcGroup))
-            {
-                list2 = (from item in list
-                        where item.Wc_Group.Contains(wcGroup)
-                        select item).ToList();
-            }
-
-            if (!string.IsNullOrWhiteSpace(processName))
-            {
-                list3 = (from item in list
-                        where item.Process_Name.Contains(processName)
-                        select item).ToList();
-            }
-
-            List<WCSearchVO> result = new List<WCSearchVO>();
-
-            //합치기
-            if (list1 != null) result.AddRange(list1);
-            if (list2 != null) result.AddRange(list2);
-            if (list3 != null) result.AddRange(list3);
-
-            //중복 제거
-            result = result.Distinct().ToList();
-
-            dgvList.DataSource = result;
+            dgvList.DataSource = list;
         }
 
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)

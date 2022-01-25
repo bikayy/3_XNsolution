@@ -38,7 +38,7 @@ namespace Team5_XN
 
         private void s_btnProcess_Click(object sender, EventArgs e)
         {
-            PopupSearchProcess frm = new PopupSearchProcess();
+            PopupSearchProcess frm = new PopupSearchProcess(null, null);
             frm.ShowDialog();
 
             if (frm.DialogResult == DialogResult.OK)
