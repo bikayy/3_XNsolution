@@ -78,8 +78,8 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
             CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy(), false);
             CommonUtil.ComboBinding(cboProcess, "PROC_GROUP", dtSysUser.Copy());
-            CommonUtil.ComboBinding(cboNopType, "NOP_CODE_TYPE", dtSysCode.Copy());
-            CommonUtil.ComboBinding(cboRegularType, "REGULAR_TYPE", dtSysCode.Copy());
+            CommonUtil.ComboBinding(cboNopType, "NOP_CODE_TYPE", dtSysCode.Copy(), false);
+            CommonUtil.ComboBinding(cboRegularType, "REGULAR_TYPE", dtSysCode.Copy(), false);
             //nopServ = new NopCodeService();
             //dt = nopServ.GetNopMaster();
             //dt_DB = dt.Copy();
@@ -220,7 +220,13 @@ namespace Team5_XN
             dgvNopDetail_CellClick(dgvNopDetail, new DataGridViewCellEventArgs(0, dgvNopDetail.RowCount - 1));
 
             ChangeValue_Check(1); //추가
+            cboProcess.Text =
+            txtRemark.Text =
+
+            cboNopType.Text =
+            cboRegularType.Text =
             cboUseYN.Text = "";
+
             //dgvNopDetail.Enabled = false;
         }
 
@@ -406,6 +412,8 @@ namespace Team5_XN
                 ChangeValue_Check(0);
                 dt = dt_DB.Copy();
                 dgvNopMaster.DataSource = dt;
+                if (dgvNopMaster.Rows.Count > 0)
+                    dgvNopMaster_CellClick(dgvNopMaster, new DataGridViewCellEventArgs(0, 0));
                 //OnSelect(this, e);
                 //this.DialogResult = DialogResult.Yes;
             }
@@ -538,6 +546,7 @@ namespace Team5_XN
 
         private void dgvNopMaster_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             string code = Convert.ToString(dgvNopMaster.Rows[e.RowIndex].Cells[0].Value);
             dtDetail = nopServ.GetNopDetail(code);
             dgvNopDetail.DataSource = dtDetail;
