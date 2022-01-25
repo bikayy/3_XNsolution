@@ -42,6 +42,7 @@ namespace Team5_XN
             main.Delete += OnDelete;
             main.Save += OnSave;
             main.Cancle += OnCancle;
+            main.Reset += OnReset;
 
             dgvUserGroup.Columns.Clear();
 
@@ -49,7 +50,7 @@ namespace Team5_XN
 
             DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "사용자그룹코드", "UserGroup_Code", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "사용자그룹명", "UserGroup_Name", colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "사용여부", "Use_YN", colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "사용유무", "Use_YN", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "Admin 여부", "Admin", colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "작성일자", "Ins_Date", colWidth: 100, visibility: false);
             DataGridViewUtil.AddGridTextColumn(dgvUserGroup, "작성자", "Ins_Emp", colWidth: 100, visibility: false);
@@ -65,13 +66,23 @@ namespace Team5_XN
             CommonUtil.ComboBinding(cboUse, "USE_YN", dtSysCode.Copy());
             CommonUtil.ComboBinding(cboUseYN, "USE_YN", dtSysCode.Copy(), false);
             CommonUtil.ComboBinding(cboAdmin, "Admin_YN", dtSysCode.Copy());
-            userServ = new UserService();
-            dt = userServ.GetUserGroupMaster();
-            dt_DB = dt.Copy();
+            //userServ = new UserService();
+            //dt = userServ.GetUserGroupMaster();
+            //dt_DB = dt.Copy();
             //dt = userServ.GetUserGroupMaster();
             //dgvUserGroup.DataSource = dt;
             //LoadData();
             main.toolCreate.Enabled = main.toolUpdate.Enabled = main.toolDelete.Enabled = main.toolSave.Enabled = main.toolCancle.Enabled = false; 
+        }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            if (this.MdiParent == null) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            txtUserGroupCode.Text = txtUserGroupName.Text = "";
+            cboUse.SelectedIndex = 0;
+            dgvUserGroup.CurrentCell = null;
+            ControlTextReset();
         }
 
         private void OnDelete(object sender, EventArgs e)
@@ -111,7 +122,7 @@ namespace Team5_XN
                     if (result)
                     {
                         MessageBox.Show("삭제 완료");
-                        LoadData();
+                        //LoadData();
                         OnSelect(this, e);
                     }
                     else
@@ -197,6 +208,7 @@ namespace Team5_XN
             //저장-편집
             else if (check == 2)
             {
+                dt = (DataTable)dgvUserGroup.DataSource;
                 foreach (DataRow dr in dt.Rows)
                 {
                     foreach (DataColumn dc in dt.Columns)
@@ -223,6 +235,11 @@ namespace Team5_XN
                     }
                 }
                 dt2.AcceptChanges();
+                if (dt2.Rows.Count < 1)
+                {
+                    MessageBox.Show("저장할 데이터가 없습니다.");
+                    return;
+                }
                 result = userServ.SaveUserGroup(dt2, check);
 
             }
@@ -238,10 +255,10 @@ namespace Team5_XN
             {
                 MessageBox.Show("저장 실패");
             }
-            else
-            {
-                MessageBox.Show("저장할 데이터가 없습니다.");
-            }
+            //else
+            //{
+            //    MessageBox.Show("저장할 데이터가 없습니다.");
+            //}
         }
 
         
@@ -251,6 +268,7 @@ namespace Team5_XN
             if (this.MdiParent == null) return;
             if (((Main)this.MdiParent).ActiveMdiChild != this) return;
 
+            if (dt == null) return;
             ChangeValue_Check(1); //추가
             //dataGridView1.AllowUserToAddRows = true;
             DataRow dr = dt.NewRow();
@@ -286,9 +304,12 @@ namespace Team5_XN
 
             ChangeValue_Check(0);
 
-            
 
-            dgvUserGroup.DataSource = dt;
+            userServ = new UserService();
+            dt = userServ.GetUserGroupMaster();
+            dt_DB = dt.Copy();
+
+            //dgvUserGroup.DataSource = dt;
 
             searchList = new DataView(dt);
 
@@ -314,7 +335,8 @@ namespace Team5_XN
             rowCount = searchList.Count;
             //dgvUserGroup.CurrentCell = null;
             ControlTextReset();
-            dgvUserGroup_CellClick(dgvUserGroup, new DataGridViewCellEventArgs(0, 0));
+            if (dgvUserGroup.Rows.Count > 0)
+                dgvUserGroup_CellClick(dgvUserGroup, new DataGridViewCellEventArgs(0, 0));
         }
         private void OnCancle(object sender, EventArgs e)
         {
@@ -329,8 +351,9 @@ namespace Team5_XN
             if (MessageBox.Show($"{menu}한 데이터를 저장하지 않고 기능을 취소하시겠습니까?.", "취소확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ChangeValue_Check(0);
-
-                OnSelect(this, e);
+                dt = dt_DB.Copy();
+                dgvUserGroup.DataSource = dt;
+                //OnSelect(this, e);
                 //this.DialogResult = DialogResult.Yes;
             }
             else

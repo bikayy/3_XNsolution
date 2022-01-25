@@ -325,7 +325,7 @@ namespace Team5_XN
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(69, 23);
             this.label17.TabIndex = 26;
-            this.label17.Text = "사용여부";
+            this.label17.Text = "사용유무";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlSelect
@@ -440,7 +440,7 @@ namespace Team5_XN
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 23);
             this.label13.TabIndex = 29;
-            this.label13.Text = "사용여부";
+            this.label13.Text = "사용유무";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2

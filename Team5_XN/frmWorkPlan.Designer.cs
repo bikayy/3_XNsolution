@@ -217,7 +217,7 @@ namespace Team5_XN
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 38);
             this.label4.TabIndex = 4;
-            this.label4.Text = "생산요청";
+            this.label4.Text = "생산계획";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
@@ -572,8 +572,10 @@ namespace Team5_XN
             // 
             // dgvPlan
             // 
+            this.dgvPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlan.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvPlan.Location = new System.Drawing.Point(0, 44);
             this.dgvPlan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPlan.Name = "dgvPlan";
@@ -675,10 +677,10 @@ namespace Team5_XN
             this.p_btnCancle.BackColor = System.Drawing.Color.White;
             this.p_btnCancle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.p_btnCancle.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p_btnCancle.Location = new System.Drawing.Point(1285, 71);
+            this.p_btnCancle.Location = new System.Drawing.Point(1285, 70);
             this.p_btnCancle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.p_btnCancle.Name = "p_btnCancle";
-            this.p_btnCancle.Size = new System.Drawing.Size(155, 44);
+            this.p_btnCancle.Size = new System.Drawing.Size(121, 55);
             this.p_btnCancle.TabIndex = 91;
             this.p_btnCancle.Text = "취 소";
             this.p_btnCancle.UseVisualStyleBackColor = false;
@@ -690,10 +692,10 @@ namespace Team5_XN
             this.p_btnSave.BackColor = System.Drawing.Color.White;
             this.p_btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.p_btnSave.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p_btnSave.Location = new System.Drawing.Point(1124, 71);
+            this.p_btnSave.Location = new System.Drawing.Point(1158, 70);
             this.p_btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.p_btnSave.Name = "p_btnSave";
-            this.p_btnSave.Size = new System.Drawing.Size(155, 44);
+            this.p_btnSave.Size = new System.Drawing.Size(121, 55);
             this.p_btnSave.TabIndex = 90;
             this.p_btnSave.Text = "저 장";
             this.p_btnSave.UseVisualStyleBackColor = false;
@@ -735,10 +737,10 @@ namespace Team5_XN
             this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDelete.Location = new System.Drawing.Point(1285, 19);
+            this.btnDelete.Location = new System.Drawing.Point(1285, 10);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(155, 44);
+            this.btnDelete.Size = new System.Drawing.Size(121, 55);
             this.btnDelete.TabIndex = 68;
             this.btnDelete.Text = "생산계획 삭제";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -750,10 +752,10 @@ namespace Team5_XN
             this.btnUpdate.BackColor = System.Drawing.Color.White;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUpdate.Location = new System.Drawing.Point(1124, 19);
+            this.btnUpdate.Location = new System.Drawing.Point(1158, 10);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(155, 44);
+            this.btnUpdate.Size = new System.Drawing.Size(121, 55);
             this.btnUpdate.TabIndex = 67;
             this.btnUpdate.Text = "생산계획 수정";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -808,10 +810,10 @@ namespace Team5_XN
             this.btnAdd.BackColor = System.Drawing.Color.White;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("맑은 고딕", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnAdd.Location = new System.Drawing.Point(963, 19);
+            this.btnAdd.Location = new System.Drawing.Point(1031, 9);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(155, 44);
+            this.btnAdd.Size = new System.Drawing.Size(121, 55);
             this.btnAdd.TabIndex = 56;
             this.btnAdd.Text = "생산계획 추가";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -1410,8 +1412,10 @@ namespace Team5_XN
             // 
             // dgvRequest
             // 
+            this.dgvRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRequest.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvRequest.Location = new System.Drawing.Point(0, 44);
             this.dgvRequest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvRequest.Name = "dgvRequest";

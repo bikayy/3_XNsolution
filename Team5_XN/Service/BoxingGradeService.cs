@@ -43,5 +43,14 @@ namespace Team5_XN
 
             return result;
         }
+
+        public List<BoxingGradeVO> GetBoxingGradeList()
+        {
+            BoxingGradeDAC db = new BoxingGradeDAC();
+            List<BoxingGradeVO> result = db.GetBoxingGradeList();
+            db.Dispose();
+
+            return result;
+        }
     }
 }

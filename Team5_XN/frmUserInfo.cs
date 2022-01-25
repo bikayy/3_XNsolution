@@ -40,6 +40,7 @@ namespace Team5_XN
             main.Save += OnSave;
             main.Delete += OnDelete;
             main.Cancle += OnCancle;
+            main.Reset += OnReset;
             //LoadData();
             dgvUserInfo.Columns.Clear();
 
@@ -53,7 +54,7 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "기본 공정 명", "Process_Name", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "IP 보안 적용여부", "IP_Security_YN", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "패스워드 초기화 횟수", "PW_Reset_Count", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
-            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "사용여부", "Use_YN", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
+            DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "사용유무", "Use_YN", DataGridViewContentAlignment.MiddleCenter, colWidth: 100);
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "작성일자", "Ins_Date", colWidth: 100, visibility: false);
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "작성자", "Ins_Emp", colWidth: 100, visibility: false);
             DataGridViewUtil.AddGridTextColumn(dgvUserInfo, "수정일자", "Up_Date", colWidth: 100, visibility: false);
@@ -76,6 +77,16 @@ namespace Team5_XN
             //dt = userServ.GetUserInfo();
             //dt_DB = dt.Copy();
 
+        }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            if (this.MdiParent == null) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            txtUserID.Text = txtUserName.Text = txtGroupCode.Text = txtGroupName.Text = "";
+            cboUse.SelectedIndex = 0;
+            dgvUserInfo.CurrentCell = null;
+            ControlTextReset();
         }
 
         private void OnDelete(object sender, EventArgs e)
@@ -491,9 +502,11 @@ namespace Team5_XN
                 bool result = userServ.UpdateID(userPwd);
 
                 //수정하시겠습니까? if messageBox ~ 추가하기!@
-                if (result) MessageBox.Show("수정되었습니다.");
-                else MessageBox.Show("오류가 발생하였습니다.\n다시 시도하여주십시오.");
-
+                if (MessageBox.Show($"[{txtID.Text}] 비밀번호를 변경하시겠습니까?", "비밀번호 변경", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (result) MessageBox.Show("수정되었습니다.");
+                    else MessageBox.Show("오류가 발생하였습니다.\n다시 시도하여주십시오.");
+                }
             }
             catch (Exception err)
             {

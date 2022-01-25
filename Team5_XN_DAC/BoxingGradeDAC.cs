@@ -94,5 +94,24 @@ FROM BoxingGrade_Detail_Master WHERE Boxing_Grade_Code = @Boxing_Grade_Code";
                 return false;
             }
         }
+        public List<BoxingGradeVO> GetBoxingGradeList()
+        {
+            string sql = @"SELECT DISTINCT Boxing_Grade_Code, 
+(select DetailName from CommonCodeSystem where Code ='Box_Grade' and DetailCode= Boxing_Grade_Code) Boxing_Grade_Name
+FROM BoxingGrade_Detail_Master";
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    return Helper.DataReaderMapToList<BoxingGradeVO>(cmd.ExecuteReader());
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return null;
+            }
+        }
     }
 }

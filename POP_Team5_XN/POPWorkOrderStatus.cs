@@ -28,6 +28,8 @@ namespace POP_Team5_XN
 
         int ctrlIdx = 0;
 
+        string[] remarks = new string[100];
+
         public POPWorkOrderStatus()
         {
             InitializeComponent();
@@ -76,10 +78,14 @@ namespace POP_Team5_XN
                     Prd_EndTime = dt.Rows[idx]["Prd_EndTime"].ToString(),
                     Remark_YN = dt.Rows[idx]["Remark_YN"].ToString()
                 };
+                remarks[i] = dt.Rows[idx]["Remark"].ToString();
                 ctrlOrList.TabIndex = idx;
+                ctrlOrList.eventRemark += OnRemark;
                 ctrlOrList.eventBtnCheck += OnBtn;
                 ctrlOrList.eventOrderList += OnClick;
+                
                 pnlOrList.Controls.Add(ctrlOrList);
+                //MessageBox.Show(remarks[i]);
                 idx++;
             }
         }
@@ -155,6 +161,16 @@ namespace POP_Team5_XN
             };
         }
 
+        private void OnRemark(object sender, EventArgs e)
+        {
+            ucWorkOrderStatusList ctrl = (ucWorkOrderStatusList)sender;
+    
+            PopupRemark frm = new PopupRemark();
+            frm.GetMsg = remarks[ctrl.TabIndex];
+            frm.ShowDialog();
+            //MessageBox.Show(remarks[ctrl.TabIndex]);
+        }
+
 
         /// <summary>
         /// 선택된 목록 외 배경색 리셋
@@ -172,6 +188,7 @@ namespace POP_Team5_XN
                 }
             }
         }
+
 
         private void CtrlRemove(Panel pnl, int tabIdx)
         {

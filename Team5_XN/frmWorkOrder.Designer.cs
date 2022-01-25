@@ -157,7 +157,7 @@ namespace Team5_XN
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(121, 55);
             this.btnCreate.TabIndex = 105;
-            this.btnCreate.Text = "작업지시 생성";
+            this.btnCreate.Text = "작업지시 추가";
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
@@ -217,7 +217,7 @@ namespace Team5_XN
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(121, 55);
             this.btnUpdate.TabIndex = 101;
-            this.btnUpdate.Text = "작업지시 수정";
+            this.btnUpdate.Text = "작업지시 편집";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -456,8 +456,10 @@ namespace Team5_XN
             // 
             // dgvWo
             // 
+            this.dgvWo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvWo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWo.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvWo.Location = new System.Drawing.Point(0, 44);
             this.dgvWo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvWo.Name = "dgvWo";

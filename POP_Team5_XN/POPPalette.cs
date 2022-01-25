@@ -51,6 +51,9 @@ namespace POP_Team5_XN
             int idx = 0;
 
             pnlList.Controls.Clear();
+            lblGrade.Text = "";
+            lblGradeDetail.Text = "";
+            lblBoxQty.Text = "";
 
             ctrlPalette = new ucPaletteList();
             ctrlPalette.Location = new Point(4, 6);
@@ -162,6 +165,7 @@ namespace POP_Team5_XN
                 if (crResult)
                 {
                     MessageBox.Show("팔레트가 등록되었습니다.");
+                    lblQty.Text = (Convert.ToInt32(lblQty.Text) + Convert.ToInt32(lblBoxQty.Text)).ToString();
                     LoadPalette();
                 }
                 else MessageBox.Show("작업지시 생성에 실패하였습니다.\n다시 확인하여주십시오.");

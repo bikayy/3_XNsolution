@@ -29,6 +29,7 @@ namespace Team5_XN
         {
             main = (Main)this.MdiParent;
             main.Select += OnSelect;
+            main.Reset += OnReset;
 
             dgvScreen.Columns.Clear();
 
@@ -55,6 +56,28 @@ namespace Team5_XN
             userServ = new UserService();
             dt = userServ.GetScreenList();
             
+        }
+
+        private void OnReset(object sender, EventArgs e)
+        {
+            if (this.MdiParent == null) return;
+            if (((Main)this.MdiParent).ActiveMdiChild != this) return;
+            txtCode.Text = txtName.Text = "";
+            cboUse.SelectedIndex = 0;
+            dgvScreen.CurrentCell = null;
+            ControlTextReset();
+        }
+
+        private void ControlTextReset()
+        {
+            txtScreenCode.Text =
+            txtSearchScreen.Text =
+
+            txtWordKey.Text =
+            txtScreenPath.Text =
+
+            cboUseYN.Text =
+            cboMonitor.Text = "";
         }
 
         private void OnSelect(object sender, EventArgs e)

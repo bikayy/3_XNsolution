@@ -74,7 +74,7 @@ where Code in ('{code}');";
         {
             string sql = @"SELECT DetailCode, DetailName, Sort_Index, Remark, 
 (select DetailName from CommonCodeSystem where Code='USE_YN' and DetailCode = UseYN) UseYN, CodeNum
-FROM CommonCodeSystem WHERE Name = @Name";
+FROM CommonCodeSystem WHERE Name = @Name ORDER BY Sort_Index, DetailCode ASC";
 
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))

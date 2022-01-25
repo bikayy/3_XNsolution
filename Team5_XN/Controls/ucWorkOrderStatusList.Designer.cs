@@ -101,7 +101,7 @@ namespace Team5_XN
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(92, 86);
             this.panel16.TabIndex = 2;
-            this.panel16.Click += new System.EventHandler(this.ucOrStatusClick);
+            this.panel16.Click += new System.EventHandler(this.ucRemarkClick);
             // 
             // lblRemark
             // 
@@ -114,7 +114,7 @@ namespace Team5_XN
             this.lblRemark.TabIndex = 5;
             this.lblRemark.Text = "X";
             this.lblRemark.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblRemark.Click += new System.EventHandler(this.ucOrStatusClick);
+            this.lblRemark.Click += new System.EventHandler(this.ucRemarkClick);
             // 
             // panel17
             // 
