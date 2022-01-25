@@ -99,6 +99,12 @@ namespace POP_Team5_XN
 
         private void btnGradeDetail_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(lblGrade.Text))
+            {
+                MessageBox.Show("등급을 먼저 선택하여주십시오.");
+                return;
+            }
+
             PopupBoxingGrade frm = new PopupBoxingGrade();
             frm.Mode = 'D';
             frm.ShowDialog();

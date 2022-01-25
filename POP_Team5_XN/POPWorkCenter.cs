@@ -20,6 +20,7 @@ namespace POP_Team5_XN
         private string wcCode;
         private string wcName;
         private string wcStatus = string.Empty;
+        private string wcGroup = string.Empty;
 
         bool backCheck = false;
 
@@ -81,6 +82,7 @@ namespace POP_Team5_XN
             pop.WoInfo.Wc_Code = wcCode;
             pop.WoInfo.Wc_Name = wcName;
             pop.WcStatus = wcStatus;
+            pop.WcGroup = wcGroup;
             pop.ShowDialog();
             //this.Hide();
         }
@@ -99,6 +101,7 @@ namespace POP_Team5_XN
             wcCode = ctrl.SendWcList.Wc_Code;
             wcName = ctrl.SendWcList.Wc_Name;
             wcStatus = ctrl.SendWcList.Wo_Status;
+            wcGroup = ctrl.SendWcList.Wc_Group;
 
             ctrl.BackColor = Color.Red;
             CtrlSelection(pnlWcList, ctrl.TabIndex);

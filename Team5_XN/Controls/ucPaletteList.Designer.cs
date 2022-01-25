@@ -98,12 +98,13 @@ namespace Team5_XN
             // 
             // lblGradeDetail
             // 
+            this.lblGradeDetail.AutoSize = true;
             this.lblGradeDetail.BackColor = System.Drawing.Color.Transparent;
             this.lblGradeDetail.Font = new System.Drawing.Font("맑은 고딕", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblGradeDetail.ForeColor = System.Drawing.Color.Black;
             this.lblGradeDetail.Location = new System.Drawing.Point(72, 12);
             this.lblGradeDetail.Name = "lblGradeDetail";
-            this.lblGradeDetail.Size = new System.Drawing.Size(118, 32);
+            this.lblGradeDetail.Size = new System.Drawing.Size(111, 32);
             this.lblGradeDetail.TabIndex = 5;
             this.lblGradeDetail.Text = "등급상세";
             this.lblGradeDetail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -163,6 +164,7 @@ namespace Team5_XN
             this.tableLayoutPanel2.ResumeLayout(false);
             this.pnl4.ResumeLayout(false);
             this.pnl3.ResumeLayout(false);
+            this.pnl3.PerformLayout();
             this.pnl2.ResumeLayout(false);
             this.pnl1.ResumeLayout(false);
             this.ResumeLayout(false);

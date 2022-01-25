@@ -24,7 +24,11 @@ namespace POP_Team5_XN
         private string wcStatus = string.Empty;
         public string WcStatus { get { return wcStatus; } set { wcStatus = value; } }
 
+        private string wcGroup = string.Empty;
+        public string WcGroup { get { return wcGroup; } set { wcGroup = value; } }
+
         string woNo = string.Empty;
+        private string woStatus = string.Empty;
 
         int ctrlIdx = 0;
 
@@ -41,6 +45,17 @@ namespace POP_Team5_XN
             {
                 btnStart.Enabled = btnEnd.Enabled = btnPalette.Enabled = btnClosing.Enabled = btnPfm.Enabled = false;
                 btnStart.BackColor = btnEnd.BackColor = btnPalette.BackColor = btnClosing.BackColor = btnPfm.BackColor = Color.Gray;
+            }
+            //MessageBox.Show(wcGroup);
+            if (wcGroup != "포장")
+            {
+                btnPalette.Enabled = false;
+                btnPalette.BackColor = Color.Gray;
+            }
+            else
+            {
+                btnPfm.Enabled = false;
+                btnPfm.BackColor = Color.Gray;
             }
 
             lblTitle.Text = woInfo.Wc_Name;
@@ -103,6 +118,16 @@ namespace POP_Team5_XN
 
             if (ctrl.SendOrderList.Wo_Status.Equals("생산중"))
             {
+                if (wcGroup != "포장")
+                {
+                    btnPfm.Enabled = true;
+                    btnPfm.BackColor = Color.FromArgb(241, 248, 255);
+                }
+                else
+                {
+                    btnPalette.Enabled = true;
+                    btnPalette.BackColor = Color.FromArgb(241, 248, 255);
+                }
                 btnStart.Enabled = false;
                 btnStart.BackColor = Color.Gray;
                 btnEnd.Enabled = true;
@@ -111,8 +136,6 @@ namespace POP_Team5_XN
                 btnEnd.Enabled = true;
                 btnEnd.BackColor = Color.FromArgb(241, 248, 255);
 
-                btnPfm.Enabled = true;
-                btnPfm.BackColor = Color.FromArgb(241, 248, 255);
             }
             else
             {
@@ -148,7 +171,8 @@ namespace POP_Team5_XN
             ctrlIdx = ctrl.TabIndex;
             ctrl.BackColor = Color.Blue;
             CtrlSelection(pnlOrList, ctrl.TabIndex);
-            
+            woStatus = ctrl.SendOrderList.Wo_Status;
+
             woInfo = new WoInfoVO
             {  //Item_Name, Plan_Date, Prd_Qty, WorkOrderNo, Wc_Name
                 WorkOrderNo = ctrl.SendOrderList.WorkOrderNo,
