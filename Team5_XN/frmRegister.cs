@@ -70,7 +70,7 @@ namespace Team5_XN
                 User_PW = txtPassword1.Text,
                 User_Name = txtName.Text
             };
-            DialogResult message = MessageBox.Show("회원 가입 하시겠습니까?", "회원가입", MessageBoxButtons.YesNo);
+            DialogResult message = MessageBox.Show("가입 하시겠습니까?", "사원등록", MessageBoxButtons.YesNo);
             if (message == DialogResult.Yes)
             {
                 bool result = false;
