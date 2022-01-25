@@ -33,7 +33,6 @@ namespace Team5_XN
             if (wcGroup != null) this.wcGroup = wcGroup;
             if (processName != null) this.processName = processName;
             InitializeComponent();
-            InitializeComponent();
         }
         private void PopupWCSearch_Load(object sender, EventArgs e)
         {
@@ -52,14 +51,41 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvList, "공정 명", "Process_Name", DataGridViewContentAlignment.MiddleLeft, colWidth: 120);
 
             list = searchServ.GetWCList();
+            List<WCSearchVO> list1 = null;
+            List<WCSearchVO> list2 = null;
+            List<WCSearchVO> list3 = null;
+            if (!string.IsNullOrWhiteSpace(wcName)) 
+            {
+                list1 = (from item in list
+                              where item.Wc_Name.Contains(wcName)
+                              select item).ToList();
+            }
 
-            list = (from item in list
-                          where item.Wc_Name.Contains(wcName)
-                             || item.Wc_Group.Contains(wcGroup)
-                             || item.Process_Name.Contains(processName)
-                          select item).ToList();
+            if (!string.IsNullOrWhiteSpace(wcGroup))
+            {
+                list2 = (from item in list
+                        where item.Wc_Group.Contains(wcGroup)
+                        select item).ToList();
+            }
 
-            dgvList.DataSource = list;
+            if (!string.IsNullOrWhiteSpace(processName))
+            {
+                list3 = (from item in list
+                        where item.Process_Name.Contains(processName)
+                        select item).ToList();
+            }
+
+            List<WCSearchVO> result = new List<WCSearchVO>();
+
+            //합치기
+            if (list1 != null) result.AddRange(list1);
+            if (list2 != null) result.AddRange(list2);
+            if (list3 != null) result.AddRange(list3);
+
+            //중복 제거
+            result = result.Distinct().ToList();
+
+            dgvList.DataSource = result;
         }
 
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)

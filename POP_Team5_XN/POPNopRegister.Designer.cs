@@ -78,7 +78,6 @@ namespace POP_Team5_XN
             this.label17 = new System.Windows.Forms.Label();
             this.pnlMainTop = new System.Windows.Forms.Panel();
             this.lblWcName = new System.Windows.Forms.Label();
-            this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_MainHistory = new System.Windows.Forms.Panel();
@@ -96,6 +95,7 @@ namespace POP_Team5_XN
             this.btnStart = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pnl_Update = new System.Windows.Forms.Panel();
+            this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
             this.tableLayoutPanel3.SuspendLayout();
             this.pnl_Register.SuspendLayout();
             this.pnlDatetime.SuspendLayout();
@@ -808,17 +808,6 @@ namespace POP_Team5_XN
             this.lblWcName.TabIndex = 17;
             this.lblWcName.Text = "Wc_Name";
             // 
-            // ucDateTime1
-            // 
-            this.ucDateTime1.BackColor = System.Drawing.Color.Transparent;
-            this.ucDateTime1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ucDateTime1.Location = new System.Drawing.Point(0, 0);
-            this.ucDateTime1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ucDateTime1.Name = "ucDateTime1";
-            this.ucDateTime1.Padding = new System.Windows.Forms.Padding(20);
-            this.ucDateTime1.Size = new System.Drawing.Size(277, 106);
-            this.ucDateTime1.TabIndex = 16;
-            // 
             // pnl_Main
             // 
             this.pnl_Main.Controls.Add(this.panel1);
@@ -1061,6 +1050,17 @@ namespace POP_Team5_XN
             this.pnl_Update.Size = new System.Drawing.Size(1098, 670);
             this.pnl_Update.TabIndex = 17;
             // 
+            // ucDateTime1
+            // 
+            this.ucDateTime1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDateTime1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ucDateTime1.Location = new System.Drawing.Point(0, 0);
+            this.ucDateTime1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucDateTime1.Name = "ucDateTime1";
+            this.ucDateTime1.Padding = new System.Windows.Forms.Padding(20);
+            this.ucDateTime1.Size = new System.Drawing.Size(277, 106);
+            this.ucDateTime1.TabIndex = 16;
+            // 
             // POPNopRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1074,7 +1074,7 @@ namespace POP_Team5_XN
             this.MinimumSize = new System.Drawing.Size(1114, 812);
             this.Name = "POPNopRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "POPNopRegister";
+            this.Text = "비가동등록";
             this.Load += new System.EventHandler(this.POPNopRegister_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
