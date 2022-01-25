@@ -70,7 +70,7 @@ namespace POP_Team5_XN
 
             button_Click_NowDate(this, null);
 
-
+            lblWcName.Text = woInfo.Wc_Name;
             LoadData();
 
         }
@@ -261,6 +261,7 @@ namespace POP_Team5_XN
         private void Nop_Ma_Insert()
         {
             pnlNopMa.Controls.Clear();
+            NopInfo.Nop_Ma_Code = NopInfo.Nop_Ma_Name = NopInfo.Nop_Mi_Code = NopInfo.Nop_Mi_Name = null;
 
             DataTable dt = nopServ.GetNopRegist_Ma(WoInfo.Wc_Code);
 
@@ -353,6 +354,7 @@ namespace POP_Team5_XN
         {
             pnlNopMi.Controls.Clear();
 
+            
             DataTable dt = nopServ.GetNopRegist_Mi(wcCode);
 
             int cnt = dt.Rows.Count;

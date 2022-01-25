@@ -24,7 +24,7 @@ namespace POP_Team5_XN
             set
             {
                 nopHis = value;
-                lblWcName.Text = value.Wc_Name;
+                //lblWcName.Text = value.Wc_Name;
                 lblNopMa.Text = value.Nop_Ma_Name;
                 lblNopMi.Text = value.Nop_Mi_Name;
                 lblNopTime.Text = value.Nop_DateTime_Start.ToString("yyyy-MM-dd HH:mm:ss");
