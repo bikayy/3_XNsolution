@@ -77,6 +77,7 @@ namespace POP_Team5_XN
             this.btnCancle = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlMainTop = new System.Windows.Forms.Panel();
+            this.lblWcName = new System.Windows.Forms.Label();
             this.ucDateTime1 = new POP_Team5_XN.Controls.ucDateTime();
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -95,7 +96,6 @@ namespace POP_Team5_XN
             this.btnStart = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pnl_Update = new System.Windows.Forms.Panel();
-            this.lblWcName = new System.Windows.Forms.Label();
             this.tableLayoutPanel3.SuspendLayout();
             this.pnl_Register.SuspendLayout();
             this.pnlDatetime.SuspendLayout();
@@ -797,6 +797,17 @@ namespace POP_Team5_XN
             this.pnlMainTop.Size = new System.Drawing.Size(1098, 106);
             this.pnlMainTop.TabIndex = 11;
             // 
+            // lblWcName
+            // 
+            this.lblWcName.BackColor = System.Drawing.Color.Transparent;
+            this.lblWcName.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblWcName.ForeColor = System.Drawing.Color.White;
+            this.lblWcName.Location = new System.Drawing.Point(510, 36);
+            this.lblWcName.Name = "lblWcName";
+            this.lblWcName.Size = new System.Drawing.Size(351, 30);
+            this.lblWcName.TabIndex = 17;
+            this.lblWcName.Text = "Wc_Name";
+            // 
             // ucDateTime1
             // 
             this.ucDateTime1.BackColor = System.Drawing.Color.Transparent;
@@ -1050,17 +1061,6 @@ namespace POP_Team5_XN
             this.pnl_Update.Size = new System.Drawing.Size(1098, 670);
             this.pnl_Update.TabIndex = 17;
             // 
-            // lblWcName
-            // 
-            this.lblWcName.BackColor = System.Drawing.Color.Transparent;
-            this.lblWcName.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblWcName.ForeColor = System.Drawing.Color.White;
-            this.lblWcName.Location = new System.Drawing.Point(510, 36);
-            this.lblWcName.Name = "lblWcName";
-            this.lblWcName.Size = new System.Drawing.Size(351, 30);
-            this.lblWcName.TabIndex = 17;
-            this.lblWcName.Text = "Wc_Name";
-            // 
             // POPNopRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1070,7 +1070,10 @@ namespace POP_Team5_XN
             this.Controls.Add(this.pnl_Register);
             this.Controls.Add(this.pnl_Main);
             this.Controls.Add(this.pnl_Update);
+            this.MaximumSize = new System.Drawing.Size(1114, 812);
+            this.MinimumSize = new System.Drawing.Size(1114, 812);
             this.Name = "POPNopRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "POPNopRegister";
             this.Load += new System.EventHandler(this.POPNopRegister_Load);
             this.tableLayoutPanel3.ResumeLayout(false);

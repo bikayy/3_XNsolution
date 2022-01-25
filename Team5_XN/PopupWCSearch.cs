@@ -16,6 +16,10 @@ namespace Team5_XN
         SearchService searchServ = null;
         List<WCSearchVO> list = null;
 
+        string wcName = "";
+        string wcGroup = ""; 
+        string processName = "";
+
         private WCSearchVO sendInfo = new WCSearchVO();
         public WCSearchVO Send { get { return sendInfo; } set { sendInfo = value; } }
 
@@ -23,7 +27,14 @@ namespace Team5_XN
         {
             InitializeComponent();
         }
-
+        public PopupWCSearch(string wcName, string wcGroup, string processName)
+        {
+            if (wcName != null) this.wcName = wcName;
+            if (wcGroup != null) this.wcGroup = wcGroup;
+            if (processName != null) this.processName = processName;
+            InitializeComponent();
+            InitializeComponent();
+        }
         private void PopupWCSearch_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -41,6 +52,13 @@ namespace Team5_XN
             DataGridViewUtil.AddGridTextColumn(dgvList, "공정 명", "Process_Name", DataGridViewContentAlignment.MiddleLeft, colWidth: 120);
 
             list = searchServ.GetWCList();
+
+            list = (from item in list
+                          where item.Wc_Name.Contains(wcName)
+                             || item.Wc_Group.Contains(wcGroup)
+                             || item.Process_Name.Contains(processName)
+                          select item).ToList();
+
             dgvList.DataSource = list;
         }
 
