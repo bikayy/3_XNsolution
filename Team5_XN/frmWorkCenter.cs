@@ -492,9 +492,9 @@ namespace Team5_XN
             cboPallet_YN.Text = dataGridView1["Pallet_YN", dataGridView1.CurrentRow.Index].Value.ToString();
 
         }
+        
 
-
-        private void ControlState()
+            private void ControlState()
         {
             if (check <= 1) //0:기본, 1:추가
                 if (check == 1 && dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index >= rowCount) //추가한 행

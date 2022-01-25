@@ -483,7 +483,7 @@ namespace Team5_XN
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1274, 54);
             this.pnlSelect.TabIndex = 1;
-            this.pnlSelect.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSelect_Paint);
+            //this.pnlSelect.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSelect_Paint);
             // 
             // txtGroupCode
             // 

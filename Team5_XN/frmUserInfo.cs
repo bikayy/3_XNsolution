@@ -515,10 +515,10 @@ namespace Team5_XN
 
         }
 
-        private void pnlSelect_Paint(object sender, PaintEventArgs e)
-        {
+        //private void pnlSelect_Paint(object sender, PaintEventArgs e)
+        //{
 
-        }
+        //}
 
         private void dgvUserInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {

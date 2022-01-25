@@ -20,7 +20,7 @@ namespace Team5_XN
         Button btnSelect;
         Panel panel1;
         TreeView treeView1;
-
+        string frmName;
         //클릭시 발생하는 이벤트
         public event EventHandler Select; //조회버튼
         public event EventHandler Create; //등록(생성)버튼
@@ -177,9 +177,10 @@ namespace Team5_XN
                     frm.Activate();
                     frm.BringToFront();
                     tabControl1.SelectedTab = tabControl1.TabPages[frm.Text];
+                    toolSetting(frmName);
                     return;
                 }
-            }
+             }
 
             try
             {
@@ -227,10 +228,6 @@ namespace Team5_XN
             }
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
         //저장
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -271,16 +268,19 @@ namespace Team5_XN
                 var closeImage = Properties.Resources.icon_close_black;
                 var closeRect = new Rectangle((r.Right - closeImage.Width), r.Top + (r.Height - closeImage.Height) / 2,
                     closeImage.Width, closeImage.Height);
-
+                
                 if (closeRect.Contains(e.Location))
                 {
                     if(this.ActiveMdiChild.Name != "frmDashBoard")
                     this.ActiveMdiChild.Close();
                     if (btnSelect != null) btnSelect.Focus();
+                    
                     break;
                 }
+                
 
             }
+            toolSetting(frmName);
         }
 
         private void Main_MdiChildActivate(object sender, EventArgs e)
@@ -291,23 +291,28 @@ namespace Team5_XN
             }
             else
             {
+                Form frm = sender as Form;
+                frmName = frm.ActiveMdiChild.Text;
+                
+
                 //this.ActiveMdiChild.StartPosition = FormStartPosition.Manual;
                 this.ActiveMdiChild.Location = new Point(0, 0);
                 this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
 
                 if (this.ActiveMdiChild.Tag == null)
                 {
-                    StringBuilder sb = new StringBuilder(this.ActiveMdiChild.Text + "      ");
-                    for (int i = 0; i < sb.Length; i++)
+                    StringBuilder sb = new StringBuilder(this.ActiveMdiChild.Text);
+                    for (int i = 0; i < 20; i++)
                     {
-                        if (sb.Length < 9)
-                            sb.Append("　");
+                        if (sb.Length > 20)
+                            break;
+                        sb.Append(" ");
 
                     }
                     //탭페이지를 추가해서 탭컨트롤에 추가
 
                     TabPage tp = new TabPage(sb.ToString());
-                    tp.Width = 400;
+                    tp.Width = 600;
                     tp.Parent = tabControl1;
                     tp.Tag = this.ActiveMdiChild;
                     tp.Name = this.ActiveMdiChild.Text;
@@ -320,8 +325,11 @@ namespace Team5_XN
                     this.ActiveMdiChild.Tag = tp;
                 }
 
-                if (!tabControl1.Visible)
+                if (!tabControl1.Visible) 
+                { 
                     tabControl1.Visible = true;
+                    
+                }
 
             }
         }
@@ -337,6 +345,44 @@ namespace Team5_XN
                 e.Item.Visible = false;
         }
 
-        
+        /*static public*/ 
+        private void toolSetting(string formName)
+        {
+            if(formName == "사용자관리" || formName == "사용자그룹관리" || formName == "시스템코드분류" || formName == "공정정보" || formName == "작업장정보" || formName == "품목정보" || formName == "비가동분류" || formName == "포장등급 상세정의" || formName == "생산요청관리")
+            {
+                //조회 추가 편집 삭제 새로고침
+                toolSelect.Enabled = toolCreate.Enabled = toolUpdate.Enabled = toolDelete.Enabled = toolReset.Enabled = true;
+                toolSave.Enabled = toolCancle.Enabled = false;
+
+            }
+            else if (formName == "사용자권한설정")
+            {
+                //조회 편집 새로고침
+                toolSelect.Enabled = toolUpdate.Enabled = toolReset.Enabled = true;
+                toolCreate.Enabled = toolSave.Enabled = toolCancle.Enabled = toolDelete.Enabled = false;
+            }
+            else if (formName == "비가동이력" )
+            {
+                //조회 편집 삭제 새로고침
+                toolSelect.Enabled = toolUpdate.Enabled = toolReset.Enabled = toolDelete.Enabled = true;
+                toolCreate.Enabled = toolSave.Enabled = toolCancle.Enabled = false;
+            }
+            else if (formName == "화면관리" || formName == "시간대별 실적조회" || formName == "일별 생산현황" || formName == "일별 불량률" || formName == "생산계획관리")
+            {
+                //조회 새로고침
+                toolSelect.Enabled = toolReset.Enabled = true;
+                toolCreate.Enabled = toolUpdate.Enabled = toolDelete.Enabled = toolSave.Enabled = toolCancle.Enabled = false;
+            }
+            else
+            {
+                //노버튼
+                //작업지시 생성 및 마감
+                //시유 작업지시 생성
+                //완제품 입고리스트
+                toolSelect.Enabled = toolReset.Enabled =
+                toolCreate.Enabled = toolUpdate.Enabled = toolDelete.Enabled = toolSave.Enabled = toolCancle.Enabled = false;
+            }
+
+        }
     }
 }
