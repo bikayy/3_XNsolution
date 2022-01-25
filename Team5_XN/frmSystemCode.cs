@@ -579,6 +579,7 @@ namespace Team5_XN
 
         private void dgvSysMaster_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             string name = Convert.ToString(dgvSysMaster.Rows[e.RowIndex].Cells[1].Value);
             dt3 = commServ.GetSystemCodeDetail(name);
             dtDetailOrigin = dt3.Copy();

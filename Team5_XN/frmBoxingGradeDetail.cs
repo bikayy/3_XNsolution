@@ -303,8 +303,8 @@ namespace Team5_XN
             {
                 if (dgvBoxDetail.CurrentRow.Index >= detailCount)
                 {
-                    dt.Rows.Remove(dt.Rows[dgvBoxDetail.CurrentCell.RowIndex]);
-                    dt.AcceptChanges();
+                    list.Rows.Remove(list.Rows[dgvBoxDetail.CurrentCell.RowIndex]);
+                    list.AcceptChanges();
 
                     //if (dataGridView1.RowCount == rowCount)
                     //    dataGridView1.CurrentCell = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.RowCount-1];
@@ -348,9 +348,11 @@ namespace Team5_XN
             if (MessageBox.Show($"{menu}한 데이터를 저장하지 않고 기능을 취소하시겠습니까?.", "취소확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ChangeValue_Check(0);
-                dt = dt_DB.Copy();
-                dgvBoxDetail.DataSource = dt;
-                //OnSelect(this, e);
+                //list = dt_DB.Copy();
+                //dgvBoxDetail.DataSource = list;
+                if (dgvBoxMaster.Rows.Count > 0)
+                    dgvBoxMaster_CellClick(dgvBoxMaster, new DataGridViewCellEventArgs(0, 0));
+                //OnSelect(this, e);d
                 //this.DialogResult = DialogResult.Yes;
             }
             else
@@ -479,6 +481,7 @@ namespace Team5_XN
         }
         private void dgvBoxMaster_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             string code = Convert.ToString(dgvBoxMaster.Rows[e.RowIndex].Cells[0].Value);
             list = boxServ.GetBoxingGradeDetail(code);
             dgvBoxDetail.DataSource = list;
