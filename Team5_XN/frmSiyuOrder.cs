@@ -555,7 +555,7 @@ namespace Team5_XN
 
         private void o_btnWCSearch_Click(object sender, EventArgs e)
         {
-            PopupWCSearch frm = new PopupWCSearch();
+            PopupWCSearch frm = new PopupWCSearch("시유", "시유", "시유");
             frm.ShowDialog();
             
             if (frm.DialogResult == DialogResult.OK)
