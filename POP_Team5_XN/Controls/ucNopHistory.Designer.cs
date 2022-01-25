@@ -33,7 +33,6 @@ namespace POP_Team5_XN
             this.lblNopMinute = new System.Windows.Forms.Label();
             this.lblNopMi = new System.Windows.Forms.Label();
             this.lblNopMa = new System.Windows.Forms.Label();
-            this.lblWcName = new System.Windows.Forms.Label();
             this.lblNopTime = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -41,17 +40,16 @@ namespace POP_Team5_XN
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.lblNopMinute, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNopMi, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNopMa, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblWcName, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNopTime, 3, 0);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.lblNopMinute, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblNopMi, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblNopMa, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblNopTime, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -68,10 +66,10 @@ namespace POP_Team5_XN
             this.lblNopMinute.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNopMinute.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblNopMinute.ForeColor = System.Drawing.Color.Black;
-            this.lblNopMinute.Location = new System.Drawing.Point(512, 0);
+            this.lblNopMinute.Location = new System.Drawing.Point(483, 0);
             this.lblNopMinute.Margin = new System.Windows.Forms.Padding(0);
             this.lblNopMinute.Name = "lblNopMinute";
-            this.lblNopMinute.Size = new System.Drawing.Size(132, 100);
+            this.lblNopMinute.Size = new System.Drawing.Size(161, 100);
             this.lblNopMinute.TabIndex = 4;
             this.lblNopMinute.Text = "비가동\r\n시간(분)";
             this.lblNopMinute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -85,10 +83,10 @@ namespace POP_Team5_XN
             this.lblNopMi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNopMi.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblNopMi.ForeColor = System.Drawing.Color.Black;
-            this.lblNopMi.Location = new System.Drawing.Point(256, 0);
+            this.lblNopMi.Location = new System.Drawing.Point(161, 0);
             this.lblNopMi.Margin = new System.Windows.Forms.Padding(0);
             this.lblNopMi.Name = "lblNopMi";
-            this.lblNopMi.Size = new System.Drawing.Size(128, 100);
+            this.lblNopMi.Size = new System.Drawing.Size(161, 100);
             this.lblNopMi.TabIndex = 2;
             this.lblNopMi.Text = "비가동\r\n상세분류";
             this.lblNopMi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -102,31 +100,14 @@ namespace POP_Team5_XN
             this.lblNopMa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNopMa.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblNopMa.ForeColor = System.Drawing.Color.Black;
-            this.lblNopMa.Location = new System.Drawing.Point(128, 0);
+            this.lblNopMa.Location = new System.Drawing.Point(0, 0);
             this.lblNopMa.Margin = new System.Windows.Forms.Padding(0);
             this.lblNopMa.Name = "lblNopMa";
-            this.lblNopMa.Size = new System.Drawing.Size(128, 100);
+            this.lblNopMa.Size = new System.Drawing.Size(161, 100);
             this.lblNopMa.TabIndex = 1;
             this.lblNopMa.Text = "비가동\r\n대분류";
             this.lblNopMa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNopMa.Click += new System.EventHandler(this.ucNopHistory_Click);
-            // 
-            // lblWcName
-            // 
-            this.lblWcName.AutoSize = true;
-            this.lblWcName.BackColor = System.Drawing.Color.Transparent;
-            this.lblWcName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblWcName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWcName.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblWcName.ForeColor = System.Drawing.Color.Black;
-            this.lblWcName.Location = new System.Drawing.Point(0, 0);
-            this.lblWcName.Margin = new System.Windows.Forms.Padding(0);
-            this.lblWcName.Name = "lblWcName";
-            this.lblWcName.Size = new System.Drawing.Size(128, 100);
-            this.lblWcName.TabIndex = 0;
-            this.lblWcName.Text = "작업장";
-            this.lblWcName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblWcName.Click += new System.EventHandler(this.ucNopHistory_Click);
             // 
             // lblNopTime
             // 
@@ -136,10 +117,10 @@ namespace POP_Team5_XN
             this.lblNopTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNopTime.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblNopTime.ForeColor = System.Drawing.Color.Black;
-            this.lblNopTime.Location = new System.Drawing.Point(384, 0);
+            this.lblNopTime.Location = new System.Drawing.Point(322, 0);
             this.lblNopTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblNopTime.Name = "lblNopTime";
-            this.lblNopTime.Size = new System.Drawing.Size(128, 100);
+            this.lblNopTime.Size = new System.Drawing.Size(161, 100);
             this.lblNopTime.TabIndex = 3;
             this.lblNopTime.Text = "발생시";
             this.lblNopTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -166,7 +147,6 @@ namespace POP_Team5_XN
         private System.Windows.Forms.Label lblNopMinute;
         private System.Windows.Forms.Label lblNopMi;
         private System.Windows.Forms.Label lblNopMa;
-        private System.Windows.Forms.Label lblWcName;
         private System.Windows.Forms.Label lblNopTime;
     }
 }

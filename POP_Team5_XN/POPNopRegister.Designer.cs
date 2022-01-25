@@ -35,23 +35,27 @@ namespace POP_Team5_XN
             this.pnlWc = new System.Windows.Forms.Panel();
             this.pnl_Register = new System.Windows.Forms.Panel();
             this.pnlDatetime = new System.Windows.Forms.Panel();
-            this.tblDay = new System.Windows.Forms.TableLayoutPanel();
-            this.mskDay = new System.Windows.Forms.MaskedTextBox();
-            this.btnDayDown = new System.Windows.Forms.Button();
-            this.btnDayUp = new System.Windows.Forms.Button();
             this.tblMonth = new System.Windows.Forms.TableLayoutPanel();
             this.mskMonth = new System.Windows.Forms.MaskedTextBox();
             this.btnMonthDown = new System.Windows.Forms.Button();
             this.btnMonthUp = new System.Windows.Forms.Button();
+            this.tblYear = new System.Windows.Forms.TableLayoutPanel();
+            this.mskYear = new System.Windows.Forms.MaskedTextBox();
+            this.btnYearDown = new System.Windows.Forms.Button();
+            this.btnYearUp = new System.Windows.Forms.Button();
+            this.tblHour = new System.Windows.Forms.TableLayoutPanel();
+            this.mskHour = new System.Windows.Forms.MaskedTextBox();
+            this.btnHourDown = new System.Windows.Forms.Button();
+            this.btnHourUp = new System.Windows.Forms.Button();
+            this.tblDay = new System.Windows.Forms.TableLayoutPanel();
+            this.mskDay = new System.Windows.Forms.MaskedTextBox();
+            this.btnDayDown = new System.Windows.Forms.Button();
+            this.btnDayUp = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.tblSecond = new System.Windows.Forms.TableLayoutPanel();
             this.mskSecond = new System.Windows.Forms.MaskedTextBox();
             this.btnSecondDown = new System.Windows.Forms.Button();
             this.btnSecondUp = new System.Windows.Forms.Button();
-            this.tblYear = new System.Windows.Forms.TableLayoutPanel();
-            this.mskYear = new System.Windows.Forms.MaskedTextBox();
-            this.btnYearDown = new System.Windows.Forms.Button();
-            this.btnYearUp = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.tblMinute = new System.Windows.Forms.TableLayoutPanel();
             this.mskMinute = new System.Windows.Forms.MaskedTextBox();
@@ -60,10 +64,6 @@ namespace POP_Team5_XN
             this.label14 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.tblHour = new System.Windows.Forms.TableLayoutPanel();
-            this.mskHour = new System.Windows.Forms.MaskedTextBox();
-            this.btnHourDown = new System.Windows.Forms.Button();
-            this.btnHourUp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
@@ -95,15 +95,16 @@ namespace POP_Team5_XN
             this.btnStart = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pnl_Update = new System.Windows.Forms.Panel();
+            this.lblWcName = new System.Windows.Forms.Label();
             this.tableLayoutPanel3.SuspendLayout();
             this.pnl_Register.SuspendLayout();
             this.pnlDatetime.SuspendLayout();
-            this.tblDay.SuspendLayout();
             this.tblMonth.SuspendLayout();
-            this.tblSecond.SuspendLayout();
             this.tblYear.SuspendLayout();
-            this.tblMinute.SuspendLayout();
             this.tblHour.SuspendLayout();
+            this.tblDay.SuspendLayout();
+            this.tblSecond.SuspendLayout();
+            this.tblMinute.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -199,64 +200,6 @@ namespace POP_Team5_XN
             this.pnlDatetime.Size = new System.Drawing.Size(801, 268);
             this.pnlDatetime.TabIndex = 78;
             // 
-            // tblDay
-            // 
-            this.tblDay.ColumnCount = 2;
-            this.tblDay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblDay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tblDay.Controls.Add(this.mskDay, 0, 0);
-            this.tblDay.Controls.Add(this.btnDayDown, 1, 1);
-            this.tblDay.Controls.Add(this.btnDayUp, 1, 0);
-            this.tblDay.Location = new System.Drawing.Point(546, 17);
-            this.tblDay.Name = "tblDay";
-            this.tblDay.RowCount = 2;
-            this.tblDay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.35461F));
-            this.tblDay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.64539F));
-            this.tblDay.Size = new System.Drawing.Size(161, 95);
-            this.tblDay.TabIndex = 68;
-            // 
-            // mskDay
-            // 
-            this.mskDay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mskDay.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mskDay.Location = new System.Drawing.Point(1, 1);
-            this.mskDay.Margin = new System.Windows.Forms.Padding(1);
-            this.mskDay.Mask = "00";
-            this.mskDay.Name = "mskDay";
-            this.mskDay.PromptChar = '-';
-            this.tblDay.SetRowSpan(this.mskDay, 2);
-            this.mskDay.Size = new System.Drawing.Size(99, 93);
-            this.mskDay.TabIndex = 60;
-            this.mskDay.Text = "00";
-            this.mskDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mskDay.Validating += new System.ComponentModel.CancelEventHandler(this.mskMonth_Validating);
-            // 
-            // btnDayDown
-            // 
-            this.btnDayDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDayDown.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDayDown.Location = new System.Drawing.Point(102, 48);
-            this.btnDayDown.Margin = new System.Windows.Forms.Padding(1);
-            this.btnDayDown.Name = "btnDayDown";
-            this.btnDayDown.Size = new System.Drawing.Size(58, 46);
-            this.btnDayDown.TabIndex = 59;
-            this.btnDayDown.Text = "▼";
-            this.btnDayDown.UseVisualStyleBackColor = true;
-            this.btnDayDown.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnDayUp
-            // 
-            this.btnDayUp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDayUp.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDayUp.Location = new System.Drawing.Point(102, 1);
-            this.btnDayUp.Margin = new System.Windows.Forms.Padding(1);
-            this.btnDayUp.Name = "btnDayUp";
-            this.btnDayUp.Size = new System.Drawing.Size(58, 45);
-            this.btnDayUp.TabIndex = 58;
-            this.btnDayUp.Text = "▲";
-            this.btnDayUp.UseVisualStyleBackColor = true;
-            this.btnDayUp.Click += new System.EventHandler(this.button1_Click);
-            // 
             // tblMonth
             // 
             this.tblMonth.ColumnCount = 2;
@@ -315,6 +258,181 @@ namespace POP_Team5_XN
             this.btnMonthUp.Text = "▲";
             this.btnMonthUp.UseVisualStyleBackColor = true;
             this.btnMonthUp.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tblYear
+            // 
+            this.tblYear.ColumnCount = 2;
+            this.tblYear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblYear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tblYear.Controls.Add(this.mskYear, 0, 0);
+            this.tblYear.Controls.Add(this.btnYearDown, 1, 1);
+            this.tblYear.Controls.Add(this.btnYearUp, 1, 0);
+            this.tblYear.Location = new System.Drawing.Point(16, 17);
+            this.tblYear.Name = "tblYear";
+            this.tblYear.RowCount = 2;
+            this.tblYear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.35461F));
+            this.tblYear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.64539F));
+            this.tblYear.Size = new System.Drawing.Size(219, 95);
+            this.tblYear.TabIndex = 62;
+            // 
+            // mskYear
+            // 
+            this.mskYear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mskYear.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mskYear.Location = new System.Drawing.Point(1, 1);
+            this.mskYear.Margin = new System.Windows.Forms.Padding(1);
+            this.mskYear.Mask = "0000";
+            this.mskYear.Name = "mskYear";
+            this.mskYear.PromptChar = '-';
+            this.tblYear.SetRowSpan(this.mskYear, 2);
+            this.mskYear.Size = new System.Drawing.Size(157, 93);
+            this.mskYear.TabIndex = 60;
+            this.mskYear.Text = "1900";
+            this.mskYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mskYear.Validating += new System.ComponentModel.CancelEventHandler(this.mskMonth_Validating);
+            // 
+            // btnYearDown
+            // 
+            this.btnYearDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnYearDown.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnYearDown.Location = new System.Drawing.Point(160, 48);
+            this.btnYearDown.Margin = new System.Windows.Forms.Padding(1);
+            this.btnYearDown.Name = "btnYearDown";
+            this.btnYearDown.Size = new System.Drawing.Size(58, 46);
+            this.btnYearDown.TabIndex = 59;
+            this.btnYearDown.Text = "▼";
+            this.btnYearDown.UseVisualStyleBackColor = true;
+            this.btnYearDown.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnYearUp
+            // 
+            this.btnYearUp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnYearUp.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnYearUp.Location = new System.Drawing.Point(160, 1);
+            this.btnYearUp.Margin = new System.Windows.Forms.Padding(1);
+            this.btnYearUp.Name = "btnYearUp";
+            this.btnYearUp.Size = new System.Drawing.Size(58, 45);
+            this.btnYearUp.TabIndex = 58;
+            this.btnYearUp.Text = "▲";
+            this.btnYearUp.UseVisualStyleBackColor = true;
+            this.btnYearUp.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tblHour
+            // 
+            this.tblHour.ColumnCount = 2;
+            this.tblHour.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblHour.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tblHour.Controls.Add(this.mskHour, 0, 0);
+            this.tblHour.Controls.Add(this.btnHourDown, 1, 1);
+            this.tblHour.Controls.Add(this.btnHourUp, 1, 0);
+            this.tblHour.Location = new System.Drawing.Point(73, 146);
+            this.tblHour.Name = "tblHour";
+            this.tblHour.RowCount = 2;
+            this.tblHour.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.35461F));
+            this.tblHour.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.64539F));
+            this.tblHour.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblHour.Size = new System.Drawing.Size(160, 95);
+            this.tblHour.TabIndex = 70;
+            // 
+            // mskHour
+            // 
+            this.mskHour.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mskHour.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mskHour.Location = new System.Drawing.Point(1, 1);
+            this.mskHour.Margin = new System.Windows.Forms.Padding(1);
+            this.mskHour.Mask = "00";
+            this.mskHour.Name = "mskHour";
+            this.mskHour.PromptChar = '-';
+            this.tblHour.SetRowSpan(this.mskHour, 2);
+            this.mskHour.Size = new System.Drawing.Size(98, 93);
+            this.mskHour.TabIndex = 60;
+            this.mskHour.Text = "00";
+            this.mskHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mskHour.Validating += new System.ComponentModel.CancelEventHandler(this.mskMonth_Validating);
+            // 
+            // btnHourDown
+            // 
+            this.btnHourDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHourDown.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHourDown.Location = new System.Drawing.Point(101, 48);
+            this.btnHourDown.Margin = new System.Windows.Forms.Padding(1);
+            this.btnHourDown.Name = "btnHourDown";
+            this.btnHourDown.Size = new System.Drawing.Size(58, 46);
+            this.btnHourDown.TabIndex = 59;
+            this.btnHourDown.Text = "▼";
+            this.btnHourDown.UseVisualStyleBackColor = true;
+            this.btnHourDown.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnHourUp
+            // 
+            this.btnHourUp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHourUp.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnHourUp.Location = new System.Drawing.Point(101, 1);
+            this.btnHourUp.Margin = new System.Windows.Forms.Padding(1);
+            this.btnHourUp.Name = "btnHourUp";
+            this.btnHourUp.Size = new System.Drawing.Size(58, 45);
+            this.btnHourUp.TabIndex = 58;
+            this.btnHourUp.Text = "▲";
+            this.btnHourUp.UseVisualStyleBackColor = true;
+            this.btnHourUp.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tblDay
+            // 
+            this.tblDay.ColumnCount = 2;
+            this.tblDay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblDay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tblDay.Controls.Add(this.mskDay, 0, 0);
+            this.tblDay.Controls.Add(this.btnDayDown, 1, 1);
+            this.tblDay.Controls.Add(this.btnDayUp, 1, 0);
+            this.tblDay.Location = new System.Drawing.Point(546, 17);
+            this.tblDay.Name = "tblDay";
+            this.tblDay.RowCount = 2;
+            this.tblDay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.35461F));
+            this.tblDay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.64539F));
+            this.tblDay.Size = new System.Drawing.Size(161, 95);
+            this.tblDay.TabIndex = 68;
+            // 
+            // mskDay
+            // 
+            this.mskDay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mskDay.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mskDay.Location = new System.Drawing.Point(1, 1);
+            this.mskDay.Margin = new System.Windows.Forms.Padding(1);
+            this.mskDay.Mask = "00";
+            this.mskDay.Name = "mskDay";
+            this.mskDay.PromptChar = '-';
+            this.tblDay.SetRowSpan(this.mskDay, 2);
+            this.mskDay.Size = new System.Drawing.Size(99, 93);
+            this.mskDay.TabIndex = 60;
+            this.mskDay.Text = "00";
+            this.mskDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mskDay.Validating += new System.ComponentModel.CancelEventHandler(this.mskMonth_Validating);
+            // 
+            // btnDayDown
+            // 
+            this.btnDayDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDayDown.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDayDown.Location = new System.Drawing.Point(102, 48);
+            this.btnDayDown.Margin = new System.Windows.Forms.Padding(1);
+            this.btnDayDown.Name = "btnDayDown";
+            this.btnDayDown.Size = new System.Drawing.Size(58, 46);
+            this.btnDayDown.TabIndex = 59;
+            this.btnDayDown.Text = "▼";
+            this.btnDayDown.UseVisualStyleBackColor = true;
+            this.btnDayDown.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnDayUp
+            // 
+            this.btnDayUp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDayUp.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDayUp.Location = new System.Drawing.Point(102, 1);
+            this.btnDayUp.Margin = new System.Windows.Forms.Padding(1);
+            this.btnDayUp.Name = "btnDayUp";
+            this.btnDayUp.Size = new System.Drawing.Size(58, 45);
+            this.btnDayUp.TabIndex = 58;
+            this.btnDayUp.Text = "▲";
+            this.btnDayUp.UseVisualStyleBackColor = true;
+            this.btnDayUp.Click += new System.EventHandler(this.button1_Click);
             // 
             // label12
             // 
@@ -383,64 +501,6 @@ namespace POP_Team5_XN
             this.btnSecondUp.Text = "▲";
             this.btnSecondUp.UseVisualStyleBackColor = true;
             this.btnSecondUp.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tblYear
-            // 
-            this.tblYear.ColumnCount = 2;
-            this.tblYear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblYear.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tblYear.Controls.Add(this.mskYear, 0, 0);
-            this.tblYear.Controls.Add(this.btnYearDown, 1, 1);
-            this.tblYear.Controls.Add(this.btnYearUp, 1, 0);
-            this.tblYear.Location = new System.Drawing.Point(16, 17);
-            this.tblYear.Name = "tblYear";
-            this.tblYear.RowCount = 2;
-            this.tblYear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.35461F));
-            this.tblYear.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.64539F));
-            this.tblYear.Size = new System.Drawing.Size(219, 95);
-            this.tblYear.TabIndex = 62;
-            // 
-            // mskYear
-            // 
-            this.mskYear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mskYear.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mskYear.Location = new System.Drawing.Point(1, 1);
-            this.mskYear.Margin = new System.Windows.Forms.Padding(1);
-            this.mskYear.Mask = "0000";
-            this.mskYear.Name = "mskYear";
-            this.mskYear.PromptChar = '-';
-            this.tblYear.SetRowSpan(this.mskYear, 2);
-            this.mskYear.Size = new System.Drawing.Size(157, 93);
-            this.mskYear.TabIndex = 60;
-            this.mskYear.Text = "1900";
-            this.mskYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mskYear.Validating += new System.ComponentModel.CancelEventHandler(this.mskMonth_Validating);
-            // 
-            // btnYearDown
-            // 
-            this.btnYearDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnYearDown.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnYearDown.Location = new System.Drawing.Point(160, 48);
-            this.btnYearDown.Margin = new System.Windows.Forms.Padding(1);
-            this.btnYearDown.Name = "btnYearDown";
-            this.btnYearDown.Size = new System.Drawing.Size(58, 46);
-            this.btnYearDown.TabIndex = 59;
-            this.btnYearDown.Text = "▼";
-            this.btnYearDown.UseVisualStyleBackColor = true;
-            this.btnYearDown.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnYearUp
-            // 
-            this.btnYearUp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnYearUp.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnYearUp.Location = new System.Drawing.Point(160, 1);
-            this.btnYearUp.Margin = new System.Windows.Forms.Padding(1);
-            this.btnYearUp.Name = "btnYearUp";
-            this.btnYearUp.Size = new System.Drawing.Size(58, 45);
-            this.btnYearUp.TabIndex = 58;
-            this.btnYearUp.Text = "▲";
-            this.btnYearUp.UseVisualStyleBackColor = true;
-            this.btnYearUp.Click += new System.EventHandler(this.button1_Click);
             // 
             // label32
             // 
@@ -540,65 +600,6 @@ namespace POP_Team5_XN
             this.label15.Size = new System.Drawing.Size(76, 65);
             this.label15.TabIndex = 71;
             this.label15.Text = "시";
-            // 
-            // tblHour
-            // 
-            this.tblHour.ColumnCount = 2;
-            this.tblHour.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblHour.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tblHour.Controls.Add(this.mskHour, 0, 0);
-            this.tblHour.Controls.Add(this.btnHourDown, 1, 1);
-            this.tblHour.Controls.Add(this.btnHourUp, 1, 0);
-            this.tblHour.Location = new System.Drawing.Point(73, 146);
-            this.tblHour.Name = "tblHour";
-            this.tblHour.RowCount = 2;
-            this.tblHour.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.35461F));
-            this.tblHour.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.64539F));
-            this.tblHour.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblHour.Size = new System.Drawing.Size(160, 95);
-            this.tblHour.TabIndex = 70;
-            // 
-            // mskHour
-            // 
-            this.mskHour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mskHour.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mskHour.Location = new System.Drawing.Point(1, 1);
-            this.mskHour.Margin = new System.Windows.Forms.Padding(1);
-            this.mskHour.Mask = "00";
-            this.mskHour.Name = "mskHour";
-            this.mskHour.PromptChar = '-';
-            this.tblHour.SetRowSpan(this.mskHour, 2);
-            this.mskHour.Size = new System.Drawing.Size(98, 93);
-            this.mskHour.TabIndex = 60;
-            this.mskHour.Text = "00";
-            this.mskHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mskHour.Validating += new System.ComponentModel.CancelEventHandler(this.mskMonth_Validating);
-            // 
-            // btnHourDown
-            // 
-            this.btnHourDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHourDown.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnHourDown.Location = new System.Drawing.Point(101, 48);
-            this.btnHourDown.Margin = new System.Windows.Forms.Padding(1);
-            this.btnHourDown.Name = "btnHourDown";
-            this.btnHourDown.Size = new System.Drawing.Size(58, 46);
-            this.btnHourDown.TabIndex = 59;
-            this.btnHourDown.Text = "▼";
-            this.btnHourDown.UseVisualStyleBackColor = true;
-            this.btnHourDown.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnHourUp
-            // 
-            this.btnHourUp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHourUp.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnHourUp.Location = new System.Drawing.Point(101, 1);
-            this.btnHourUp.Margin = new System.Windows.Forms.Padding(1);
-            this.btnHourUp.Name = "btnHourUp";
-            this.btnHourUp.Size = new System.Drawing.Size(58, 45);
-            this.btnHourUp.TabIndex = 58;
-            this.btnHourUp.Text = "▲";
-            this.btnHourUp.UseVisualStyleBackColor = true;
-            this.btnHourUp.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -787,6 +788,7 @@ namespace POP_Team5_XN
             // 
             this.pnlMainTop.BackColor = System.Drawing.SystemColors.Control;
             this.pnlMainTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlMainTop.BackgroundImage")));
+            this.pnlMainTop.Controls.Add(this.lblWcName);
             this.pnlMainTop.Controls.Add(this.ucDateTime1);
             this.pnlMainTop.Controls.Add(this.label17);
             this.pnlMainTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1048,6 +1050,17 @@ namespace POP_Team5_XN
             this.pnl_Update.Size = new System.Drawing.Size(1098, 670);
             this.pnl_Update.TabIndex = 17;
             // 
+            // lblWcName
+            // 
+            this.lblWcName.BackColor = System.Drawing.Color.Transparent;
+            this.lblWcName.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblWcName.ForeColor = System.Drawing.Color.White;
+            this.lblWcName.Location = new System.Drawing.Point(510, 36);
+            this.lblWcName.Name = "lblWcName";
+            this.lblWcName.Size = new System.Drawing.Size(351, 30);
+            this.lblWcName.TabIndex = 17;
+            this.lblWcName.Text = "Wc_Name";
+            // 
             // POPNopRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1065,18 +1078,18 @@ namespace POP_Team5_XN
             this.pnl_Register.ResumeLayout(false);
             this.pnlDatetime.ResumeLayout(false);
             this.pnlDatetime.PerformLayout();
-            this.tblDay.ResumeLayout(false);
-            this.tblDay.PerformLayout();
             this.tblMonth.ResumeLayout(false);
             this.tblMonth.PerformLayout();
-            this.tblSecond.ResumeLayout(false);
-            this.tblSecond.PerformLayout();
             this.tblYear.ResumeLayout(false);
             this.tblYear.PerformLayout();
-            this.tblMinute.ResumeLayout(false);
-            this.tblMinute.PerformLayout();
             this.tblHour.ResumeLayout(false);
             this.tblHour.PerformLayout();
+            this.tblDay.ResumeLayout(false);
+            this.tblDay.PerformLayout();
+            this.tblSecond.ResumeLayout(false);
+            this.tblSecond.PerformLayout();
+            this.tblMinute.ResumeLayout(false);
+            this.tblMinute.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -1162,5 +1175,6 @@ namespace POP_Team5_XN
         private System.Windows.Forms.MaskedTextBox mskDay;
         private System.Windows.Forms.Button btnDayDown;
         private System.Windows.Forms.Button btnDayUp;
+        private System.Windows.Forms.Label lblWcName;
     }
 }
