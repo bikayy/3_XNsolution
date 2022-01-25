@@ -619,6 +619,11 @@ namespace Team5_XN
             cboUse_YN.Text = dataGridView1["Use_YN", dataGridView1.CurrentRow.Index].Value.ToString();
         }
 
+        private void pnlDetail_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         /************************************************************************************************************/
         /************************************************************************************************************/
 
@@ -632,7 +637,6 @@ namespace Team5_XN
         //    if (check <= 1)
         //    {
         //        if (e.RowIndex < rowCount)
-        //            e.Cancel = true;
         //    }
         //    //편집
         //    else if (check == 2)

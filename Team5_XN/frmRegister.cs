@@ -25,14 +25,19 @@ namespace Team5_XN
         {
             txtID.Text = txtID.Text.Replace(" ", "");
             bool check = srv.IDCheck(txtID.Text);
+            if (string.IsNullOrWhiteSpace(txtID.Text.Trim()))
+            {
+                MessageBox.Show("아이디를 입력해주세요.");
+                return;
+            }
             if (!check)
             {
                 txtID.ReadOnly = true;
-                MessageBox.Show("회원가입이 가능한 아이디 입니다.");
+                MessageBox.Show("사원등록이 가능한 아이디 입니다.");
             }
             else
             {
-                MessageBox.Show("회원가입이 불가능한 아이디 입니다.");
+                MessageBox.Show("사원등록이 불가능한 아이디 입니다.");
             }
         }
 
@@ -65,7 +70,7 @@ namespace Team5_XN
                 User_PW = txtPassword1.Text,
                 User_Name = txtName.Text
             };
-            DialogResult message = MessageBox.Show("회원 가입 하시겠습니까?", "회원가입", MessageBoxButtons.YesNo);
+            DialogResult message = MessageBox.Show("등록 하시겠습니까?", "사원등록", MessageBoxButtons.YesNo);
             if (message == DialogResult.Yes)
             {
                 bool result = false;
@@ -73,12 +78,12 @@ namespace Team5_XN
                 result = srv.AddID(user);
                 if (result)
                 {
-                    MessageBox.Show("회원가입 완료");
+                    MessageBox.Show("사원등록 완료");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("회원가입 실패");
+                    MessageBox.Show("사원등록 실패");
                 }
             }
         }

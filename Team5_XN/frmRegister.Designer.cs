@@ -80,7 +80,7 @@ namespace Team5_XN
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 20);
             this.label4.TabIndex = 9;
-            this.label4.Text = "회원가입";
+            this.label4.Text = "사원등록";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
@@ -122,7 +122,7 @@ namespace Team5_XN
             this.btnCreateID.Name = "btnCreateID";
             this.btnCreateID.Size = new System.Drawing.Size(79, 27);
             this.btnCreateID.TabIndex = 19;
-            this.btnCreateID.Text = "가입";
+            this.btnCreateID.Text = "등록";
             this.btnCreateID.UseVisualStyleBackColor = false;
             this.btnCreateID.Click += new System.EventHandler(this.btnCreateID_Click);
             // 
@@ -244,7 +244,7 @@ namespace Team5_XN
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel21);
             this.Name = "frmRegister";
-            this.Text = "회원가입";
+            this.Text = "사원등록";
             this.panel21.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);

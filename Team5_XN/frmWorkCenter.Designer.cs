@@ -45,49 +45,49 @@ namespace Team5_XN
             this.btnSelectProcess = new System.Windows.Forms.Button();
             this.txtSelectWcName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtWcCode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pnlBorder = new System.Windows.Forms.Panel();
             this.pnlSubject2 = new System.Windows.Forms.Panel();
-            this.txtWcName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlDetail = new System.Windows.Forms.Panel();
-            this.txtProcessName = new System.Windows.Forms.TextBox();
-            this.txtProcessCode = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnProcess = new System.Windows.Forms.Button();
-            this.label00 = new System.Windows.Forms.Label();
-            this.cboUse_YN = new System.Windows.Forms.ComboBox();
-            this.cboPallet_YN = new System.Windows.Forms.ComboBox();
-            this.cboMonitoring_YN = new System.Windows.Forms.ComboBox();
-            this.cboWcGroup = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.txtRemark = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtWcName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtWcCode = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.cboWcGroup = new System.Windows.Forms.ComboBox();
+            this.cboMonitoring_YN = new System.Windows.Forms.ComboBox();
+            this.cboPallet_YN = new System.Windows.Forms.ComboBox();
+            this.cboUse_YN = new System.Windows.Forms.ComboBox();
+            this.label00 = new System.Windows.Forms.Label();
+            this.btnProcess = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtProcessCode = new System.Windows.Forms.TextBox();
+            this.txtProcessName = new System.Windows.Forms.TextBox();
             this.pnlDetail2 = new System.Windows.Forms.Panel();
+            this.pnlSubject1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pnlSubject1 = new System.Windows.Forms.Panel();
             this.pnlDgv = new System.Windows.Forms.Panel();
-            this.pnlBorder = new System.Windows.Forms.Panel();
             this.pnlSelect.SuspendLayout();
+            this.pnlBorder.SuspendLayout();
             this.pnlSubject2.SuspendLayout();
             this.pnlDetail.SuspendLayout();
             this.pnlDetail2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSubject1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlDgv.SuspendLayout();
-            this.pnlBorder.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSelectWcCode
@@ -273,50 +273,19 @@ namespace Team5_XN
             this.label12.Text = "작업장명";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // pnlBorder
             // 
-            this.label3.BackColor = System.Drawing.Color.Gainsboro;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 33);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "입력정보";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(6, 11);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 23);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "*";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtWcCode
-            // 
-            this.txtWcCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtWcCode.Location = new System.Drawing.Point(100, 11);
-            this.txtWcCode.Name = "txtWcCode";
-            this.txtWcCode.Size = new System.Drawing.Size(130, 22);
-            this.txtWcCode.TabIndex = 18;
-            this.txtWcCode.Tag = "Wc_Code";
-            this.txtWcCode.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
-            this.txtWcCode.Leave += new System.EventHandler(this.txtBox_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(21, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 23);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "작업장코드";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pnlBorder.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlBorder.Controls.Add(this.pnlDgv);
+            this.pnlBorder.Controls.Add(this.pnlDetail2);
+            this.pnlBorder.Controls.Add(this.pnlSelect);
+            this.pnlBorder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBorder.Location = new System.Drawing.Point(0, 0);
+            this.pnlBorder.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBorder.Name = "pnlBorder";
+            this.pnlBorder.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlBorder.Size = new System.Drawing.Size(1284, 661);
+            this.pnlBorder.TabIndex = 5;
             // 
             // pnlSubject2
             // 
@@ -329,26 +298,18 @@ namespace Team5_XN
             this.pnlSubject2.Size = new System.Drawing.Size(1276, 33);
             this.pnlSubject2.TabIndex = 11;
             // 
-            // txtWcName
+            // label3
             // 
-            this.txtWcName.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtWcName.Location = new System.Drawing.Point(100, 39);
-            this.txtWcName.Name = "txtWcName";
-            this.txtWcName.Size = new System.Drawing.Size(130, 22);
-            this.txtWcName.TabIndex = 12;
-            this.txtWcName.Tag = "Wc_Name";
-            this.txtWcName.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
-            this.txtWcName.Leave += new System.EventHandler(this.txtBox_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(21, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 23);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "작업장명";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.BackColor = System.Drawing.Color.Gainsboro;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 33);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "입력정보";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlDetail
             // 
@@ -387,107 +348,195 @@ namespace Team5_XN
             this.pnlDetail.Size = new System.Drawing.Size(1276, 130);
             this.pnlDetail.TabIndex = 12;
             // 
-            // txtProcessName
+            // label5
             // 
-            this.txtProcessName.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtProcessName.Location = new System.Drawing.Point(207, 95);
-            this.txtProcessName.Name = "txtProcessName";
-            this.txtProcessName.ReadOnly = true;
-            this.txtProcessName.Size = new System.Drawing.Size(98, 22);
-            this.txtProcessName.TabIndex = 86;
-            this.txtProcessName.Tag = "Process_Name";
-            this.txtProcessName.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(21, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 23);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "작업장그룹";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtProcessCode
+            // label4
             // 
-            this.txtProcessCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtProcessCode.Location = new System.Drawing.Point(100, 95);
-            this.txtProcessCode.Name = "txtProcessCode";
-            this.txtProcessCode.ReadOnly = true;
-            this.txtProcessCode.Size = new System.Drawing.Size(82, 22);
-            this.txtProcessCode.TabIndex = 85;
-            this.txtProcessCode.Tag = "Process_Code";
-            this.txtProcessCode.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(21, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 23);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "작업장명";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label10
+            // txtWcName
             // 
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(6, 95);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 23);
-            this.label10.TabIndex = 103;
-            this.label10.Text = "*";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtWcName.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWcName.Location = new System.Drawing.Point(100, 39);
+            this.txtWcName.Name = "txtWcName";
+            this.txtWcName.Size = new System.Drawing.Size(130, 22);
+            this.txtWcName.TabIndex = 12;
+            this.txtWcName.Tag = "Wc_Name";
+            this.txtWcName.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.txtWcName.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
-            // btnProcess
+            // label7
             // 
-            this.btnProcess.BackColor = System.Drawing.Color.Black;
-            this.btnProcess.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
-            this.btnProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnProcess.Location = new System.Drawing.Point(184, 95);
-            this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(19, 24);
-            this.btnProcess.TabIndex = 84;
-            this.btnProcess.UseVisualStyleBackColor = false;
-            this.btnProcess.Click += new System.EventHandler(this.btnSelectProcess_Click);
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(6, 39);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 23);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "*";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label00
+            // label8
             // 
-            this.label00.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label00.Location = new System.Drawing.Point(21, 95);
-            this.label00.Name = "label00";
-            this.label00.Size = new System.Drawing.Size(81, 23);
-            this.label00.TabIndex = 102;
-            this.label00.Text = "공정";
-            this.label00.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(6, 67);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(17, 23);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "*";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cboUse_YN
+            // label2
             // 
-            this.cboUse_YN.BackColor = System.Drawing.Color.White;
-            this.cboUse_YN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUse_YN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboUse_YN.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboUse_YN.FormattingEnabled = true;
-            this.cboUse_YN.Location = new System.Drawing.Point(440, 67);
-            this.cboUse_YN.Name = "cboUse_YN";
-            this.cboUse_YN.Size = new System.Drawing.Size(104, 21);
-            this.cboUse_YN.TabIndex = 101;
-            this.cboUse_YN.Tag = "Use_YN";
-            this.cboUse_YN.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
-            this.cboUse_YN.Leave += new System.EventHandler(this.txtBox_TextChanged);
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(21, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 23);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "작업장코드";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cboPallet_YN
+            // txtWcCode
             // 
-            this.cboPallet_YN.BackColor = System.Drawing.Color.White;
-            this.cboPallet_YN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPallet_YN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboPallet_YN.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboPallet_YN.FormattingEnabled = true;
-            this.cboPallet_YN.Location = new System.Drawing.Point(440, 39);
-            this.cboPallet_YN.Name = "cboPallet_YN";
-            this.cboPallet_YN.Size = new System.Drawing.Size(104, 21);
-            this.cboPallet_YN.TabIndex = 100;
-            this.cboPallet_YN.Tag = "Pallet_YN";
-            this.cboPallet_YN.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
-            this.cboPallet_YN.Leave += new System.EventHandler(this.txtBox_TextChanged);
+            this.txtWcCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWcCode.Location = new System.Drawing.Point(100, 11);
+            this.txtWcCode.Name = "txtWcCode";
+            this.txtWcCode.Size = new System.Drawing.Size(130, 22);
+            this.txtWcCode.TabIndex = 18;
+            this.txtWcCode.Tag = "Wc_Code";
+            this.txtWcCode.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.txtWcCode.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
-            // cboMonitoring_YN
+            // label6
             // 
-            this.cboMonitoring_YN.BackColor = System.Drawing.Color.White;
-            this.cboMonitoring_YN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMonitoring_YN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboMonitoring_YN.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cboMonitoring_YN.FormattingEnabled = true;
-            this.cboMonitoring_YN.Location = new System.Drawing.Point(440, 11);
-            this.cboMonitoring_YN.Name = "cboMonitoring_YN";
-            this.cboMonitoring_YN.Size = new System.Drawing.Size(104, 21);
-            this.cboMonitoring_YN.TabIndex = 99;
-            this.cboMonitoring_YN.Tag = "Monitoring_YN";
-            this.cboMonitoring_YN.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
-            this.cboMonitoring_YN.Leave += new System.EventHandler(this.txtBox_TextChanged);
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(6, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 23);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "*";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label36
+            // 
+            this.label36.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label36.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label36.Location = new System.Drawing.Point(327, 11);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(107, 23);
+            this.label36.TabIndex = 53;
+            this.label36.Text = "모니터링여부";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label35
+            // 
+            this.label35.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(312, 11);
+            this.label35.Margin = new System.Windows.Forms.Padding(0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(17, 23);
+            this.label35.TabIndex = 55;
+            this.label35.Text = "*";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label42
+            // 
+            this.label42.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label42.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label42.Location = new System.Drawing.Point(327, 39);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(107, 23);
+            this.label42.TabIndex = 59;
+            this.label42.Text = "팔렛생성유무";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label41
+            // 
+            this.label41.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label41.ForeColor = System.Drawing.Color.Black;
+            this.label41.Location = new System.Drawing.Point(312, 39);
+            this.label41.Margin = new System.Windows.Forms.Padding(0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(17, 23);
+            this.label41.TabIndex = 61;
+            this.label41.Text = "*";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label40
+            // 
+            this.label40.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label40.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label40.Location = new System.Drawing.Point(327, 67);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(107, 23);
+            this.label40.TabIndex = 62;
+            this.label40.Text = "사용유무";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label43
+            // 
+            this.label43.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label43.ForeColor = System.Drawing.Color.Red;
+            this.label43.Location = new System.Drawing.Point(312, 67);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(17, 23);
+            this.label43.TabIndex = 65;
+            this.label43.Text = "*";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label44
+            // 
+            this.label44.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label44.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label44.Location = new System.Drawing.Point(649, 11);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(107, 23);
+            this.label44.TabIndex = 66;
+            this.label44.Text = "비고";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtRemark.Location = new System.Drawing.Point(701, 11);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtRemark.Size = new System.Drawing.Size(218, 76);
+            this.txtRemark.TabIndex = 67;
+            this.txtRemark.Tag = "Remark";
+            this.txtRemark.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.txtRemark.Leave += new System.EventHandler(this.txtBox_TextChanged);
+            // 
+            // label39
+            // 
+            this.label39.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label39.ForeColor = System.Drawing.Color.Black;
+            this.label39.Location = new System.Drawing.Point(627, 11);
+            this.label39.Margin = new System.Windows.Forms.Padding(0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(20, 23);
+            this.label39.TabIndex = 68;
+            this.label39.Text = "*";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cboWcGroup
             // 
@@ -504,142 +553,107 @@ namespace Team5_XN
             this.cboWcGroup.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             this.cboWcGroup.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
-            // label39
+            // cboMonitoring_YN
             // 
-            this.label39.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label39.ForeColor = System.Drawing.Color.Black;
-            this.label39.Location = new System.Drawing.Point(627, 11);
-            this.label39.Margin = new System.Windows.Forms.Padding(0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(20, 23);
-            this.label39.TabIndex = 68;
-            this.label39.Text = "*";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cboMonitoring_YN.BackColor = System.Drawing.Color.White;
+            this.cboMonitoring_YN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMonitoring_YN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboMonitoring_YN.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboMonitoring_YN.FormattingEnabled = true;
+            this.cboMonitoring_YN.Location = new System.Drawing.Point(440, 11);
+            this.cboMonitoring_YN.Name = "cboMonitoring_YN";
+            this.cboMonitoring_YN.Size = new System.Drawing.Size(104, 21);
+            this.cboMonitoring_YN.TabIndex = 99;
+            this.cboMonitoring_YN.Tag = "Monitoring_YN";
+            this.cboMonitoring_YN.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.cboMonitoring_YN.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
-            // txtRemark
+            // cboPallet_YN
             // 
-            this.txtRemark.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtRemark.Location = new System.Drawing.Point(701, 11);
-            this.txtRemark.Multiline = true;
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtRemark.Size = new System.Drawing.Size(218, 76);
-            this.txtRemark.TabIndex = 67;
-            this.txtRemark.Tag = "Remark";
-            this.txtRemark.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
-            this.txtRemark.Leave += new System.EventHandler(this.txtBox_TextChanged);
+            this.cboPallet_YN.BackColor = System.Drawing.Color.White;
+            this.cboPallet_YN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPallet_YN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboPallet_YN.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboPallet_YN.FormattingEnabled = true;
+            this.cboPallet_YN.Location = new System.Drawing.Point(440, 39);
+            this.cboPallet_YN.Name = "cboPallet_YN";
+            this.cboPallet_YN.Size = new System.Drawing.Size(104, 21);
+            this.cboPallet_YN.TabIndex = 100;
+            this.cboPallet_YN.Tag = "Pallet_YN";
+            this.cboPallet_YN.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.cboPallet_YN.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
-            // label44
+            // cboUse_YN
             // 
-            this.label44.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label44.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label44.Location = new System.Drawing.Point(649, 11);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(107, 23);
-            this.label44.TabIndex = 66;
-            this.label44.Text = "비고";
-            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cboUse_YN.BackColor = System.Drawing.Color.White;
+            this.cboUse_YN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUse_YN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboUse_YN.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboUse_YN.FormattingEnabled = true;
+            this.cboUse_YN.Location = new System.Drawing.Point(440, 67);
+            this.cboUse_YN.Name = "cboUse_YN";
+            this.cboUse_YN.Size = new System.Drawing.Size(104, 21);
+            this.cboUse_YN.TabIndex = 101;
+            this.cboUse_YN.Tag = "Use_YN";
+            this.cboUse_YN.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.cboUse_YN.Leave += new System.EventHandler(this.txtBox_TextChanged);
             // 
-            // label43
+            // label00
             // 
-            this.label43.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label43.ForeColor = System.Drawing.Color.Red;
-            this.label43.Location = new System.Drawing.Point(312, 67);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(17, 23);
-            this.label43.TabIndex = 65;
-            this.label43.Text = "*";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label00.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label00.Location = new System.Drawing.Point(21, 95);
+            this.label00.Name = "label00";
+            this.label00.Size = new System.Drawing.Size(81, 23);
+            this.label00.TabIndex = 102;
+            this.label00.Text = "공정";
+            this.label00.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label40
+            // btnProcess
             // 
-            this.label40.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label40.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label40.Location = new System.Drawing.Point(327, 67);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(107, 23);
-            this.label40.TabIndex = 62;
-            this.label40.Text = "사용유무";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcess.BackColor = System.Drawing.Color.Black;
+            this.btnProcess.BackgroundImage = global::Team5_XN.Properties.Resources.icon_find;
+            this.btnProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcess.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProcess.Location = new System.Drawing.Point(184, 95);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(19, 24);
+            this.btnProcess.TabIndex = 84;
+            this.btnProcess.UseVisualStyleBackColor = false;
+            this.btnProcess.Click += new System.EventHandler(this.btnSelectProcess_Click);
             // 
-            // label41
+            // label10
             // 
-            this.label41.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label41.ForeColor = System.Drawing.Color.Black;
-            this.label41.Location = new System.Drawing.Point(312, 39);
-            this.label41.Margin = new System.Windows.Forms.Padding(0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(17, 23);
-            this.label41.TabIndex = 61;
-            this.label41.Text = "*";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(6, 95);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(17, 23);
+            this.label10.TabIndex = 103;
+            this.label10.Text = "*";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label42
+            // txtProcessCode
             // 
-            this.label42.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label42.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label42.Location = new System.Drawing.Point(327, 39);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(107, 23);
-            this.label42.TabIndex = 59;
-            this.label42.Text = "팔렛생성유무";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtProcessCode.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtProcessCode.Location = new System.Drawing.Point(100, 95);
+            this.txtProcessCode.Name = "txtProcessCode";
+            this.txtProcessCode.ReadOnly = true;
+            this.txtProcessCode.Size = new System.Drawing.Size(82, 22);
+            this.txtProcessCode.TabIndex = 85;
+            this.txtProcessCode.Tag = "Process_Code";
+            this.txtProcessCode.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
-            // label35
+            // txtProcessName
             // 
-            this.label35.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(312, 11);
-            this.label35.Margin = new System.Windows.Forms.Padding(0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(17, 23);
-            this.label35.TabIndex = 55;
-            this.label35.Text = "*";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label36
-            // 
-            this.label36.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label36.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label36.Location = new System.Drawing.Point(327, 11);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(107, 23);
-            this.label36.TabIndex = 53;
-            this.label36.Text = "모니터링여부";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(6, 67);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 23);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "*";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(6, 39);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(17, 23);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "*";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(21, 67);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 23);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "작업장그룹";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtProcessName.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtProcessName.Location = new System.Drawing.Point(207, 95);
+            this.txtProcessName.Name = "txtProcessName";
+            this.txtProcessName.ReadOnly = true;
+            this.txtProcessName.Size = new System.Drawing.Size(98, 22);
+            this.txtProcessName.TabIndex = 86;
+            this.txtProcessName.Tag = "Process_Name";
+            this.txtProcessName.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
             // 
             // pnlDetail2
             // 
@@ -651,6 +665,16 @@ namespace Team5_XN
             this.pnlDetail2.Name = "pnlDetail2";
             this.pnlDetail2.Size = new System.Drawing.Size(1276, 163);
             this.pnlDetail2.TabIndex = 4;
+            // 
+            // pnlSubject1
+            // 
+            this.pnlSubject1.BackColor = System.Drawing.Color.White;
+            this.pnlSubject1.Controls.Add(this.label9);
+            this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
+            this.pnlSubject1.Name = "pnlSubject1";
+            this.pnlSubject1.Size = new System.Drawing.Size(1276, 33);
+            this.pnlSubject1.TabIndex = 7;
             // 
             // label9
             // 
@@ -680,16 +704,6 @@ namespace Team5_XN
             this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowLeave);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // pnlSubject1
-            // 
-            this.pnlSubject1.BackColor = System.Drawing.Color.White;
-            this.pnlSubject1.Controls.Add(this.label9);
-            this.pnlSubject1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubject1.Location = new System.Drawing.Point(0, 5);
-            this.pnlSubject1.Name = "pnlSubject1";
-            this.pnlSubject1.Size = new System.Drawing.Size(1276, 33);
-            this.pnlSubject1.TabIndex = 7;
-            // 
             // pnlDgv
             // 
             this.pnlDgv.BackColor = System.Drawing.Color.White;
@@ -703,20 +717,6 @@ namespace Team5_XN
             this.pnlDgv.Size = new System.Drawing.Size(1276, 413);
             this.pnlDgv.TabIndex = 6;
             // 
-            // pnlBorder
-            // 
-            this.pnlBorder.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pnlBorder.Controls.Add(this.pnlDgv);
-            this.pnlBorder.Controls.Add(this.pnlDetail2);
-            this.pnlBorder.Controls.Add(this.pnlSelect);
-            this.pnlBorder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBorder.Location = new System.Drawing.Point(0, 0);
-            this.pnlBorder.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlBorder.Name = "pnlBorder";
-            this.pnlBorder.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlBorder.Size = new System.Drawing.Size(1284, 661);
-            this.pnlBorder.TabIndex = 5;
-            // 
             // frmWorkCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -729,14 +729,14 @@ namespace Team5_XN
             this.Load += new System.EventHandler(this.frmWorkCenter_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
+            this.pnlBorder.ResumeLayout(false);
             this.pnlSubject2.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
             this.pnlDetail.PerformLayout();
             this.pnlDetail2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlSubject1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlDgv.ResumeLayout(false);
-            this.pnlBorder.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -755,14 +755,22 @@ namespace Team5_XN
         private System.Windows.Forms.Button btnSelectProcess;
         private System.Windows.Forms.TextBox txtSelectWcName;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtWcCode;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel pnlSubject2;
-        private System.Windows.Forms.TextBox txtWcName;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel pnlBorder;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Panel pnlDgv;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel pnlSubject1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel pnlDetail2;
         private System.Windows.Forms.Panel pnlDetail;
+        private System.Windows.Forms.TextBox txtProcessName;
+        private System.Windows.Forms.TextBox txtProcessCode;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnProcess;
+        private System.Windows.Forms.Label label00;
         private System.Windows.Forms.ComboBox cboUse_YN;
         private System.Windows.Forms.ComboBox cboPallet_YN;
         private System.Windows.Forms.ComboBox cboMonitoring_YN;
@@ -776,23 +784,15 @@ namespace Team5_XN
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel pnlDetail2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel pnlSubject1;
-        private System.Windows.Forms.Panel pnlDgv;
-        private System.Windows.Forms.Panel pnlBorder;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtWcCode;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtWcName;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtProcessName;
-        private System.Windows.Forms.TextBox txtProcessCode;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnProcess;
-        private System.Windows.Forms.Label label00;
+        private System.Windows.Forms.Panel pnlSubject2;
+        private System.Windows.Forms.Label label3;
     }
 }
