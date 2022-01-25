@@ -312,7 +312,8 @@ namespace Team5_XN
                     //탭페이지를 추가해서 탭컨트롤에 추가
 
                     TabPage tp = new TabPage(sb.ToString());
-                    tp.Width = 600;
+                    //tp.Width = 600;
+                    //tp.Height = 35;
                     tp.Parent = tabControl1;
                     tp.Tag = this.ActiveMdiChild;
                     tp.Name = this.ActiveMdiChild.Text;
@@ -345,10 +346,16 @@ namespace Team5_XN
                 e.Item.Visible = false;
         }
 
-        /*static public*/ 
+        /// <summary>
+        /// 혹시나해서 가라로 넣은 툴버튼 세팅 메서드
+        /// </summary>
+        /// <param name="formName"></param>
         private void toolSetting(string formName)
         {
-            if(formName == "사용자관리" || formName == "사용자그룹관리" || formName == "시스템코드분류" || formName == "공정정보" || formName == "작업장정보" || formName == "품목정보" || formName == "비가동분류" || formName == "포장등급 상세정의" || formName == "생산요청관리")
+            toolSelect.BackColor = toolCreate.BackColor = toolUpdate.BackColor = toolDelete.BackColor = toolReset.BackColor =
+                toolSave.BackColor = toolCancle.BackColor = Color.DarkGray;
+
+            if (formName == "사용자관리" || formName == "사용자그룹관리" || formName == "시스템코드분류" || formName == "공정정보" || formName == "작업장정보" || formName == "품목정보" || formName == "비가동분류" || formName == "포장등급 상세정의" || formName == "생산요청관리")
             {
                 //조회 추가 편집 삭제 새로고침
                 toolSelect.Enabled = toolCreate.Enabled = toolUpdate.Enabled = toolDelete.Enabled = toolReset.Enabled = true;

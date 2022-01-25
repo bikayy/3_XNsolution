@@ -36,11 +36,11 @@ namespace Team5_XN
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlSelect = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pnlDgv = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlDgv = new System.Windows.Forms.Panel();
             this.pnlSubject1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSelect.SuspendLayout();
@@ -111,7 +111,7 @@ namespace Team5_XN
             // 
             // pnlSelect
             // 
-            this.pnlSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
+            this.pnlSelect.BackColor = System.Drawing.Color.LightCyan;
             this.pnlSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSelect.Controls.Add(this.button3);
             this.pnlSelect.Controls.Add(this.button2);
@@ -125,32 +125,6 @@ namespace Team5_XN
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1274, 54);
             this.pnlSelect.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Controls.Add(this.pnlDgv);
-            this.panel5.Controls.Add(this.pnlSelect);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(5);
-            this.panel5.Size = new System.Drawing.Size(1284, 661);
-            this.panel5.TabIndex = 5;
-            // 
-            // pnlDgv
-            // 
-            this.pnlDgv.BackColor = System.Drawing.Color.White;
-            this.pnlDgv.Controls.Add(this.dataGridView1);
-            this.pnlDgv.Controls.Add(this.pnlSubject1);
-            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDgv.Location = new System.Drawing.Point(5, 59);
-            this.pnlDgv.Margin = new System.Windows.Forms.Padding(10);
-            this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.pnlDgv.Size = new System.Drawing.Size(1274, 597);
-            this.pnlDgv.TabIndex = 6;
             // 
             // button3
             // 
@@ -188,6 +162,32 @@ namespace Team5_XN
             this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel5.Controls.Add(this.pnlDgv);
+            this.panel5.Controls.Add(this.pnlSelect);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(5);
+            this.panel5.Size = new System.Drawing.Size(1284, 661);
+            this.panel5.TabIndex = 5;
+            // 
+            // pnlDgv
+            // 
+            this.pnlDgv.BackColor = System.Drawing.Color.White;
+            this.pnlDgv.Controls.Add(this.dataGridView1);
+            this.pnlDgv.Controls.Add(this.pnlSubject1);
+            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDgv.Location = new System.Drawing.Point(5, 59);
+            this.pnlDgv.Margin = new System.Windows.Forms.Padding(10);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.pnlDgv.Size = new System.Drawing.Size(1274, 597);
+            this.pnlDgv.TabIndex = 6;
             // 
             // Form1_1
             // 

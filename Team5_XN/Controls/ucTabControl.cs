@@ -32,21 +32,24 @@ namespace Team5_XN
                 r = this.GetTabRect(e.Index);
                 r.Offset(2, 2);
 
-                //선택된 탭의 백그라운드색상은 흰색 (나머지 탭은 기본값)
-                if (this.SelectedIndex == e.Index)
-                {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(225, 230, 210)), e.Bounds);
-                }
+                
                 //else
                 //{
-                //    e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
+                //    e.Graphics.FillRectangle(new SolidBrush(Color.FromName("ControlLight")), e.Bounds);
                 //}
                 //탭의 글씨
-                SolidBrush titleBrush = new SolidBrush(Color.Black);
+                SolidBrush titleBrush = new SolidBrush(Color.DimGray);
                 string title = this.TabPages[e.Index].Text;
                 Font f = new Font("맑은 고딕", 10, FontStyle.Bold);
+                
+                //선택된 탭의 백그라운드색상은 d(나머지 탭은 기본값)
+                if (this.SelectedIndex == e.Index)
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(230, 240, 240)), e.Bounds);
+                    titleBrush = new SolidBrush(Color.Black);
+                    f = new Font("맑은 고딕", 10, FontStyle.Bold);
+                }
                 e.Graphics.DrawString(title, f, titleBrush, new Point(r.X, r.Y));
-
                 //탭의 닫기 이미지
                 //선택된 탭은 빨간색이미지, 선택이 안된 탭은 검정색이미지
                 Image img;
