@@ -344,6 +344,7 @@ namespace POP_Team5_XN
             Nop_Mi_Insert(item.Nop_Code);
             NopInfo.Nop_Ma_Code = ctrl.SendnopList.Nop_Code;
             NopInfo.Nop_Ma_Name = ctrl.SendnopList.Nop_Name;
+            NopInfo.Nop_Mi_Code = NopInfo.Nop_Mi_Name = null;
         }
 
         /// <summary>
